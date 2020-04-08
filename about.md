@@ -13,10 +13,15 @@ title: About
 
 
 
-
+***
 - 머신러닝의 전반적인 이론
 - 딥러닝의 전반적인 이론
   * 관련 논문들
   * 기본 이론 및 관련 논문들의 구현
+- 음성인식과 음성 합성
+  * 음성 신호 처리
+  * Traditional ASR, Speech Synthesis 
+  * ASR, Speech Synthesis using Deep Learning
+***
 - 강화학습의 전반적인 내용 ( 시도해보고자 함 )
 - 빅데이터 컴퓨팅 내용 ( 수업 )
