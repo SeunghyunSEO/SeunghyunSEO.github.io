@@ -9,8 +9,6 @@ title: About
 석사과정 1년 이라는 짧은 기간동안 딥러닝에 대해서 공부하며, 국내외 수많은 블로그들에서 많은 정보를 얻었기에  
 저도 제가 공부해왔던 지식들에 대해 공유하고 기록하고자 블로그 운영을 시작하게 되었습니다 :)
 
-<p class="message" style="font-size: 0.9rem; font-weight: 700">
-Speech Processing, Speech Recognition, Natural Language Processing, Machine Learning
 </p>
 저는 현재 대학원 석사과정에 재학중이고 @Navercorp 에서 인턴을 하고 있습니다.
 </div>
