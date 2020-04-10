@@ -183,6 +183,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: .5rem 1rem;
   border-top: 1px solid rgba(255,255,255,.1);
 }
+.sidebar-nav-item-sub {
+  &:before {
+    content: "";
+    padding-left: 1em;
+  }
+  font-size: 85%;
+  line-height: 85%;
+}
 .sidebar-nav-item.active,
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
