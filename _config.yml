@@ -24,6 +24,21 @@ author:
   name:              Seunghyun SEO
   url:               
   email:             seosh7039@naver.com
+  
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Contents:           
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
 
 # Gems
 plugins:
