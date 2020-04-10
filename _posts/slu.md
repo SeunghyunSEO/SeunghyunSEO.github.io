@@ -1,6 +1,8 @@
 ---
 layout: post
 title: SLU
+category: base
+tag: start
 ---
 
 ### 2020/04/08 시작
