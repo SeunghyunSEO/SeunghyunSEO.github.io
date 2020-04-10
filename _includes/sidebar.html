@@ -8,7 +8,7 @@
     <p>{{ site.description }}</p>
   </div>
 
-<!--   <nav class="sidebar-nav">
+  <nav class="sidebar-nav">
     <a class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %}" href="{{ '/' | absolute_url }}">Home</a>
     {% comment %}
       The code below dynamically generates a sidebar nav of pages with
@@ -28,8 +28,8 @@
     <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
     <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
   </nav>
- -->
-  <nav class="sidebar-nav">
+
+<!--   <nav class="sidebar-nav">
     {% for nav in site.nav %}
       {% assign is_relative = nav[1][0] | slice: 0 %}
       {% assign url = nav[1][0] %}
@@ -60,7 +60,7 @@
 
     {% endfor %}
 
-  </nav>
+  </nav> -->
      
   <div class="sidebar-item">
     <p>
