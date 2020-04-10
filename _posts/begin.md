@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 시작
+category: base
+tag: 
 ---
 
 ### 2020/04/08 시작
