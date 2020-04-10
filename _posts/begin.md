@@ -1,5 +1,5 @@
 ---
-layout: post
+<!--layout: post-->
 title: 시작
 category: base
 tag: 
