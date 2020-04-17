@@ -24,4 +24,4 @@ Not all ways of computing the loss function and performing inference are tractab
 The CTC algorithm can assign a probability for any Y given an X. The key to computing this probability is how CTC thinks about alignments between inputs and outputs. We’ll start by looking at these alignments and then show how to use them to compute the loss function and perform inference.
 
 
-
+https://distill.pub/2017/ctc/assets/naive_alignment.svg
