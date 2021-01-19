@@ -1,7 +1,7 @@
 ---
 title: Sequence Generation
-categories: tmp
-tag: [tmp]
+categories: DeepLearning
+tag: 
 
 toc: true
 toc_sticky: true
