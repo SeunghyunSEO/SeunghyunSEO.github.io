@@ -29,7 +29,7 @@ nav:
   Home:           
     - '/'
   Contents:           
-    - '/blog/'
+#     - '/blog/'
     - { Categories: '/blog/categories/' }
 #     - { Tags: '/blog/tags/' }
   About:          
