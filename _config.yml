@@ -31,7 +31,7 @@ nav:
   Contents:           
     - '/blog/'
     - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
+#     - { Tags: '/blog/tags/' }
   About:          
     - '/about/'
 
