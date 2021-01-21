@@ -177,9 +177,9 @@ posterior를 최대화 하는 solution을 구하면
 
 $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른 정규화 term이 곡선 피팅에 끼치는 영향은 다음과 같다.
 
-<img src="https://user-images.githubusercontent.com/48202736/105374322-e983db00-5c4a-11eb-8d03-ad7ecdcf11ea.png" width="40%" title="제목"/>
-<img src="https://user-images.githubusercontent.com/48202736/105374328-eb4d9e80-5c4a-11eb-88a8-21c716935e26.png" width="40%" title="제목"/>
-<img src="https://user-images.githubusercontent.com/48202736/105374337-edaff880-5c4a-11eb-80f5-9508a0f8d6fc.png" width="40%" title="제목"/>
+<img src="https://user-images.githubusercontent.com/48202736/105374322-e983db00-5c4a-11eb-8d03-ad7ecdcf11ea.png" title="제목"/>
+<img src="https://user-images.githubusercontent.com/48202736/105374328-eb4d9e80-5c4a-11eb-88a8-21c716935e26.png" title="제목"/>
+<img src="https://user-images.githubusercontent.com/48202736/105374337-edaff880-5c4a-11eb-80f5-9508a0f8d6fc.png" title="제목"/>
 
 
 - <mark style='background-color: #fff5b1'> Further Study </mark>
