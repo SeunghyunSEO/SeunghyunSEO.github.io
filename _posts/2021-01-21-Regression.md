@@ -15,6 +15,9 @@ toc_sticky: true
 
 ![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
 ![image](https://user-images.githubusercontent.com/48202736/105039364-d1be2280-5aa3-11eb-9f2e-f3ff85d367a4.png)
+
+- <mark style='background-color: #fff5b1'> Non-Linear Regression </mark>
+
 ![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
 ![image](https://user-images.githubusercontent.com/48202736/105039396-dc78b780-5aa3-11eb-8cdd-c37caca058e6.png)
 ![image](https://user-images.githubusercontent.com/48202736/105039401-dedb1180-5aa3-11eb-9922-10d47a5cbdd8.png)
