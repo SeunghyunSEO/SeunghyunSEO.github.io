@@ -69,6 +69,8 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 자 이제 우리는 모든 x,y data pair에 대한 식을 위처럼 얻게 되었다.
 
+ - <mark style='background-color: #dcffe4'> likelihood </mark>
+
 우리가 찾고싶은 것은 전체 데이터셋에 대한 $$likelihood$$이다. 
 
 이는 각각의 분포를 전부 곱한것과 같기 때문에 아래와 같이 쓸 수 있다.
@@ -88,8 +90,9 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
   
 이제 늘 그랬듯이 미분해서 0인 지점을 찾으면 우리는 likelihood를 가장 크게하는, 그러니까 현재 데이터를 가장 likely하게 표현하는 세 가지 파라메터를 구할 수 있다.
 
+ - <mark style='background-color: #dcffe4'> solution </mark>
 
-  
+asd
   
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
