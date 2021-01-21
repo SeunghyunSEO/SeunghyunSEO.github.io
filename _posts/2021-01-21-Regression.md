@@ -46,6 +46,13 @@ toc_sticky: true
 마치 빔을 쏘는 것 처럼 됐다.
 마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분포를 곁들인...
 
+- <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
+
+우리가 위에서 w (혹은 y인데 책에서는 같은 의미로 world state, w를 사용했다.)에 대해서 가우시안 분포를 가정했기 때문에 
+우리가 모델링 하고자 하는 분포는 다음과 같다. 
+
+<center>$$ Pr(w_i \mid w_i,\theta) = Norm_{w_i}[\phi_0 \phi^T x_i, sigma^2] $$</center>
+
 
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
