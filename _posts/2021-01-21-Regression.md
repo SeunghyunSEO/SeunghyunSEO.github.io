@@ -7,11 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> asd </mark>
-
-
+- <mark style='background-color: #fff5b1'> Regression </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105039716-3bd6c780-5aa4-11eb-8ff6-8ddb57c79b92.png)
+
+- <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
 ![image](https://user-images.githubusercontent.com/48202736/105039364-d1be2280-5aa3-11eb-9f2e-f3ff85d367a4.png)
