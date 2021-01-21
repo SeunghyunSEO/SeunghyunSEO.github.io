@@ -1,5 +1,5 @@
 ---
-title: Maximum Generative vs Discriminative Models
+title: Generative vs Discriminative Models
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
