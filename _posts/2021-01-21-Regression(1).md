@@ -175,7 +175,7 @@ posterior를 최대화 하는 solution을 구하면
 즉 파라메터에 사전 확률을 넣어 계산하는 베이지안 관점으로 문제를 푸는것이 우리가 잘 알고있는 MSE Loss로 선형 회귀 문제를 풀 때, 곡선(혹은 직선)의 오버피팅을 막기위해 weight decay 정규화 제약식을 추가하는 것과 같은 매우 좋은 효과를 가져온다는 것입니다.
 
 
-$$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른 정규화 term이 곡선 피팅에 끼치는 영향은 다음과 같다.
+$$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른 정규화 term이 곡선 피팅에 끼치는 영향은 다음과 같습니다.
 
 <img src="https://user-images.githubusercontent.com/48202736/105374322-e983db00-5c4a-11eb-8d03-ad7ecdcf11ea.png" title="제목"/>
 <img src="https://user-images.githubusercontent.com/48202736/105374328-eb4d9e80-5c4a-11eb-88a8-21c716935e26.png" title="제목"/>
