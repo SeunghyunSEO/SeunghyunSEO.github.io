@@ -9,7 +9,7 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Regression </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/105039716-3bd6c780-5aa4-11eb-8ff6-8ddb57c79b92.png)
+![image](https://user-images.githubusercontent.com/48202736/105357223-da476200-5c37-11eb-9612-eaebab62a743.png)
 
 - <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
