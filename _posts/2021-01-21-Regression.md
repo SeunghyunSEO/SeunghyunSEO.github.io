@@ -51,7 +51,7 @@ toc_sticky: true
 우리가 위에서 w (혹은 y인데 책에서는 같은 의미로 world state, w를 사용했다.)에 대해서 가우시안 분포를 가정했기 때문에 
 우리가 모델링 하고자 하는 분포는 다음과 같다. 
 
-<center>$$ Pr(w_i \mid w_i,\theta) = Norm_{w_i}[\phi_0 + \phi^T x_i, sigma^2] $$</center>
+<center>$$ Pr(w_i \mid x_i,\theta) = Norm_{w_i}[\phi_0 + \phi^T x_i, sigma^2] $$</center>
 
 (각 $$x_i$$에 대응하는 $$y_i$$의 분포인 것이다.)
 
@@ -65,8 +65,17 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 그러면 위의 모델링 하고자 하는 분포를 아래처럼 다시 쓸 수 있다.
 
-<center>$$ Pr(w_i \mid w_i,\theta) = Norm_{w_i}[\phi^T x_i, sigma^2] $$</center>
+<center>$$ Pr(w_i \mid x_i,\theta) = Norm_{w_i}[\phi^T x_i, sigma^2] $$</center>
 
+자 이제 우리는 모든 x,y data pair에 대한 식을 위처럼 얻게 되었다.
+
+우리가 찾고싶은 것은 전체 데이터셋에 대한 likelihood이다. 
+
+이는 각각의 분포를 전부 곱한것과 같기 때문에 아래와 같이 쓸 수 있다.
+
+<center>$$ Pr(w \mid X) = Norm_{w}[X^T \phi, sigma^2I] $$</center>
+
+<center>$$ where X = [x_1,x_2, ... x_I] w=[w_1,w_2,...,w_I]^T $$<center>
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
