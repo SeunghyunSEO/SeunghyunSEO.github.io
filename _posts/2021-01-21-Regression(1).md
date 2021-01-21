@@ -176,9 +176,7 @@ posterior를 최대화 하는 solution을 구하면
 
 - <mark style='background-color: #fff5b1'> Further Study </mark>
 
-지금까지 이야기 한 것 외에도, 모든 가능한 파라메터를 다 고려하는 Bayesian Regression 방법과
-
-Non-linear Regression 등등의 다양한 업그레이드 버전이 있습니다. 
+지금까지 이야기 한 것 외에도, Bayesian Regression 방법과 Non-linear Regression 등등의 다양한 업그레이드 버전이 있습니다. 
 
 이것들은 여백이 부족해서 2편에서 다루도록 하겠습니다.
 
