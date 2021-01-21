@@ -38,7 +38,7 @@ toc_sticky: true
 ![image](https://user-images.githubusercontent.com/48202736/105039364-d1be2280-5aa3-11eb-9f2e-f3ff85d367a4.png)
 
 마치 빔을 쏘는 것 처럼 됐다.
-마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분산을 곁들인...
+마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분포를 곁들인...
 
 
 
