@@ -1,5 +1,5 @@
 ---
-title: Regression (1/3)
+title: Regression (1/2)
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
