@@ -135,15 +135,45 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 이를 다시쓰면 다음과 같습니다.
 
-<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2} -\frac{Nlog[2\pi]}{2} - \frac{Nlog[\sigma^2]}{2}] $$</center>
+<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{\{f(x_i,\phi)-w_i\}}^2} -\frac{Nlog[2\pi]}{2} - \frac{Nlog[\sigma^2]}{2}] $$</center>
 
 여기서 분산에 대한 식은 다 떼어버리고 생각하면 이는 MSE loss식과 같습니다. (argmax, argmin의 차이가 이것마저 같게 하면 아예 동일합니다.)
 
 <center>$$ 1. \space \hat{\theta} = argmin_{\theta}\frac{1}{2} \sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
 
-<center>$$ 2. \space \hat{\phi} = argmax_{\phi}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2}] $$</center>
+<center>$$ 2. \space \hat{\phi} = argmax_{\phi}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{\{f(x_i,\phi)-w_i\}}^2}] $$</center>
 
 결과적으로 노이즈가 가우시안 분포를 가진다는 가정하에, 즉 가우시안 분포로 y를 모델링 한 경우 $$likelihood$$를 maximize하는 방법이 일반적인 회귀에 쓰이는 MSE를 최소화 하는것과 같다는 걸 알 수 있습니다.
+
+
+- <mark style='background-color: #fff5b1'> MAP로 Linear Regression </mark> 
+
+우리는 앞서 ML과 MAP의 차이에 대해서 공부했었습니다. 사후 확률(posterior)는 likelihood에 prior 정보를 추가해 데이터가 별로 없을 때 likelihood를 약간 보정해주는 느낌이라고 설명했었습니다.
+
+<center>$$posterior \propto likelihood \times prior$$</center>
+
+<center>$$ Pr(\theta \mid x,w) \propto Pr(w \mid x,\theta) \times Pr(\theta)$$</center>
+
+여기서는 x,y가 데이터로 주어졌고 \theta 를 통해 찾는 것이기 때문에 y와 $$\theta$$가 조건부 확률의 어디에 있느냐가 중요합니다.
+
+
+prior는 $$\theta$$에 대한 사전 정보가 되고 ( $$likelihood$$가 가우시안 분포이기 때문에 mean, variance가 어떤 값을 가질 확률이 어떻다~ 를 나타내는 분포가 된다. )
+
+
+prior를 적절히 다음과 같이 0 mean 가우시안 분포로 고르고
+
+<center>$$ Pr(\theta \mid \alpha) = Norm_{\theta}[0,\sigma^2] $$</center>
+
+<center>$$ Pr(\theta \mid \alpha) = \frac{1}{\sqrt{2\pi\sigma^2}}exp[-0.5\frac{(\theta-0)^2}{\sigma^2}] $$</center>
+
+posterior를 최대화 하는 solution을 구하면
+
+이는 다음을 최소화 하는 것과 같은 solution을 구할 수 있게 됩니다.
+
+<center>$$ \frac{1}{2\sigma^2} \sum_{i=1}^{I}{ \{ f(x_i,\phi)-y_i \} }^2 + \frac{\alpha}{2}{\phi^T \phi} $$</center>
+
+즉 파라메터에 사전 확률을 넣어 계산하는 베이지안 관점으로 문제를 푸는것이 우리가 잘 알고있는 MSE Loss로 선형 회귀 문제를 풀 때, 곡선(혹은 직선)의 오버피팅을 막기위해 weight decay 정규화 제약식을 추가하는 것과 같은 매우 좋은 효과를 가져온다는 것입니다.
+
 
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
