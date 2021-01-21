@@ -40,9 +40,8 @@ toc_sticky: true
 ![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
 
 이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것이다.
-그렇다면 우리가 추정하고자 하는 회귀 모양은 아래의 그림과 같이 된다.
+그렇다면 우리가 추정하고자 하는 회귀 모양은 위의 그림 (b) 같이 된다.
 
-![image](https://user-images.githubusercontent.com/48202736/105039364-d1be2280-5aa3-11eb-9f2e-f3ff85d367a4.png)
 
 마치 빔을 쏘는 것 처럼 됐다.
 마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분포를 곁들인...
