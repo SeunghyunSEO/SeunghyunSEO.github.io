@@ -141,7 +141,7 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 <center>$$ 1. \space \hat{\theta} = argmin_{\theta}\frac{1}{2} \sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
 
-<center>$$ 2. \hat{\phi} = argmax_{\phi}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2}] $$</center>
+<center>$$ 2. \space \hat{\phi} = argmax_{\phi}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2}] $$</center>
 
 결과적으로 노이즈가 가우시안 분포를 가진다는 가정하에, 즉 가우시안 분포로 y를 모델링 한 경우 $$likelihood$$를 maximize하는 방법이 일반적인 회귀에 쓰이는 MSE를 최소화 하는것과 같다는 걸 알 수 있습니다.
 
