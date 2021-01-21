@@ -16,7 +16,20 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
+1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해보자.
+우리의 목적은 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이다. 
+
+<center>$$y=ax+b$$</center>
+
+데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있다.
+여기에 조금 더 보태보자, 우리가 직선의 방정식만 찾으면 어떤 데이터 포인트 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 $$x_i$$에 대응하는게 분포라고 생각해보자.
+$$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각하자.
+
 ![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
+
+이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것이다.
+그렇다면 우리가 추정하고자 하는 회귀 모양은 아래의 그림과 같이 된다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105039364-d1be2280-5aa3-11eb-9f2e-f3ff85d367a4.png)
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
