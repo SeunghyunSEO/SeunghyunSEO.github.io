@@ -24,7 +24,7 @@ toc_sticky: true
 1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해보자.
 우리의 목적은 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이다. 
 
-<img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width 70 height 70 title="제목"/>
+<img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" height="70" title="제목"/>
 
 데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있다.
 
