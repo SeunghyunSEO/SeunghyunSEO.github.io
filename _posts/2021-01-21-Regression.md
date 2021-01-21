@@ -9,8 +9,13 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Regression </mark>
 
-아래의 표에서 볼 수 있듯이, 간단하게 생각하면 입력값이 continuous 한데 결과값이 마찬가지로 continuous하면 Regression 문제라 할 수 있고,
-입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있다.
+아래의 표에서 볼 수 있듯이, 간단하게 생각하면 
+
+
+1.입력값이 continuous 한데 결과값이 마찬가지로 continuous하면 Regression 문제라 할 수 있고,
+
+
+2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105357223-da476200-5c37-11eb-9612-eaebab62a743.png)
 
