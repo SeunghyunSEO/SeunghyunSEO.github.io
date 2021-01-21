@@ -122,11 +122,11 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 여기서 regression을 할 때 널리 알려진 MSE Loss는 다음과 같이 나타낼 수 있습니다.
 
-<center>$$ Loss(\theta) = \frac{1}{2} sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
+<center>$$ Loss(\theta) = \frac{1}{2} \sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
 
 일반적으로 loss를 줄여야 하는 방향으로 업데이트 해야 하기 때문에 식을 다시 쓰면 아래와 같습니다.
 
-<center>$$ \hat{\theta} = argmin_{\theta}\frac{1}{2} sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
+<center>$$ \hat{\theta} = argmin_{\theta}\frac{1}{2} \sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
 
 
 그런데 이는 사실 위에서 구한 식과 같습니다.
@@ -135,7 +135,7 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 이를 다시쓰면 다음과 같습니다.
 
-<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ - \frac{1}{2}\frac{1}{\sigma^2}{sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2} -\frac{Nlog[2\pi]}{2} - \frac{Nlog[\sigma^2]}{2}] $$</center>
+<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ - \frac{1}{2}\frac{1}{\sigma^2}{\sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2} -\frac{Nlog[2\pi]}{2} - \frac{Nlog[\sigma^2]}{2}] $$</center>
 
 여기서 분산에 대한 식은 다 떼어버리고 생각하면 이는 MSE loss식과 같습니다. (argmax, argmin의 차이가 이것마저 같게 하면 아예 동일합니다.)
 
