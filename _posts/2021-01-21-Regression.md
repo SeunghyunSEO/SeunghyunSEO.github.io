@@ -75,9 +75,26 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 <center>$$ Pr(w \mid X) = Norm_{w}[X^T \phi, \sigma^2I] $$</center>
 
-<center>$$ where X = [x_1,x_2, ... x_I] \space and \space w=[w_1,w_2,...,w_I]^T $$<center>
+<center>$$ where X = [x_1,x_2, ... x_I] \space and \space w=[w_1,w_2,...,w_I]^T $$</center>
+
+이제 우리는 $$likelihood$$를 가지고 있으니 그전에 다룬 Maximim likelihood를 통해 데이터에 딱 맞는 원하는 파라메터를 구해보자.
+
+<center>$$ \hat{\theta} = argmax_{\theta}[Pr(w|X,\theta)] = argmax_{\theta}[logPr(w|X,\theta)] $$</center>
+ 
+우리가 구하고자 하는 파라메터 $$\theta$$는 지금은 $$\phi_0$$, $$\phi_1$$, $$\sigma^2$$ 세 개 이므로 위의 식을 다시 쓰면, 
+(물론 로그를 먼저 likelihood인 가우시안 분포의 식을 풀어 쓰고 log를 취해줌.)
+
+<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ -\frac{Ilog[2\pi]}{2} - \frac{Ilog[\sigma^2]}{2} - \frac{(w-X^T\phi)^T(w-X^T \phi)}{2\sigma^2} ] $$</center>
+  
+이제 늘 그랬듯이 미분해서 0인 지점을 찾으면 우리는 likelihood를 가장 크게하는, 그러니까 현재 데이터를 가장 likely하게 표현하는 세 가지 파라메터를 구할 수 있다.
+
+
+  
+  
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
+
+
 
 ![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
 ![image](https://user-images.githubusercontent.com/48202736/105039396-dc78b780-5aa3-11eb-8cdd-c37caca058e6.png)
