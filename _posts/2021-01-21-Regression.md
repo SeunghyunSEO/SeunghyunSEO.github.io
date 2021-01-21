@@ -120,10 +120,27 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 ```주어진 데이터와 잘 맞는 직선 혹은 곡선의 방정식을 찾겠다``` 라는 목적은 같지만 차이(error)를 계산하는 식을 도입해서 문제를 풀자는 겁니다.
 
-여기서 regression을 할 때 널리 알려진 MSE는 다음과 같이 나타낼 수 있습니다.
+여기서 regression을 할 때 널리 알려진 MSE Loss는 다음과 같이 나타낼 수 있습니다.
 
-<center>$$ E(\theta) = \frac{1}{2} sum_{i=1}^{I}\{f(xi,\theta}-y_i\}^2 $$</center>
+<center>$$ Loss(\theta) = \frac{1}{2} sum_{i=1}^{I}{ \{ f(xi,\theta}-y_i \} }^2 $$</center>
 
+일반적으로 loss를 줄여야 하는 방향으로 업데이트 해야 하기 때문에 식을 다시 쓰면 아래와 같습니다.
+
+<center>$$ \hat{\theta} = argmin_{\theta}\frac{1}{2} sum_{i=1}^{I}{ \{ f(xi,\theta}-y_i \} }^2 $$</center>
+
+
+그런데 이는 사실 위에서 구한 식과 같습니다.
+
+<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ -\frac{Ilog[2\pi]}{2} - \frac{Ilog[\sigma^2]}{2} - \frac{(w-X^T\phi)^T(w-X^T \phi)}{2\sigma^2} ] $$</center>
+
+이를 다시쓰면 다음과 같습니다.
+
+<center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ - \frac{1}{2}\frac{1}{\sigma^2}{sum_{i=1}^{N}{f(x_i,\phi)-w_i}^2} -\frac{Nlog[2\pi]}{2} - \frac{Nlog[\sigma^2]}{2}] $$</center>
+
+여기서 분산에 대한 식은 다 떼어버리고 생각하면 이는 MSE loss식과 같습니다. (argmax, argmin의 차이가 이것마저 같게 하면 아예 동일합니다.)
+
+
+결과적으로 노이즈가 가우시안 분포를 가진다는 가정하에, 즉 가우시안 분포로 y를 모델링 한 경우 $$likelihood$$를 maximize하는 방법이 일반적인 회귀에 쓰이는 MSE를 최소화 하는것과 같다는 걸 알 수 있습니다.
 
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
