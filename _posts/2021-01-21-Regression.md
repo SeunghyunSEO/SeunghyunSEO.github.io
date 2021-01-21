@@ -122,11 +122,11 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 여기서 regression을 할 때 널리 알려진 MSE Loss는 다음과 같이 나타낼 수 있습니다.
 
-<center>$$ Loss(\theta) = \frac{1}{2} sum_{i=1}^{I}{ \{ f(xi,\theta}-y_i \} }^2 $$</center>
+<center>$$ Loss(\theta) = \frac{1}{2} sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
 
 일반적으로 loss를 줄여야 하는 방향으로 업데이트 해야 하기 때문에 식을 다시 쓰면 아래와 같습니다.
 
-<center>$$ \hat{\theta} = argmin_{\theta}\frac{1}{2} sum_{i=1}^{I}{ \{ f(xi,\theta}-y_i \} }^2 $$</center>
+<center>$$ \hat{\theta} = argmin_{\theta}\frac{1}{2} sum_{i=1}^{I}{ \{ f(x_i,\theta)-y_i \} }^2 $$</center>
 
 
 그런데 이는 사실 위에서 구한 식과 같습니다.
