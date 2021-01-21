@@ -34,7 +34,7 @@ toc_sticky: true
 
 
 
-여기에 조금 더 보태보자, 우리가 직선의 방정식만 찾으면 어떤 데이터 포인트 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 $$x_i$$에 대응하는게 분포라고 생각해보자.
+여기에 조금 더 보태보자, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각해보자.
 쉽게 $$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각하자.
 
 ![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
@@ -53,6 +53,19 @@ toc_sticky: true
 
 <center>$$ Pr(w_i \mid w_i,\theta) = Norm_{w_i}[\phi_0 \phi^T x_i, sigma^2] $$</center>
 
+(각 $$x_i$$에 대응하는 $$y_i$$의 분포인 것이다.)
+
+x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1을 붙혀보자.
+
+<center>$$ x_i \leftarrow [1 \space x_{i}^{T}]^T $$</center>
+
+그리고 $$\phi$$도 합쳐서 표현하자.
+
+<center>$$ \phi \leftarrow [\phi_0 \space \phi^{T}]^T $$</center>
+
+그러면 위의 모델링 하고자 하는 분포를 아래처럼 다시 쓸 수 있다.
+
+<center>$$ Pr(w_i \mid w_i,\theta) = Norm_{w_i}[\phi^T x_i, sigma^2] $$</center>
 
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
