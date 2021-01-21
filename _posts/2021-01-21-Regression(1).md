@@ -174,6 +174,10 @@ posterior를 최대화 하는 solution을 구하면
 
 즉 파라메터에 사전 확률을 넣어 계산하는 베이지안 관점으로 문제를 푸는것이 우리가 잘 알고있는 MSE Loss로 선형 회귀 문제를 풀 때, 곡선(혹은 직선)의 오버피팅을 막기위해 weight decay 정규화 제약식을 추가하는 것과 같은 매우 좋은 효과를 가져온다는 것입니다.
 
+
+$$\lambda = \frac{\sigma^2}{\alpha^2}$$ 
+
+
 - <mark style='background-color: #fff5b1'> Further Study </mark>
 
 지금까지 이야기 한 것 외에도, Bayesian Regression 방법과 Non-linear Regression 등등의 다양한 업그레이드 버전이 있습니다. 
