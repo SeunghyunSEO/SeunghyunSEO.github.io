@@ -24,7 +24,11 @@ toc_sticky: true
 - <mark style='background-color: #fff5b1'> Non-Linear Regression </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
+
+
 ![image](https://user-images.githubusercontent.com/48202736/105039467-ef8b8780-5aa3-11eb-994b-9e82c2569038.png)
+
+
 ![image](https://user-images.githubusercontent.com/48202736/105039492-f6b29580-5aa3-11eb-89ad-72bed31ccea3.png)
 
 - <mark style='background-color: #fff5b1'> Kernelization and Gaussian processes</mark>
