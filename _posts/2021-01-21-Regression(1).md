@@ -180,7 +180,7 @@ posterior를 최대화 하는 solution을 구하면
 
 Non-linear Regression 등등의 다양한 업그레이드 버전이 있습니다. 
 
-이것들은 2편에서 다루도록 하겠습니다.
+이것들은 여백이 부족해서 2편에서 다루도록 하겠습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
 
