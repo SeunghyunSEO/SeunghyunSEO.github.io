@@ -162,9 +162,9 @@ prior는 $$\theta$$에 대한 사전 정보가 되고 ( $$likelihood$$가 가우
 
 prior를 적절히 다음과 같이 0 mean 가우시안 분포로 고르고
 
-<center>$$ Pr(\theta \mid \alpha) = Norm_{\theta}[0,\alpha^2] $$</center>
+<center>$$ Pr(\theta \mid \alpha^2) = Norm_{\theta}[0,\alpha^2] $$</center>
 
-<center>$$ Pr(\theta \mid \alpha) = \frac{1}{\sqrt{2\pi\alpha^2}}exp[-0.5\frac{(\theta-0)^2}{\alpha^2}] $$</center>
+<center>$$ Pr(\theta \mid \alpha^2) = \frac{1}{\sqrt{2\pi\alpha^2}}exp[-0.5\frac{(\theta-0)^2}{\alpha^2}] $$</center>
 
 posterior를 최대화 하는 solution을 구하면
 
