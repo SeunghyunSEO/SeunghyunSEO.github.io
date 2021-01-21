@@ -92,8 +92,32 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
  - <mark style='background-color: #dcffe4'> solution </mark>
 
-asd
+위의 방법대로 풀면 우리가 Maximum likelihood 방법을 통해 구한 솔루션은 아래와 같게 됩니다.
+
+<center>$$ \hat{\phi} = (XX^T)^{-1}Xw $$</center>
+
+먼저 구한 평균을 결정하는 파라메터들을 통해 분산 마저 구합니다.
   
+<center>$$ \hat{\phi} = \frac{(w-X^T\phi)^T(w-X^T \phi)}{I} $$</center>
+
+직선의 방정식을 구하고, 거기에 균일한 분산을 곁들인거죠.
+
+
+- <mark style='background-color: #fff5b1'> 가우시안 분포를 가정한 ML solution과 MSE의 관계  </mark> 
+
+어떤 분들은 위의 솔루션이 맘에 들지 않을 수도 있습니다.
+
+왜냐하면 대부분의 머신러닝 교재,강의에서 커브 피팅(혹은 직선 피팅)을 할 때 $$X(x_1,x_2...)$$와 $$X(y_1,y_2...)$$ 데이터가 쭉 존재할 때, 
+Mean Squared Error 를 통해 해를 구하는 방식을 얘기하기 때문입니다.
+
+
+어떤 의미냐 하면 다시 아래의 그림을 봅시다.
+
+<img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" title="제목"/>
+
+우리는 
+
+
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
