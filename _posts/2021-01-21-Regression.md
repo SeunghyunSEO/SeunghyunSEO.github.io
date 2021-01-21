@@ -75,7 +75,7 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 <center>$$ Pr(w \mid X) = Norm_{w}[X^T \phi, \sigma^2I] $$</center>
 
-<center>$$ where X = [x_1,x_2, ... x_I] w=[w_1,w_2,...,w_I]^T $$<center>
+<center>$$ where X = [x_1,x_2, ... x_I] \space and \space w=[w_1,w_2,...,w_I]^T $$<center>
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
