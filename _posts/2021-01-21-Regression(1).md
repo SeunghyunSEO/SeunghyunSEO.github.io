@@ -162,15 +162,15 @@ prior는 $$\theta$$에 대한 사전 정보가 되고 ( $$likelihood$$가 가우
 
 prior를 적절히 다음과 같이 0 mean 가우시안 분포로 고르고
 
-<center>$$ Pr(\theta \mid \alpha) = Norm_{\theta}[0,\sigma^2] $$</center>
+<center>$$ Pr(\theta \mid \alpha) = Norm_{\theta}[0,\alpha^2] $$</center>
 
-<center>$$ Pr(\theta \mid \alpha) = \frac{1}{\sqrt{2\pi\sigma^2}}exp[-0.5\frac{(\theta-0)^2}{\sigma^2}] $$</center>
+<center>$$ Pr(\theta \mid \alpha) = \frac{1}{\sqrt{2\pi\alpha^2}}exp[-0.5\frac{(\theta-0)^2}{\alpha^2}] $$</center>
 
 posterior를 최대화 하는 solution을 구하면
 
 이는 다음을 최소화 하는 것과 같은 solution을 구할 수 있게 됩니다.
 
-<center>$$ \frac{1}{2\sigma^2} \sum_{i=1}^{I}{ \{ f(x_i,\phi)-y_i \} }^2 + \frac{\alpha}{2}{\phi^T \phi} $$</center>
+<center>$$ \frac{1}{2\sigma^2} \sum_{i=1}^{I}{ \{ f(x_i,\phi)-y_i \} }^2 + \frac{1}{2\alpha^2}{\phi^T \phi} $$</center>
 
 즉 파라메터에 사전 확률을 넣어 계산하는 베이지안 관점으로 문제를 푸는것이 우리가 잘 알고있는 MSE Loss로 선형 회귀 문제를 풀 때, 곡선(혹은 직선)의 오버피팅을 막기위해 weight decay 정규화 제약식을 추가하는 것과 같은 매우 좋은 효과를 가져온다는 것입니다.
 
