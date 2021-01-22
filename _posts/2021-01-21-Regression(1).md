@@ -52,9 +52,11 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Notation </mark>
 
-$$ x : input state, input data point $$
+$$ x : input state, 데이터 입력값 $$
 
-$$ w : world state, x
+$$ w : world state, x에 대응하는 값 $$
+
+$$ \theta : parameter, 우리가 알고싶은, 추정하려는 값 $$
 
 - <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
 
