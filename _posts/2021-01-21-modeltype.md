@@ -52,3 +52,10 @@ $$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값
 ![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
 ![image](https://user-images.githubusercontent.com/48202736/105446703-01dd0f80-5cb6-11eb-9b33-ed3e6e74c6a8.png)
 ![image](https://user-images.githubusercontent.com/48202736/105446708-06a1c380-5cb6-11eb-8d13-c549738a7943.png)
+
+
+- <mark style='background-color: #fff5b1'> References </mark>
+
+1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
+
+2. [Bishop, Christopher M. Pattern recognition and machine learning. springer, 2006.](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)
