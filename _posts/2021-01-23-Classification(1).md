@@ -9,17 +9,17 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> asdf </mark>
 
+![image](https://user-images.githubusercontent.com/48202736/105444745-c7717380-5cb1-11eb-92a0-b618ad4d6b4f.png)
+
 - <mark style='background-color: #fff5b1'> Logistic Regression </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/105444745-c7717380-5cb1-11eb-92a0-b618ad4d6b4f.png)
+![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
 - <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105038829-29a85980-5aa3-11eb-9d6a-f69508532167.png)
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
 
