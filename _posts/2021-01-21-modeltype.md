@@ -7,6 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
+- <mark style='background-color: #fff5b1'> Notation </mark>
+
+$$ x : input state, 데이터 입력값 $$
+
+$$ w : world state, x에 대응하는 값 $$
+
+$$ \theta : parameter, 우리가 알고싶은, 추정하려는 값 $$
+
 - <mark style='background-color: #fff5b1'> Generative vs Discriminative Models </mark>
 
 - <mark style='background-color: #fff5b1'> Generative Model </mark>
