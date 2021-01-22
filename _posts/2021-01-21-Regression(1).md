@@ -24,24 +24,30 @@ toc_sticky: true
 1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해봅시다.
 우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이 될 수 있습니다. 
 
-(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아닙니다. 곡선을 찾는것도 선형이 될 수 있습니다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있습니다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것입니다.)
-[참조1](https://brunch.co.kr/@gimmesilver/18),[참조2](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html)
-
 <img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" title="제목"/>
 
-데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있습니다.
+(이미지 출처 : [link](https://en.wikipedia.org/wiki/Regression_analysis))
 
-<center>$$y=ax+b$$</center>
+(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아닙니다. 곡선을 찾는것도 선형이 될 수 있습니다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있습니다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것입니다.)
 
-그러니까 우리가 데이터로부터 학습을 통해 찾아야 될 직선은 a랑 b인 것입니다.
+[참조1](https://brunch.co.kr/@gimmesilver/18),[참조2](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html)
 
+![image](https://user-images.githubusercontent.com/48202736/105502385-bbfd6700-5d08-11eb-90a0-428d75bf8cdf.png)
 
-(만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하면 될 것입니다.)
+(이미지 출처 : [link](https://www.javatpoint.com/machine-learning-polynomial-regression))
+
+(+또 다른 예시로, 만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하면 될 것입니다.)
 
 ![image](https://user-images.githubusercontent.com/48202736/105502143-76409e80-5d08-11eb-9f96-3550a7b919cd.png)
 
 (이미지 출처 : [link](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/01/20/ISL-linear-regression_ch3.html))
 
+
+다시 본론으로 돌아가서, 데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있습니다.
+
+<center>$$y=ax+b$$</center>
+
+그러니까 우리가 데이터로부터 학습을 통해 찾아야 될 직선은 a랑 b인 것입니다.
 
 
 여기에 조금 더 보태보면, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각할 수 있습니다.
