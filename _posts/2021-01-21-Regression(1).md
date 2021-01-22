@@ -50,13 +50,13 @@ toc_sticky: true
 마치 빔을 쏘는 것 처럼 됐다.
 마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분포를 곁들인...
 
-- <mark style='background-color: #fff5b1'> Notation </mark>
+- <mark style='background-color: #dcffe4'> Notation </mark>
 
-$$ x : input state, 데이터 입력값 $$
+$$ x $$ : input state, 데이터 입력값
 
-$$ w : world state, x에 대응하는 값 $$
+$$ w $$ : world state, x에 대응하는 값
 
-$$ \theta : parameter, 우리가 알고싶은, 추정하려는 값 $$
+$$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값
 
 - <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
 
