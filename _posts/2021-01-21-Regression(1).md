@@ -21,34 +21,34 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
-1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해보자.
-우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이다. 
+1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해봅시다.
+우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이 될 수 있습니다. 
 
-(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아니다. 곡선을 찾는것도 선형이 될 수 있다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것이다.)
+(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아닙니다. 곡선을 찾는것도 선형이 될 수 있습니다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있습니다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것입니다.)
 [참조1](https://brunch.co.kr/@gimmesilver/18),[참조2](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html)
 
 <img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" title="제목"/>
 
-데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있다.
+데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있습니다.
 
 <center>$$y=ax+b$$</center>
 
-그러니까 우리가 데이터로부터 학습을 통해 찾아야 될 직선은 a랑 b인 것이다.
+그러니까 우리가 데이터로부터 학습을 통해 찾아야 될 직선은 a랑 b인 것입니다.
 
 
 
 
-여기에 조금 더 보태보자, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각해보자.
-쉽게 $$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각하자.
+여기에 조금 더 보태보면, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각할 수 있습니다.
+쉽게 $$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각해봅시다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
 
-이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것이다.
-그렇다면 우리가 추정하고자 하는 회귀 모양은 위의 그림 (b) 같이 된다.
+이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것입니다.
+그렇다면 우리가 추정하고자 하는 회귀 모양은 위의 그림 (b) 같이 됩니다.
 
 
-마치 빔을 쏘는 것 처럼 됐다.
-마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분포를 곁들인...
+마치 빔을 쏘는 것 처럼 됐습니다.
+마찬가지로 직선의 방정식을 구하는게 맞긴 맞습니다. 근데 이제 분포를 곁들인...
 
 - <mark style='background-color: #dcffe4'> Notation </mark>
 
@@ -60,38 +60,38 @@ $$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값
 
 - <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
 
-우리가 위에서 w (혹은 y인데 책에서는 같은 의미로 world state, w를 사용했다.)에 대해서 가우시안 분포를 가정했기 때문에 
-우리가 모델링 하고자 하는 분포는 다음과 같다. 
+우리가 위에서 w (혹은 y인데 책에서는 같은 의미로 world state, w를 사용했습니다.)에 대해서 가우시안 분포를 가정했기 때문에 
+우리가 모델링 하고자 하는 분포는 다음과 같습니다. 
 
 <center>$$ Pr(w_i \mid x_i,\theta) = Norm_{w_i}[\phi_0 + \phi^T x_i, \sigma^2] $$</center>
 
-(각 $$x_i$$에 대응하는 $$y_i$$의 분포인 것이다.)
+(각 $$x_i$$에 대응하는 $$y_i$$의 분포인 것입니다.)
 
-x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1을 붙혀보자.
+x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1을 붙혀봅시다.
 
 <center>$$ x_i \leftarrow [1 \space x_{i}^{T}]^T $$</center>
 
-그리고 $$\phi$$도 합쳐서 표현하자.
+그리고 $$\phi$$도 합쳐서 표현합니다.
 
 <center>$$ \phi \leftarrow [\phi_0 \space \phi^{T}]^T $$</center>
 
-그러면 위의 모델링 하고자 하는 분포를 아래처럼 다시 쓸 수 있다.
+그러면 위의 모델링 하고자 하는 분포를 아래처럼 다시 쓸 수 있습니다.
 
 <center>$$ Pr(w_i \mid x_i,\theta) = Norm_{w_i}[\phi^T x_i, \sigma^2] $$</center>
 
-자 이제 우리는 모든 x,y data pair에 대한 식을 위처럼 얻게 되었다.
+자 이제 우리는 모든 x,y data pair에 대한 식을 위처럼 얻게 되었습니다.
 
  - <mark style='background-color: #dcffe4'> likelihood </mark>
 
-우리가 찾고싶은 것은 전체 데이터셋에 대한 $$likelihood$$이다. 
+우리가 찾고싶은 것은 전체 데이터셋에 대한 $$likelihood$$가 됩니다. 
 
-이는 각각의 분포를 전부 곱한것과 같기 때문에 아래와 같이 쓸 수 있다.
+이는 각각의 분포를 전부 곱한것과 같기 때문에 아래와 같이 쓸 수 있습니다.
 
 <center>$$ Pr(w \mid X) = Norm_{w}[X^T \phi, \sigma^2I] $$</center>
 
 <center>$$ where X = [x_1,x_2, ... x_I] \space and \space w=[w_1,w_2,...,w_I]^T $$</center>
 
-이제 우리는 $$likelihood$$를 가지고 있으니 그전에 다룬 Maximim likelihood를 통해 데이터에 딱 맞는 원하는 파라메터를 구해보자.
+이제 우리는 $$likelihood$$를 가지고 있으니 그전에 다룬 Maximim likelihood를 통해 데이터에 딱 맞는 원하는 파라메터를 구해봅시다.
 
 <center>$$ \hat{\theta} = argmax_{\theta}[Pr(w|X,\theta)] = argmax_{\theta}[logPr(w|X,\theta)] $$</center>
  
@@ -100,7 +100,7 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 <center>$$ \hat{\phi}, \hat{\sigma^2} = argmax_{\phi,\sigma^2}[ -\frac{Ilog[2\pi]}{2} - \frac{Ilog[\sigma^2]}{2} - \frac{(w-X^T\phi)^T(w-X^T \phi)}{2\sigma^2} ] $$</center>
   
-이제 늘 그랬듯이 미분해서 0인 지점을 찾으면 우리는 likelihood를 가장 크게하는, 그러니까 현재 데이터를 가장 likely하게 표현하는 세 가지 파라메터를 구할 수 있다.
+이제 늘 그랬듯이 미분해서 0인 지점을 찾으면 우리는 likelihood를 가장 크게하는, 그러니까 현재 데이터를 가장 likely하게 표현하는 세 가지 파라메터를 구할 수 있습니다.
 
  - <mark style='background-color: #dcffe4'> solution </mark>
 
