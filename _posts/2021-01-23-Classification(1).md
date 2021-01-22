@@ -63,3 +63,7 @@ toc_sticky: true
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
+
+- <mark style='background-color: #fff5b1'> References </mark>
+
+1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
