@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> Regression </mark>
+- <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
 
 아래의 표에서 볼 수 있듯이, 간단하게 생각하면 
 
@@ -15,7 +15,7 @@ toc_sticky: true
 1.입력값이 continuous 한데 결과값이 마찬가지로 continuous하면 Regression 문제라 할 수 있고,
 
 
-2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있다.
+2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105357223-da476200-5c37-11eb-9612-eaebab62a743.png)
 
@@ -49,6 +49,12 @@ toc_sticky: true
 
 마치 빔을 쏘는 것 처럼 됐다.
 마찬가지로 직선의 방정식을 구하는게 맞긴 맞다. 근데 이제 분포를 곁들인...
+
+- <mark style='background-color: #fff5b1'> Notation </mark>
+
+$$ x : input state, input data point $$
+
+$$ w : world state, x
 
 - <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
 
