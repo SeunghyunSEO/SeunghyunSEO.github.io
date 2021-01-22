@@ -25,6 +25,7 @@ toc_sticky: true
 우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이다. 
 
 (하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아니다. 곡선을 찾는것도 선형이 될 수 있다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것이다.)
+[참조1](https://brunch.co.kr/@gimmesilver/18),[참조2](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html)
 
 <img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" title="제목"/>
 
