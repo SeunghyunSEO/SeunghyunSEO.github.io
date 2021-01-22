@@ -22,7 +22,9 @@ toc_sticky: true
 - <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
 1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해보자.
-우리의 목적은 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이다. 
+우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이다. 
+
+(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아니다. 곡선을 찾는것도 선형이 될 수 있다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것이다.)
 
 <img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" title="제목"/>
 
@@ -31,6 +33,7 @@ toc_sticky: true
 <center>$$y=ax+b$$</center>
 
 그러니까 우리가 데이터로부터 학습을 통해 찾아야 될 직선은 a랑 b인 것이다.
+
 
 
 
