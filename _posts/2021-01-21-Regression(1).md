@@ -28,7 +28,7 @@ toc_sticky: true
 
 (이미지 출처 : [link](https://en.wikipedia.org/wiki/Regression_analysis))
 
-(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었지만 직선만이 선형회귀의 답은 아닙니다. 곡선을 찾는것도 선형이 될 수 있습니다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 우리가 구하고자 하는 계수 a,b,c에 대해서 선형이기 때문에 선형 회귀라고 할 수 있습니다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것입니다.)
+(하지만 여기서 예시로 직선의 방정식만을 찾는 것을 들었다고 직선만이 선형회귀의 답은 아닙니다. 곡선을 찾는것도 선형회귀가 될 수 있습니다. 가령 $$y=ax+bx^2+cx^3$$ 같은 경우도 x에 대해서는 비선형이지만 우리가 구하고자 하는 계수는 a,b,c이기 때문에 이에 대해서는 선형이라고 할 수 있습니다. 나중에 non-linear regression에 대해서 배우겠지만, 확실히 알아야 할 것은 직선을 찾는것만이 "linear" regression은 아니라는 것입니다.)
 
 [참조1](https://brunch.co.kr/@gimmesilver/18),[참조2](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html)
 
@@ -36,7 +36,7 @@ toc_sticky: true
 
 (이미지 출처 : [link](https://www.javatpoint.com/machine-learning-polynomial-regression))
 
-(+또 다른 예시로, 만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하면 될 것입니다.)
++ (만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하는게 목적이 될 겁니다.)
 
 ![image](https://user-images.githubusercontent.com/48202736/105502143-76409e80-5d08-11eb-9f96-3550a7b919cd.png)
 
