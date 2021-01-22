@@ -7,7 +7,16 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> asdf </mark>
+- <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
+
+아래의 표에서 볼 수 있듯이, 간단하게 생각하면 
+
+
+1.입력값이 continuous 한데 결과값이 마찬가지로 continuous하면 Regression 문제라 할 수 있고,
+
+
+2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있습니다.
+
 
 ![image](https://user-images.githubusercontent.com/48202736/105444745-c7717380-5cb1-11eb-92a0-b618ad4d6b4f.png)
 
