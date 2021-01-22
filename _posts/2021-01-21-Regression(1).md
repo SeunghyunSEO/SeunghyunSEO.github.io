@@ -36,6 +36,12 @@ toc_sticky: true
 그러니까 우리가 데이터로부터 학습을 통해 찾아야 될 직선은 a랑 b인 것입니다.
 
 
+(만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하면 될 것입니다.)
+
+![image](https://user-images.githubusercontent.com/48202736/105502143-76409e80-5d08-11eb-9f96-3550a7b919cd.png)
+
+(이미지 출처 : [link](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/01/20/ISL-linear-regression_ch3.html))
+
 
 
 여기에 조금 더 보태보면, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각할 수 있습니다.
