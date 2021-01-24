@@ -295,9 +295,9 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 위의 말이 와닿지 않는다면 수식이 어떻게 구성되어 있는지를 보시면 됩니다.
 
-<center>$$ ex) \space \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]}{sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_2]}{sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_3]}{sum_{m=1}^{3}exp[a_m]} $$</center>
+<center>$$ ex) \space \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]}{\sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_2]}{\sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_3]}{\sum_{m=1}^{3}exp[a_m]} $$</center>
 
-<center>$$ \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]+exp[a_2]+exp[a_3]}{sum_{m=1}^{3}exp[a_m]} = 1 $$</center>
+<center>$$ \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]+exp[a_2]+exp[a_3]}{\sum_{m=1}^{3}exp[a_m]} = 1 $$</center>
 
 우리가 추정하고자 하는 파라메터는 n개의 벡터들 $$\theta_n$$ 입니다.
 
