@@ -125,7 +125,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 추정하고자 하는 파라메터도 간단하게 쓰기위해서 offset과 gradient 벡터, $$\phi_0$$ 과 $$\phi$$를 붙혀봅니다.
 
-<center>$$ \phi \leftarrow [phi_0 \space \phi^{T}]^T $$</center>
+<center>$$ \phi \leftarrow [\phi_0 \space \phi^{T}]^T $$</center>
 
 이렇게하면 notation을 깔끔하게 다시 쓸 수 있습니다.
 
