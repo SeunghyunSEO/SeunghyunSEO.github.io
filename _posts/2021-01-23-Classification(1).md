@@ -92,7 +92,7 @@ Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 
 
 <center>$$ where, a = \phi_0 + \phi^T x$$</center> and <center>$$sig[a] = \frac{1}{1+exp[-a]} $$</center>
 
-여기서 $$a$$는 $$x$$에 $$\phi$$를 통해 선형 결합한 것이고 
+여기서 $$a$$는 $$x$$에 $$\phi$$를 선형 결합한 것이고 
 
 $$sig[a]$$는 a를 sigmoid 라는 함수에(활성 함수라고도 함) 넣은 결과값입니다.
 
