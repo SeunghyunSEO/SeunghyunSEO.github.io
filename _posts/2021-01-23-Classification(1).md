@@ -393,15 +393,17 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 수식으로 생각해보자면 데이터 한개에 대해서 Cross Entropy Loss는 아래와 같은데,
 
-<center>$$ CE Loss = -log t_i \frac{exp[w_i x]}{\sum_{m=1}^{N}exp[w_m x]} $$</center>
+<center>$$ CE \space Loss = -log t_i \frac{exp[w_i x]}{\sum_{m=1}^{N}exp[w_m x]} $$</center>
 
 이는 아래처럼 각 클래스를 나타내는 벡터들과의 내적으로 표현할 수도 있습니다.
 
-<center>$$ CE Loss = -log t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+<center>$$ CE \space Loss = -log t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
 
 이렇게 분류 문제를 분류할 클래스 벡터들과의 내적으로 생각하게 되면, 내적을 $$\cos{\theta}$$에 재밌는 짓을 해서 클래스를 구분짓는 경계에 다양한 variation을 줄 수 있습니다. ( Large Margine Loss, LDAM Loss 등) 
 
-<center>$$ ex) L-Softmax Loss = -log t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}]}{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i} + \sum_{m!=i}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+<center>$$ ex) L-Softmax \space Loss = -log t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}]}{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i} + \sum_{m!=i}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+
+dlfjg
 
 
 - <mark style='background-color: #fff5b1'> References </mark>
