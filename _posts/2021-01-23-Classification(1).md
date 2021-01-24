@@ -271,7 +271,32 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 
 - <mark style='background-color: #fff5b1'> ML vs MAP for Classification </mark>
 
-asd
+우리는 $$likelihood$$ 다음과 같이 구한 뒤 이를 maximize하려고 했습니다.
+
+<center>$$ likelihood = \prod_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
+
+<center>$$ log \space likelihood = \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}^{I}(1-w_i)log[\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]}] $$</center>
+
+MAP로 문제를 풀어볼까요? 
+
+> 1. $$likelihood : p(x\mid\theta)$$ <br>
+> 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
+
+위의 관계가 기억나실겁니다.
+
+$$likelihood$$ 는 베르누이 분포를 통해 모델링 했고, 적당히 $$prior$$를 zero-mean 가우시안 분포로 생각해봅시다.
+
+<center>$$ prior = Norm_{\phi}[0, \simga^2] $$</center>
+
+그러면 둘을 곱해서 posterior를 구하고 이를 적당히 정리하면 Linear Regression 때와 마찬가지로 다음의 식을 얻게 됩니다.
+
+<center>$$ posterior = \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}^{I}(1-w_i)log[\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]}] + \alpha \sum{\phi^2} $$</center>
+
+(후에 Cross Entropy와의 관계를 설명하겠지만 미리 말해보자면) 결과는 마찬가지로 우리가 익히 알고있는 Cross Entropy 수식에 weight decay regularization term을 추가한 식을 얻게 됩니다.
+
+(생각해보면 'prior로 우리가 얻게 될 파라메터가 0 근처의 값을 가질 확률이 높다는 정보를 계속 준다는 것' <-> '파라메터 값들이 한없이 커지지 않게 0근처의 작은 값들을 가지게 하는 regularization term' 이 아닌가 싶습니다.)
+
+
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
