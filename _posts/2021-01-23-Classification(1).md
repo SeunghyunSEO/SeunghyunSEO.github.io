@@ -194,7 +194,10 @@ likelihood는 다음과 같이 나타낼 수 있습니다.
 
 <center>$$ \frac{\partial L}{\partial \phi} = -\sum_{i=1}^{I}(\frac{1}{1+exp[-\phi^T x_i]} - w_i)x_i = - \sum_{i=1}^{I}(sig[a_i]-w_i)x_i $$</center>
 
-하지만 안타깝게도 Logistic Regression은 $$\phi$$를 x와 w에 대해 한방에 정리해 그 식을 최소화 하는 해를 구할 수 없습니다. 즉 닫힌 형태의 해(Closed-form Solution)를 바로 구할 수 없다는 것입니다.
+이제 한방에 최적 해를 구할 수 있을까요?
+
+
+답은 아닙니다. 안타깝게도 Logistic Regression은 $$\phi$$를 x와 w에 대해 한방에 정리해 그 식을 최소화 하는 해를 구할 수 없습니다. 즉 닫힌 형태의 해(Closed-form Solution)를 바로 구할 수 없다는 것입니다.
 
 이는 다른 말로는 Analytic Solution이 존재하지 않는다고 할 수도 있습니다. (반대로는 Numerical Solution)
 
