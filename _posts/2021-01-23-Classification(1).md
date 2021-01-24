@@ -175,7 +175,7 @@ likelihood는 다음과 같이 나타낼 수 있습니다.
 
 <center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
 
-이제 logarithm을 취해봅시다.
+이제 Logarithm을 취해봅시다.
 
 L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}^{I}(1-w_i)log[\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]}] $$</center>
 
@@ -183,9 +183,21 @@ L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}
 
 <center>$$ \diffp{L}{\phi} = -\sum_{i=1}^{I}(\frac{1}{1+exp[-\phi^T x_i]} - w_i)x_i = - \sum_{i=1}^{I}(sig[a_i]-w_i)x_i $$<\center>
 
-하지만 안타깝게도 logistic regression은 $$\phi$$를 x와 w에 대해 한방에 정리해 그 식을 최소화 하는 해를 구할 수 없습니다. 즉 닫힌 형태의 해(closed-form solution)를 바로 구할 수 없다는 것입니다. 
+하지만 안타깝게도 Logistic Regression은 $$\phi$$를 x와 w에 대해 한방에 정리해 그 식을 최소화 하는 해를 구할 수 없습니다. 즉 닫힌 형태의 해(Closed-form Solution)를 바로 구할 수 없다는 것입니다.
+
+이는 다른 말로는 Analytic Solution이 존재하지 않는다고 할 수도 있습니다. (반대로는 Numerical Solution)
+
+
+(이에 대해 더 궁금하신분들은 구글링을 해보시길 바랍니다 ㅎ...)
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
+
+Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 Non-linear Opitmization을 통해 최적의 해를 찾아야 합니다. 이는 반복적으로 파라메터를 점진적으로 업데이트 해 나아가는 방법인데, 이를 최적화, Optimization이라고 합니다.
+
+
+$$*$$ 하지만 위의 경우처럼 closed-form solution이 존재하지 않는 경우에만 최적화 기법으로 해를 구할 수 있는건 아닙니다. 이전에 다뤘던 Linear Regression은 Closed-form Solution이 존재했지만 마찬가지로 Iterative하게 파라메터를 업데이트 해서 최적 해를 찾을 수 있습니다.
+
+
 
 ![image](https://user-images.githubusercontent.com/48202736/105444895-128b8680-5cb2-11eb-91a7-dac84df8707d.png)
 ![image](https://user-images.githubusercontent.com/48202736/105444900-14ede080-5cb2-11eb-9347-cb53fbfa5a5a.png)
