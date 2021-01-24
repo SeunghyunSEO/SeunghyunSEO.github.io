@@ -462,6 +462,15 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 (논문 참조 : [Cao, Kaidi, Colin Wei, Adrien Gaidon, Nikos Arechiga, and Tengyu Ma. "Learning imbalanced datasets with label-distribution-aware margin loss." arXiv preprint arXiv:1906.07413 (2019).](https://arxiv.org/abs/1612.02295))
 
 
+- <mark style='background-color: #fff5b1'> Further Study   </mark>
+지금까지 이야기 한 것 외에도, Classification 또한 Bayesian 방법과 Kernel 방법 등등 다양한 변이와 업그레이드 버전이 있습니다.
+
+
+(원래 Multi-Class Classification 이나 Cross Entropy 등 예정에 없었지만 생각난김에 연관지어 넣은 내용이 많아서 굉장히 호흡이 길어졌습니다 ㅠㅠ...) 
+
+
+나머지는 여백이 부족해서 2편에서 다루도록 하겠습니다.
+
 - <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
