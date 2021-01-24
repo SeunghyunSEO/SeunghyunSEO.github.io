@@ -396,6 +396,12 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 아래는 이미지 분류에서 유명한 딥러닝 모델인 ResNet을 사용한 것인데요.
 
+> <mark style='background-color: #dcffe4'> Notation </mark> <br>
+> $$ Batch \space size $$ : 입력 데이터(이미지) 수 <br>
+> $$ width $$ : 입력 이미지의 가로 길이 <br>
+> $$ height $$ : 입력 이미지의 세로 길이 <br>
+> $$ hidden \space size $$ : 네트워크 거의? 끝 단에서의 입력 이미지의 차원 <br>
+
 데이터가 $$ Batch \space size \times Width \times Height $$ 의 3차원 행렬인(채널을 무시해버렸네요 1이나 없는걸로 하겠습니다...) Tensor 모양으로 되어있고 이게 네트워크로 들어간다고 생각하겠습니다. 
 
 예시가 딥러닝이라 생소하실 수도 있는데, 딥러닝이나 머신러닝이나 결국 우리가 풀고자하는 문제의 결과값을 내주는 어떤 최상의 $$y=f(x)$$ 가 있다고 생각하고, 주어진 데이터를 통해서 이 oracle function의 approximate function을 찾는 문제인것은 똑같으니 걱정 안하셔도 됩니다.
