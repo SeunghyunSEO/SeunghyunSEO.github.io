@@ -393,17 +393,37 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 수식으로 생각해보자면 데이터 한개에 대해서 Cross Entropy Loss는 아래와 같은데,
 
-<center>$$ CE \space Loss = -log t_i \frac{exp[w_i x]}{\sum_{m=1}^{N}exp[w_m x]} $$</center>
+<center>$$ CE \space Loss = -log \space t_i \frac{exp[w_i x]}{\sum_{m=1}^{N}exp[w_m x]} $$</center>
 
 이는 아래처럼 각 클래스를 나타내는 벡터들과의 내적으로 표현할 수도 있습니다.
 
-<center>$$ CE \space Loss = -log t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+<center>$$ CE \space Loss = -log \space t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
 
-이렇게 분류 문제를 분류할 클래스 벡터들과의 내적으로 생각하게 되면, 내적을 $$\cos{\theta}$$에 재밌는 짓을 해서 클래스를 구분짓는 경계에 다양한 variation을 줄 수 있습니다. ( Large Margine Loss, LDAM Loss 등) 
+이렇게 분류 문제를 분류할 클래스 벡터들과의 내적으로 생각하게 되면, 내적을 $$\cos{\theta}$$에 재밌는 짓을 해서 클래스를 구분짓는 경계에 다양한 variation을 줄 수도 있습니다. ([Large Margine Loss](https://arxiv.org/abs/1612.02295) 등) 
 
-<center>$$ ex) L-Softmax \space Loss = -log t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}]}{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i} + \sum_{m!=i}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+* Cross Entropy 변이 예시 1 : 2016, [Large Margine Loss](https://arxiv.org/abs/1612.02295) 
 
-dlfjg
+원래의 크로스 엔트로피 수식인 아래의 수식을 
+
+<center>$$ CE \space Loss = -log \space t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+
+아래처럼 조금 변형하면
+
+<center>$$ ex) L-Softmax \space Loss = -log \space t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}]}{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}] + \sum_{m!=i}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+
+결과는 아래처럼 변합니다.
+
+![스크린샷 2021-01-24 오후 11 19 24](https://user-images.githubusercontent.com/48202736/105633213-9dc77080-5e9a-11eb-931b-0977be8dfe72.png)
+
+(논문 참조 : [Liu, Weiyang, Yandong Wen, Zhiding Yu, and Meng Yang. "Large-margin softmax loss for convolutional neural networks." In ICML, vol. 2, no. 3, p. 7. 2016.](https://arxiv.org/abs/1612.02295))
+
+* Cross Entropy 변이 예시 2 : 2019, [Label-Distribution-Aware Margin Loss](https://arxiv.org/abs/1906.07413) 
+
+
+
+<img width="657" alt="스크린샷 2021-01-24 오후 11 24 07" src="https://user-images.githubusercontent.com/48202736/105633342-55f51900-5e9b-11eb-858a-49c39460d939.png">
+
+(논문 참조 : [Cao, Kaidi, Colin Wei, Adrien Gaidon, Nikos Arechiga, and Tengyu Ma. "Learning imbalanced datasets with label-distribution-aware margin loss." arXiv preprint arXiv:1906.07413 (2019).](https://arxiv.org/abs/1612.02295))
 
 
 - <mark style='background-color: #fff5b1'> References </mark>
