@@ -267,7 +267,10 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 ![image](https://user-images.githubusercontent.com/48202736/105444909-18816780-5cb2-11eb-9c32-403825583254.png)
 
-$$log$$
+그림 b를 보면 1번 점에서 출발해 cost를 줄이는 방향으로 2번, 3번으로 파라메터가 업데이트 되는, 즉 Optimization이 진행되었다고 생각할 수 있습니다.
+
+
+'각 1번, 2번, 3번 point의 파라메터가 Decision Boundary를 어떻게 만들어 내는가?' 에 대한 결과가 c에 나타나 있습니다.
 
 - <mark style='background-color: #fff5b1'> Gradient Based Optimization </mark>
 
