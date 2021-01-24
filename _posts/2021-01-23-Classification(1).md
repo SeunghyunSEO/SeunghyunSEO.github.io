@@ -89,7 +89,7 @@ Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 
 $$sig[a]$$는 a를 sigmoid 라는 함수에(활성 함수라고도 함) 넣은 결과값입니다.
 
 
-sigmoid 함수는 아래의 그림처럼 $$[-\infinity,\infinity]$$ 사이의 입력값을 $$[0,1]$$ 사이의 값으로 매핑해줍니다.
+sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력값을 $$[0,1]$$ 사이의 값으로 매핑해줍니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105623021-afd4ef00-5e59-11eb-892d-4916ee66edb1.png)
 
