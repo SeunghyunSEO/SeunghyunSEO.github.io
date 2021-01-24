@@ -291,25 +291,44 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 - <mark style='background-color: #dcffe4'> Steepest Gradient Descent  </mark>
 
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444927-23d49300-5cb2-11eb-8336-1e13ccfd1901.png)
+
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444938-2b943780-5cb2-11eb-9947-df2dcf6cb9d4.png)
+
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444942-2f27be80-5cb2-11eb-858c-a23f594829c2.png)
 
 
 - <mark style='background-color: #dcffe4'> Newton’s Method </mark>
 
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444950-3353dc00-5cb2-11eb-8f62-291d69813e45.png)
+
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444958-35b63600-5cb2-11eb-8cd4-939b22e844f2.png)
+
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444964-38b12680-5cb2-11eb-834d-b3c6475a09b7.png)
 
 - <mark style='background-color: #dcffe4'> Optimization for Logistic Regression </mark>
 
+ㅁㄴㅇ
+
 ![image](https://user-images.githubusercontent.com/48202736/105444986-41a1f800-5cb2-11eb-97fe-d287609a3a77.png)
 
+ㅁㄴㅇ
 
 ![image](https://user-images.githubusercontent.com/48202736/105444997-48c90600-5cb2-11eb-8445-1b32c228bdc9.png)
 
-
+ㅁㄴㅇ
 
 - <mark style='background-color: #fff5b1'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
 
