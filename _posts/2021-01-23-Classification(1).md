@@ -466,10 +466,10 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 지금까지 이야기 한 것 외에도, Classification 또한 Bayesian 방법과 Kernel 방법 등등 다양한 변이와 업그레이드 버전이 있습니다.
 
 
-(원래 Multi-Class Classification 이나 Cross Entropy 등 예정에 없었지만 생각난김에 연관지어 넣은 내용이 많아서 굉장히 호흡이 길어졌습니다 ㅠㅠ...) 
-
-
 나머지는 여백이 부족해서 2편에서 다루도록 하겠습니다.
+
+
+(원래 Multi-Class Classification 이나 Cross Entropy 등 예정에 없던 내용이고, reference로 삼은 책에도 없는 내용이었지만 생각난김에 연관지어 넣은 내용입니다. 글을 쓰다보니 급발진 해서 굉장히 호흡이 길어졌습니다만... 나머지는 또 추후에  ㅠㅠ...) 
 
 - <mark style='background-color: #fff5b1'> References </mark>
 
