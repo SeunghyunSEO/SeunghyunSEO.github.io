@@ -94,6 +94,9 @@ Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 
 
 $$sig[a]$$는 a를 sigmoid 라는 함수에(활성 함수라고도 함) 넣은 결과값입니다.
 
+```
+sigmoid 
+```
 
 sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력값을 $$[0,1]$$ 사이의 값으로 매핑해줍니다.
 
@@ -171,14 +174,14 @@ Logistic Regression은 사실 간단히 말해서 한마디로 정리할 수 있
 
 그 중 Maximum Likelihood (ML) 방법을 쓴다고 생각하면 다음과 같이 잘 아시는 것 처럼 다음의 방법을 통해 최적의 파라메터를 구할 수 있습니다.
  
-> 1.likelihood를 정의한다.<br>
+> 1.$$likelihood$$를 정의한다.<br>
 > 2.전체 식에 log를 취한다. <br>
 > 3.미분을 취해 0인 지점을 찾는다.<br>
 
 한번 해볼까요?
 
  
-likelihood는 다음과 같이 나타낼 수 있습니다.
+$$likelihood$$ 다음과 같이 나타낼 수 있습니다.
 
 <center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
 
@@ -264,11 +267,21 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 
-- <mark style='background-color: #dcffe4'> ML vs MAP for Classification </mark>
+- <mark style='background-color: #fff5b1'> ML vs MAP for Classification </mark>
 
 asd
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
+
+여러개의 클래스를 분류하는 문제의 경우 이진 클래스를 분류하는 경우와 크게 다르지 않습니다. 다만 출력값을 Bernoulli 분포가 아닌 Categorical 분포로 모델링 하면 됩니다.
+
+다시 한 번 remind 하자면, Categorical 분포는 아래와 같이 생겼습니다. (그림은 클래스가 5개인 경우에 해당)
+
+![image](https://user-images.githubusercontent.com/48202736/105621216-96777700-5e48-11eb-99c4-400cf91c6405.png)
+
+이럴경우 $$likelihood$$는 수식으로는 다음과 같이 쓸 수 있습니다.
+
+<center>$$ Pr(w|x) = Cat_w[\lambda[x]] $$</center>
 
 ![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
 
@@ -279,16 +292,16 @@ asd
 이 글을 통해 처음 Logistic Regression 혹은 분류 문제를 접하신 분들이 아니라면, 아마 데이터를 클래스 2개로 분류하는 경우인, 이진 분류 문제를 풀 때 Loss Function으로 (Binary) Cross Entropy 를 쓴다는걸 아실겁니다. 
 
 
-하지만 이는 이번 글에서 설명한 Bernoulli 분포로 출력값을 모델링하고 이것의 likelihood를 구한다음 log를 취해 ML문제를 푸는것과 다르지 않습니다. 아니, 같습니다.
+하지만 이는 이번 글에서 설명한 Bernoulli 분포로 출력값을 모델링하고 이것의 $$likelihood$$를 구한다음 log를 취해 ML문제를 푸는것과 다르지 않습니다. 아니, 같습니다.
 
 
-다시 생각해보면 우리가 구했던, log likelihood는 아래와 같았습니다.
+다시 생각해보면 우리가 구했던, $$log \space likelihood$$는 아래와 같았습니다.
 
 <center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
 
 <center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} (sig[a])^{w_i}(1-sig[a])^{1-w_i} $$</center>
 
-<center>$$ log_likelihood = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
+<center>$$ log \space likelihood = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
 
 (Binary) Cross Entropy의 경우는 어떨까요? 
 
@@ -302,16 +315,16 @@ asd
 <center>$$ Loss = \sum_{i=1}^{I} t_i log (y_i) + (1-t_i)log(1-y_i) $$</center>
 
 
-어떤가요?? 한눈에 봐도 알 수 있듯이 Bernoulli 분포로 모델링한 likelihood를 maximize하는것이 곧 Binary Cross Entropy Loss를 minimize 하는 것과 완벽하게 동치임을 알 수 있습니다.
+어떤가요?? 한눈에 봐도 알 수 있듯이 Bernoulli 분포로 모델링한 $$likelihood$$를 maximize하는것이 곧 Binary Cross Entropy Loss를 minimize 하는 것과 완벽하게 동치임을 알 수 있습니다.
 
 
 (크로스 엔트로피는 정보이론 (+ KL divergence) , 확률분포 모델링 등 다양한 관점에서 해석을 할 수 있으니 다른 관점도 생각해보시길 바랍니다.) 
 
 
-이는 회귀문제에서 잘 알려진 Mean Squared Error (MSE) Loss를 minimize하는 것이 출력 값을 Gaussian 분포로 모델링한 likelihood를 maximize하는 것과 수식적으로 완벽하게 일치하는것과 같습니다. 
+이는 회귀문제에서 잘 알려진 Mean Squared Error (MSE) Loss를 minimize하는 것이 출력 값을 Gaussian 분포로 모델링한 $$likelihood$$를 maximize하는 것과 수식적으로 완벽하게 일치하는것과 같습니다. 
 
 
-마찬가지로, Categorical 분포로 모델링한 log likelihood를 최대화 하는 것은 Cross Entropy Loss를 최소화 하는것과 동일합니다. 
+마찬가지로, Categorical 분포로 모델링한 $$log \space likelihood$$를 최대화 하는 것은 Cross Entropy Loss를 최소화 하는것과 동일합니다. 
 
 
 
