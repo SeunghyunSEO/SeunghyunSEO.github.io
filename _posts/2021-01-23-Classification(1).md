@@ -465,6 +465,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 - <mark style='background-color: #fff5b1'> Further Study   </mark>
 지금까지 이야기 한 것 외에도, Classification 또한 Bayesian 방법과 Kernel 방법 등등 다양한 변이와 업그레이드 버전이 있습니다.
 
+![image](https://user-images.githubusercontent.com/48202736/105445042-5d0d0300-5cb2-11eb-86bf-356923711b50.png)
 
 나머지는 여백이 부족해서 2편에서 다루도록 하겠습니다.
 
