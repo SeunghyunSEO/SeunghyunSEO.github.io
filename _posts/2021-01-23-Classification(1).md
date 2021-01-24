@@ -96,13 +96,22 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 (이미지 출처 : [link](https://en.wikipedia.org/wiki/Sigmoid_function#:~:text=4%20Applications-,Definition,refer%20to%20the%20same%20object.))
 
-
+위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
+
+- <mark style='background-color: #dcffe4'> Intuition </mark>
+
+![image](https://user-images.githubusercontent.com/48202736/105623179-11e22400-5e5b-11eb-9ffd-173549eb6785.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
+
+![logistic_regression_animation](https://user-images.githubusercontent.com/48202736/105623202-405fff00-5e5b-11eb-8831-bb4748282789.gif)
+
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
