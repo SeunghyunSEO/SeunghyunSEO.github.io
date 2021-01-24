@@ -271,7 +271,7 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 
 
 
-- <mark style='background-color: #dcffe4'> Modeling Bernoulli Distribution over Model Output VS Binary Cross Entropy  </mark>
+- <mark style='background-color: #ffdce0'> Modeling Bernoulli Distribution over Model Output VS Binary Cross Entropy  </mark>
 
 이 글을 통해 처음 Logistic Regression 혹은 분류 문제를 접하신 분들이 아니라면, 아마 데이터를 클래스 2개로 분류하는 경우인, 이진 분류 문제를 풀 때 Loss Function으로 (Binary) Cross Entropy 를 쓴다는걸 아실겁니다. 
 
@@ -308,9 +308,11 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 이는 회귀문제에서 잘 알려진 Mean Squared Error (MSE) Loss를 minimize하는 것이 출력 값을 Gaussian 분포로 모델링한 likelihood를 maximize하는 것과 수식적으로 완벽하게 일치하는것과 같습니다. 
 
 
+마찬가지로, Categorical 분포로 모델링한 log likelihood를 최대화 하는 것은 Cross Entropy Loss를 최소화 하는것과 동일합니다. 
 
 
-- <mark style='background-color: #fff5b1'> Classification의 또다른 관점 </mark>
+
+- <mark style='background-color: #ffdce0'> Classification의 또다른 관점 </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
 
