@@ -181,8 +181,9 @@ L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}
 
 마지막으로 미분을 해봅시다.
 
-<center>$$ asd $$<\center>
+<center>$$ \diffp{L}{\phi} = -\sum_{i=1}^{I}(\frac{1}{1+exp[-\phi^T x_i]} - w_i)x_i = - \sum_{i=1}^{I}(sig[a_i]-w_i)x_i = 0 $$<\center>
 
+하지만 안타깝게도 logistic regression은 $$\phi$$를 x와 w에 대해 한방에 정리할 수 없습니다, 그러니까 closed-form solution이 존재하지 않는것이죠.
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
