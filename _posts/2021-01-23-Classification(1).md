@@ -281,6 +281,8 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 (크로스 엔트로피는 정보이론 (+ KL divergence) , 확률분포 모델링 등 다양한 관점에서 해석을 할 수 있으니 다른 관점도 생각해보시길 바랍니다.) 
 
 
+이는 회귀문제에서 잘 알려진 Mean Squared Error (MSE) Loss를 minimize하는 것이 출력 값을 Gaussian 분포로 모델링한 likelihood를 maximize하는 것과 수식적으로 완벽하게 일치하는것과 같습니다. 
+
 
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
