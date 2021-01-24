@@ -252,6 +252,8 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 
+- <mark style='background-color: #dcffe4'> Modeling Bernoulli Distribution over Y VS Binary Cross Entropy  </mark>
+
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
