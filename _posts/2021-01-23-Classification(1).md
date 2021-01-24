@@ -32,7 +32,20 @@ toc_sticky: true
 
 - <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/105038829-29a85980-5aa3-11eb-9d6a-f69508532167.png)
+![image](https://user-images.githubusercontent.com/48202736/105621207-7fd12000-5e48-11eb-9106-42a0a58fb4a2.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105621209-8495d400-5e48-11eb-8ab7-2095f20068c6.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105621213-86f82e00-5e48-11eb-8f27-74ec370737da.png)
+
+- <mark style='background-color: #dcffe4'> Categorical Distribution </mark>
+
+![image](https://user-images.githubusercontent.com/48202736/105621216-96777700-5e48-11eb-99c4-400cf91c6405.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105621218-9aa39480-5e48-11eb-88ed-ac911e2e2a76.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
+
 
 다시 본론으로 돌아가서 
 
