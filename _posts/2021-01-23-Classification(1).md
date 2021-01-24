@@ -149,11 +149,20 @@ $$*$$ 사실 2차원 데이터도 아래의 그림처럼 생각하는게 더 직
 
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
+Logistic Regression은 사실 간단히 말해서 한마디로 정리할 수 있습니다. 
+
+
+바로 "데이터로부터 최적의 Decistion Boundary를 정하는 것" 입니다.
+
+
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
 이제 어떻게 하면 위의 그림처럼 데이터로부터 최적의 Decision Boundary를 찾아낼 수 있는지,
 
-그러니까 최적의 파라메터 $$\phi$$ (1차원이면 $$\phi_0, \phi_1$$) 를 찾아낼 수 있을까요?
+그러니까 최적의 파라메터 $$\phi$$ (1차원이면 $$\phi_0, \phi_1$$) 를 찾아낼 수 있을지를 알아봅시다.
+
+
+어떻게 해야할까요?
 
 
 네 맞습니다. 이전에 ML, MAP, Bayesian에 대해서 배우셨다면 어떤 방법으로 파라메터를 추정해도 상관 없습니다.
