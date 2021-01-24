@@ -188,7 +188,7 @@ likelihood는 다음과 같이 나타낼 수 있습니다.
 
 이제 Logarithm을 취해봅시다.
 
-L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}^{I}(1-w_i)log[\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]}] $$</center>
+<center>$$ L = \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}^{I}(1-w_i)log[\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]}] $$</center>
 
 마지막으로 미분을 해봅시다.
 
