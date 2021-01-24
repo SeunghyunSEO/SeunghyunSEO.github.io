@@ -104,7 +104,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 ![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
 
-- <mark style='background-color: #dcffe4'> Intuition </mark>
+- <mark style='background-color: #dcffe4'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105623179-11e22400-5e5b-11eb-9ffd-173549eb6785.png)
 
@@ -112,6 +112,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 ![logistic_regression_animation](https://user-images.githubusercontent.com/48202736/105623202-405fff00-5e5b-11eb-8831-bb4748282789.gif)
 
+(출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
