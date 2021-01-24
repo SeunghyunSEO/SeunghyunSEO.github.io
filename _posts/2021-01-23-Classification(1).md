@@ -159,7 +159,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 Logistic Regression은 사실 간단히 말해서 한마디로 정리할 수 있습니다. 
 
 
-바로 "데이터로부터 최적의 Decistion Boundary를 정하는 것" 입니다.
+바로 "데이터로부터 학습을  최적의 Decistion Boundary를 정하는 것" 입니다.
 
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
