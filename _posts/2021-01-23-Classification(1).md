@@ -147,6 +147,8 @@ $$*$$ 사실 2차원 데이터도 아래의 그림처럼 생각하는게 더 직
 
 ![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
 
+(출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
+
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
