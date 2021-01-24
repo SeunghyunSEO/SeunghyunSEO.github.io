@@ -94,17 +94,17 @@ Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 
 
 $$sig[a]$$는 a를 sigmoid 라는 함수에(활성 함수라고도 함) 넣은 결과값입니다.
 
-```
-sigmoid 
-```
-
 sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력값을 $$[0,1]$$ 사이의 값으로 매핑해줍니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105623021-afd4ef00-5e59-11eb-892d-4916ee66edb1.png)
 
 (이미지 출처 : [link](https://en.wikipedia.org/wiki/Sigmoid_function#:~:text=4%20Applications-,Definition,refer%20to%20the%20same%20object.))
 
-위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
+```
+입력값을 굳이 sigmoid 함수에 넣어 최종 출력값으로 나타내는 것은 여러가지 의미가 있습니다. 지금은 다루지 않지만 크게 다른 개념이 아닌 Neural Network가 인간의 신경망을 motive로 만들었다는 것 같이, sigmoid가 neural firining을 나타내는 것이라고 하는 사람도 있고, 아니면 확률로 모델링 하기 위해서 출력값을 확률처럼 나타내기 위해서 라는 말도 있습니다. (sigmoid가 0~1 사이의 값을 뱉기 때문)
+```
+
+아무튼 위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
 
 ```
 * 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. Pr(y|x), x, w 세 가지 축이 있는거죠. 
@@ -282,6 +282,8 @@ asd
 이럴경우 $$likelihood$$는 수식으로는 다음과 같이 쓸 수 있습니다.
 
 <center>$$ Pr(w|x) = Cat_w[\lambda[x]] $$</center>
+
+여기서 $$\lambda$$
 
 ![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
 
