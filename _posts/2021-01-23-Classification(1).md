@@ -113,9 +113,35 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
+조금 더 notation을 깔끔하게 써보겠습니다.
+
+<center>$$ Pr(w|\phi_0,\phi,x) = Bern_w[sig[a]] $$</center>
+
+를 더 쉽게 쓰기 위해서 입력 데이터 x (1차원, 2차원 ... 전부 가능, 우리가 잘 아는 MNIST 손글씨 데이터라면 784차원)에 1을 붙혀봅시다.
+그러면 데이터셋의 데이터 하나 하나는 다음과 같이 표현할 수 있습니다.
+
+<center>$$ x_i \leftarrow [1 \space x_{i}^{T}]^T $$</center>
+
+추정하고자 하는 파라메터도 간단하게 쓰기위해서 offset과 gradient 벡터, $$\phi_0$$ 과 $$\phi$$를 붙혀봅니다.
+
+<center>$$ \phi \leftarrow [phi_0 \space \phi^{T}]^T $$</center>
+
+이렇게하면 notation을 깔끔하게 다시 쓸 수 있습니다.
+
+<center>$$ Pr(w|\phi_0,\phi,x) = Bern_w[sig[a]] $$</center>
+<center>$$ \downarrow $$</center>
+<center>$$ Pr(w|\phi,x) = Bern_w[\frac{1}{1+exp[- \phi^T x]}] $$</center>
+
+아직 학습이 되지 않은 상태를 한번 봅시다.
+
+아래의 그림의 왼쪽은 입력 데이터 x가 1차원, 오른쪽은 x가 2차원인 경우입니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
 
+분류 문제를 푼다고 생각할 때, 베르누이 확률 분포가 0.5가 되는 지점을 두 클래스가 어떤 것인지 결정하는 'Decision Boundary'라고 생각하면 그 선을 기준으로 클래스를 나누게 될 것입니다.
 
+
+![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
 
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
