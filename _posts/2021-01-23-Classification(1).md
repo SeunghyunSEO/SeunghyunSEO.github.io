@@ -275,8 +275,10 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 
 <center>$$ Loss = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
 
+한눈에 봐도 알 수 있듯이 Bernoulli 분포로 모델링한 likelihood를 maximize하는것이 곧 Binary Cross Entropy Loss를 minimize 하는 것과 완벽하게 동치임을 알 수 있습니다.
 
 
+(크로스 엔트로피는 정보이론 (+ KL divergence) , 확률분포 모델링 등 다양한 관점에서 해석을 할 수 있으니 다른 관점도 생각해보시길 바랍니다.) 
 
 
 
