@@ -274,6 +274,21 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 - <mark style='background-color: #fff5b1'> Gradient Based Optimization </mark>
 
+그런데 과연 한 번 이동할 때 마다 어느 방향으로 이동해야 할 지가 고민입니다.
+
+
+바로 다음과 같이 이동하면 됩니다.
+
+> 1. search direction s를 함수 f의 특성에 따라 정합니다.
+
+> 2. 여러 $$\lambda$$ 중 다음의 식을 만족하는 최적의 $$\lambda$$를 찾아냅니다. 이를 line search라고 합니다.
+
+<center>$$ \hat{\lambda} = argmin_y[ f[ \theta^{[t] + \lambda s ] ] $$</center>
+
+> 3. 그리고 다음을 진행하면 됩니다.
+
+<center>$$ \theta^{[t+1]} = \theta^{[t]} + \hat{\lambda} s $$</center>
+
 - <mark style='background-color: #dcffe4'> Steepest Gradient Descent  </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105444927-23d49300-5cb2-11eb-8336-1e13ccfd1901.png)
