@@ -178,11 +178,11 @@ Logistic Regression은 사실 간단히 말해서 한마디로 정리할 수 있
  
 likelihood는 다음과 같이 나타낼 수 있습니다.
 
-<center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
+<center>$$ Pr(w|X,\phi) = \propto_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
 
-<center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(1-\frac{1}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
+<center>$$ Pr(w|X,\phi) = \propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(1-\frac{1}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
 
-<center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
+<center>$$ Pr(w|X,\phi) = \propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
 
 이제 Logarithm을 취해봅시다.
 
