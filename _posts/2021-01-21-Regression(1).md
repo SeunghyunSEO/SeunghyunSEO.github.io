@@ -42,6 +42,19 @@ toc_sticky: true
 
 (이미지 출처 : [link](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/01/20/ISL-linear-regression_ch3.html))
 
+- <mark style='background-color: #dcffe4'> Intuitive Animation for Linear Regression </mark>
+
+입력 x 1차원, 출력 y 1차원 데이터에 대한 linear regression이 학습 되는 과정.
+
+아래는 일반적으로 생각할 수 있는 직선 $$y=\theta_0 + \theta_1 x$$ 을 피팅하는 과정이고
+
+![linear_regression_animation1](https://user-images.githubusercontent.com/48202736/105623281-e449aa80-5e5b-11eb-9fc8-719fd7fac0c8.gif)
+
+아래는 마찬가지로 linear regression 이지만, 직선 $$y=\theta_0 + \theta_1 x + \theta_2 x^2$$ 인 polynomial linear regression을 피팅하는 과정에 대한 애니메이션입니다.
+
+![linear_regression_animation](https://user-images.githubusercontent.com/48202736/105623286-e7dd3180-5e5b-11eb-9f09-30f0021bcfca.gif)
+
+(출처 : [link](https://medium.com/analytics-vidhya/ml-from-scrach-linear-regression-normal-equation-gradient-descent-1af26b542c28))
 
 다시 본론으로 돌아가서, 데이터는 x 1차원, y 1차원이니 총 2차원 평면에 뿌려져있고, 우리는 중고등학교때 직선의 방정식을 구하기 위해서는 y절편 하나, 직선의 기울기 하나, 이렇게 딱 두가지만 알면 된다고 알고있습니다.
 
