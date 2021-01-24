@@ -279,30 +279,39 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 바로 다음과 같이 이동하면 됩니다.
 
-> 1. search direction s를 함수 f의 특성에 따라 정합니다.
+> 1. search direction s를 함수 f의 특성에 따라 정합니다. (어느 방향으로 이동할것인가?)
 
-> 2. 여러 $$\lambda$$ 중 다음의 식을 만족하는 최적의 $$\lambda$$를 찾아냅니다. 이를 line search라고 합니다.
+> 2. 여러 $$\lambda$$ 중 다음의 식을 만족하는 최적의 $$\lambda$$를 찾아냅니다. 이를 line search라고 합니다. (얼만큼 이동할 것인가?)
 
 <center>$$ \hat{\lambda} = argmin_y[ f[ \theta^{[t] + \lambda s ] ] $$</center>
 
-> 3. 그리고 다음을 진행하면 됩니다.
+> 3. 그리고 다음을 진행하면 됩니다. (ex) s 방향으로, 0.1 만큼 이동
 
 <center>$$ \theta^{[t+1]} = \theta^{[t]} + \hat{\lambda} s $$</center>
 
 - <mark style='background-color: #dcffe4'> Steepest Gradient Descent  </mark>
 
-ㅁㄴㅇ
+위의 아이디어를 적용한 방법을 gradient descent라고 합니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105636614-4b8f4b00-5eac-11eb-9bd8-9fb51d25b541.png)
+
+비유를 해보자면 어떤 언덕에 내가 서 있다고 생각을 해봤을 때, 서있는 지점에서 가장 가파른(steepest) 방향을 고르고 그 방향으로 적당한 거리만큼 내려가면 되는겁니다.  
+
+이를 3차원으로 보면 아래 그림과 같습니다.
+
+![image](https://user-images.githubusercontent.com/48202736/105637021-86927e00-5eae-11eb-85c3-32345926a9c3.png)
 
 ㅁㄴㅇ
 
 ![image](https://user-images.githubusercontent.com/48202736/105444938-2b943780-5cb2-11eb-9947-df2dcf6cb9d4.png)
 
-ㅁㄴㅇ
+그런데 Steepest Descent 는 문제가 아래와 같은 있습니다
 
 ![image](https://user-images.githubusercontent.com/48202736/105444942-2f27be80-5cb2-11eb-858c-a23f594829c2.png)
 
+위의 그림을 보시면 초반에 이동할때 매우 자잘자잘하게 많이 이동하는걸 알 수 있습니다. (저 지점을 빠져나오기 어려움 or 오래 학습함)
+
+이런 문제점을 해결하기 위해 2차 미분을 이용한 Newton's Method 라는 방법에 대해 한번 알아보도록 하겠습니다.
 
 - <mark style='background-color: #dcffe4'> Newton’s Method </mark>
 
