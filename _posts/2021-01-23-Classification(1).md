@@ -111,7 +111,7 @@ $$*$$ 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니
 
 
 
-- <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
+- <mark style='background-color: #dcffe4'> Decision Boundary </mark>
 
 조금 더 notation을 깔끔하게 써보겠습니다.
 
@@ -148,6 +148,21 @@ $$*$$ 사실 2차원 데이터도 아래의 그림처럼 생각하는게 더 직
 ![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
 
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
+
+- <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
+
+이제 어떻게 하면 위의 그림처럼 데이터로부터 최적의 Decision Boundary를 찾아낼 수 있는지,
+
+그러니까 최적의 파라메터 $$\phi$$ (1차원이면 $$\phi_0, \phi_1$$) 를 찾아낼 수 있을까요?
+
+
+네 맞습니다. 이전에 ML, MAP, Bayesian에 대해서 배우셨다면 어떤 방법으로 파라메터를 추정해도 상관 없습니다.
+
+그 중 Maximum Likelihood (ML) 방법을 쓴다고 생각하면 다음과 같이 잘 아시는 것 처럼 다음의 방법을 통해 최적의 파라메터를 구할 수 있습니다.
+ 
+> 1.likelihood를 정의한다.<br>
+> 2.전체 식에 log를 취한다. <br>
+> 3.미분을 취해 0인 지점을 찾는다.<br>
 
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
