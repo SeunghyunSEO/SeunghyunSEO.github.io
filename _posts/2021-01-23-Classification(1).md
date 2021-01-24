@@ -252,7 +252,7 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 
-- <mark style='background-color: #dcffe4'> Modeling Bernoulli Distribution over Y VS Binary Cross Entropy  </mark>
+- <mark style='background-color: #dcffe4'> Modeling Bernoulli Distribution over Model Output VS Binary Cross Entropy  </mark>
 
 이 글을 통해 처음 Logistic Regression 혹은 분류 문제를 접하신 분들이 아니라면, 아마 데이터를 클래스 2개로 분류하는 경우인, 이진 분류 문제를 풀 때 Loss Function으로 (Binary) Cross Entropy 를 쓴다는걸 아실겁니다. 
 
