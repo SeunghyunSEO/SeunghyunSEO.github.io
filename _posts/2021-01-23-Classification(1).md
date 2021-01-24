@@ -399,17 +399,17 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 <center>$$ CE \space Loss = -log \space t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
 
-이렇게 분류 문제를 분류할 클래스 벡터들과의 내적으로 생각하게 되면, 내적을 $$\cos{\theta}$$에 재밌는 짓을 해서 클래스를 구분짓는 경계에 다양한 variation을 줄 수도 있습니다. ([Large Margine Loss](https://arxiv.org/abs/1612.02295) 등) 
+이렇게 분류 문제를 분류할 클래스 벡터들과의 내적으로 생각하게 되면, 내적을 $$\cos{\theta}$$에 재밌는 짓을 해서 클래스를 구분짓는 경계에 다양한 variation을 줄 수도 있습니다. ([Large Margine Loss](https://arxiv.org/abs/1612.02295), [Additive Margin Softmax for Face Verification](Additive Margin Softmax for Face Verification) 등 ...) 
 
 * Cross Entropy 변이 예시 1 : 2016, [Large Margine Loss](https://arxiv.org/abs/1612.02295) 
 
 원래의 크로스 엔트로피 수식인 아래의 수식을 
 
-<center>$$ CE \space Loss = -log \space t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+<center>$$ CE \space Loss = -log \space \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{\theta_i}]}{\sum_{m=1}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
 
 아래처럼 조금 변형하면
 
-<center>$$ ex) L-Softmax \space Loss = -log \space t_i \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}]}{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}] + \sum_{m!=i}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
+<center>$$ ex) L-Softmax \space Loss = -log \space \frac{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}]}{exp[\lVert w_i \rVert \lVert x \rVert \cos{m \theta_i}] + \sum_{m!=i}^{N}exp[\lVert w_m \rVert \lVert x \rVert \cos{\theta_m}]} $$</center>
 
 결과는 아래처럼 변합니다.
 
@@ -419,7 +419,13 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 * Cross Entropy 변이 예시 2 : 2019, [Label-Distribution-Aware Margin Loss](https://arxiv.org/abs/1906.07413) 
 
+이 예시는 cosine similarity의 cos에 인자를 넣어준 것은 아닌데, 전체 데이터셋의 클래스 분포가 달라 학습이 힘들 때 (예를 들면 long-tailed) 이를 고려해서 margin을 추가해주는 방법입니다.
 
+이것도 마찬가지로 크로스 엔트로피 수식에 클래스 개수 $$n_j$$를 추가해 아래처럼 나타냅니다.
+
+<center>$$ LDAM \space loss = -log \space \frac{ exp[w_i x - \frac{C}{n_{j}^{1/4}}] }{ exp[w_i x - \frac{C}{n_{j}^{1/4}}] + \sum_{m!=i} exp[w_m x] } $$</center>
+
+그 결과 데이터 수가 적은 클래스에 대해서 상당히 큰 여유를 둬서 '학습 데이터상에는 없지만 데이터가 적어서 그런거지, 실제론 이정도는 있을거야!' 라는 것을 모델이 학습하게 합니다.
 
 <img width="657" alt="스크린샷 2021-01-24 오후 11 24 07" src="https://user-images.githubusercontent.com/48202736/105633342-55f51900-5e9b-11eb-858a-49c39460d939.png">
 
