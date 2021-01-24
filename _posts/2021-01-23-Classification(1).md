@@ -290,8 +290,10 @@ asd
 <center>$$ \lambda_n = softmax_n[a_1,a_2,...,a_N] = \frac{exp[a_N]}{sum_{m=1}^{N}exp[a_m]} $$</center>
 
 ```
-sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, softmax 함수는 입력 벡터를 마찬가지로 0~1 사이의 값으로 매핑해주지만, 전체 클래스의 합이 1이 되도록 해줍니다. 
+sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니다. 마찬가지로 softmax 함수는 여러개의 입력값을 마찬가지로 0~1 사이의 값으로 매핑해주는 역할이지만 동시에 softmax 함수의 출력 값들의 합이 1이 되도록 해 줘야 합니다. (왜냐하면 확률 분포의 합이 1이기 때문이죠) 
 ```
+
+위의 말이 와닿지 않는다면 수식이 어떻게 구성되어 있는지를 보시면 됩니다.
 
 <center>$$ ex) \space \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]}{sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_2]}{sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_3]}{sum_{m=1}^{3}exp[a_m]} $$</center>
 
