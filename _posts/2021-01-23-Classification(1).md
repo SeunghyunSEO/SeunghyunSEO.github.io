@@ -360,6 +360,10 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 - <mark style='background-color: #ffdce0'> Classification의 또다른 관점 </mark>
 
+앞서 배웠던 Classification들은 그게 이진 클래스 분류던, 다중 클래스 분류던 동일한 과정을 겪었는데, 이는 입력값과 클래스를 구분하는 Decision boundary가 될 파라메터와의 내적을 하는 것이었습니다.
+
+한번 이렇게 생각해봅시다. 입력값을 l2 normalize 하고    다르게 생각하자면 사실상 
+
 ![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
 
 ![decision1](https://user-images.githubusercontent.com/48202736/105625958-3a284d80-5e70-11eb-873f-a5c27ea08095.png)
