@@ -45,7 +45,7 @@ toc_sticky: true
 
 ![image](https://user-images.githubusercontent.com/48202736/105621213-86f82e00-5e48-11eb-8f27-74ec370737da.png)
 
-위의 수식을 보면 베르누이 분포를 한번에 $$\labmda^{x}(1-\lambda)^{1-x}$$로 표현하는 걸 알 수 있습니다. 이는 x가 1이면 $$\lambda$$가 되고 x가 0이면 $$(1-\lambda)$$가 되는 수식입니다.
+위의 수식을 보면 베르누이 분포를 한번에 $$\lambda^{x}(1-\lambda)^{1-x}$$로 표현하는 걸 알 수 있습니다. 이는 x가 1이면 $$\lambda$$가 되고 x가 0이면 $$(1-\lambda)$$가 되는 수식입니다.
 이러한 의미를 가지는 베르누이 분포는 아래와 같이 쓰기도 합니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105621209-8495d400-5e48-11eb-8ab7-2095f20068c6.png)
@@ -283,9 +283,34 @@ asd
 
 <center>$$ Pr(w|x) = Cat_w[\lambda[x]] $$</center>
 
-여기서 $$\lambda$$
+여기서 $$\lambda$$는 전체 합이 합이 1이 되는 각 class들에 대한 확률 값을 나타내는 벡터이고 수식으로 나타내면 다음과 같습니다.
+
+<center>$$ \lambda_n = softmax_n[a_1,a_2,...,a_N] = frac{exp[a_N]}{sum_{m=1}^{N}exp[a_m]} $$</center>
+
+```
+sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, softmax 함수는 입력 벡터를 마찬가지로 0~1 사이의 값으로 매핑해주지만, 전체 클래스의 합이 1이 되도록 해줍니다. 
+```
+
+<center>$$ ex) \space \lambda_1 + \lambda_2 + \lambda_3 = frac{exp[a_1]}{sum_{m=1}^{3}exp[a_m]} + frac{exp[a_2]}{sum_{m=1}^{3}exp[a_m]} + frac{exp[a_3]}{sum_{m=1}^{3}exp[a_m]} $$</center>
+
+<center>$$ \lambda_1 + \lambda_2 + \lambda_3 = frac{exp[a_1]+exp[a_2]+exp[a_3]}{sum_{m=1}^{3}exp[a_m]} = 1 $$</center>
+
+우리가 추정하고자 하는 파라메터는 n개의 벡터들 $$\theta_n$$ 입니다.
+
+<center>$$ a_1 = \theta_{1}^{T} x $$</center>
+
+<center>$$ a_2 = \theta_{2}^{T} x $$</center>
+
+<center>$$ a_n = \theta_{n}^{T} x $$</center>
+
+이렇게 모델링해서 최적 해를 구하게 되면 각각의 클래스에 대한 Decision Boundary를 구할 수 있게 된다고 생각할 수 있습니다. 
 
 ![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
+
+마찬가지로 해를 구하기 위해서는 $$likelihood$$에 $$log$$를 취한 $$log \space likelihood$$를 최대화 하면 됩니다.
+
+
+이는 마찬가지로 Closed-form Solution이 존재하지 않기 때문에, Iterative Non-Linear Optimization을 하면 구할 수 있습니다. 
 
 
 
@@ -310,14 +335,14 @@ asd
 
 마찬가지로 activation function이 sigmoid일때 아래와 같이 쓸 수 있습니다.
 
-<center>$$ Loss = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
+<center>$$ BCE \space Loss = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
 
 흔히들 쓰는 notation으로 정답이 $$t_i$$이고 모델의 예측 값이 $$y_i$$인 경우로 다시 쓰면 아래와 같습니다.
 
-<center>$$ Loss = \sum_{i=1}^{I} t_i log (y_i) + (1-t_i)log(1-y_i) $$</center>
+<center>$$ BCE \space Loss = \sum_{i=1}^{I} t_i log (y_i) + (1-t_i)log(1-y_i) $$</center>
 
 
-어떤가요?? 한눈에 봐도 알 수 있듯이 Bernoulli 분포로 모델링한 $$likelihood$$를 maximize하는것이 곧 Binary Cross Entropy Loss를 minimize 하는 것과 완벽하게 동치임을 알 수 있습니다.
+어떤가요?? 한눈에 봐도 알 수 있듯이 Bernoulli 분포로 모델링한 $$likelihood$$를 maximize하는것이 곧 Binary Cross Entropy(BCE) Loss를 minimize 하는 것과 완벽하게 동치임을 알 수 있습니다.
 
 
 (크로스 엔트로피는 정보이론 (+ KL divergence) , 확률분포 모델링 등 다양한 관점에서 해석을 할 수 있으니 다른 관점도 생각해보시길 바랍니다.) 
@@ -326,9 +351,12 @@ asd
 이는 회귀문제에서 잘 알려진 Mean Squared Error (MSE) Loss를 minimize하는 것이 출력 값을 Gaussian 분포로 모델링한 $$likelihood$$를 maximize하는 것과 수식적으로 완벽하게 일치하는것과 같습니다. 
 
 
-마찬가지로, Categorical 분포로 모델링한 $$log \space likelihood$$를 최대화 하는 것은 Cross Entropy Loss를 최소화 하는것과 동일합니다. 
+마찬가지로, Categorical 분포로 모델링한 $$log \space likelihood$$를 최대화 하는 것은 Cross Entropy(CE) Loss를 최소화 하는것과 동일합니다. 
 
 
+<center>$$ likelihood = \prod_{i=1}^{I} Cat_{w_i}[\lambda[x_i]] $$</center>
+
+<center>$$ CE \space Loss = \sum_{i=1}^{I} - t_i log (y_i) $$</center>
 
 - <mark style='background-color: #ffdce0'> Classification의 또다른 관점 </mark>
 
