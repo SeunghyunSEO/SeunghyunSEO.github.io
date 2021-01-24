@@ -165,7 +165,7 @@ Logistic Regression은 사실 간단히 말해서 한마디로 정리할 수 있
 어떻게 해야할까요?
 
 
-네 맞습니다. 이전에 ML, MAP, Bayesian에 대해서 배우셨다면 어떤 방법으로 파라메터를 추정해도 상관 없습니다.
+네 맞습니다. 이전에 ML, MAP, Bayesian에 대해서 배우셨다면 이것들 중 하나를 쓰면 됩니다. 어떤 방법으로 파라메터를 추정해도 상관 없습니다.
 
 그 중 Maximum Likelihood (ML) 방법을 쓴다고 생각하면 다음과 같이 잘 아시는 것 처럼 다음의 방법을 통해 최적의 파라메터를 구할 수 있습니다.
  
@@ -198,6 +198,9 @@ L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}
 
 
 (이에 대해 더 궁금하신분들은 구글링을 해보시길 바랍니다 ㅎ...)
+
+
+(임시 참조 링크, 나중에 정리해야함... [참조1](http://wanochoi.com/?p=5061), [참조2](https://stats.stackexchange.com/questions/949/when-is-logistic-regression-solved-in-closed-form)
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
