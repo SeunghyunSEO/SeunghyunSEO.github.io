@@ -222,7 +222,29 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 * 하지만 위의 경우처럼 closed-form solution이 존재하지 않는 경우에만 최적화 기법으로 해를 구할 수 있는건 아닙니다. 이전에 다뤘던 Linear Regression은 Closed-form Solution이 존재했지만 마찬가지로 Iterative하게 파라메터를 업데이트 해서 최적 해를 찾을 수 있습니다. 그리고 최적화 기법을 사용한다고 해서 꼭 단 하나의 최적의 솔루션을 찾을 수 있는 것은 아닙니다, 그에 가까운 해를 찾을 수가 있을 뿐이죠.  또한 운이 나쁘면 못찾을 수도 ...
 ```
 
-자 이제 Optimization
+자 이제 Optimization 에 대해 생각해봅시다.
+
+
+우리는 어떤 함수 $$f[\theta]$$ 를 가지고 있습니다. 
+
+우리의 목적은 다음과 같습니다.
+
+<center>$$ \hat{\theta} = argmin_{\theta}[f[\theta]] $$</center>
+
+이는 말로 다시 풀어쓰면 '$$f[\theta]$$ 라는 함수값을 가장 작게 만드는 $$\theta$$ 를 찾고싶다.' 가 됩니다.
+
+$$f[\theta]$$ 는 여기서 목적 함수 (Objective function) 혹은 Cost function(비용 함수), Loss function(손실 함수) 라고 합니다.
+
+
+어떻게 하면 위의 목적을 달성할 수 있을까요???
+
+
+아이디어는 다음과 같습니다.
+
+> 어떤 랜덤한 값 $$\theta^{[0]}$$ 에서 시작한다.
+> 
+>
+>
 
 
 ![image](https://user-images.githubusercontent.com/48202736/105444895-128b8680-5cb2-11eb-91a7-dac84df8707d.png)
