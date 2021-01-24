@@ -401,7 +401,7 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 이렇게 분류 문제를 분류할 클래스 벡터들과의 내적으로 생각하게 되면, 내적을 $$\cos{\theta}$$에 재밌는 짓을 해서 클래스를 구분짓는 경계에 다양한 variation을 줄 수도 있습니다. ([Large Margine Loss](https://arxiv.org/abs/1612.02295), [Additive Margin Softmax for Face Verification](Additive Margin Softmax for Face Verification) 등 ...) 
 
-* Cross Entropy 변이 예시 1 : 2016, [Large Margine Loss](https://arxiv.org/abs/1612.02295) 
+* <mark style='background-color: #dcffe4'> Cross Entropy 변이 예시 1 </mark> : 2016, [Large Margine Loss](https://arxiv.org/abs/1612.02295) 
 
 원래의 크로스 엔트로피 수식인 아래의 수식을 
 
@@ -417,7 +417,7 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 (논문 참조 : [Liu, Weiyang, Yandong Wen, Zhiding Yu, and Meng Yang. "Large-margin softmax loss for convolutional neural networks." In ICML, vol. 2, no. 3, p. 7. 2016.](https://arxiv.org/abs/1612.02295))
 
-* Cross Entropy 변이 예시 2 : 2019, [Label-Distribution-Aware Margin Loss](https://arxiv.org/abs/1906.07413) 
+* <mark style='background-color: #dcffe4'> Cross Entropy 변이 예시 2 </mark> : 2019, [Label-Distribution-Aware Margin Loss](https://arxiv.org/abs/1906.07413) 
 
 이 예시는 cosine similarity의 cos에 인자를 넣어준 것은 아닌데, 전체 데이터셋의 클래스 분포가 달라 학습이 힘들 때 (예를 들면 long-tailed) 이를 고려해서 margin을 추가해주는 방법입니다.
 
