@@ -67,10 +67,26 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 하지만 Categorical 분포는 예를들어 x=0~x=4 (5가지 가능한 경우)에 대한 확률을 전부 다 찾아내야 함으로 전체 경우에 대한 가능한 확률 값을 추정해야 합니다. (근데 이제 $$\sum{\lambda_{0...I}} = 1$$ 이 되는...)
 
+이를 베르누이 분포처럼 아래와 같이 표현할 수 있습니다. (굵은 $$\lambda$$는 스칼라가 아니라 아니라 벡터) 
+
 ![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
 
 
-다시 본론으로 돌아가서 
+다시 본론으로 돌아가서 Logistic Regression에 대해 얘기해보겠습니다.
+
+Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 world state $$w$$를 모델링 합니다.
+
+<center>$$ Pr(w|\lambda) = Bern_w[\lambda] $$</center>
+
+근데 여기서 $$\lambda$$ 를 입력 데이터 x에 대한 함수로 표현을 해봅시다.
+
+<center>$$ Pr(w|\phi_0,\phi,x) = Bern_w[sig[a]] $$</center>
+
+<center>$$ where, a = \phi_0 + \phi^T x$$</center>
+
+aasd
+
+
 
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
