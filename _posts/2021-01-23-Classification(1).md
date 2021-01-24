@@ -71,6 +71,7 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 ![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
 
+- <mark style='background-color: #dcffe4'> Back to Logistic Regression </mark>
 
 다시 본론으로 돌아가서 Logistic Regression에 대해 얘기해보겠습니다.
 
