@@ -164,6 +164,25 @@ $$*$$ 사실 2차원 데이터도 아래의 그림처럼 생각하는게 더 직
 > 2.전체 식에 log를 취한다. <br>
 > 3.미분을 취해 0인 지점을 찾는다.<br>
 
+한번 해볼까요?
+
+ 
+likelihood는 다음과 같이 나타낼 수 있습니다.
+
+<center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
+
+<center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(1-\frac{1}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
+
+<center>$$ Pr(w|X,\phi) = propto_{i=1}^{I} \(\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
+
+이제 logarithm을 취해봅시다.
+
+L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}^{I}(1-w_i)log[\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]}] $$</center>
+
+마지막으로 미분을 해봅시다.
+
+<center>$$ asd $$<\center>
+
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
