@@ -299,7 +299,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 <center>$$ \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]+exp[a_2]+exp[a_3]}{\sum_{m=1}^{3}exp[a_m]} = 1 $$</center>
 
-우리가 추정하고자 하는 파라메터는 n개의 벡터들 $$\theta_n$$ 입니다.
+자, 다시 돌아가서, 우리가 추정하고자 하는 파라메터는 n개의 벡터들 $$\theta_n$$ 입니다.
 
 <center>$$ a_1 = \theta_{1}^{T} x $$</center>
 
