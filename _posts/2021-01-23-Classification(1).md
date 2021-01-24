@@ -254,6 +254,22 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 
 - <mark style='background-color: #dcffe4'> Modeling Bernoulli Distribution over Y VS Binary Cross Entropy  </mark>
 
+이 글을 통해 처음 Logistic Regression 혹은 분류 문제를 접하신 분들이 아니라면, 아마 데이터를 클래스 2개로 분류하는 경우인, 이진 분류 문제를 풀 때 Loss Function으로 (Binary) Cross Entropy 를 쓴다는걸 아실겁니다. 
+
+
+하지만 이는 이번 글에서 설명한 Bernoulli 분포로 출력값을 모델링하고 이것의 likelihood를 구한다음 log를 취해 ML문제를 푸는것과 다르지 않습니다. 아니, 같습니다.
+
+
+다시 생각해보면 우리가 구했던, log likelihood는 아래와 같았습니다.
+
+<center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
+
+<center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} (sig[a])^{w_i}(1-sig[a])^{1-w_i} $$</center>
+
+log likelihood = <center>$$ \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[sig[a]] $$</center>
+
+
+
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
