@@ -293,7 +293,7 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 ㅁㄴㅇ
 
-![image](https://user-images.githubusercontent.com/48202736/105444927-23d49300-5cb2-11eb-8336-1e13ccfd1901.png)
+![image](https://user-images.githubusercontent.com/48202736/105636614-4b8f4b00-5eac-11eb-9bd8-9fb51d25b541.png)
 
 ㅁㄴㅇ
 
