@@ -302,6 +302,14 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 
 
 
+
+- <mark style='background-color: #fff5b1'> Classification의 또다른 관점 </mark>
+
+![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
+
+
+
+
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
