@@ -233,7 +233,7 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 
 이는 말로 다시 풀어쓰면 '$$f[\theta]$$ 라는 함수값을 가장 작게 만드는 $$\theta$$ 를 찾고싶다.' 가 됩니다.
 
-$$f[\theta]$$ 는 여기서 목적 함수 (Objective function) 혹은 Cost function(비용 함수), Loss function(손실 함수) 라고 합니다.
+$$f[\theta]$$ 는 여기서 목적 함수 (Objective function) 혹은 Cost function(비용 함수), Loss function(손실 함수) 라고 합니다. (다 같은말임)
 
 
 어떻게 하면 위의 목적을 달성할 수 있을까요???
@@ -241,15 +241,33 @@ $$f[\theta]$$ 는 여기서 목적 함수 (Objective function) 혹은 Cost funct
 
 아이디어는 다음과 같습니다.
 
-> 어떤 랜덤한 값 $$\theta^{[0]}$$ 에서 시작한다.
-> 
->
->
+> 1. 어떤 랜덤한 값 $$\theta^{[0]}$$ 에서 시작한다. <br>
+> 2. 그 다음 $$\theta^{[1]}$$, 그 다음 $$\theta^{[2]}$$, $$\theta^{[3]}$$ ... 으로 조금씩 이동한다. <br>
+> 3. 조금씩 이동하는 것이 cost를 감소시킨다는걸 보장한다. <br>
+> 4. 더이상 나아질 수 없을 때, 그 지점이 바로 최소값이어야 한다. <br>
 
+아이디어를 그림으로 나타내면 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105444895-128b8680-5cb2-11eb-91a7-dac84df8707d.png)
+
+위의 그림에서 보면 문제점이 있는데 시작 지점이 빨간점이냐 파란점이냐에 따라서 도달하는 지점이 다르다는 것입니다. (이것은 learning rate라던가 하는 디테일한 학습 파라메터에 따라 같은 곳에 도달 할 수도, 아닐 수도 있는 복잡한 내용이 있는데 지금은 무시하도록 하겠습니다.)
+
+
+즉 언제나 한결같은 곳에 수렴한다는걸 보장할 수 없다는 것입니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105444900-14ede080-5cb2-11eb-9347-cb53fbfa5a5a.png)
+
+하지만 위의 그림처럼 Convex한 Objective function 이라면 적절한 학습 파라메터를 설정해줬을 때 언제나 단 하나의 최소값 (a single minimum)에 도달합니다. 
+
+
+(Can tell if a function is convex by looking at 2nd derivatives)
+
+
+Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space likelihood$$ 각각을 아래의 그림처럼 나타낼 수 있습니다. 
+
 ![image](https://user-images.githubusercontent.com/48202736/105444909-18816780-5cb2-11eb-9c32-403825583254.png)
+
+$$log$$
 
 - <mark style='background-color: #fff5b1'> Gradient Based Optimization </mark>
 
