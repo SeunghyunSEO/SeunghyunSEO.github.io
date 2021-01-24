@@ -22,6 +22,9 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Logistic Regression </mark>
 
+ㅁ
+- <mark style='background-color: #fff5b1'> Logistic Regression </mark>
+
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
 - <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
