@@ -307,9 +307,6 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 
 ![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
 
-![decision1](https://user-images.githubusercontent.com/48202736/105625849-698a8a80-5e6f-11eb-90d3-99d7eccf69c8.png)
-
-![decision2](https://user-images.githubusercontent.com/48202736/105625854-6e4f3e80-5e6f-11eb-9c59-549cc9caa9f6.png)
 
 
 
