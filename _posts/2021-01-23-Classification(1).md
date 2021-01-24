@@ -264,6 +264,9 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 
+- <mark style='background-color: #dcffe4'> ML vs MAP for Classification </mark>
+
+asd
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
