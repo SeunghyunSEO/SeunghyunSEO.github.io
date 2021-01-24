@@ -207,7 +207,7 @@ L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}
 Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이제는 다른 방법을 사용해 최적의 해를 찾아야 합니다. "Iterative Non-linear Opitmization"이 바로 그 방법이라고 할 수 있는데, 이는 반복적으로 추정하고자 하는 파라메터를 점진적으로 업데이트 해나가며 결국 최적해에 가까워지게 만드는 것.
 
 
-$$*$$ 하지만 위의 경우처럼 closed-form solution이 존재하지 않는 경우에만 최적화 기법으로 해를 구할 수 있는건 아닙니다. 이전에 다뤘던 Linear Regression은 Closed-form Solution이 존재했지만 마찬가지로 Iterative하게 파라메터를 업데이트 해서 최적 해를 찾을 수 있습니다.
+$$*$$ 하지만 위의 경우처럼 closed-form solution이 존재하지 않는 경우에만 최적화 기법으로 해를 구할 수 있는건 아닙니다. 이전에 다뤘던 Linear Regression은 Closed-form Solution이 존재했지만 마찬가지로 Iterative하게 파라메터를 업데이트 해서 최적 해를 찾을 수 있습니다. 그리고 최적화 기법을 사용한다고 해서 꼭 단 하나의 최적의 솔루션을 찾을 수 있는 것은 아닙니다, 그에 가까운 해를 찾을 수가 있을 뿐이죠.  또한 운이 나쁘면 못찾을 ...
 
 
 
