@@ -63,7 +63,7 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 ![image](https://user-images.githubusercontent.com/48202736/105621218-9aa39480-5e48-11eb-88ed-ac911e2e2a76.png)
 
-
+베르누이 분포에서는 ㅁ
 
 ![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
 
