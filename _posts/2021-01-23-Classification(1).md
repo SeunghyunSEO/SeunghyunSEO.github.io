@@ -22,8 +22,9 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Logistic Regression </mark>
 
-ㅁ
-- <mark style='background-color: #fff5b1'> Logistic Regression </mark>
+로지스틱 회귀 정의 추가해야할듯
+
+본론 
 
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
