@@ -63,7 +63,8 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 ![image](https://user-images.githubusercontent.com/48202736/105621218-9aa39480-5e48-11eb-88ed-ac911e2e2a76.png)
 
-베르누이 분포에서는 ㅁ
+베르누이 분포에서는 두 가지 케이스중 한 가지 케이스로 분류될 확률 $$\lambda$$만 찾아내면 확률 분포의 합이 1이 되는것을 이용하여 자동으로 나머지 케이스로 분류될 확률이 정해졌습니다.
+
 
 ![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
 
