@@ -285,15 +285,15 @@ asd
 
 여기서 $$\lambda$$는 전체 합이 합이 1이 되는 각 class들에 대한 확률 값을 나타내는 벡터이고 수식으로 나타내면 다음과 같습니다.
 
-<center>$$ \lambda_n = softmax_n[a_1,a_2,...,a_N] = frac{exp[a_N]}{sum_{m=1}^{N}exp[a_m]} $$</center>
+<center>$$ \lambda_n = softmax_n[a_1,a_2,...,a_N] = \frac{exp[a_N]}{sum_{m=1}^{N}exp[a_m]} $$</center>
 
 ```
 sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, softmax 함수는 입력 벡터를 마찬가지로 0~1 사이의 값으로 매핑해주지만, 전체 클래스의 합이 1이 되도록 해줍니다. 
 ```
 
-<center>$$ ex) \space \lambda_1 + \lambda_2 + \lambda_3 = frac{exp[a_1]}{sum_{m=1}^{3}exp[a_m]} + frac{exp[a_2]}{sum_{m=1}^{3}exp[a_m]} + frac{exp[a_3]}{sum_{m=1}^{3}exp[a_m]} $$</center>
+<center>$$ ex) \space \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]}{sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_2]}{sum_{m=1}^{3}exp[a_m]} + \frac{exp[a_3]}{sum_{m=1}^{3}exp[a_m]} $$</center>
 
-<center>$$ \lambda_1 + \lambda_2 + \lambda_3 = frac{exp[a_1]+exp[a_2]+exp[a_3]}{sum_{m=1}^{3}exp[a_m]} = 1 $$</center>
+<center>$$ \lambda_1 + \lambda_2 + \lambda_3 = \frac{exp[a_1]+exp[a_2]+exp[a_3]}{sum_{m=1}^{3}exp[a_m]} = 1 $$</center>
 
 우리가 추정하고자 하는 파라메터는 n개의 벡터들 $$\theta_n$$ 입니다.
 
@@ -362,13 +362,27 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 앞서 배웠던 Classification들은 그게 이진 클래스 분류던, 다중 클래스 분류던 동일한 과정을 겪었는데, 이는 입력값과 클래스를 구분하는 Decision boundary가 될 파라메터와의 내적을 하는 것이었습니다.
 
-한번 이렇게 생각해봅시다. 입력값을 l2 normalize 하고    다르게 생각하자면 사실상 
+아래의 그림을 볼까요, 우리는 개,고양이,배 ... 등 다양한 클래스의 이미지가 포함된 데이터셋을 분류하는 task인 다중 분류 문제를 풀고 싶습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
+아래는 이미지 분류에서 유명한 딥러닝 모델인 ResNet을 사용한 것인데요.
 
-![decision1](https://user-images.githubusercontent.com/48202736/105625958-3a284d80-5e70-11eb-873f-a5c27ea08095.png)
+데이터가 $$ Batch_size \times Width \times Height $$ 의 3차원 행렬인(채널을 무시해버렸네요 1이나 없는걸로 하겠습니다...) Tensor 모양으로 되어있고 이게 네트워크로 들어간다고 생각하겠습니다. 
+
+예시가 딥러닝이라 생소하실 수도 있는데, 딥러닝이나 머신러닝이나 결국 우리가 풀고자하는 문제의 결과값을 내주는 어떤 최상의 $$y=f(x)$$ 가 있을 때 데이터를 통해서 이 oracle function의 approximate function을 찾는 문제로 똑같으니 걱정 안하셔도 됩니다.
 
 ![decision2](https://user-images.githubusercontent.com/48202736/105625959-3c8aa780-5e70-11eb-8779-adf9c1176a86.png)
+
+이미지가 들어가서 유의미한 특징값들을 추출해주는 단계를 거치고 마지막에 $$Batch_size \times hidden_size$$ 형태가 됩니다. 
+
+(이 때부터 다시 생각해봅시다. 지금 마지막 단계가 그냥 순수 입력값이라고 생각하고 여기에 클래스를 구분지어 줄 파라메터를 곱한 뒤 softmax함수를 취하고 등등... 앞서 다중 분류를 할 때와 똑같이 생각하면 됩니다.) 
+
+아까는 이 클래스를 구분지어줄 파라메터들(Categorical Distribution의 여러 카테고리에 해당하는)과 입력 값을 곱하는 것(벡터간 내적하는 것)이 각각의 클래스의 Decision Boundary들을 아래와 같이 그어준다고 생각했는데,
+
+![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
+
+이는 다르게 생각해보면 각 클래스에 해당하는 어떤 벡터가 존재하고, 입력 이미지인 입력 벡터와 이 클래스들를 표현하는 벡터들과의 벡터간 유사도들을 전부 계산해내는 것이라고 생각할 수도 있습니다.
+
+![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
 
 
 
