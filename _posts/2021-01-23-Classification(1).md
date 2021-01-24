@@ -103,9 +103,15 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
+
+
+
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
+
+
+
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
@@ -152,6 +158,9 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
+
+
+
 
 - <mark style='background-color: #fff5b1'> References </mark>
 
