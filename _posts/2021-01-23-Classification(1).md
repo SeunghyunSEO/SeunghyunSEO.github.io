@@ -266,7 +266,17 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 
 <center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} (sig[a])^{w_i}(1-sig[a])^{1-w_i} $$</center>
 
-log likelihood = <center>$$ \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[sig[a]] $$</center>
+<center>$$ log likelihood = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
+
+(Binary) Cross Entropy의 경우는 어떨까요? 
+
+
+마찬가지로 activation function이 sigmoid일때 아래와 같이 쓸 수 있습니다.
+
+<center>$$ Loss = \sum_{i=1}^{I} w_i log[sig[a]] + (1-w_i)log[1-sig[a]] $$</center>
+
+
+
 
 
 
