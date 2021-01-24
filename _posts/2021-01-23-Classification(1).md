@@ -30,13 +30,22 @@ toc_sticky: true
 
 자 이번에는 y의 분포를 베르누이 확률 분포로 모델링 해보도록 하겠습니다.
 
+그 전에 우선 베르누이 분포에 대해서 remind를 해보도록 하겠습니다. 
+
 - <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
+
+베르누이 분포에 대해 쉽게 설명하기 위해 그림을 먼저 보도록 하겠습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105621207-7fd12000-5e48-11eb-9106-42a0a58fb4a2.png)
 
-![image](https://user-images.githubusercontent.com/48202736/105621209-8495d400-5e48-11eb-8ab7-2095f20068c6.png)
+베르누이 분포는 '$$x=0/x=1$$' 이나 '성공/실패' 등 두 가지 가능한 경우에 대한 상황을 나타냅니다.
+
+수식으로 나타내면 아래와 같은데, $$x=1$$일 확률이 $$\lambda$$ 이고, 베르누이 분포는 두 가지 경우에 대해서만 생각하기 때문에 반대로 $$x=0$$ 이 될 확률은 $$1-\lambda$$가 됩니다.
+(예를 들어, 어떤 x(이미지 픽셀값)가 $$x=0$$(강아지)일 확률이 $$labmda$$(0.64)면 $$x=1$$(고양이)일 확률은 $$1-\lambda$$(1-0.64=0.34)가 됩니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105621213-86f82e00-5e48-11eb-8f27-74ec370737da.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105621209-8495d400-5e48-11eb-8ab7-2095f20068c6.png)
 
 - <mark style='background-color: #dcffe4'> Categorical Distribution </mark>
 
