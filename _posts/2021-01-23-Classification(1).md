@@ -24,13 +24,19 @@ toc_sticky: true
 
 로지스틱 회귀 정의 추가해야할듯
 
-본론 
+본론)
 
-![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
+앞서 Regression 문제에서와 마찬가지로 우리는 연속적인 입력 변수에 대해서 대상 y의 분포를 모델링 할 수 있습니다. 선형 회귀에서는 y를 가우시안 분포로 정의하여 문제를 풀었습니다.
+
+자 이번에는 y의 분포를 베르누이 확률 분포로 모델링 해보도록 하겠습니다.
 
 - <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105038829-29a85980-5aa3-11eb-9d6a-f69508532167.png)
+
+다시 본론으로 돌아가서 
+
+![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
