@@ -58,7 +58,12 @@ toc_sticky: true
 
 ![image](https://user-images.githubusercontent.com/48202736/105621216-96777700-5e48-11eb-99c4-400cf91c6405.png)
 
+Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 가능한 케이스가 두가지 이상이 된 경우에 대한 이야기를 합니다.
+아래의 수식은 Categorical 분포에 대한 수식을 나타냅니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105621218-9aa39480-5e48-11eb-88ed-ac911e2e2a76.png)
+
+
 
 ![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
 
