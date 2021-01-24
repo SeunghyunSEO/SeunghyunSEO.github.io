@@ -74,7 +74,7 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 다시 본론으로 돌아가서 Logistic Regression에 대해 얘기해보겠습니다.
 
-Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 world state $$w$$를 모델링 합니다.
+Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 world state, $$w$$를 모델링 합니다.
 
 <center>$$ Pr(w|\lambda) = Bern_w[\lambda] $$</center>
 
@@ -82,9 +82,18 @@ Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 
 
 <center>$$ Pr(w|\phi_0,\phi,x) = Bern_w[sig[a]] $$</center>
 
-<center>$$ where, a = \phi_0 + \phi^T x$$</center>
+<center>$$ where, a = \phi_0 + \phi^T x$$</center> and <center>$$sig[a] = \frac{1}{1+exp[-a]} $$</center>
 
-aasd
+여기서 $$a$$는 $$x$$에 $$\phi$$를 통해 선형 결합한 것이고 
+
+$$sig[a]$$는 a를 sigmoid 라는 함수에(활성 함수라고도 함) 넣은 결과값입니다.
+
+
+sigmoid 함수는 아래의 그림처럼 $$[-\infinity,\infinity]$$ 사이의 입력값을 $$[0,1]$$ 사이의 값으로 매핑해줍니다.
+
+![image](https://user-images.githubusercontent.com/48202736/105623021-afd4ef00-5e59-11eb-892d-4916ee66edb1.png)
+
+(이미지 출처 : [link](https://en.wikipedia.org/wiki/Sigmoid_function#:~:text=4%20Applications-,Definition,refer%20to%20the%20same%20object.))
 
 
 
