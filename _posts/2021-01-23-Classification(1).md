@@ -190,7 +190,7 @@ L = <center>$$ \sum_{i=1}^{I} w_i log[\frac{1}{1+exp[-\phi^T x_i]}] + \sum_{i=1}
 
 마지막으로 미분을 해봅시다.
 
-<center>$$ \diffp{L}{\phi} = -\sum_{i=1}^{I}(\frac{1}{1+exp[-\phi^T x_i]} - w_i)x_i = - \sum_{i=1}^{I}(sig[a_i]-w_i)x_i $$<\center>
+<center>$$ {\partial L}{\partial \phi} = -\sum_{i=1}^{I}(\frac{1}{1+exp[-\phi^T x_i]} - w_i)x_i = - \sum_{i=1}^{I}(sig[a_i]-w_i)x_i $$<\center>
 
 하지만 안타깝게도 Logistic Regression은 $$\phi$$를 x와 w에 대해 한방에 정리해 그 식을 최소화 하는 해를 구할 수 없습니다. 즉 닫힌 형태의 해(Closed-form Solution)를 바로 구할 수 없다는 것입니다.
 
