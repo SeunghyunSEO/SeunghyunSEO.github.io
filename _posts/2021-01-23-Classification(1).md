@@ -56,7 +56,7 @@ toc_sticky: true
 
 - <mark style='background-color: #dcffe4'> Categorical Distribution </mark>
 
-+) (나중에 다루겠지만, 미리 얘기하고 넘어가겠습니다.) 베르누이 분포와 분포로 Categorical(범주형) 분포가 있습니다.
++) 베르누이 분포와 유사한 분포로 Categorical(범주형) 분포가 있습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105621216-96777700-5e48-11eb-99c4-400cf91c6405.png)
 
