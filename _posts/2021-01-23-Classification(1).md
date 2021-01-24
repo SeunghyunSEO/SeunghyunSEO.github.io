@@ -104,7 +104,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
 
 
-* 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. $$Pr(y \mid x), x, w$$ 세 가지 축이 있는거죠. 
+$$*$$ 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. $$Pr(y \mid x), x, w$$ 세 가지 축이 있는거죠. 
 
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
@@ -132,7 +132,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 <center>$$ \downarrow $$</center>
 <center>$$ Pr(w|\phi,x) = Bern_w[\frac{1}{1+exp[- \phi^T x]}] $$</center>
 
-아직 학습이 되지 않은 상태를 한번 봅시다.
+학습이 잘 된 상태를 가정해봅시다.
 
 아래의 그림의 왼쪽은 입력 데이터 x가 1차원, 오른쪽은 x가 2차원인 경우입니다.
 
@@ -140,6 +140,10 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 분류 문제를 푼다고 생각할 때, 베르누이 확률 분포가 0.5가 되는 지점을 두 클래스가 어떤 것인지 결정하는 'Decision Boundary'라고 생각하면 그 선을 기준으로 클래스를 나누게 될 것입니다.
 
+현재는 파란(cyon?)색이 decision boundary입니다.
+
+
+$$*$$ 사실 
 
 ![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
 
