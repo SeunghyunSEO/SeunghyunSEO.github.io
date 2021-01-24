@@ -75,6 +75,11 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 다시 본론으로 돌아가서 Logistic Regression에 대해 얘기해보겠습니다.
 
+> <mark style='background-color: #dcffe4'> Notation </mark>
+> $$ x $$ : input state, 데이터 입력값
+> $$ w $$ : world state, x에 대응하는 값
+> $$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값
+
 Logistic Regression은 설명한 대로 베르누이(Bernolli) 확률 분포로 world state, $$w$$를 모델링 합니다.
 
 <center>$$ Pr(w|\lambda) = Bern_w[\lambda] $$</center>
