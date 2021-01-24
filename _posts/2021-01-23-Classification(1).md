@@ -20,6 +20,8 @@ toc_sticky: true
 
 ![image](https://user-images.githubusercontent.com/48202736/105444745-c7717380-5cb1-11eb-92a0-b618ad4d6b4f.png)
 
+예를 들면) 연속적인 입력값 (이미지 등)을 이산적으로 ( 개= 1, [1 0 0] , 고양이=2, [0 1 0], 비행기=3, [0 0 1] ) 등으로 구분지어주는 이미지 분류 문제 같은 것입니다.
+
 - <mark style='background-color: #fff5b1'> Logistic Regression </mark>
 
 로지스틱 회귀 정의 추가해야할듯
