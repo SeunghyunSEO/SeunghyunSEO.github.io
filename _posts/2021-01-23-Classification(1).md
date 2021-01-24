@@ -368,7 +368,7 @@ sigmoid 함수가 입력 벡터를 0~1 사이의 값으로 매핑해주듯, soft
 
 데이터가 $$ Batch-size \times Width \times Height $$ 의 3차원 행렬인(채널을 무시해버렸네요 1이나 없는걸로 하겠습니다...) Tensor 모양으로 되어있고 이게 네트워크로 들어간다고 생각하겠습니다. 
 
-예시가 딥러닝이라 생소하실 수도 있는데, 딥러닝이나 머신러닝이나 결국 우리가 풀고자하는 문제의 결과값을 내주는 어떤 최상의 $$y=f(x)$$ 가 있을 때 데이터를 통해서 이 oracle function의 approximate function을 찾는 문제로 똑같으니 걱정 안하셔도 됩니다.
+예시가 딥러닝이라 생소하실 수도 있는데, 딥러닝이나 머신러닝이나 결국 우리가 풀고자하는 문제의 결과값을 내주는 어떤 최상의 $$y=f(x)$$ 가 있다고 생각하고, 주어진 데이터를 통해서 이 oracle function의 approximate function을 찾는 문제인것은 똑같으니 걱정 안하셔도 됩니다.
 
 ![decision2](https://user-images.githubusercontent.com/48202736/105625959-3c8aa780-5e70-11eb-8779-adf9c1176a86.png)
 
