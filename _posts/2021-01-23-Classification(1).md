@@ -99,23 +99,13 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
 
 
-* 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈려서 부연 설명을 하자면, 그림이 3차원 이라고 생각하시면 될 것 같습니다. $$Pr(y \mid x), x, w$$ 세 가지 축이 있는거죠. 
+* 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. $$Pr(y \mid x), x, w$$ 세 가지 축이 있는거죠. 
 
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
-
-- <mark style='background-color: #dcffe4'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105623179-11e22400-5e5b-11eb-9ffd-173549eb6785.png)
-
-![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
-
-![logistic_regression_animation](https://user-images.githubusercontent.com/48202736/105623202-405fff00-5e5b-11eb-8831-bb4748282789.gif)
-
-(출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 - <mark style='background-color: #dcffe4'> Optimization </mark>
 
@@ -144,6 +134,20 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 
 ![image](https://user-images.githubusercontent.com/48202736/105444997-48c90600-5cb2-11eb-8445-1b32c228bdc9.png)
+
+
+
+- <mark style='background-color: #fff5b1'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
+
+![image](https://user-images.githubusercontent.com/48202736/105623179-11e22400-5e5b-11eb-9ffd-173549eb6785.png)
+
+![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
+
+![logistic_regression_animation](https://user-images.githubusercontent.com/48202736/105623202-405fff00-5e5b-11eb-8831-bb4748282789.gif)
+
+(출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
+
+
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
