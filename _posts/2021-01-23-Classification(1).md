@@ -246,9 +246,18 @@ Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이
 
 - <mark style='background-color: #fff5b1'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
 
+Logistic Regression으로 분류 문제를 푼 경우 최적화를 통해 구한 $$\phi$$는 아래의 직선을 나타냅니다.
+
+
+여기서 0.5의 확률을 나타내는 지점에 선을 그으면 그게 곧 Decision Boundary가 되는 것입니다. 
+
 ![image](https://user-images.githubusercontent.com/48202736/105623179-11e22400-5e5b-11eb-9ffd-173549eb6785.png)
 
+사실 이 그림은 3D로 봐야 와닿습니다. (입력 데이터 x 2차원, 정답 y 1차원) 
+
 ![image](https://user-images.githubusercontent.com/48202736/105623182-14dd1480-5e5b-11eb-9512-121dc3549fef.png)
+
+Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면 아래와 같습니다. 
 
 ![logistic_regression_animation](https://user-images.githubusercontent.com/48202736/105623202-405fff00-5e5b-11eb-8831-bb4748282789.gif)
 
