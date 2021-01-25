@@ -141,13 +141,34 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 - <mark style='background-color: #fff5b1'> Example 2 : Classification </mark>
 
+2개의 클래스를 판별하는 이진 분류 모델에 대해서 생각해보도록 하겠습니다.
+
 - <mark style='background-color: #dcffe4'> Classification : Discriminative </mark>
 
+Discriminative Classification Model의 경우를 살펴봅시다.
+
+> 1. $$w$$에 대해 적절한 prior로 베르누이 분포를 고른다. <br>
+> 2. $$Pr(w|x)$$를 $$ Pr(w|x) = Bern_w[\frac{1}{1+exp[-\theta_0 -\theta_1 x]}] $$라고 정의한다. <br>
+> 3. 학습할 파라메터는 $$\theta_0,\theta_1$$ 이다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105446663-eeca3f80-5cb5-11eb-8ac0-c34bc071995b.png)
+
+마찬가지로 ML, MAP, Bayesian 어떤 방법으로도 파라메터를 찾아낼 수 있습니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105446667-f12c9980-5cb5-11eb-8c6b-14a664b2b5d4.png)
+
+Regression 때와 마찬가지로 $$Pr(w|x)$$ 에 대한 분포를 정의하고 그 분포의 파라메터를 학습했으니, 바로 입력 데이터 x를 넣어 추론할 수 있습니다.
 
 - <mark style='background-color: #dcffe4'> Classification : Generative </mark>
 
+Generative Classification Model의 경우를 살펴봅시다.
+
+
+이번에도 마찬가지로 $$Pr(x|w)$$를 학습하겠죠?
+
+> 1. $$x$$에 대해 적절한 prior로 가우시안 분포를 고른다. <br>
+> 2. $$Pr(x|w)$$를 $$ Pr(x|w) = Norm_x[\mu_w, \sigma_w^2] $$라고 정의한다. <br>
+> 3. 학습할 파라메터는 $$\mu_0,\mu_1,\sigma_0^2,\sigma_1^2$$ 입니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105446672-f38ef380-5cb5-11eb-9b8b-db2238d1cb6d.png)
 ![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
