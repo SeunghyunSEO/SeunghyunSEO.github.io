@@ -376,7 +376,7 @@ MAP로 문제를 풀어볼까요?
 
 $$likelihood$$ 는 베르누이 분포를 통해 모델링 했고, 적당히 $$prior$$를 zero-mean 가우시안 분포로 생각해봅시다.
 
-<center>$$ prior = Norm_{\phi}[0, \simga^2] $$</center>
+<center>$$ prior = Norm_{\phi}[0, \sigma^2] $$</center>
 
 그러면 둘을 곱해서 posterior를 구하고 이를 적당히 정리하면 Linear Regression 때와 마찬가지로 다음의 식을 얻게 됩니다.
 
