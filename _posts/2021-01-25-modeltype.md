@@ -263,6 +263,22 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
 
 - <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
 
+<mark style='background-color: #dcffe4'> Generative Model </mark>
+
+- <mark style='background-color: #dcffe4'> Generative Model </mark>
+  - Pros
+    - asd
+    - asd
+  - Cons
+    - asd
+    - asd
+- <mark style='background-color: #dcffe4'> Discriminative Model </mark>
+  - Pros
+    - asd
+    - asd
+  - Cons
+    - asd
+    - asd
 
 - <mark style='background-color: #fff5b1'> References </mark>
 
