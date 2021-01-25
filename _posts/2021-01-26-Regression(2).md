@@ -80,7 +80,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 <center>$$ Pr(w^{\ast}|x^{\ast},X,w) = \int Pr(w^{\ast}|x^{\ast},\phi) Pr(\phi|X,w) d\phi $$</center>
 
-우리는 이미 $$Pr(w|x,\phi)$$와 $$Pr(\phi|X,w)$$에 대해 정의를 했습니다. 
+우리는 이미 $$Pr(w \mid x,\phi)$$와 $$Pr(\phi \mid X,w)$$에 대해 정의를 했습니다. 
 
 계속해서 전개해보겠습니다.
 
@@ -101,34 +101,3 @@ b)는 파라메터 $$\phi_0,phi_1$$가 어떤 값이냐에 따라서 선형 회�
 
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
 
-- <mark style='background-color: #fff5b1'> Non-Linear Regression </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
-
-
-![image](https://user-images.githubusercontent.com/48202736/105039467-ef8b8780-5aa3-11eb-994b-9e82c2569038.png)
-
-
-![image](https://user-images.githubusercontent.com/48202736/105039492-f6b29580-5aa3-11eb-89ad-72bed31ccea3.png)
-
-- <mark style='background-color: #fff5b1'> Kernelization and Gaussian processes </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
-![image](https://user-images.githubusercontent.com/48202736/105039516-fe723a00-5aa3-11eb-986c-3a245635e6c6.png)
-![image](https://user-images.githubusercontent.com/48202736/105039578-10ec7380-5aa4-11eb-991c-a2f0639e6446.png)
-
-- <mark style='background-color: #fff5b1'> Sparse linear regression </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
-
-![image](https://user-images.githubusercontent.com/48202736/105341731-ca715300-5c22-11eb-92ae-7424f092c401.png)
-![image](https://user-images.githubusercontent.com/48202736/105039605-1a75db80-5aa4-11eb-950e-e6e9a75f20ba.png)
-
-- <mark style='background-color: #fff5b1'> Dual Linear Regression </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105039618-1d70cc00-5aa4-11eb-9bf1-4f79f5156595.png)
-
-- <mark style='background-color: #fff5b1'> Sparse linear regression </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
-![image](https://user-images.githubusercontent.com/48202736/105341781-d9580580-5c22-11eb-8331-bac2dcc117ee.png)
