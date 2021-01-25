@@ -70,10 +70,10 @@ Discriminative Model, 판별 모델의 경우
 > 1. Learning algorithm : 입력 $$w$$에 대해 적절한 prior $$Pr(w)$$를 고르고, $$x,w$$에 대해서 $$Pr(w \mid x)$$를 학습한다.<br>
 > 2. Inference algorithm : 학습 자체를 $$Pr(w \mid x)$$에 대한 분포에 대해 했기 때문에 바로 테스트 데이터 x를 넣는다.
 
+여기서는 $$Pr(x \mid y)$$를 바로 구하게 됐으니 마음이 편안합니다.
 
 
-
-사실 생성 모델, 판별 모델 전부 말로는 와닿지 않아서 예제를 보는게 나을거 같습니다.
+하지만 사실 생성 모델, 판별 모델 전부 말로는 와닿지 않습니다. 그래서 몇가지 예시(회귀,분류 문제)를 들어 두 모델의 차이를 이해해 보도록 하겠습니다. 
 
 - <mark style='background-color: #fff5b1'> Example 1 : Regression </mark>
 
