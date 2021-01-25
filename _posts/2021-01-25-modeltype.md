@@ -265,18 +265,31 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
 
 - <mark style='background-color: #dcffe4'> Generative Model </mark>
   - Pros
-    - asd
-    - asd
+    - 각 클래스가 어떤 분포로 부터 근거했는지 근본적인 부분에 대해서 생각할 수 있다.
+    - 찾은 분포를 통해 새로운 데이터를 생성 할 수 있다.
+    - 베이지안 정리를 통해 p(x)의 주변 밀도까지 구할 수 있다. ($$\rightarrow$$ 이를 바탕으로 발생 확률이 낮은 새 데이터 포인트들을 미리 발견할 수 있다. 이런 데이터들은 낮은 정확도를 뱉을 것이기 때문에 이상점 검출 등에 사용 될 수 있다.)
+    - Unsupervised Learning에 적합하다.
   - Cons
-    - asd
-    - asd
+    - 보통 입력 데이터의 차원이 크기 때문에 그것을 모델링하기란 쉽지 않다. (모델 파라메터가 엄청 많아지고 계산량이 많아짐)
+    - 일정 수준 이상의 제대로 된 분포를 찾기 위해서는 학습 데이터가 많이 필요하다.
+    - 사후 확률을 계산하는데 영향을 미치지 않는 추가적인 정보가 많이 포함되어 있을 수도 있다.
+  - Examples
+    - Naive Bayes
+    - Gaussian mixture model
+    - Hidden Markov Models (HMM)
 - <mark style='background-color: #dcffe4'> Discriminative Model </mark>
   - Pros
-    - asd
-    - asd
+    - 계산량이 적다.
+    - 필요한 데이터도 적다. (물론 데이터가 많으면 좋겠지만 생성모델처럼 데이터 요구량이 엄청 많지는 않다.)
   - Cons
-    - asd
-    - asd
+    - 해석하기 어렵다.
+    - 단순히 분류를 할 뿐 (decision boundary를 만들어낼 뿐) 데이터를 만들어 낼 수는 없다.
+    - Unsupervised Learning에 부적합하다.
+  - Examples
+    - Logistic regression
+    - SVM
+    - Neural Networks
+  
 
 - <mark style='background-color: #fff5b1'> References </mark>
 
