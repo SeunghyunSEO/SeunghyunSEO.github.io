@@ -227,10 +227,39 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
 
 즉 우리는 $$Pr(x \mid y)$$를 모델링 함으로써 학습 데이터 (예를들어 고양이 사진 500장, 개 500장)를 통해 고양이이 라는 클래스의 이미지들이 가지는 분포가 어떤지를 알 수 있게 된다는 겁니다.
 
+
+반면에 다이렉트로 $$Pr(y \mid x)$$ 를 학습한 것은 단순히 클래스 두 개를 분류할 Decision Boundary를 학습하는 것일 뿐입니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105727674-ab4e2a80-5f6e-11eb-863a-ce606a8e29b4.png)
 
+(이미지 출처 : [link](https://medium.com/@jordi299/about-generative-and-discriminative-models-d8958b67ad32))
+
+![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
+
+(위의 두 그림은 입력 데이터 x가 2차원, 1차원일 때의 예시입니다.)
+
+첫번째 그림에서는 고양이를 나타내는 분포와 개를 나타내는 분포가 한 장에 표시되어있지만 어쨌든 고양이만 생각해보겠습니다.
+
+우리는 고양이의 경우에 해당하는 이미지들의 분포를 학습을 통해 알아냈습니다. 이 분포가 일정 수준 이상이라고 생각할 때, 이 분포로부터 샘플링으로 이미지를 한장 뽑아보면 어떻게 될까요?
+
+개 사진이 나올까요? 아니면 이도저도 아닌 이미지가 나올까요? 아마 그래도 학습 데이터와 유사한 혹은 어쩌면 학습 데이터에서 찾아볼 수 없었던 뚱뚱한? 고양이가 나올 수도 있습니다.
 
 
+생성 모델의 이점은 (입력) 데이터의 진짜 분포를 학습을 통해 찾아내고 이를 통해 데이터를 만들어 낼 수 있다는 데 있습니다. 
+
+
+사실 모델의 이름이 Generative, 생성인 이유가 여기에 있습니다.
+
+
+```
+* 추가적으로 1차원 연속 데이터 x에 대한 예시가 있습니다.
+```
+
+![An-illustration-of-the-difference-between-the-generative-and-discriminative-models-in](https://user-images.githubusercontent.com/48202736/105729032-2532e380-5f70-11eb-9b86-37afaf0c2602.png)
+
+(이미지 출처 : [link](https://www.researchgate.net/figure/An-illustration-of-the-difference-between-the-generative-and-discriminative-models-in_fig9_319093376))
+
+(비슷한 내용이라 더 자세하게 쓰지는 않겠습니다. 다만 위의 예시에서는 Generative Model $$Pr(x \mid y)$$를 학습하고 베이즈 룰을 통해 $$Pr(y \mid x)$$를 만들어내지 않고도 단순히 두 클래스의 분포에 테스트 입력 데이터를 넣었을 때 더 높은 확률을 나타내는 클래스로 와인을 분류하는 방법을 사용합니다.)
 
 - <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
 
