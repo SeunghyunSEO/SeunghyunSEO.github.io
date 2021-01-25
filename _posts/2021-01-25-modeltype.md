@@ -15,7 +15,7 @@ toc_sticky: true
 > 2. 학습 데이터 $$x_i,y_i$$들을 통해서 model의 파라메터를 학습한다. (Learning Algorithm)
 > 3. 학습이 끝난 후 모델을 이용해 주어진 테스트 입력 x에 대한 $$Pr(w \mid x)$$ 를 구한다. (Inference Algorithm)
 
-어떤 방식으로 어떤 분포를 학습하던 (x에대한 분포이던 y에 대한 분포이던) 목적은 곧 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 입니다.
+어떤 방식(ML, MAP, Bayesian)으로 어떤 분포를 학습하던 (x에대한 분포 $$Pr(x \mid y)$$ 이던 y에 대한 분포 $$Pr(y \mid x)$$이던) 목적은 곧 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 입니다.
 
 - <mark style='background-color: #fff5b1'> Generative vs Discriminative Models </mark>
 
@@ -212,9 +212,27 @@ $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다
 
 ![image](https://user-images.githubusercontent.com/48202736/105658418-c33f9300-5f09-11eb-9252-b6efdd1dafc4.png)
 
-- <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
 
-- <mark style='background-color: #fff5b1'> Intuition </mark>
+- <mark style='background-color: #fff5b1'> Intuition...? </mark>
+
+그전에 혹시 글의 서두에서 언급했던 궁금증이 생각 나시나요?
+
+> 생성 모델 : 어차피 학습 다 끝나고 우리에겐 새로운 입력 데이터 x 를 모델에 넣어서 결과를 내줄 $$Pr(y \mid x)$$가 필요한데 왜 굳이 $$Pr(x \mid y)$$를 모델링 해야 할까?
+
+우리가 지금까지 두 가지 타입의 모델에 대해서 살펴봤기 때문에 이제는 이 질문에 대해서 다시 생각해 볼만 합니다.
+
+
+$$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생각해보면, 각 분류 클래스(개,고양이 두개 라고 칩시다) 에 대한 분포가 어떻다를 모델링하는 겁니다.
+
+
+즉 우리는 $$Pr(x \mid y)$$를 모델링 함으로써 학습 데이터 (예를들어 고양이 사진 500장, 개 500장)를 통해 고양이이 라는 클래스의 이미지들이 가지는 분포가 어떤지를 알 수 있게 된다는 겁니다.
+
+![image](https://user-images.githubusercontent.com/48202736/105727674-ab4e2a80-5f6e-11eb-863a-ce606a8e29b4.png)
+
+
+
+
+- <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
 
 
 - <mark style='background-color: #fff5b1'> References </mark>
