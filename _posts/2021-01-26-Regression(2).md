@@ -82,9 +82,9 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 계속해서 전개해보겠습니다.
 
-<center>$$ = \int Norm_{w^{\ast}}[\phi^T x^{\ast},\sigma^2] Norm_{\phi}[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] d\phi $$</center>
+<center>$$ Pr(w^{\ast}|x^{\ast},X,w) = \int Norm_{w^{\ast}}[\phi^T x^{\ast},\sigma^2] Norm_{\phi}[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] d\phi $$</center>
 
-<center>$$ Norm_{w^{\ast}}[\frac{1}{\sigma^2}x^{\ast T}A^{-1}Xw,x^{\ast T}A^{-1}x^{\ast} + \sigma^2] $$</center>
+<center>$$ = Norm_{w^{\ast}}[\frac{1}{\sigma^2}x^{\ast T}A^{-1}Xw,x^{\ast T}A^{-1}x^{\ast} + \sigma^2] $$</center>
 
 이렇게 하면 결과는 아래와 같이 됩니다.
 
