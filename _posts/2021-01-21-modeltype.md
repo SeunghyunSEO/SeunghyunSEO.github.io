@@ -122,15 +122,22 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 베이즈 룰을 사용하기 위해 이 두 분포를 곱하면 공식의 분자인 $$Pr(x|w)Pr(w)$$, 즉 학습 데이터 x,y의 결합분포 $$Pr(w,x)$$가 됩니다.
 
-($$Pr(x,y) = Pr(x|y)Pr(y)$$ 이기 때문)
+($$ Pr(x,y) = Pr(x|y)Pr(y) = Pr(y|x)Pr(x) $$ 이기 때문)
 
 ![image](https://user-images.githubusercontent.com/48202736/105656572-e405e980-5f05-11eb-9bae-1dee177ed5c7.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/105446616-d8bc7f00-5cb5-11eb-8c3f-a1b1777f5df1.png)
 
-
+결과적으로 우리는 $$Pr(x|w)$$를 학습했지만 베이즈 룰을 통해 $$Pr(w|x)$$를 구할 수 있습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105446621-db1ed900-5cb5-11eb-96ba-780fb7cfa3c7.png)
+
+
+생성 모델이라고 이름이 붙혀진 것은 우리가 $$Pr(x|w)$$를 학습하기 때문에 입력 데이터의 분포를 알아냄으로써 분포로 부터 학습 데이터에 없는 $$x$$ 를 샘플링 할 경우 유의미한 데이터를 얻어낼 수 있다 (아무 분포에서 막 샘플링한게 아니니까) 라고 하는데 사실 아직도 감이 잘 안옵니다... 
+
+
+이제 분류 문제에 대해서도 똑같이 적용해보도록 하겠습니다.
+
 
 - <mark style='background-color: #fff5b1'> Example 2 : Classification </mark>
 
