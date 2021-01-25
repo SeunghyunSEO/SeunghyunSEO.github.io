@@ -9,11 +9,13 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Learning and Inference </mark>
 
-머신러닝의 매커니즘은 다음과 같다.
+간단하게 말해서 대부분의 머신러닝 알고리즘의 해를 구하는 매커니즘은 다음과 같다고 할 수 있을 것 같습니다.
 
 > 1. 수학적으로 입력 x와 출력 y의 관계를 설명할 model을 설정한다.
 > 2. 학습 데이터 $$x_i,y_i$$들을 통해서 model의 파라메터를 학습한다. (Learning Algorithm)
 > 3. 학습이 끝난 후 모델을 이용해 주어진 테스트 입력 x에 대한 $$Pr(w \mid x)$$ 를 구한다. (Inference Algorithm)
+
+어떤 방식으로 어떤 분포를 학습하던 (x에대한 분포이던 y에 대한 분포이던) 목적은 곧 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 입니다.
 
 - <mark style='background-color: #fff5b1'> Generative vs Discriminative Models </mark>
 
@@ -27,23 +29,28 @@ toc_sticky: true
 Generative Model은 $$Pr(x \mid w)$$ 를 모델링하고
 
 
-Discriminative Model은 $$Pr(w \mid x)$$ 를 모델링 합니다.
+Discriminative Model은 $$Pr(w \mid x)$$ 를 모델링 하는 것이 목적입니다.
+
+
+하지만 위에서도 말했듯 결국 추론시에 필요한 것은 '$$Pr(w \mid x)$$'가 됩니다.
 
 - <mark style='background-color: #fff5b1'> Generative Model </mark>
 
-두 모델 모두 관심사는 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 입니다.
+과연 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 그에 대한 첫번째 방법으로 $$Pr(x \mid y)$$를 모델링 하는 방법이 있습니다.
 
-Generative Model, 생성 모델의 경우
+이러한 모델을 Generative Model, 생성 모델이라고 하는데, 이런 경우 먼저
 
 > 1. $$x$$에 대해 적절한 prior를 고른다. <br>
 > 2. $$Pr(x \mid w,\theta)$$를 정한다. <br>
 
-학습과 추론은
+그리고 파라메터를 학습하고 추론하는것은 아래와 같습니다.
 
 > 1. Learning algorithm : 입력 $$x$$에 대해 적절한 prior $$Pr(x)$$를 고르고, $$x,w$$에 대해서 $$Pr(x \mid w)$$를 학습한다.<br>
 > 2. Inference algorithm : 출력 $$w$$에 대한 $$Pr(w)$$를 정의하고 Bayes' Rule을 통해 $$Pr(w \mid x)$$를 계산한다. <br>
 
 <center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\int{Pr(x \mid w)}{Pr(w)}dw} $$</center>
+
+
 
 - <mark style='background-color: #fff5b1'> Discriminative Model </mark>
 
