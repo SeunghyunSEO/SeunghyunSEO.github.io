@@ -194,7 +194,7 @@ $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다
 
 이제 우리는 어떤 경우에 Generative (좌) vs Discriminative (우) 를 선택할지를 생각해 봐야 합니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446708-06a1c380-5cb6-11eb-8d13-c549738a7943.png)
+![image](https://user-images.githubusercontent.com/48202736/105658418-c33f9300-5f09-11eb-9252-b6efdd1dafc4.png)
 
 
 - <mark style='background-color: #fff5b1'> References </mark>
