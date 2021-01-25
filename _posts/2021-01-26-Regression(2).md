@@ -55,7 +55,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 위의 사후 확률을 구하는 관계식을 이용해서 $$posterior$$를 구하면 다음과 같습니다.
 
-<center>$$ posterior : Pr(\theta|X,w) = Norm_\phi[\frac{1}{sigma^2} A^{-1}Xw, A^{-1}] $$</center>
+<center>$$ posterior : Pr(\theta|X,w) = Norm_\phi[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] $$</center>
 <center>$$ where A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
 
 ![image](https://user-images.githubusercontent.com/48202736/105039396-dc78b780-5aa3-11eb-8cdd-c37caca058e6.png)
