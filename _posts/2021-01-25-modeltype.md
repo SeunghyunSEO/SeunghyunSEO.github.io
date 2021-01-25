@@ -197,6 +197,10 @@ $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다
 
 ![image](https://user-images.githubusercontent.com/48202736/105658418-c33f9300-5f09-11eb-9252-b6efdd1dafc4.png)
 
+- <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
+
+- <mark style='background-color: #fff5b1'> Intuition </mark>
+
 
 - <mark style='background-color: #fff5b1'> References </mark>
 
