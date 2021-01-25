@@ -9,7 +9,7 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Learning and Inference </mark>
 
-머신러닝의 매커니즘은 다음과 같.
+머신러닝의 매커니즘은 다음과 같다.
 
 > 1. 수학적으로 입력 x와 출력 y의 관계를 설명할 model을 설정한다.
 > 2. 학습 데이터 $$x_i,y_i$$들을 통해서 model의 파라메터를 학습한다. (Learning Algorithm)
