@@ -289,6 +289,18 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
     - Logistic regression
     - SVM
     - Neural Networks
+    
+어떤 모델이 더 우수하다고는 할 수 없습니다. (마치 ML과 Bayesian Approach중 무엇이 우수한지 알 수 없듯, 주장만 있을 뿐...) 
+
+
+대부분의 경우에 Discriminative Model이 계산량이 적고 모델링 하기 쉽기 때문에 인기가 많지만 경우에 따라 Generative Model을 사용해야 할 때가 있을 수 있습니다.
+
+
+2015년 
+
+
+다음에 기회가 되면 많은 생성 모델에 대해서 집중적으로 다뤄보도록 하겠습니다! 
+
   
 
 - <mark style='background-color: #fff5b1'> References </mark>
