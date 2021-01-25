@@ -43,7 +43,7 @@ Generative Model, 생성 모델의 경우
 > 1. Learning algorithm : 입력 $$x$$에 대해 적절한 prior $$Pr(x)$$를 고르고, $$x,w$$에 대해서 $$Pr(x \mid w)$$를 학습한다.<br>
 > 2. Inference algorithm : 출력 $$w$$에 대한 $$Pr(w)$$를 정의하고 Bayes' Rule을 통해 $$Pr(w \mid x)$$를 계산한다. <br>
 
-<center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\integral{Pr(x \mid w)}{Pr(w)}dw} $$</center>
+<center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\int{Pr(x \mid w)}{Pr(w)}dw} $$</center>
 
 - <mark style='background-color: #fff5b1'> Discriminative Model </mark>
 
