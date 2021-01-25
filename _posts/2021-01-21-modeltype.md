@@ -115,10 +115,21 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 <center>$$ Bayes' \space Rule : Pr(w|x) = \frac{Pr(x|w)Pr(w)}{\integral{Pr(x|w)}{Pr(w)}dw} $$</center>
 
-학습을 
-
 ![image](https://user-images.githubusercontent.com/48202736/105446609-d5c18e80-5cb5-11eb-8f82-fd620423d775.png)
+
+학습을 통해 x의 분포인 $$Pr(x|w)$$는 이미 구했고, $$Pr(w)$$ 는 학습 데이터로부터 바로 구할 수 있습니다. (위의 그림처럼)
+
+
+베이즈 룰을 사용하기 위해 이 두 분포를 곱하면 공식의 분자인 $$Pr(x|w)Pr(w)$$, 즉 학습 데이터 x,y의 결합분포 $$Pr(w,x)$$가 됩니다.
+
+($$Pr(x,y) = Pr(x|y)Pr(y)$$ 이기 때문)
+
+![image](https://user-images.githubusercontent.com/48202736/105656572-e405e980-5f05-11eb-9bae-1dee177ed5c7.png)
+
 ![image](https://user-images.githubusercontent.com/48202736/105446616-d8bc7f00-5cb5-11eb-8c3f-a1b1777f5df1.png)
+
+
+
 ![image](https://user-images.githubusercontent.com/48202736/105446621-db1ed900-5cb5-11eb-96ba-780fb7cfa3c7.png)
 
 - <mark style='background-color: #fff5b1'> Example 2 : Classification </mark>
