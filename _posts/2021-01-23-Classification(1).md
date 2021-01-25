@@ -575,3 +575,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 - <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
+
+2. [Bishop, Christopher M. Pattern recognition and machine learning. springer, 2006.](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)
+
+3. 몇몇 이미지 : (본문에 출처 있음)
