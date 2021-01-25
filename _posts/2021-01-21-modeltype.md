@@ -171,10 +171,29 @@ Generative Classification Model의 경우를 살펴봅시다.
 > 3. 학습할 파라메터는 $$\mu_0,\mu_1,\sigma_0^2,\sigma_1^2$$ 입니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105446672-f38ef380-5cb5-11eb-9b8b-db2238d1cb6d.png)
-![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
+
+현재 이진 분류 문제를 예시로 들었으니, 우리가 찾아야 할 것은 continuous한 입력에 대해 가우시안 분포로 모델링 했기 때문에 각 클래스 당 mean,variance 1개 씩 
+총 $$\mu_0,\mu_1,\sigma_0^2,\sigma_1^2$$ 4개가 됩니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
+
+이제 학습 데이터에서 바로 정답 클래스의 분포 $$Pr(w)$$를 구할 수 있습니다. 이진 분류 문제이기 때문에 정답 분포는 $$[0,1,0,1,1,1,0,...,0]$$ 이런식으로 이산적이겠죠? 베르누이 분포로 모델링 할 수 있습니다.
+
+
+그리고 저희가 원하는것은 마찬가지로 $$Pr(w \mid x)$$ 이기 때문에 마찬가지로 베이즈 룰을 이용해 구해보면 다음과 같은 결과를 얻을 수 있습니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105446703-01dd0f80-5cb6-11eb-9b33-ed3e6e74c6a8.png)
+
+$$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다이렉트로 $$Pr(w \mid x)$$를 학습한 분포가 조금 차이가 있습니다.(우)
+
+![image](https://user-images.githubusercontent.com/48202736/105658233-7065db80-5f09-11eb-8549-335e9fc9f20b.png)
+
+
+어떤 차이가 있는지 감이 오셨나요...?
+
+
+이제 우리는 어떤 경우에 Generative (좌) vs Discriminative (우) 를 선택할지를 생각해 봐야 합니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/105446708-06a1c380-5cb6-11eb-8d13-c549738a7943.png)
 
 
