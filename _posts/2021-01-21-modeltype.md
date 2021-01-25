@@ -113,7 +113,7 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 그렇게 하기 위해서 Bayes' Rule을 사용한다고 했는데 베이즈 룰은 다음과 같습니다.
 
-<center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\integral{Pr(x \mid w)}{Pr(w)}dw} $$</center>
+<center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\int{Pr(x \mid w)}{Pr(w)}dw} $$</center>
 
 ![image](https://user-images.githubusercontent.com/48202736/105446609-d5c18e80-5cb5-11eb-8f82-fd620423d775.png)
 
