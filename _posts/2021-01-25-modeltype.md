@@ -50,7 +50,13 @@ Discriminative Model은 $$Pr(w \mid x)$$ 를 모델링 하는 것이 목적입�
 
 <center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\int{Pr(x \mid w)}{Pr(w)}dw} $$</center>
 
+아마 여기서 의문점이 하나 생기실 겁니다. (안생기셨나요? 저는 생겼습니다...)
 
+
+어차피 학습 다 끝나고 우리에겐 새로운 입력 데이터 x 를 모델에 넣어서 결과를 내줄 $$Pr(y \mid x)$$가 필요한데 왜 굳이 $$Pr(x \mid y)$$를 모델링 해야 할까?
+
+
+이에 대한 답은 아래에 예시를 들면서 설명을 해보도록 하도록 하고 우선은 넘어가도록 하겠습니다.
 
 - <mark style='background-color: #fff5b1'> Discriminative Model </mark>
 
@@ -63,6 +69,8 @@ Discriminative Model, 판별 모델의 경우
 
 > 1. Learning algorithm : 입력 $$w$$에 대해 적절한 prior $$Pr(w)$$를 고르고, $$x,w$$에 대해서 $$Pr(w \mid x)$$를 학습한다.<br>
 > 2. Inference algorithm : 학습 자체를 $$Pr(w \mid x)$$에 대한 분포에 대해 했기 때문에 바로 테스트 데이터 x를 넣는다.
+
+
 
 
 사실 생성 모델, 판별 모델 전부 말로는 와닿지 않아서 예제를 보는게 나을거 같습니다.
