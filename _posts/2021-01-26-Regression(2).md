@@ -37,12 +37,27 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 
 우리가 잘 아는 관계식이 하나 있습니다.
 
+![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
+
 > 1. $$likelihood : p(x\mid\theta)$$ <br>
 > 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
 
+이전에 선형 회귀 문제에서 파라메터를 구하던 것과 비슷하게 접근해봅시다.
 
+$$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니다. 
+(왜냐면 $$posterior$$를 구해서 적분을 하게 될 텐데, $$posterior$$는 두 분포 $$likelihood$$ 와 $$prior$$의 곱이기 때문입니다. 그리고 두 가우시안 분포의 곱은 가우시안 분포기 때문이죠.)
 
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
+<center>$$ likelihood : Pr(w|X) = Norm_w[X^T\phi,\sigma^2I] $$</center>
+
+<center>$$ prior : Pr(\phi) = Norm_\phi[0,\sigma_p^2I] $$</center>
+
+여기서 헷갈리지 말아야 할 점은 prior에 존재하는 분산은 $$\sigma_p^2$$라는 것입니다.
+
+위의 사후 확률을 구하는 관계식을 이용해서 $$posterior$$를 구하면 다음과 같습니다.
+
+<center>$$ posterior : Pr(\theta|X,w) = Norm_\phi[\frac{1}{sigma^2} A^{-1}Xw, A^{-1}] $$</center>
+<center>$$ where A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
+
 ![image](https://user-images.githubusercontent.com/48202736/105039396-dc78b780-5aa3-11eb-8cdd-c37caca058e6.png)
 
 - <mark style='background-color: #fff5b1'> Non-Linear Regression </mark>
