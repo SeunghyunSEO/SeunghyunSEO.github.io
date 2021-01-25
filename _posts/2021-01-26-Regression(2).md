@@ -51,7 +51,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 <center>$$ prior : Pr(\phi) = Norm_\phi[0,\sigma_p^2I] $$</center>
 
-여기서 헷갈리지 말아야 할 점은 prior에 존재하는 분산은 $$\sigma_p^2$$라는 것입니다.
+여기서 헷갈리지 말아야 할 점은 $$prior$$에 존재하는 분산은 $$\sigma_p^2$$라는 것입니다.
 
 위의 사후 확률을 구하는 관계식을 이용해서 $$posterior$$를 구하면 다음과 같습니다.
 
@@ -59,6 +59,31 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 <center>$$ where A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
 
 ![image](https://user-images.githubusercontent.com/48202736/105039396-dc78b780-5aa3-11eb-8cdd-c37caca058e6.png)
+
+확실히 해야 할 것은 우리가 찾고싶은 것은 선형회귀의 gradient를 나타낼 $$\phi$$와 $$\sigma^2$$라는 점입니다. ($$\sigma_p^2$$는 그냥 정해졌습니다.)
+
+위의 그림의 왼쪽은 원래 추정하고자 했던 $$\phi$$의 사전 확률인 $$prior$$가 가우시안 분포를 나타내고, 
+오른쪽은 $$prior$$를 그림으로는 안나와 있지만 가우시안 분포를 가지는 $$likelihood$$ 곱했을 때 나오는 실제 추정하고자 하는 파라메터, $$\phi$$의 분포를 나타냅니다. (variance는 나중에 다룰 예정)
+
+이제 모든 가능한 파라메터에 대해서 적분합니다.
+
+<center>$$ Pr(w^{\ast}|x^{\ast},X,w) = \int Pr(w^{\ast}|x^{\ast},\phi) Pr(\phi|X,w) d\phi $$</center>
+
+<center>$$ = \int Norm_{w^{\ast}}[\phi^T x^{\ast},\sigma^2] Norm_{\phi}[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] d\phi $$</center>
+
+<center>$$ Norm_{w^{\ast}}[\frac{1}{\sigma^2}x^{\ast T}A^{-1}Xw,x^{\ast T}A^{-1}x^{\ast} + \sigma^2] $$</center>
+
+이렇게 하면 결과는 아래와 같이 된다.
+
+![image](https://user-images.githubusercontent.com/48202736/105039401-dedb1180-5aa3-11eb-9922-10d47a5cbdd8.png)
+
+a)는 추정하고자 하는 파라메터 $$\phi_0,phi_1$$의 분포를 나타내는 것이다.
+원래 MAP는 여기서 최대가 되는 값 하나만을 취했으나, 이제는 b)처럼 가능한 파라메터 $$\phi^{1}$$, $$\phi^{2}$$, $$\phi^{3}$$ ... 에 대해서 모두 생각을 해보자는 것이다.
+
+b)는 파라메터 $$\phi_0,phi_1$$가 어떤 값이냐에 따라서 선형 회귀의 직선이 어떻게 표현되는지를 나타낸다.
+
+
+c)는 말 그대로 가능한 파라메터를 모두 적분한 것이다.  
 
 - <mark style='background-color: #fff5b1'> Non-Linear Regression </mark>
 
