@@ -1,5 +1,5 @@
 ---
-title: Regression (1/2)
+title: Regression (1/?) : Linear Regression
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
