@@ -1,5 +1,5 @@
 ---
-title: Classification (1/2)
+title: Classification (1/?) : Logistic Regression + $$\alpha$$
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
