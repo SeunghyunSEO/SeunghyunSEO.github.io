@@ -384,8 +384,9 @@ $$likelihood$$ 는 베르누이 분포를 통해 모델링 했고, 적당히 $$p
 
 (후에 Cross Entropy와의 관계를 설명하겠지만 미리 말해보자면) 결과는 마찬가지로 우리가 익히 알고있는 Cross Entropy 수식에 weight decay regularization term을 추가한 식을 얻게 됩니다.
 
+```
 (생각해보면 'prior로 우리가 얻게 될 파라메터가 0 근처의 값을 가질 확률이 높다는 정보를 계속 준다는 것' <-> '파라메터 값들이 한없이 커지지 않게 0근처의 작은 값들을 가지게 하는 regularization term' 이 아닌가 싶습니다.)
-
+```
 
 
 - <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
