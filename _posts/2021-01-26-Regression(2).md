@@ -151,6 +151,8 @@ c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해�
 
 위와 같이 $$posterior$$ 를 간단한 관계식으로 표현했지만, 사실 $$posterior$$를 구하기 위한 Bayes' Rule은 조금 더 복잡합니다.
 
+- <mark style='background-color: #dcffe4'> Bayes' Rule </mark>
+
 <center>$$posterior :  p(\theta \mid X,W) = \frac{p(W \mid X, \theta)p(\theta)}{p(W \mid X)}$$</center>
 
 <center>$$p(W \mid X) = \int p(W|X,\theta)p(\theta)d\theta$$</center>
