@@ -66,7 +66,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 - <mark style='background-color: #dcffe4'> Inference </mark>
 
-자 우리가 학습 데이터 $$X,Y$$ pair, 즉 입력 데이터 $$X$$와 이에 해당하는 정답 $$W$$를 가지고 있다고 합시다. 
+자 우리가 학습 데이터 $$X,W$$ pair, 즉 입력 데이터 $$X$$와 이에 해당하는 정답 $$W$$를 가지고 있다고 합시다. 
 
 
 그리고 우리는 정의한 모델을 통해 어떤 학습 데이터에 존재하지 않는 $$x^{\ast}$$에 대응하는 $$w^{\ast}$$를 찾고 싶습니다.
@@ -74,13 +74,21 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 '$$x^{\ast}$$에 대응하는 $$w^{\ast}$$' 이는 수식적으로 아래와 같이 표현할 수 있습니다.
 
-<center>$$ Pr(w^{\ast}|x^{\ast},X,w) $$</center>
+<center>$$ Pr(w^{\ast}|x^{\ast},X,W) $$</center>
 
 이는 marginalization 테크닉을 통해 아래와 같이 나눌 수 있습니다.
 
-<center>$$ Pr(w^{\ast}|x^{\ast},X,w) = \int Pr(w^{\ast}|x^{\ast},\phi) Pr(\phi|X,w) d\phi $$</center>
+<center>$$ Pr(w^{\ast}|x^{\ast},X,W) = \int Pr(w^{\ast}|x^{\ast},\phi) Pr(\phi|X,W) d\phi $$</center>
 
-우리는 이미 $$Pr(w \mid x,\phi)$$와 $$Pr(\phi \mid X,w)$$에 대해 정의를 했습니다. 
+```
+우리는 위의 수식에 대해서 한번 제대로 생각해볼 필요가 있습니다. 위의 오른쪽 적분 식이 의미하는 바는 뭘까요?
+왼쪽의 p(y*|x*,\phi)는 우리가 정의한 모델 (여기서는 가우시안 분포의 파라메터, 더 나아가서는 뉴럴 네트워크의 파라메터들)을 통해 예측한 결과 분포 이고
+오른쪽의 p(\phi|X,W)는 데이터를 통해 찾아낸, 데이터와 걸맞는 모델 파라메터의 분포 입니다.
+
+이 두개를 곱한것을 가능한 모델 파라메터에 대해서 모두 적분한다... 우선 조금 더 진행해보겠습니다.
+```
+
+우리는 이미 $$Pr(w \mid x,\phi)$$와 $$Pr(\phi \mid X,W)$$에 대해 정의를 했습니다. 
 
 계속해서 전개해보겠습니다.
 
