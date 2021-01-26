@@ -283,7 +283,7 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 > 2. 여러 $$\lambda$$ 중 다음의 식을 만족하는 최적의 $$\lambda$$를 찾아냅니다. 이를 line search라고 합니다. (얼만큼 이동할 것인가?)
 
-<center>$$ \hat{\lambda} = argmin_y[ f[ \theta^{[t] + \lambda s ] ] $$</center>
+<center>$$ \hat{\lambda} = argmin_y{ f[ \theta^{[t] + \lambda s } } $$</center>
 
 > 3. 그리고 다음을 진행하면 됩니다. (ex) s 방향으로, 0.1 만큼 이동
 
