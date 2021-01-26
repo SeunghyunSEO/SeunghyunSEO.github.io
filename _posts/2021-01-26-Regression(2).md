@@ -35,9 +35,11 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
-우리가 잘 아는 관계식이 하나 있습니다.
-
 ![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
+
+(오늘은 Bayesian Linear Regression만 다루고 나머지는 다음에 다루도록 하겠습니다 ㅎㅎ...)
+
+우리가 잘 아는 관계식이 하나 있습니다.
 
 > 1. $$likelihood : p(x\mid\theta)$$ <br>
 > 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
