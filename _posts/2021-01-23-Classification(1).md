@@ -108,13 +108,11 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 아무튼 위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
 
-```
-* 아래의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. Pr(y|x), x, w 세 가지 축이 있는거죠. 
-```
-
 ![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
 
-
+```
+* 위의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. Pr(y|x), x, w 세 가지 축이 있는거죠. 
+```
 
 
 - <mark style='background-color: #dcffe4'> Decision Boundary </mark>
