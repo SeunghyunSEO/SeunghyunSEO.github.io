@@ -64,6 +64,8 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 오른쪽은 $$\phi$$의 분포를 나타냅니다. (variance는 나중에 다룰 예정)
 
 
+- <mark style='background-color: #dcffe4'> Inference </mark>
+
 자 우리가 학습 데이터 $$X,Y$$ pair, 즉 입력 데이터 $$X$$와 이에 해당하는 정답 $$W$$를 가지고 있다고 합시다. 
 
 
@@ -131,5 +133,47 @@ c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해�
 
 - <mark style='background-color: #fff5b1'> Limitation </mark>
 
+베이지안 방법으로 문제를 푸는 것은 상당히 괜찮은 접근으로 보입니다.
 
+
+하지만 위에서 유도한 식과 달리 실제로는 $$posterior$$ 를 제대로 구하기 쉽지 않습니다. (위에서는 $$posterior$$ 에 대한 관계식 정도만 언급했음)
+
+> 1. $$likelihood : p(x\mid\theta)$$ <br>
+> 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
+
+위와 같이 $$posterior$$ 를 간단한 관계식으로 표현했지만, 사실 $$posterior$$를 구하기 위한 Bayes' Rule은 조금 더 복잡합니다.
+
+<center>$$posterior :  p(\theta \mid X,W) = \frac{p(W \mid X, \theta)p(\theta)}{p(W \mid X)}$$</center>
+
+<center>$$p(W \mid X) = \int p(W|X,\theta)p(\theta)d\theta$$</center>
+
+위에서 보시는 거와 같이 사실은 베이즈 룰에서는 분모, normalizer term 혹은 model evidence 라고 하는 적분 term이 중요합니다.
+
+이 적분을 계산하는 것은 'marginalising the likelihood over ω' 혹은 'marginal likelihood'라고도 합니다.
+
+
+우리가 예시로 든 간단한 Bayesian Linear Regression 문제에서는 $$likelihood$$와 $$prior$$를 둘 다 conjugate 관계인 가우시안 분포로 적당히 가정했기 때문에 적분을 계산하는게 상대적으로 쉽습니다.
+
+
+하지만 조금만 복잡해져도 (예를들어 basis function이 고정되어 있지 않은 Basis Function Regression이라던가, Neural Network 라던가...) 위의 적분은 계산하기가 쉽지 않습니다.
+
+<center>$$ Pr(w^{\ast}|x^{\ast},X,w) = \int Pr(w^{\ast}|x^{\ast},\phi) Pr(\phi|X,w) d\phi $$</center>
+
+즉, 위의 식에서 $$Pr(\phi \mid X,w)$$를 제대로 구할 수 없다는 것이죠.
+
+
+이런 경우를 'The true posterior cannot usually be evaluated analytically.' 혹은 'the true posterior is intractable' 하다고 합니다.
+
+이를 해결하기 위해서는 $$true \space posterior$$와 유사하지만 계산하기 쉬운 분포로 근사(approximate)를 해서 문제를 풉니다.
+
+<br><br>
+
+다음에는 위에서 언급한 Bayesian Classification, Bayesian Neural Network 더 나아가 Bayesian Deep Learning에 대해서 더 알아보도록 하겠습니다.
+
+
+- <mark style='background-color: #fff5b1'> References </mark>
+
+1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
+
+2. [Gal, Yarin. "Uncertainty in deep learning." University of Cambridge 1, no. 3 (2016): 4.](https://www.cs.ox.ac.uk/people/yarin.gal/website/blog_2248.html)
 
