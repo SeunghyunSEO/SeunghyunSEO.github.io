@@ -1,5 +1,5 @@
 ---
-title: Classification (1/?) - Logistic Regression (+a)
+title: Classification (1/?) - Logistic Regression (+α)
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
