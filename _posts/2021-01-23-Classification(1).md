@@ -563,7 +563,14 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 (논문 참조 : [Cao, Kaidi, Colin Wei, Adrien Gaidon, Nikos Arechiga, and Tengyu Ma. "Learning imbalanced datasets with label-distribution-aware margin loss." arXiv preprint arXiv:1906.07413 (2019).](https://arxiv.org/abs/1612.02295))
 
 
-- <mark style='background-color: #fff5b1'> Further Study   </mark>
+- <mark style='background-color: #fff5b1'> Further Study </mark>
+
+이번에는 글이 굉장히 길었던 것 같습니다. 
+
+
+아무래도 굉장히 핫한 딥러닝 분야의 대부분의 문제가 분류 문제여서 이야기를 하다보니 그랬던 것 같습니다. (이미지 분류, 음성 인식, 기계 번역 등등) 
+
+
 지금까지 이야기 한 것 외에도, Classification 또한 Bayesian 방법과 Kernel 방법 등등 다양한 변이와 업그레이드 버전이 있습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105445042-5d0d0300-5cb2-11eb-86bf-356923711b50.png)
