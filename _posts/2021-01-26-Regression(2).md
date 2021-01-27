@@ -70,6 +70,8 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 
 Bayesian Deep Learning 분야에서 유명한 Yarin Gal의 thesis를 보면 Bayesian Modeling에서의 Inference를 아래와 같이 정의하고 있습니다.
 
+그러니 읽어보신 뒤, Bayesian inference를 일반적인 딥 러닝에서의 추론과 햇갈리지 마시고 흐름을 따라가시면 좋을 것 같습니다.
+
 ```
 Note that “inference” in Bayesian modelling has a different meaning to that in deep learning. In Bayesian modelling “inference” is the process of integration over model parameters. This means that “approximate inference” can involve optimisation at training time (approximating this integral). This is
 in contrast to deep learning literature where “inference” often means model evaluation at test time alone.
