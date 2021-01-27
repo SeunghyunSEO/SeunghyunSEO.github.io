@@ -1,6 +1,6 @@
 ---
 title: 2016, CVPR, Image Style Transfer Using Convolutional Neural Networks
-categories: DeepLearning_Paper_Review
+categories: Deep_Learning_Paper_Review
 tag: [DeepLearning]
 
 toc: true
