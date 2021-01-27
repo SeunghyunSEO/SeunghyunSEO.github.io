@@ -42,4 +42,8 @@ toc_sticky: true
 바로 여기서 '이 만큼 loss를 발생시킨데는 $$\theta_1$$의 값이 가장 주요했어'를 계산해 내는 것이 바로 오차 역전파(```Back Propagation```) 입니다. 
 
 
+
+(물론 여기서 다양한 variation이 존재할 수 있습니다. 목적 함수(손실 함수)를 이렇게만 정의 하는 것은 아니고, 여러가지로 목적에 맞게 설계할 수 있지만 가장 일반적으로 설명했습니다.) 
+
+
 - <mark style='background-color: #fff5b1'> Machine Learning VS Deep Learning </mark>
