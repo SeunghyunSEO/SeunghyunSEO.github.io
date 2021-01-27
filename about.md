@@ -10,8 +10,6 @@ title: About me
 
 앞으로 제가 블로그를 통해서 다루고 싶은 내용들은 아래와 같습니다.<br>
 
-<mark style='background-color: #fff5b1'> References </mark>
-
 - 머신러닝 (Machine Learning)
   - <mark style='background-color: #fff5b1'> 머신러닝의 중요한 개념과 모델들 </mark>
   - 딥러닝 (Deep Learning)
