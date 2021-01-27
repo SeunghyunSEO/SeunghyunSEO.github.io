@@ -10,15 +10,19 @@ title: About me
 
 앞으로 제가 블로그를 통해서 다루고 싶은 내용들은 아래와 같습니다.<br>
 
+<mark style='background-color: #fff5b1'> References </mark>
+
 - 머신러닝 (Machine Learning)
+  - <mark style='background-color: #fff5b1'> 머신러닝의 중요한 개념과 모델들 </mark>
   - 딥러닝 (Deep Learning)
-    - Sequence Generation Models 
+    - <mark style='background-color: #fff5b1'> Sequence Generation Models </mark>
       - 음성 인식 (Speech Recognition)
       - 음성 합성 (Speech Synthesis)
       - 기계 번역 (Neural Machine Translation)
-    - 각종 SOTA Models
-    - 재밌어보이는 논문 리뷰
+    - <mark style='background-color: #fff5b1'> SOTA Models </mark>
+    - <mark style='background-color: #fff5b1'> 각종 유명(중요한) 페이퍼들 </mark>
+    - <mark style='background-color: #fff5b1'> 재밌어보이는 논문 리뷰 </mark>
   - 강화학습 (Reinforcement Learning)
-    - 심층 강화학습 (Deep Reinforcement Learning)
+    - <mark style='background-color: #fff5b1'> 심층 강화학습 (Deep Reinforcement Learning) </mark>
 
 위의 내용들은, 제가 좋아하는 책들인 [[Computer vision: models, learning, and inference, 2012.](http://www.computervisionmodels.com/)], [[PRML, 2006](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)] 과 논문, 그리고 각종 insightful한 국내외 블로그들의 내용을 참조하여 이해하기 쉽게 전달해보려고 합니다. 
