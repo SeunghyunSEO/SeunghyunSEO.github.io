@@ -25,4 +25,4 @@ title: About me
   - 강화학습 (Reinforcement Learning)
     - <mark style='background-color: #fff5b1'> 심층 강화학습 (Deep Reinforcement Learning) </mark>
 
-위의 내용들은, 제가 좋아하는 책들인 [[Computer vision: models, learning, and inference, 2012.](http://www.computervisionmodels.com/)], [[PRML, 2006](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)] 과 논문, 그리고 각종 insightful한 국내외 블로그들의 내용을 참조하여 이해하기 쉽게 전달해보려고 합니다. 
+위의 내용들은, 제가 좋아하는 책들인 [[Computer vision: models, learning, and inference, 2012.](http://www.computervisionmodels.com/)], [[PRML, 2006](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)] 과 관련 논문, 그리고 각종 insightful한 국내외 블로그들의 내용을 참조하여 이해하기 쉽게 전달해보려고 합니다. 
