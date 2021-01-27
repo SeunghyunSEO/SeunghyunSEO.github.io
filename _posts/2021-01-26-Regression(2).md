@@ -115,6 +115,14 @@ b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회
 
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
 
+- <mark style='background-color: #fff5b1'> 점 추정? 분포 추정? </mark>
+
+ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ 분포를 구한뒤 분포의 가장 큰 값일 때의 파라메터를 찾는 것입니다.
+
+즉 이를 '점 추정' 한다고 할 수 있습니다.
+
+
+하지만 베이지안 관점에서는 테스트 데이터에 대한 정답을 추론할 때 마다 적분을 하기 위한 점이 아닌 posterior분포를 다 쓰기 때문에, '분포 추정'을 한다고 할 수 있습니다.
 
 - <mark style='background-color: #fff5b1'> Why Integral over all parameter? </mark>
 
