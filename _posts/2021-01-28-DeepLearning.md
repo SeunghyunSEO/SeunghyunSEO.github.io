@@ -27,20 +27,34 @@ toc_sticky: true
 ```approximate function```의 출력은 확률 분포로 모델링 되어있고, 이 출력 분포는 입력 데이터를 각종 수많은(많게는 175 billion 개, GPT3) 파라메터 $$\theta$$들로 정의된 노드들을 
 통과 시켜 얻기 때문에 ```approximate \space function```를 학습시킨다는 것은 이 파라메터들의 값들을 최적의 값이 되도록 조정하는 것을 말합니다.
 
+![1](https://user-images.githubusercontent.com/48202736/106025729-5ea05600-610c-11eb-9589-44b0c7fdeda6.gif)
+
+(출처 : [[3b1b youtube 1](https://www.youtube.com/watch?v=Ilg3gGewQ5U&t=1s)], [[3b1b youtube 2](https://www.youtube.com/watch?v=tIeHLnjs5U8)])
 
 하지만 일반적으로 이러한 파라메터를 학습시키기 위한 닫힌 해($$closed form solution$$)은 존재하지 않기때문에 한방에 최적의 파라메터를 구해낼 수 없고,
 그렇기 때문에 우리는 일반적으로 ```gradient descent``` 라고 하는 최적화 기법을 통해서 파라메터를 점진적으로 바꿔갑니다.
 
+
 학습이 잘 된다는 가정하에 파라메터를 점진적으로 바꾸다 보면 어느 지점에 수렴하게 되고, 최적해에 도달하게 됩니다.
 
-최적의 해를 찾았다는 것은 이 된다는 것은 '아 네트워크가 뽑은 출력값이, 출력분포가 정답과 유사해 지게 하는 것'이고 바로 이 실제와 추론한 것이 얼마나 차이가 나는지를 나타내는 손실 함수(```loss function``` or ```objective function```) 라고 합니다.(일반적으로 손실함수는 출력 분포를 모델링 함으로써 자동으로 정해집니다, 분류 문제에서 Maximum likelihood가 곧 Cross Entropy Loss를 최소화 하는 것이 되듯)  
+![3](https://user-images.githubusercontent.com/48202736/106025751-64963700-610c-11eb-93db-1035efc352f8.gif)
+
+(출처 : [[3b1b youtube 1](https://www.youtube.com/watch?v=Ilg3gGewQ5U&t=1s)], [[3b1b youtube 2](https://www.youtube.com/watch?v=tIeHLnjs5U8)])
+
+최적의 해를 찾았다는 것은 이 된다는 것은 '아 네트워크가 뽑은 출력값이, 출력분포가 정답과 유사해 지게 하는 것'이고 바로 이 실제와 추론한 것이 얼마나 차이가 나는지를 나타내는 손실 함수(```loss function```) 라고 합니다.(일반적으로 손실함수는 출력 분포를 모델링 함으로써 자동으로 정해집니다, 분류 문제에서 Maximum likelihood가 곧 Cross Entropy Loss를 최소화 하는 것이 되듯)  
 
 바로 앞서 말한 '파라메터를 점진적으로 바꿔갑니다', 즉 '내 네트워크의 10개의 파라메터 중 $$\theta_1$$은 얼만큼 바꾸고, $$\theta_2$$는 얼만큼 바꾸지?'라는 것을 이 손실 함수라는 것을 통해 구합니다.
 
 
 손실 함수를 계산해서 네트워크는 '이 만큼 loss를 발생시킨데는 $$\theta_1$$의 값이 가장 주요했어, 그러니까 넌 크게 penalty를 받아야겠다, 크게 값을 조정해야겠어!' 라고 판단하여 파라메터를 조절하는데,
-바로 여기서 '이 만큼 loss를 발생시킨데는 $$\theta_1$$의 값이 가장 주요했어'를 계산해 내는 것이 바로 오차 역전파(```Error Back Propagation```) 입니다. 
+여기서 '이 만큼 loss를 발생시킨데는 $$\theta_1$$의 값이 가장 주요했어'라는 각 파라메터가 출력에 끼치는 영향을 편미분(수치 미분)을 통해서 계산해 낼 수 있습니다.
 
+
+하지만 딥러닝 모델이 커질수록, 층수가 깊어지고, 파라메터가 많아질수록 그 많은 파라메터를 매번 계산해 내는것은 불가능할 정도로 오래걸립니다. 바로 이를 해결하기 위한 효율적인 테크닉이 바로 오차 역전파(```Error Back Propagation```) 입니다. 
+
+![2](https://user-images.githubusercontent.com/48202736/106025744-62cc7380-610c-11eb-9c36-0837b7be6939.gif)
+
+(출처 : [[3b1b youtube 1](https://www.youtube.com/watch?v=Ilg3gGewQ5U&t=1s)], [[3b1b youtube 2](https://www.youtube.com/watch?v=tIeHLnjs5U8)])
 
 
 (물론 여기서 다양한 variation이 존재할 수 있습니다. 목적 함수(손실 함수)를 이렇게만 정의 하는 것은 아니고, 여러가지로 목적에 맞게 설계할 수 있지만 가장 일반적으로 설명했습니다.) 
