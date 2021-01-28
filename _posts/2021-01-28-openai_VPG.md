@@ -34,7 +34,7 @@ and push down the probabilities of actions that lead to lower return, until you 
  
  자 이제 VPG 핵심적인 equation들에 대해 짧게 알아보도록 하겠습니다.
  
- <center>$$\nabla_{\theta} J(\pi_{\theta}) = \underE{\tau \sim \pi_{\theta}}{
+ <center>$$\nabla_{\theta} J(\pi_{\theta}) = \mathbb{E}_{\tau \sim \pi_{\theta}}{
         \sum_{t=0}^{T} \nabla_{\theta} \log \pi_{\theta}(a_t|s_t) A^{\pi_{\theta}}(s_t,a_t)
         }$$</center>
     
