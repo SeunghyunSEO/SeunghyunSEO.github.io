@@ -1,5 +1,5 @@
 ---
-title: Maximum Likelihood Estimation, MLE
+title: Maximum From AutoEncoder(AE) to Variational AutoEncoder(VAE)
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
