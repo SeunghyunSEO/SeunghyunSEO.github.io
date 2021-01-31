@@ -1,5 +1,5 @@
 ---
-title: Normal(Gaussian) Distribution
+title: Gaussian distribution (a.k.a normal distribution)
 categories: Probability&Statistics
 tag: 
 
