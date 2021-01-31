@@ -31,10 +31,9 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 
+![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
 
 - <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/106379160-55093d80-63ed-11eb-9da8-4cdbac065b18.png)
 ![image](https://user-images.githubusercontent.com/48202736/106379163-58042e00-63ed-11eb-98de-0b82c005de7c.png)
