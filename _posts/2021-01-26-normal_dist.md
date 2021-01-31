@@ -27,6 +27,15 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
 
+![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
+
+![image](https://user-images.githubusercontent.com/48202736/106379160-55093d80-63ed-11eb-9da8-4cdbac065b18.png)
+![image](https://user-images.githubusercontent.com/48202736/106379163-58042e00-63ed-11eb-98de-0b82c005de7c.png)
+
+![image](https://user-images.githubusercontent.com/48202736/106379164-5a668800-63ed-11eb-993b-ea09b72ac61a.png)
+![image](https://user-images.githubusercontent.com/48202736/106379166-5c304b80-63ed-11eb-8e3c-761669998966.png)
+
+
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
 - <mark style='background-color: #dcffe4'> Inverse Gamma  </mark>
