@@ -95,22 +95,38 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 ![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
+{: style="width: 60%;" class="center"}
+
 ![cond2](https://user-images.githubusercontent.com/48202736/106459115-b9eb9300-64d4-11eb-9561-88beb5020302.png)
+{: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
 ![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
+{: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
 - <mark style='background-color: #dcffe4'> Normar Inverse Gamma X Univariate Normal  </mark>
+![normal1](https://user-images.githubusercontent.com/48202736/106457506-6aa46300-64d2-11eb-849c-3f76dac4ca70.png)
+{: style="width: 60%;" class="center"}
+
+![normal2](https://user-images.githubusercontent.com/48202736/106457512-6bd59000-64d2-11eb-8fc3-b12bdd89be6a.png)
+{: style="width: 60%;" class="center"}
+
 ![inverse1](https://user-images.githubusercontent.com/48202736/106459196-da1b5200-64d4-11eb-9cbb-a2dd3dc5a3ab.png)
+
 ![inverse2](https://user-images.githubusercontent.com/48202736/106459199-db4c7f00-64d4-11eb-9738-f1254d5d8a05.png)
+{: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
 ![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
+{: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #dcffe4'> Normal inverse Wishart X Multivariate Normal  </mark>
 ![wishart1](https://user-images.githubusercontent.com/48202736/106459372-1b136680-64d5-11eb-9c1e-dd81432ee24c.png)
-![wishart2](https://user-images.githubusercontent.com/48202736/106459378-1c449380-64d5-11eb-93d6-f1db1394458a.png)
-![wishart3](https://user-images.githubusercontent.com/48202736/106459380-1d75c080-64d5-11eb-9c75-4fb0d25752a8.png)
+{: style="width: 60%;" class="center"}
 
+![wishart2](https://user-images.githubusercontent.com/48202736/106459378-1c449380-64d5-11eb-93d6-f1db1394458a.png)
+
+![wishart3](https://user-images.githubusercontent.com/48202736/106459380-1d75c080-64d5-11eb-9c75-4fb0d25752a8.png)
+{: style="width: 60%;" class="center"}
