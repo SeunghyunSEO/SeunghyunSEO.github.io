@@ -83,6 +83,9 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 ![cov5](https://user-images.githubusercontent.com/48202736/106457553-7859e880-64d2-11eb-88e7-d3888e8f43da.png)
 
+![cov6 5](https://user-images.githubusercontent.com/48202736/106458941-785ae800-64d4-11eb-8d90-bb732b8bfd37.png)
+{: style="width: 60%;" class="center"}
+
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
 
 ![cov7](https://user-images.githubusercontent.com/48202736/106457562-7b54d900-64d2-11eb-840d-c679d9fc872a.png)
@@ -99,7 +102,15 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
-- <mark style='background-color: #dcffe4'> Inverse Gamma  </mark>
+- <mark style='background-color: #dcffe4'> Normar Inverse Gamma X Univariate Normal  </mark>
+![inverse1](https://user-images.githubusercontent.com/48202736/106459196-da1b5200-64d4-11eb-9cbb-a2dd3dc5a3ab.png)
+![inverse2](https://user-images.githubusercontent.com/48202736/106459199-db4c7f00-64d4-11eb-9738-f1254d5d8a05.png)
 
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
 ![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
+
+- <mark style='background-color: #dcffe4'> Normal inverse Wishart X Multivariate Normal  </mark>
+![wishart1](https://user-images.githubusercontent.com/48202736/106459372-1b136680-64d5-11eb-9c1e-dd81432ee24c.png)
+![wishart2](https://user-images.githubusercontent.com/48202736/106459378-1c449380-64d5-11eb-93d6-f1db1394458a.png)
+![wishart3](https://user-images.githubusercontent.com/48202736/106459380-1d75c080-64d5-11eb-9c75-4fb0d25752a8.png)
+
