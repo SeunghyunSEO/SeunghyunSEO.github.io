@@ -17,7 +17,7 @@ toc_sticky: true
 
 2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105357223-da476200-5c37-11eb-9612-eaebab62a743.png)
+![reg vs classification](https://user-images.githubusercontent.com/48202736/106451206-9111d080-64c9-11eb-875c-d5f1121d419d.png)
 
 - <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
@@ -66,7 +66,7 @@ toc_sticky: true
 여기에 조금 더 보태보면, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각할 수 있습니다.
 쉽게 $$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각해봅시다.
 
-![image](https://user-images.githubusercontent.com/48202736/105039350-cc60d800-5aa3-11eb-96ec-465f01c3fc46.png)
+![reg1](https://user-images.githubusercontent.com/48202736/106451223-97a04800-64c9-11eb-949f-8dbac19457eb.png)
 
 이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것입니다.
 그렇다면 우리가 추정하고자 하는 회귀 모양은 위의 그림 (b) 같이 됩니다.
@@ -149,7 +149,8 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 어떤 의미냐 하면 아래의 커브 피팅(곡선 피팅) 의 예시를 보시면, 
 
-![image](https://user-images.githubusercontent.com/48202736/105365680-d9b3c900-5c41-11eb-9325-86c051a53e4b.png)
+![prml_reg1](https://user-images.githubusercontent.com/48202736/106451320-bdc5e800-64c9-11eb-939a-4c85d6a27538.png)
+ {: style="width: 60%;" class="center"}
 
 목적은 우리가 구하려는 파라메터는 곡선을 나타내는데 (직선의 방정식 얘기하다가 갑자기 곡선으로 넘어와서 햇갈리실 수 있지만 매커니즘은 같습니다.)
 그 곡선과 실제 y값과의 차이(error)가 존재하고, 이를 계산해서 줄이는 방식으로 파라메터를 점차적으로 학습 (gradient descent) 혹은 한방에(closed-form solution) 구하겠다. 입니다.
@@ -213,9 +214,12 @@ posterior를 최대화 하는 solution을 구하면
 
 $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른 정규화 term이 곡선 피팅에 끼치는 영향은 다음과 같습니다.
 
-<img src="https://user-images.githubusercontent.com/48202736/105374322-e983db00-5c4a-11eb-8d03-ad7ecdcf11ea.png" title="제목"/>
-<img src="https://user-images.githubusercontent.com/48202736/105374328-eb4d9e80-5c4a-11eb-88a8-21c716935e26.png" title="제목"/>
-<img src="https://user-images.githubusercontent.com/48202736/105374337-edaff880-5c4a-11eb-80f5-9508a0f8d6fc.png" title="제목"/>
+![prml_reg2](https://user-images.githubusercontent.com/48202736/106451323-bef71500-64c9-11eb-8070-0e5433c72345.png)
+ {: style="width: 60%;" class="center"}
+![prml_reg3](https://user-images.githubusercontent.com/48202736/106451328-c0284200-64c9-11eb-8bbb-36c9bed683e3.png)
+ {: style="width: 60%;" class="center"}
+![prml_reg4](https://user-images.githubusercontent.com/48202736/106451333-c1596f00-64c9-11eb-8d73-a7122f278fe4.png)
+ {: style="width: 60%;" class="center"}
 
 
 - <mark style='background-color: #fff5b1'> Further Study </mark>
@@ -224,7 +228,7 @@ $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른
 
 이것들은 여백이 부족해서 2편에서 다루도록 하겠습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
+![reg all](https://user-images.githubusercontent.com/48202736/106451237-9a02a200-64c9-11eb-933a-e6522c1c0a87.png)
 
 
 - <mark style='background-color: #fff5b1'> References </mark>
