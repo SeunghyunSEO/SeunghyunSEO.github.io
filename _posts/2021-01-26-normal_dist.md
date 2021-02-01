@@ -92,7 +92,6 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 {: style="width: 60%;" class="center"}
 
 
-
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 ![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
 {: style="width: 60%;" class="center"}
@@ -103,6 +102,14 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 - <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
 ![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
 {: style="width: 60%;" class="center"}
+
+
+- <mark style='background-color: #fff5b1'> Maximum Likelihood for the Gaussian </mark>
+
+- <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
+
+
+
 
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
