@@ -28,21 +28,39 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 데이터 x를 표현하는 위의 분포의 파라메터는 평균(mean, $$\mu$$), 분산(variance, $$\sigma^2$$) 두가지 뿐입니다.
 
+> $$\mu$$ : 평균(mean) <br>
+> $$\sigma^2$$ : 분산(variance) ($$\sigma^2 > 0$$) <br>
+
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
-이제 조금 변수의 개수를 늘려서 생각해볼까요? 다변량 정규 분포는 변수의 개수가 2개 3개 ... 무수히 많아질 수 있지만
+이제 조금 변수의 개수를 늘려서 생각해볼까요? 다변량 정규분포의 식은 아래와 같습니다.
 
-우리가 일반적으로 visualize하는데 한계가 존재하니 변수가 2개인 경우에 대해서 생각해봅시다.$$x=[x1, x2]$$
+<center>$$ Pr(x) = \frac{1}{ (2\pi)^{D/2} \left | {\Sigma}^{1/2} \right | }exp[-\frac{1}{2} (x-\mu)^T {Sigma}^{-1} (x-\mu) ] $$</center>
+
+이를 간단하게 아래와 같이 표현하곤 합니다.
+
+<center>$$ Pr(x) = Norm_x[\mu,\Sigma] $$</center>
+
+다변량 정규분포는 역시 두 가지 파라메터로 주어진 분포를 표현합니다.
+
+> $$\mu$$ : mean 벡터 (a vector containing mean position) <br>
+> $$\Sigma$$ : 대칭이며 양의 정부호 행렬인, 공분산 행렬 (a symmetric “positive definite” covariance matrix) <br>
+
+여기서 Positive definite의 정의는 아래와 같습니다.
+
+> Positive definite: $$z^T {Sigma} z$$ is positive for any real is positive for any real. <br>
+
+다변량 정규 분포는 변수의 개수가 2개 3개 ... 무수히 많아질 수 있지만
+
+우리가 일반적으로 visualize하는데 한계가 존재하니 변수가 2개인 경우에 대해서 생각해봅시다. ($$x=[x1, x2]$$인 경우)
 
 - <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
 
 변수가 2개인 경우인 이변량 정규 분포는 아래와 같이 생겼습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
-
-이를 3차원으로 다시 그려보면 아래와 같습니다.
-
 ![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
+
+이를 수식으로 나타내면 tmp.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
