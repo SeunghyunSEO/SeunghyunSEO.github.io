@@ -65,15 +65,11 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/106379122-1d01fa80-63ed-11eb-964c-e9ed83014c02.png)
+![image](https://user-images.githubusercontent.com/48202736/106446987-48a3e400-64c4-11eb-8264-0e518c0370a7.png)
 
-![image](https://user-images.githubusercontent.com/48202736/106379117-1a9fa080-63ed-11eb-9dd2-cc24ca2be8b3.png)
+![image](https://user-images.githubusercontent.com/48202736/106446821-11353780-64c4-11eb-8395-e9c3d176f249.png)
 
-![image](https://user-images.githubusercontent.com/48202736/106379146-4458c780-63ed-11eb-8342-1eae6d8770d2.png)
 
-![image](https://user-images.githubusercontent.com/48202736/106379155-4b7fd580-63ed-11eb-9f4c-0f4857763616.png)
-
-![image](https://user-images.githubusercontent.com/48202736/106379156-4f135c80-63ed-11eb-941c-871ec0ffa780.png)
 
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
@@ -93,9 +89,5 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 - <mark style='background-color: #dcffe4'> Inverse Gamma  </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/106379109-0a87c100-63ed-11eb-8e80-c8d642f20d22.png)
-![image](https://user-images.githubusercontent.com/48202736/106379111-0c518480-63ed-11eb-8269-26244ea6bfea.png)
 
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/106379170-5fc3d280-63ed-11eb-95d1-7e2d91119b90.png)
