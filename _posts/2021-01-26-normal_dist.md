@@ -41,7 +41,7 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 ![multivariate1](https://user-images.githubusercontent.com/48202736/106457529-709a4400-64d2-11eb-8f09-9a8d18343e00.png)
 {: style="width: 60%;" class="center"}
 
-<center>$$ Pr(x) = \frac{1}{ (2\pi)^{D/2} {\left | {\Sigma} \right |}^{1/2} }exp[-\frac{1}{2} (x-\mu)^T {Sigma}^{-1} (x-\mu) ] $$</center>
+<center>$$ Pr(x) = \frac{1}{ (2\pi)^{D/2} {\left | {\Sigma} \right |}^{1/2} }exp[-\frac{1}{2} (x-\mu)^T {\Sigma}^{-1} (x-\mu) ] $$</center>
 
 다변량 정규분포는 역시 두 가지 파라메터로 주어진 분포를 표현합니다.
 
