@@ -32,14 +32,16 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/106442710-f1e7db80-64be-11eb-9810-954a14c0ed74.png)
-(이미지 출처 : [link](https://ko.wikipedia.org/wiki/%EB%8B%A4%EB%B3%80%EB%9F%89_%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC))
+이제 조금 변수의 개수를 늘려서 생각해볼까요? 일반적으로 우리가 visualize 할 수 있는 차원의 수가 3차원을 못넘어가니 변수가 2개인 경우에 대해서 생각해봅시다.$$x$$
+
+![image](https://user-images.githubusercontent.com/48202736/106379271-0dcf7c80-63ee-11eb-80b1-8a401837c6a4.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/106379113-13789280-63ed-11eb-9a8a-3ee82f60c4cc.png)
 
 - <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/106379271-0dcf7c80-63ee-11eb-80b1-8a401837c6a4.png)
+![image](https://user-images.githubusercontent.com/48202736/106442710-f1e7db80-64be-11eb-9810-954a14c0ed74.png)
+(이미지 출처 : [link](https://ko.wikipedia.org/wiki/%EB%8B%A4%EB%B3%80%EB%9F%89_%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC))
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
