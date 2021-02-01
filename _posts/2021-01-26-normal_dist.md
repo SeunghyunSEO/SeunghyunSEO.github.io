@@ -17,6 +17,7 @@ toc_sticky: true
 Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106446895-290cbb80-64c4-11eb-841c-018238377b2b.png)
+{: style="width: 60%;" class="center"}
 
 
 일변량 정규 분포는 1개의 연속적인 변수에 대한 확률 값을 뱉는 함수가 되고,
@@ -60,21 +61,26 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 변수가 2개인 경우인 이변량 정규 분포는 아래와 같이 생겼습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
+{: style="width: 60%;" class="center"}
 
 이를 수식으로 나타내면 tmp.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
 ![image](https://user-images.githubusercontent.com/48202736/106446987-48a3e400-64c4-11eb-8264-0e518c0370a7.png)
+{: style="width: 80%;" class="center"}
 
 ![image](https://user-images.githubusercontent.com/48202736/106446821-11353780-64c4-11eb-8395-e9c3d176f249.png)
+{: style="width: 80%;" class="center"}
 
 ![image](https://user-images.githubusercontent.com/48202736/106447131-7721bf00-64c4-11eb-8edd-2992d5711774.png)
+{: style="width: 60%;" class="center"}
 
 ![image](https://user-images.githubusercontent.com/48202736/106447139-7a1caf80-64c4-11eb-911f-b1c25a9adfad.png)
+{: style="width: 60%;" class="center"}
 
 ![image](https://user-images.githubusercontent.com/48202736/106447151-7c7f0980-64c4-11eb-8866-fc0c3183c516.png)
-
+{: style="width: 60%;" class="center"}
 
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
