@@ -32,7 +32,11 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
-이제 조금 변수의 개수를 늘려서 생각해볼까요? 일반적으로 우리가 visualize 할 수 있는 차원의 수가 3차원을 못넘어가니 변수가 2개인 경우에 대해서 생각해봅시다.$$x$$
+이제 조금 변수의 개수를 늘려서 생각해볼까요? 변수가 2개인 경우에 대해서 생각해봅시다.$$x=[x1, x2]$$
+
+![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
+
+이는
 
 ![image](https://user-images.githubusercontent.com/48202736/106379271-0dcf7c80-63ee-11eb-80b1-8a401837c6a4.png)
 
