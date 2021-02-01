@@ -87,8 +87,9 @@ Discriminative Regression Model의 경우를 살펴봅시다.
 
 (이런 모델은 Linear Regression이라고 부른다.)
 
-![image](https://user-images.githubusercontent.com/48202736/105446589-c80c0900-5cb5-11eb-9671-fbaf131d6f33.png)
-
+![dis_reg1](https://user-images.githubusercontent.com/48202736/106454584-4e9ec280-64ce-11eb-9b83-2dea0deed256.png)
+{: style="width: 60%;" class="center"}
+ 
 이런경우 앞서 배운것과 마찬가지로 ML, MAP, Bayesian Aprroach 등으로 파라메터를 학습하면 됩니다.
 
 
@@ -97,7 +98,8 @@ Discriminative Regression Model의 경우를 살펴봅시다.
 
 Inference를 할 때도 x 데이터를 넣고 y의 자표를 읽으면 끝입니다. (아래 그림 참조)
 
-![image](https://user-images.githubusercontent.com/48202736/105446592-c93d3600-5cb5-11eb-8143-9c3ff6dbf0b4.png)
+![dis_reg2](https://user-images.githubusercontent.com/48202736/106454596-552d3a00-64ce-11eb-8cd0-91f999bbd3bb.png)
+{: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #dcffe4'> Regression : Generative </mark>
 
@@ -108,7 +110,8 @@ Generative Regression Model의 경우를 살펴봅시다.
 > 2. $$Pr(x \mid w,\theta)$$를 $$ Pr(x \mid w,\theta) = Norm_x[\theta^T w, \sigma^2] $$라고 정의한다. <br>
 > 3. 학습할 파라메터는 $$\theta, \sigma^2$$ 이다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446601-d0fcda80-5cb5-11eb-9689-0c31ed7bde82.png)
+![gen_reg1](https://user-images.githubusercontent.com/48202736/106454606-5cecde80-64ce-11eb-9ddb-24942a10c01a.png)
+{: style="width: 60%;" class="center"}
 
 판별 모델과 거의 유사하지만, 우리가 학습하고자 정의한 분포가 $$Pr(x \mid w,\theta)$$ 라는게 중요합니다.
 
@@ -118,7 +121,8 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 (후에 분류 문제에서도 생성,판별 모델에 대해서 생각해 볼 건데, 그 경우를 예로 들어보자면, 학습 데이터에 '고양이' 라고 레이블 된 사진들의 분포가 어떻게 생겼는지를 (뚱뚱한 고양이일 확률은 몇, 얼룩 고양이는 몇 등등) 학습한다고 생각하면 될 것 같습니다.) 
 
-![image](https://user-images.githubusercontent.com/48202736/105446605-d35f3480-5cb5-11eb-86bb-8a33300dbd91.png)
+![gen_reg2](https://user-images.githubusercontent.com/48202736/106454609-5eb6a200-64ce-11eb-8000-52cc6e2466e5.png)
+{: style="width: 60%;" class="center"}
 
 하지만 우리가 앞서 말한 것처럼 어떤 모델을 사용하던, 두 모델 모두 관심사는 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 입니다.
 
@@ -130,7 +134,7 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 <center>$$ Bayes' \space Rule : Pr(w \mid x) = \frac{Pr(x \mid w)Pr(w)}{\int{Pr(x \mid w)}{Pr(w)}dw} $$</center>
 
-![image](https://user-images.githubusercontent.com/48202736/105446609-d5c18e80-5cb5-11eb-8f82-fd620423d775.png)
+![gen_reg3](https://user-images.githubusercontent.com/48202736/106454612-5f4f3880-64ce-11eb-897e-cb3cbb0602b7.png)
 
 학습을 통해 x의 분포인 $$Pr(x \mid w)$$는 이미 구했고, $$Pr(w)$$ 는 학습 데이터로부터 바로 구할 수 있습니다. (위의 그림처럼)
 
@@ -139,13 +143,15 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 
 ($$ Pr(x,y) = Pr(x \mid y)Pr(y) = Pr(y \mid x)Pr(x) $$ 이기 때문)
 
-![image](https://user-images.githubusercontent.com/48202736/105656572-e405e980-5f05-11eb-9bae-1dee177ed5c7.png)
+![joint1](https://user-images.githubusercontent.com/48202736/106454699-81e15180-64ce-11eb-9d5a-1546c71d246a.png)
+{: style="width: 60%;" class="center"}
 
-![image](https://user-images.githubusercontent.com/48202736/105446616-d8bc7f00-5cb5-11eb-8c3f-a1b1777f5df1.png)
+![gen_reg4](https://user-images.githubusercontent.com/48202736/106454619-624a2900-64ce-11eb-99d5-fbd9a3e7e5b1.png)
+{: style="width: 60%;" class="center"}
 
 결과적으로 우리는 $$Pr(x \mid w)$$를 학습했지만 베이즈 룰을 통해 $$Pr(w \mid x)$$를 구할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446621-db1ed900-5cb5-11eb-96ba-780fb7cfa3c7.png)
+![gen_reg5](https://user-images.githubusercontent.com/48202736/106454622-637b5600-64ce-11eb-8ea5-742d2205fe1e.png)
 
 
 생성 모델이라고 이름이 붙혀진 것은 우리가 $$Pr(x \mid w)$$를 학습하기 때문에 입력 데이터의 분포를 알아냄으로써 분포로 부터 학습 데이터에 없는 $$x$$ 를 샘플링 할 경우 유의미한 데이터를 얻어낼 수 있다 (아무 분포에서 막 샘플링한게 아니니까) 라고 하는데 사실 아직도 감이 잘 안옵니다... 
@@ -166,11 +172,12 @@ Discriminative Classification Model의 경우를 살펴봅시다.
 > 2. $$Pr(w \mid x)$$를 $$ Pr(w \mid x) = Bern_w[\frac{1}{1+exp[-\theta_0 -\theta_1 x]}] $$라고 정의한다. <br>
 > 3. 학습할 파라메터는 $$\theta_0,\theta_1$$ 이다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446663-eeca3f80-5cb5-11eb-8ac0-c34bc071995b.png)
+![dis_class1](https://user-images.githubusercontent.com/48202736/106454645-6c6c2780-64ce-11eb-8a8a-e8981f35bb92.png)
+{: style="width: 40%;" class="center"}
 
 마찬가지로 ML, MAP, Bayesian 어떤 방법으로도 파라메터를 찾아낼 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446667-f12c9980-5cb5-11eb-8c6b-14a664b2b5d4.png)
+![dis_class2](https://user-images.githubusercontent.com/48202736/106454648-6d9d5480-64ce-11eb-84ef-435eaf89e822.png)
 
 Regression 때와 마찬가지로 $$Pr(w \mid x)$$ 에 대한 분포를 정의하고 그 분포의 파라메터를 학습했으니, 바로 입력 데이터 x를 넣어 추론할 수 있습니다.
 
@@ -185,24 +192,29 @@ Generative Classification Model의 경우를 살펴봅시다.
 > 2. $$Pr(x \mid w)$$를 $$ Pr(x \mid w) = Norm_x[\mu_w, \sigma_w^2] $$라고 정의한다. <br>
 > 3. 학습할 파라메터는 $$\mu_0,\mu_1,\sigma_0^2,\sigma_1^2$$ 입니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446672-f38ef380-5cb5-11eb-9b8b-db2238d1cb6d.png)
+![gen_class1](https://user-images.githubusercontent.com/48202736/106454667-742bcc00-64ce-11eb-844b-4d44d8170c2e.png)
+{: style="width: 60%;" class="center"}
 
 현재 이진 분류 문제를 예시로 들었으니, 우리가 찾아야 할 것은 continuous한 입력에 대해 가우시안 분포로 모델링 했기 때문에 각 클래스 당 mean,variance 1개 씩 
 총 $$\mu_0,\mu_1,\sigma_0^2,\sigma_1^2$$ 4개가 됩니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
+![gen_class2](https://user-images.githubusercontent.com/48202736/106454677-768e2600-64ce-11eb-82f0-006524ba9f6f.png)
+{: style="width: 60%;" class="center"}
 
 이제 학습 데이터에서 바로 정답 클래스의 분포 $$Pr(w)$$를 구할 수 있습니다. 이진 분류 문제이기 때문에 정답 분포는 $$[0,1,0,1,1,1,0,...,0]$$ 이런식으로 이산적이겠죠? 베르누이 분포로 모델링 할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446703-01dd0f80-5cb6-11eb-9b33-ed3e6e74c6a8.png)
+![gen_class3](https://user-images.githubusercontent.com/48202736/106454681-77bf5300-64ce-11eb-8245-aff4d1dd1160.png)
+{: style="width: 40%;" class="center"}
 
 그리고 저희가 원하는것은 마찬가지로 $$Pr(w \mid x)$$ 이기 때문에 마찬가지로 베이즈 룰을 이용해 구해보면 다음과 같은 결과를 얻을 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105446708-06a1c380-5cb6-11eb-8d13-c549738a7943.png)
+![gen_class4](https://user-images.githubusercontent.com/48202736/106454682-78f08000-64ce-11eb-9f4c-f4bd67027b2a.png)
+{: style="width: 60%;" class="center"}
 
 $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다이렉트로 $$Pr(w \mid x)$$를 학습한 분포가 조금 차이가 있어 다.(우)
 
-![image](https://user-images.githubusercontent.com/48202736/105658233-7065db80-5f09-11eb-8549-335e9fc9f20b.png)
+![gen_class4 5](https://user-images.githubusercontent.com/48202736/106454685-7a21ad00-64ce-11eb-9095-5c201c9edb86.png)
+{: style="width: 90%;" class="center"}
 
 
 어떤 차이가 있는지 감이 오셨나요...?
@@ -210,8 +222,8 @@ $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다
 
 이제 우리는 어떤 경우에 Generative (좌) vs Discriminative (우) 를 선택할지를 생각해 봐야 합니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105658418-c33f9300-5f09-11eb-9252-b6efdd1dafc4.png)
-
+![gen_class6](https://user-images.githubusercontent.com/48202736/106454687-7b52da00-64ce-11eb-97a5-1b7bb971a032.png)
+{: style="width: 90%;" class="center"}
 
 - <mark style='background-color: #fff5b1'> Intuition...? </mark>
 
@@ -231,10 +243,12 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
 반면에 다이렉트로 $$Pr(y \mid x)$$ 를 학습한 것은 단순히 클래스 두 개를 분류할 Decision Boundary를 학습하는 것일 뿐입니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105727674-ab4e2a80-5f6e-11eb-863a-ce606a8e29b4.png)
+{: style="width: 60%;" class="center"}
 
 (이미지 출처 : [link](https://medium.com/@jordi299/about-generative-and-discriminative-models-d8958b67ad32))
 
-![image](https://user-images.githubusercontent.com/48202736/105446675-f558b700-5cb5-11eb-8bd8-5e8ad17e4c43.png)
+![gen_class2](https://user-images.githubusercontent.com/48202736/106454677-768e2600-64ce-11eb-82f0-006524ba9f6f.png)
+{: style="width: 60%;" class="center"}
 
 (위의 두 그림은 입력 데이터 x가 2차원, 1차원일 때의 예시입니다.)
 
