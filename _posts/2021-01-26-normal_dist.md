@@ -14,15 +14,13 @@ toc_sticky: true
 
 가우시안(Gaussian) 분포 혹은 정규(Normal) 분포는 변수가 1개냐 2개냐 ... 여러개냐에 따라서 (일변량)Univariate 분포 혹은 이변량(Bivariate), 다변량(Multivariate) 분포로 나눠 생각할 수 있습니다.
 
-Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
+Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379093-fd6ad200-63ec-11eb-9b6f-f8ad3b5448c1.png)
 
-![image](https://user-images.githubusercontent.com/48202736/106379103-0360b300-63ed-11eb-910a-63e254e01682.png)
-
 일변량 정규 분포는 1개의 연속적인 변수에 대한 확률 값을 뱉는 함수가 되고,
 
-수식을 다시 풀어서 쓰면 아래와 같이 쓸 수 있습니다.
+수식으로 나타내면 아래와 같이 쓸 수 있습니다.
 
 <center>$$ Pr(x) = Norm_x[\mu,\sigma^2] $$</center>
 
@@ -32,7 +30,13 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
-이제 조금 변수의 개수를 늘려서 생각해볼까요? 변수가 2개인 경우에 대해서 생각해봅시다.$$x=[x1, x2]$$
+이제 조금 변수의 개수를 늘려서 생각해볼까요? 다변량 정규 분포는 변수의 개수가 2개 3개 ... 무수히 많아질 수 있지만
+
+우리가 일반적으로 visualize하는데 한계가 존재하니 변수가 2개인 경우에 대해서 생각해봅시다.$$x=[x1, x2]$$
+
+- <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
+
+변수가 2개인 경우인 이변량 정규 분포는 아래와 같이 생겼습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
 
@@ -40,13 +44,7 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
 
-![image](https://user-images.githubusercontent.com/48202736/106379113-13789280-63ed-11eb-9a8a-3ee82f60c4cc.png)
-
-- <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
-
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 
