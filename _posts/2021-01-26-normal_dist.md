@@ -45,8 +45,11 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 다변량 정규분포는 역시 두 가지 파라메터로 주어진 분포를 표현합니다.
 
-> $$\mu$$ : mean 벡터 (a vector containing mean position) <br>
-> $$\Sigma$$ : 대칭이며 양의 정부호 행렬인, 공분산 행렬 (a symmetric “positive definite” covariance matrix) <br>
+> $$\mu$$ : $$D$$차원의 mean 벡터 (a vector containing mean position) <br>
+> $$\Sigma$$ : 대칭이며 $$D \times D$$차원의 양의 정부호 행렬인 공분산 행렬 (a symmetric “positive definite” covariance matrix) <br>
+
+(그리고 $${\left | {\Sigma} \right |}$$는 공분산 행렬의 행렬식입니다.)
+
 
 여기서 Positive definite의 정의는 아래와 같습니다.
 
@@ -88,14 +91,15 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
-
+![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
+![cond2](https://user-images.githubusercontent.com/48202736/106459115-b9eb9300-64d4-11eb-9561-88beb5020302.png)
 
 - <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
-
+![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
 
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
 - <mark style='background-color: #dcffe4'> Inverse Gamma  </mark>
 
-
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
+![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
