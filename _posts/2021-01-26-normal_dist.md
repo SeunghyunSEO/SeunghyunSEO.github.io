@@ -27,8 +27,6 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 수식으로 나타내면 아래와 같이 쓸 수 있습니다.
 
-<center>$$ Pr(x) = Norm_x[\mu,\sigma^2] $$</center>
-
 <center>$$ Pr(x) = \frac{1}{\sqrt{w\pi\sigma^2}}exp[-\frac{1}{2} (x-\mu)^2 / \sigma^2 ] $$</center>
 
 데이터 x를 표현하는 위의 분포의 파라메터는 평균(mean, $$\mu$$), 분산(variance, $$\sigma^2$$) 두가지 뿐입니다.
@@ -44,10 +42,6 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 {: style="width: 60%;" class="center"}
 
 <center>$$ Pr(x) = \frac{1}{ (2\pi)^{D/2} \left | {\Sigma}^{1/2} \right | }exp[-\frac{1}{2} (x-\mu)^T {Sigma}^{-1} (x-\mu) ] $$</center>
-
-이를 간단하게 아래와 같이 표현하곤 합니다.
-
-<center>$$ Pr(x) = Norm_x[\mu,\Sigma] $$</center>
 
 다변량 정규분포는 역시 두 가지 파라메터로 주어진 분포를 표현합니다.
 
