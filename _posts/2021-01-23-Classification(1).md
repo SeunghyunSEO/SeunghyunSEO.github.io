@@ -17,8 +17,7 @@ toc_sticky: true
 
 2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있습니다.
 
-
-![image](https://user-images.githubusercontent.com/48202736/105444745-c7717380-5cb1-11eb-92a0-b618ad4d6b4f.png)
+![cat vs reg](https://user-images.githubusercontent.com/48202736/106453009-01215600-64cc-11eb-9f05-3c2a43793539.png)
 
 예를 들면) 연속적인 입력값 (이미지 등)을 이산적으로 ( 개= 1, [1 0 0] , 고양이=2, [0 1 0], 비행기=3, [0 0 1] ) 등으로 구분지어주는 이미지 분류 문제 같은 것입니다.
 
@@ -38,19 +37,22 @@ toc_sticky: true
 
 베르누이 분포에 대해 쉽게 설명하기 위해 그림을 먼저 보도록 하겠습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105621207-7fd12000-5e48-11eb-9106-42a0a58fb4a2.png)
+![ber1](https://user-images.githubusercontent.com/48202736/106453016-04b4dd00-64cc-11eb-9278-625d36eaa5be.png)
+{: style="width: 60%;" class="center"}
 
 베르누이 분포는 '$$x=0/x=1$$' 이나 '성공/실패' 등 두 가지 가능한 경우에 대한 상황을 나타냅니다.
 
 수식으로 나타내면 아래와 같은데, $$x=1$$일 확률이 $$\lambda$$ 이고, 베르누이 분포는 두 가지 경우에 대해서만 생각하기 때문에 반대로 $$x=0$$ 이 될 확률은 $$1-\lambda$$가 됩니다.
 (예를 들어, 어떤 x(이미지 픽셀값)가 $$x=0$$(강아지)일 확률이 $$lambda$$(0.64)면 $$x=1$$(고양이)일 확률은 $$1-\lambda$$(1-0.64=0.34)가 됩니다.)
 
-![image](https://user-images.githubusercontent.com/48202736/105621213-86f82e00-5e48-11eb-8f27-74ec370737da.png)
+![ber1 5](https://user-images.githubusercontent.com/48202736/106453026-07afcd80-64cc-11eb-9c66-4386c9c423f6.png)
+{: style="width: 60%;" class="center"}
 
 위의 수식을 보면 베르누이 분포를 한번에 $$\lambda^{x}(1-\lambda)^{1-x}$$로 표현하는 걸 알 수 있습니다. 이는 x가 1이면 $$\lambda$$가 되고 x가 0이면 $$(1-\lambda)$$가 되는 수식입니다.
 이러한 의미를 가지는 베르누이 분포는 아래와 같이 쓰기도 합니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105621209-8495d400-5e48-11eb-8ab7-2095f20068c6.png)
+![ber2](https://user-images.githubusercontent.com/48202736/106453021-067ea080-64cc-11eb-8e5d-0b32ffc85bf7.png)
+{: style="width: 60%;" class="center"}
 
 이 때 추정하고자 하는 파라메터는 성공 확률(편의상 이렇게 말하겠습니다. 경우에 따라 다르게 말할 수 있을 것 같습니다.), $$\lambda$$가 되겠죠? (가우시안 분포에서 평균,$$\mu$$와 분산,$$\sigma^2$$를 찾는게 목적이듯)
 
@@ -58,12 +60,14 @@ toc_sticky: true
 
 +) 베르누이 분포와 유사한 분포로 Categorical(범주형) 분포가 있습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105621216-96777700-5e48-11eb-99c4-400cf91c6405.png)
+![cat1](https://user-images.githubusercontent.com/48202736/106453042-0e3e4500-64cc-11eb-87da-a44c21939f37.png)
+{: style="width: 60%;" class="center"}
 
 Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 가능한 케이스가 두가지 이상이 된 경우에 대한 이야기를 합니다.
 아래의 수식은 Categorical 분포에 대한 수식을 나타냅니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105621218-9aa39480-5e48-11eb-88ed-ac911e2e2a76.png)
+![cat1 5](https://user-images.githubusercontent.com/48202736/106453045-10080880-64cc-11eb-84e6-1d4fad0f86bb.png)
+{: style="width: 60%;" class="center"}
 
 베르누이 분포에서는 두 가지 케이스중 한 가지 케이스로 분류될 확률 $$\lambda$$만 찾아내면 확률 분포의 합이 1이 되는것을 이용하여 자동으로 나머지 케이스로 분류될 확률이 정해졌습니다.
 
@@ -71,7 +75,8 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 
 이를 베르누이 분포처럼 아래와 같이 표현할 수 있습니다. (굵은 $$\lambda$$는 스칼라가 아니라 아니라 벡터) 
 
-![image](https://user-images.githubusercontent.com/48202736/105621220-9c6d5800-5e48-11eb-8d87-bc128a488378.png)
+![cat2](https://user-images.githubusercontent.com/48202736/106453058-1302f900-64cc-11eb-93cd-f2d6e69e3317.png)
+{: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #dcffe4'> Back to Logistic Regression </mark>
 
@@ -99,6 +104,7 @@ $$sig[a]$$는 a를 sigmoid 라는 함수에(활성 함수라고도 함) 넣은 �
 sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력값을 $$[0,1]$$ 사이의 값으로 매핑해줍니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105623021-afd4ef00-5e59-11eb-892d-4916ee66edb1.png)
+{: style="width: 60%;" class="center"}
 
 (이미지 출처 : [link](https://en.wikipedia.org/wiki/Sigmoid_function#:~:text=4%20Applications-,Definition,refer%20to%20the%20same%20object.))
 
@@ -108,7 +114,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 아무튼 위의 과정을 다시 그림으로 나타내면 아래와 같습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105444774-d3f5cc00-5cb1-11eb-93e4-f280a7328d92.png)
+![logistic1](https://user-images.githubusercontent.com/48202736/106453109-2746f600-64cc-11eb-9824-eb378a390221.png)
 
 ```
 * 위의 오른쪽 그림이 저는 처음 봤을 때 좀 햇갈렸습니다. 편하게 그림이 3차원 이라고 생각하시면 될 것 같습니다. Pr(y|x), x, w 세 가지 축이 있는거죠. 
@@ -140,7 +146,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 
 아래의 그림의 왼쪽은 입력 데이터 x가 1차원, 오른쪽은 x가 2차원인 경우입니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105038606-e3eb9100-5aa2-11eb-9b1d-070d4e6edd32.png)
+![logistic2](https://user-images.githubusercontent.com/48202736/106453116-28782300-64cc-11eb-8b91-77e052aa1cbe.png)
 
 분류 문제를 푼다고 생각할 때, 베르누이 확률 분포가 0.5가 되는 지점을 두 클래스가 어떤 것인지 결정하는 'Decision Boundary'라고 생각하면 그 선을 기준으로 클래스를 나누게 될 것입니다.
 
@@ -246,14 +252,16 @@ $$f[\theta]$$ 는 여기서 목적 함수 (Objective function) 혹은 Cost funct
 
 아이디어를 그림으로 나타내면 아래와 같습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105444895-128b8680-5cb2-11eb-91a7-dac84df8707d.png)
+![opt1](https://user-images.githubusercontent.com/48202736/106453200-48a7e200-64cc-11eb-886e-573230589aea.png)
+{: style="width: 60%;" class="center"}
 
 위의 그림에서 보면 문제점이 있는데 시작 지점이 빨간점이냐 파란점이냐에 따라서 도달하는 지점이 다르다는 것입니다. (이것은 learning rate라던가 하는 디테일한 학습 파라메터에 따라 같은 곳에 도달 할 수도, 아닐 수도 있는 복잡한 내용이 있는데 지금은 무시하도록 하겠습니다.)
 
 
 즉 언제나 한결같은 곳에 수렴한다는걸 보장할 수 없다는 것입니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105444900-14ede080-5cb2-11eb-9347-cb53fbfa5a5a.png)
+![opt2](https://user-images.githubusercontent.com/48202736/106453205-49d90f00-64cc-11eb-8f5b-0e64b8af1548.png)
+{: style="width: 60%;" class="center"}
 
 하지만 위의 그림처럼 Convex한 Objective function 이라면 적절한 학습 파라메터를 설정해줬을 때 언제나 단 하나의 최소값 (a single minimum)에 도달합니다. 
 
@@ -263,7 +271,7 @@ $$f[\theta]$$ 는 여기서 목적 함수 (Objective function) 혹은 Cost funct
 
 Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space likelihood$$ 각각을 아래의 그림처럼 나타낼 수 있습니다. 
 
-![image](https://user-images.githubusercontent.com/48202736/105444909-18816780-5cb2-11eb-9c32-403825583254.png)
+![opt3](https://user-images.githubusercontent.com/48202736/106453210-4b0a3c00-64cc-11eb-8639-c057319334e8.png)
 
 그림 b를 보면 1번 점에서 출발해 cost를 줄이는 방향으로 2번, 3번으로 파라메터가 업데이트 되는, 즉 Optimization이 진행되었다고 생각할 수 있습니다.
 
@@ -291,21 +299,19 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 위의 아이디어를 적용한 방법을 gradient descent라고 합니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105636614-4b8f4b00-5eac-11eb-9bd8-9fb51d25b541.png)
+![gradient1](https://user-images.githubusercontent.com/48202736/106453214-4c3b6900-64cc-11eb-91a2-2366063fa3d5.png)
+{: style="width: 60%;" class="center"}
 
 비유를 해보자면 어떤 언덕에 내가 서 있다고 생각을 해봤을 때, 서있는 지점에서 가장 가파른(steepest) 방향을 고르고 그 방향으로 적당한 거리만큼 내려가면 되는겁니다.  
 
 이를 3차원으로 보면 아래 그림과 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105637021-86927e00-5eae-11eb-85c3-32345926a9c3.png)
-
-ㅁㄴㅇ
-
-![image](https://user-images.githubusercontent.com/48202736/105444938-2b943780-5cb2-11eb-9947-df2dcf6cb9d4.png)
+{: style="width: 60%;" class="center"}
 
 그런데 Steepest Descent 는 문제가 아래와 같은 있습니다
 
-![image](https://user-images.githubusercontent.com/48202736/105444942-2f27be80-5cb2-11eb-858c-a23f594829c2.png)
+![gradient2](https://user-images.githubusercontent.com/48202736/106453218-4d6c9600-64cc-11eb-8367-7486aaa329cb.png)
 
 위의 그림을 보시면 초반에 이동할때 매우 자잘자잘하게 많이 이동하는걸 알 수 있습니다. (저 지점을 빠져나오기 어려움 or 오래 학습함)
 
@@ -313,29 +319,18 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 - <mark style='background-color: #dcffe4'> Newton’s Method </mark>
 
-ㅁㄴㅇ
+![newton1](https://user-images.githubusercontent.com/48202736/106453223-4e9dc300-64cc-11eb-9602-ff910a16174f.png)
+{: style="width: 60%;" class="center"}
 
-![image](https://user-images.githubusercontent.com/48202736/105444950-3353dc00-5cb2-11eb-8f62-291d69813e45.png)
+![newton2](https://user-images.githubusercontent.com/48202736/106453227-4fcef000-64cc-11eb-8292-0e8a4b6945ed.png)
 
-ㅁㄴㅇ
-
-![image](https://user-images.githubusercontent.com/48202736/105444958-35b63600-5cb2-11eb-8cd4-939b22e844f2.png)
-
-ㅁㄴㅇ
-
-![image](https://user-images.githubusercontent.com/48202736/105444964-38b12680-5cb2-11eb-834d-b3c6475a09b7.png)
+![opt__1](https://user-images.githubusercontent.com/48202736/106453232-5198b380-64cc-11eb-8033-2ca11cd62c80.png)
+![line_search](https://user-images.githubusercontent.com/48202736/106453234-52314a00-64cc-11eb-9841-7805ca53825e.png)
 
 - <mark style='background-color: #dcffe4'> Optimization for Logistic Regression </mark>
 
-ㅁㄴㅇ
-
-![image](https://user-images.githubusercontent.com/48202736/105444986-41a1f800-5cb2-11eb-97fe-d287609a3a77.png)
-
-ㅁㄴㅇ
-
-![image](https://user-images.githubusercontent.com/48202736/105444997-48c90600-5cb2-11eb-8445-1b32c228bdc9.png)
-
-ㅁㄴㅇ
+![opt3](https://user-images.githubusercontent.com/48202736/106453210-4b0a3c00-64cc-11eb-8639-c057319334e8.png)
+![logistic2](https://user-images.githubusercontent.com/48202736/106453116-28782300-64cc-11eb-8b91-77e052aa1cbe.png)
 
 - <mark style='background-color: #fff5b1'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
 
@@ -393,7 +388,8 @@ $$likelihood$$ 는 베르누이 분포를 통해 모델링 했고, 적당히 $$p
 
 다시 한 번 remind 하자면, Categorical 분포는 아래와 같이 생겼습니다. (그림은 클래스가 5개인 경우에 해당)
 
-![image](https://user-images.githubusercontent.com/48202736/105621216-96777700-5e48-11eb-99c4-400cf91c6405.png)
+![cat1](https://user-images.githubusercontent.com/48202736/106453042-0e3e4500-64cc-11eb-87da-a44c21939f37.png)
+{: style="width: 60%;" class="center"}
 
 이럴경우 $$likelihood$$는 수식으로는 다음과 같이 쓸 수 있습니다.
 
@@ -423,7 +419,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 이렇게 모델링해서 최적 해를 구하게 되면 각각의 클래스에 대한 Decision Boundary를 구할 수 있게 된다고 생각할 수 있습니다. 
 
-![image](https://user-images.githubusercontent.com/48202736/105445180-9e9dae00-5cb2-11eb-96cc-e8ac1453fee7.png)
+![multi](https://user-images.githubusercontent.com/48202736/106453176-3ded4d00-64cc-11eb-946b-65f0127aa6ef.png)
 
 마찬가지로 해를 구하기 위해서는 $$likelihood$$에 $$log$$를 취한 $$log \space likelihood$$를 최대화 하면 됩니다.
 
@@ -518,6 +514,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 
 ![image](https://user-images.githubusercontent.com/48202736/105625681-22e86080-5e6e-11eb-9979-e53aee737fad.png)
+{: style="width: 60%;" class="center"}
 
 
 수식으로 생각해보자면 데이터 한개에 대해서 Cross Entropy Loss는 아래와 같은데,
