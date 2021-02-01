@@ -61,7 +61,6 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 변수가 2개인 경우인 이변량 정규 분포는 아래와 같이 생겼습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
-{: style="width: 60%;" class="center"}
 
 이를 수식으로 나타내면 tmp.
 
