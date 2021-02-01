@@ -48,7 +48,7 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 > $$\mu$$ : $$D$$차원의 mean 벡터 (a vector containing mean position) <br>
 > $$\Sigma$$ : 대칭이며 $$D \times D$$차원의 양의 정부호 행렬인 공분산 행렬 (a symmetric “positive definite” covariance matrix) <br>
 
-(그리고 $${\left | {\Sigma} \right |}$$는 공분산 행렬의 행렬식입니다.)
+(그리고 $${\mid {\Sigma} \mid}$$는 공분산 행렬의 행렬식입니다.)
 
 
 여기서 Positive definite의 정의는 아래와 같습니다.
