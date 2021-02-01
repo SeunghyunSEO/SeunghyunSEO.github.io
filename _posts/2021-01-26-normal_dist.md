@@ -12,12 +12,21 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Univariate Gaussian Distribution </mark>
 
+가우시안(Gaussian) 분포 혹은 정규(Normal) 분포는 변수가 1개냐 2개냐 ... 여러개냐에 따라서 (일변량)Univariate 분포 혹은 이변량(Bivariate), 다변량(Multivariate) 분포로 나눠 생각할 수 있습니다.
+
+Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
+
 ![image](https://user-images.githubusercontent.com/48202736/106379093-fd6ad200-63ec-11eb-9b6f-f8ad3b5448c1.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/106379103-0360b300-63ed-11eb-910a-63e254e01682.png)
 
+ㅁㄴㅇ
+
 
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
+
+![image](https://user-images.githubusercontent.com/48202736/106442710-f1e7db80-64be-11eb-9810-954a14c0ed74.png)
+(이미지 출처 : [link](https://ko.wikipedia.org/wiki/%EB%8B%A4%EB%B3%80%EB%9F%89_%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC))
 
 ![image](https://user-images.githubusercontent.com/48202736/106379113-13789280-63ed-11eb-9a8a-3ee82f60c4cc.png)
 
