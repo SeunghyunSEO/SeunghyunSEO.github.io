@@ -53,7 +53,7 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 여기서 Positive definite의 정의는 아래와 같습니다.
 
-> Positive definite: $$z^T {Sigma} z$$ is positive for any real is positive for any real. <br>
+> Positive definite: $$z^T {\Sigma} z$$ is positive for any real is positive for any real. <br>
 
 다변량 정규 분포는 변수의 개수가 2개 3개 ... 무수히 많아질 수 있지만
 
