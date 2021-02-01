@@ -67,11 +67,22 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
 ![cov1](https://user-images.githubusercontent.com/48202736/106457537-742dcb00-64d2-11eb-9418-ad604f5bba3b.png)
+{: style="width: 80%;" class="center"}
+
 ![cov2](https://user-images.githubusercontent.com/48202736/106457539-755ef800-64d2-11eb-96d1-4acacd7edf93.png)
+{: style="width: 80%;" class="center"}
+
 ![cov3](https://user-images.githubusercontent.com/48202736/106457544-76902500-64d2-11eb-8493-7685385ac389.png)
+{: style="width: 60%;" class="center"}
+
 ![cov4](https://user-images.githubusercontent.com/48202736/106457546-77c15200-64d2-11eb-8f11-8b9e20de6d86.png)
+{: style="width: 60%;" class="center"}
+
 ![cov5](https://user-images.githubusercontent.com/48202736/106457553-7859e880-64d2-11eb-88e7-d3888e8f43da.png)
+{: style="width: 60%;" class="center"}
+
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
+
 ![cov7](https://user-images.githubusercontent.com/48202736/106457562-7b54d900-64d2-11eb-840d-c679d9fc872a.png)
 
 
