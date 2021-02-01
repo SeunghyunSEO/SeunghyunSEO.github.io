@@ -103,14 +103,6 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 ![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
 {: style="width: 60%;" class="center"}
 
-
-- <mark style='background-color: #fff5b1'> Maximum Likelihood for the Gaussian </mark>
-
-- <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
-
-
-
-
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
 - <mark style='background-color: #dcffe4'> Normar Inverse Gamma X Univariate Normal  </mark>
@@ -137,3 +129,9 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 ![wishart3](https://user-images.githubusercontent.com/48202736/106459380-1d75c080-64d5-11eb-9c75-4fb0d25752a8.png)
 {: style="width: 60%;" class="center"}
+
+
+
+- <mark style='background-color: #fff5b1'> Maximum Likelihood for the Gaussian </mark>
+
+- <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
