@@ -84,6 +84,7 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
 
 ![cov7](https://user-images.githubusercontent.com/48202736/106457562-7b54d900-64d2-11eb-840d-c679d9fc872a.png)
+{: style="width: 60%;" class="center"}
 
 
 
