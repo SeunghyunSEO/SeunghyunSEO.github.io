@@ -307,7 +307,7 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 이를 3차원으로 보면 아래 그림과 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/105637021-86927e00-5eae-11eb-85c3-32345926a9c3.png)
-{: style="width: 60%;" class="center"}
+{: style="width: 90%;" class="center"}
 
 그런데 Steepest Descent 는 문제가 아래와 같은 있습니다
 
