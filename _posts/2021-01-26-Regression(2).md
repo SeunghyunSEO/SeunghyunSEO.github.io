@@ -15,7 +15,8 @@ toc_sticky: true
 
 $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱해서 구한 $$posterior$$, $$Pr(\theta \mid x,y)$$ 를 최대화 하는 Maximum A Posterior 방법을 사용했습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105039364-d1be2280-5aa3-11eb-9f2e-f3ff85d367a4.png)
+![reg2](https://user-images.githubusercontent.com/48202736/106451874-81df5280-64ca-11eb-9837-a6507323d0c3.png)
+{: style="width: 60%;" class="center"}
 
 위의 그림은 MAP로 최적의 파라메터를 구했을 때의 그림입니다.
 
@@ -35,7 +36,7 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 
 - <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/105039371-d387e600-5aa3-11eb-8b54-2d9f2b31601e.png)
+![reg all](https://user-images.githubusercontent.com/48202736/106451883-83107f80-64ca-11eb-9078-86b1359f7dc7.png)
 
 (오늘은 Bayesian Linear Regression만 다루고 나머지는 다음에 다루도록 하겠습니다 ㅎㅎ...)
 
@@ -60,7 +61,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 <center>$$ posterior : Pr(\theta|X,w) = Norm_\phi[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] $$</center>
 <center>$$ where A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
 
-![image](https://user-images.githubusercontent.com/48202736/105039396-dc78b780-5aa3-11eb-8cdd-c37caca058e6.png)
+![bayesian_prior](https://user-images.githubusercontent.com/48202736/106451896-8441ac80-64ca-11eb-8160-76bb74c748b4.png)
 
 위의 그림의 왼쪽은 원래 추정하고자 했던 $$\phi$$의 사전 확률인 $$prior$$가 가우시안 분포를 나타내고, 
 오른쪽은 $$\phi$$의 분포를 나타냅니다. (variance는 나중에 다룰 예정)
@@ -113,7 +114,7 @@ in contrast to deep learning literature where “inference” often means model 
 
 이렇게 하면 결과는 아래와 같이 됩니다.
 
-![image](https://user-images.githubusercontent.com/48202736/105039401-dedb1180-5aa3-11eb-9922-10d47a5cbdd8.png)
+![bayesian_inference](https://user-images.githubusercontent.com/48202736/106451903-8572d980-64ca-11eb-9312-cd3d6e0fe96f.png)
 
 a)는 추정하고자 하는 파라메터 $$\phi_0,\phi_1$$의 분포를 나타내는 것입니다.
 원래 MAP는 여기서 최대가 되는 값 하나만을 학습을 통해 구했으나, 이제는 b)처럼 가능한 파라메터 $$\phi^{1}$$, $$\phi^{2}$$, $$\phi^{3}$$ ... 에 대해서 모두 생각을 해보자는 것이죠.
