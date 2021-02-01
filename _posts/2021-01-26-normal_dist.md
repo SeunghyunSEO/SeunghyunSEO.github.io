@@ -38,8 +38,7 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 이는 3차원으로 다시 생각해보면 아래와 같습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/106379271-0dcf7c80-63ee-11eb-80b1-8a401837c6a4.png)
-{width = 70%}
+![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/106379113-13789280-63ed-11eb-9a8a-3ee82f60c4cc.png)
 
