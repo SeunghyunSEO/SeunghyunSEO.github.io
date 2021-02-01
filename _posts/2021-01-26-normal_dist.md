@@ -16,7 +16,8 @@ toc_sticky: true
 
 Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/106379093-fd6ad200-63ec-11eb-9b6f-f8ad3b5448c1.png)
+![image](https://user-images.githubusercontent.com/48202736/106446895-290cbb80-64c4-11eb-841c-018238377b2b.png)
+
 
 일변량 정규 분포는 1개의 연속적인 변수에 대한 확률 값을 뱉는 함수가 되고,
 
