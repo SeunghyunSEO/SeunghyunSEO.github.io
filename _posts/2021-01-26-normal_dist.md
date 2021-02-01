@@ -64,8 +64,9 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/106379117-1a9fa080-63ed-11eb-9dd2-cc24ca2be8b3.png)
 ![image](https://user-images.githubusercontent.com/48202736/106379122-1d01fa80-63ed-11eb-964c-e9ed83014c02.png)
+
+![image](https://user-images.githubusercontent.com/48202736/106379117-1a9fa080-63ed-11eb-9dd2-cc24ca2be8b3.png)
 
 ![image](https://user-images.githubusercontent.com/48202736/106379146-4458c780-63ed-11eb-8342-1eae6d8770d2.png)
 
