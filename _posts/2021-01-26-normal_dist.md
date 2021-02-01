@@ -36,16 +36,14 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379157-520e4d00-63ed-11eb-91f3-957b610e1eb1.png)
 
-이는
+이는 3차원으로 다시 생각해보면 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379271-0dcf7c80-63ee-11eb-80b1-8a401837c6a4.png)
+{width = 70%}
 
 ![image](https://user-images.githubusercontent.com/48202736/106379113-13789280-63ed-11eb-9a8a-3ee82f60c4cc.png)
 
 - <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
-
-![image](https://user-images.githubusercontent.com/48202736/106442710-f1e7db80-64be-11eb-9810-954a14c0ed74.png)
-(이미지 출처 : [link](https://ko.wikipedia.org/wiki/%EB%8B%A4%EB%B3%80%EB%9F%89_%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC))
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
