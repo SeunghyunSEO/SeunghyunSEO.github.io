@@ -20,8 +20,15 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379103-0360b300-63ed-11eb-910a-63e254e01682.png)
 
-ㅁㄴㅇ
+일변량 정규 분포는 1개의 연속적인 변수에 대한 확률 값을 뱉는 함수가 되고,
 
+수식을 다시 풀어서 쓰면 아래와 같이 쓸 수 있습니다.
+
+<center>$$ Pr(x) = Norm_x[\mu,\sigma^2] $$</center>
+
+<center>$$ Pr(x) = \frac{1}{\sqrt{w\pi\sigma^2}}exp[-\frac{1}{2} (x-\mu)^2 / \sigma^2 ] $$</center>
+
+데이터 x를 표현하는 위의 분포의 파라메터는 평균(mean, $$\mu$$), 분산(variance, $$\sigma^2$$) 두가지 뿐입니다.
 
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
