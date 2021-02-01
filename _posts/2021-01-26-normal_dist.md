@@ -14,9 +14,12 @@ toc_sticky: true
 
 가우시안(Gaussian) 분포 혹은 정규(Normal) 분포는 변수가 1개냐 2개냐 ... 여러개냐에 따라서 (일변량)Univariate 분포 혹은 이변량(Bivariate), 다변량(Multivariate) 분포로 나눠 생각할 수 있습니다.
 
-Univariate Gaussian Distribution의 모양은 아래와 같습니다.
+Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
-![image](https://user-images.githubusercontent.com/48202736/106446895-290cbb80-64c4-11eb-841c-018238377b2b.png)
+![normal1](https://user-images.githubusercontent.com/48202736/106457506-6aa46300-64d2-11eb-849c-3f76dac4ca70.png)
+{: style="width: 60%;" class="center"}
+
+![normal2](https://user-images.githubusercontent.com/48202736/106457512-6bd59000-64d2-11eb-8fc3-b12bdd89be6a.png)
 {: style="width: 60%;" class="center"}
 
 
@@ -36,6 +39,9 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 - <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
 이제 조금 변수의 개수를 늘려서 생각해볼까요? 다변량 정규분포의 식은 아래와 같습니다.
+
+![multivariate1](https://user-images.githubusercontent.com/48202736/106457529-709a4400-64d2-11eb-8f09-9a8d18343e00.png)
+{: style="width: 60%;" class="center"}
 
 <center>$$ Pr(x) = \frac{1}{ (2\pi)^{D/2} \left | {\Sigma}^{1/2} \right | }exp[-\frac{1}{2} (x-\mu)^T {Sigma}^{-1} (x-\mu) ] $$</center>
 
@@ -67,20 +73,14 @@ Univariate Gaussian Distribution의 모양은 아래와 같습니다.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
-![image](https://user-images.githubusercontent.com/48202736/106446987-48a3e400-64c4-11eb-8264-0e518c0370a7.png)
-{: style="width: 80%;" class="center"}
+![cov1](https://user-images.githubusercontent.com/48202736/106457537-742dcb00-64d2-11eb-9418-ad604f5bba3b.png)
+![cov2](https://user-images.githubusercontent.com/48202736/106457539-755ef800-64d2-11eb-96d1-4acacd7edf93.png)
+![cov3](https://user-images.githubusercontent.com/48202736/106457544-76902500-64d2-11eb-8493-7685385ac389.png)
+![cov4](https://user-images.githubusercontent.com/48202736/106457546-77c15200-64d2-11eb-8f11-8b9e20de6d86.png)
+![cov5](https://user-images.githubusercontent.com/48202736/106457553-7859e880-64d2-11eb-88e7-d3888e8f43da.png)
+![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
+![cov7](https://user-images.githubusercontent.com/48202736/106457562-7b54d900-64d2-11eb-840d-c679d9fc872a.png)
 
-![image](https://user-images.githubusercontent.com/48202736/106446821-11353780-64c4-11eb-8395-e9c3d176f249.png)
-{: style="width: 80%;" class="center"}
-
-![image](https://user-images.githubusercontent.com/48202736/106447131-7721bf00-64c4-11eb-8edd-2992d5711774.png)
-{: style="width: 60%;" class="center"}
-
-![image](https://user-images.githubusercontent.com/48202736/106447139-7a1caf80-64c4-11eb-911f-b1c25a9adfad.png)
-{: style="width: 60%;" class="center"}
-
-![image](https://user-images.githubusercontent.com/48202736/106447151-7c7f0980-64c4-11eb-8866-fc0c3183c516.png)
-{: style="width: 60%;" class="center"}
 
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
