@@ -127,11 +127,7 @@ Covariance Matrix는 행렬의 모양에 따라서 아래와 같이 나눌 수 �
 
 그리고 이중에서 가장 간단하다고 할 수 있는 $$\sigma^2 I$$, Spherical Covariance Matrix의 수식과 그림이 (a,b)가 됩니다. 
 
-![cov3](https://user-images.githubusercontent.com/48202736/106457544-76902500-64d2-11eb-8493-7685385ac389.png)
-{: style="width: 60%;" class="center"}
-
-![cov4](https://user-images.githubusercontent.com/48202736/106457546-77c15200-64d2-11eb-8f11-8b9e20de6d86.png)
-{: style="width: 60%;" class="center"}
+![cov5](https://user-images.githubusercontent.com/48202736/106457553-7859e880-64d2-11eb-88e7-d3888e8f43da.png)
 
 Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 가지는 특성에 대해 살펴볼까요?
 
