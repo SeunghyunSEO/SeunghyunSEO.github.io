@@ -174,7 +174,7 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 
-그리고 가우시안 분포의 주변 분포(Marginal distribution) 또한 가우시안 분포가 되는 특성을 가지고 있습니다.
+그리고 가우시안 분포의 조건부 분포(Conditional distribution) 또한 가우시안 분포가 되는 특성이 있습니다.
 
 ![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
 {: style="width: 80%;" class="center"}
@@ -186,10 +186,23 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
-
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
-- <mark style='background-color: #dcffe4'> Normar Inverse Gamma X Univariate Normal  </mark>
+이번에는 가우시안 분포의 공액 분포(Conjugate Distribution)에 대해서 알아보도록 하겠습니다.
+
+왜 이 특성이 중요하냐면, 우리가 posterior를 계산할 때 likelihood x prior의 꼴로 계산하게 되는데 (적분을 해서 evidence로 나눠주기 까지 해야합니다)
+
+여기서 Conjugate 관계인 likelihood와 prior를 고르면 계산이 훨씬 수월하기 때문입니다.
+
+
+우리는 우선 likelihood가 가우시안인 경우를 가정하고 이와 conjugate관계인 분포들이 무엇이 있는지에 대해서 알아보도록 하겠습니다.
+
+- <mark style='background-color: #dcffe4'> Normal Inverse Gamma X Univariate Normal  </mark>
+
+1. Univariate Normal Distribution과 Normal Inverse Gamma는 conjugate 관계입니다.
+
+이 두 분포를 곱하게 되면 하나의 새로운 (constant) x Normal Inverse Gamma 분포가 됩니다.
+
 ![normal1](https://user-images.githubusercontent.com/48202736/106457506-6aa46300-64d2-11eb-849c-3f76dac4ca70.png)
 {: style="width: 60%;" class="center"}
 
@@ -202,6 +215,9 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 {: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
+
+2. Normal Distribution과 Normal Distribution는 conjugate 관계입니다.
+
 ![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
 {: style="width: 60%;" class="center"}
 
