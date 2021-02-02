@@ -42,3 +42,12 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Mixture of Gaussian (MoG) Example </mark>
 
+
+![mog1](https://user-images.githubusercontent.com/48202736/106545456-c1e71980-654c-11eb-9d08-494728c0b5cd.png)
+![mog2](https://user-images.githubusercontent.com/48202736/106545460-c3184680-654c-11eb-8807-e7d84e8c5076.png)
+![mog3](https://user-images.githubusercontent.com/48202736/106545466-c4e20a00-654c-11eb-8a0a-acd04d74c6a2.png)
+![mog4](https://user-images.githubusercontent.com/48202736/106545469-c6133700-654c-11eb-9bde-f4787a1012ac.png)
+![mog5](https://user-images.githubusercontent.com/48202736/106545473-c7dcfa80-654c-11eb-94dc-f753d31173d1.png)
+![mog6](https://user-images.githubusercontent.com/48202736/106545477-c90e2780-654c-11eb-8d12-e4efb84b63ba.png)
+![mog7](https://user-images.githubusercontent.com/48202736/106545479-cad7eb00-654c-11eb-90a8-b148882e7f9b.png)
+![mog8](https://user-images.githubusercontent.com/48202736/106545486-cc091800-654c-11eb-8d07-5a7b85e8286b.png)
