@@ -57,6 +57,16 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> E-Step & M-Step </mark>
 
+우리가 사용할 log likelihood를 최대화 하는 방법은 E Step과 M Step이 결합된 EM Algorithm입니다.  
+
+
+여기서 E Step은 주어진 파라메터의 초기값에 대해서 likelihood와 최대한 근사한 likelihood를 얻어내는 것이고
+M Step은 말그대로 이 likelihood를 최대화 하는 파라메터값을 수식으로 얻어내는겁니다.
+
+
+그리고 다시 한 번 그 파라메터를 기점으로 E Step을 진행 (likelihood를 업데이트하고) 또 M Step을 진행하고 ... 의 반복인겁니다.
+
+
 E Step은 분포 $$q_i(h_i)$$에 대해서 bound를 최대화 하는 것으로 수식으로 나타내면 아래와 같습니다.
 
 <center>$$ \hat{q_i}(h_i) = Pr(h_i|x_i,\theta^{[t]}) = \frac{Pr(x_i|h_i,\theta^{[t]}) Pr(h_i|\theta^{[t]})}{Pr(x_i)} $$</center>
