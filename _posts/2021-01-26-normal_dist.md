@@ -166,14 +166,18 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 ![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
-{: style="width: 60%;" class="center"}
+{: style="width: 80%;" class="center"}
 
 ![cond2](https://user-images.githubusercontent.com/48202736/106459115-b9eb9300-64d4-11eb-9561-88beb5020302.png)
-{: style="width: 60%;" class="center"}
+{: style="width: 80%;" class="center"}
+
+
 
 - <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
 ![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
 {: style="width: 60%;" class="center"}
+
+
 
 - <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
