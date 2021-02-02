@@ -102,11 +102,30 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
+우리는 앞서 다변량 정규분포가 어떤 형태를 띄고있으며, 수식으로 어떻게 정의되어있는지 살펴봤습니다.
+ 
+ 
+다변량 정규분포의 파라메터는 두가지, Mean 벡터와, 변수들간의 상관 variance를 모아둔 Covariance Matrix, 이 두가지였습니다.
+
+
+이 중에서도 Covariance Matrix는 굉장히 중요한 의미를 갖기 이에 대해 한번 알아보도록 하겠습니다.
+
+
+Covariance Matrix는 행렬의 모양에 따라서 아래와 같이 나눌 수 있습니다.
+
 ![cov1](https://user-images.githubusercontent.com/48202736/106457537-742dcb00-64d2-11eb-9418-ad604f5bba3b.png)
 {: style="width: 80%;" class="center"}
 
 ![cov2](https://user-images.githubusercontent.com/48202736/106457539-755ef800-64d2-11eb-96d1-4acacd7edf93.png)
 {: style="width: 80%;" class="center"}
+
+변수간 상관관계를 가장 잘 표현하는, 가장 복잡한 모델이 일반적인 Covariance Matrix, 즉 Full Covariance Matrix라고 할 수 있고(e,f),
+
+
+이보다 조금 표현력이 떨어지지만 대각 성분에만 variance가 존재하는 Diagonal Covariance Matrix가 (c,d)에 나타나 있습니다.
+
+
+그리고 이중에서 가장 간단하다고 할 수 있는 $$\sigma^2 I$$, Spherical Covariance Matrix의 수식과 그림이 (a,b)가 됩니다. 
 
 ![cov3](https://user-images.githubusercontent.com/48202736/106457544-76902500-64d2-11eb-8493-7685385ac389.png)
 {: style="width: 60%;" class="center"}
