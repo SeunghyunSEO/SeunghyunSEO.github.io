@@ -221,8 +221,9 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 2. Normal Distribution과 Normal Distribution도 두개를 곱하면 새로운 Normal Distribution이 되는 conjugate 관계입니다. (수식은 생략하겠습니다.)
 
+(신기한 점은 마찬가지로 Normal x Normal = (constant) * Normal 이 되는데 이 때의 constant 또한 Normal 의 형태를 갖게 된다는 겁니다.)
 
-아래는 두 분포의 곱을 나타낸 .
+아래는 두 분포의 곱을 나타낸 그림입니다..
 
 ![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
 {: style="width: 60%;" class="center"}
