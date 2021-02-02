@@ -59,11 +59,11 @@ toc_sticky: true
 
 E Step은 분포 $$q_i(h_i)$$에 대해서 bound를 최대화 하는 것으로 수식으로 나타내면 아래와 같습니다.
 
-<center>$$ \hat{q_i}(h_i) = Pr(h_i|x_i,\theta^{[t]} = \frac{Pr(x_i|h_i,\theta^{[t]}) Pr(h_i|\theta^{[t]})}{Pr(x_i)} $$</center>
+<center>$$ \hat{q_i}(h_i) = Pr(h_i|x_i,\theta^{[t]}) = \frac{Pr(x_i|h_i,\theta^{[t]}) Pr(h_i|\theta^{[t]})}{Pr(x_i)} $$</center>
 
 M Step은 분포 $$\theta$$에 대해서 bound를 최대화 하는 것으로 수식으로 나타내면 아래와 같습니다.
 
-<center>$$ \hat{\theta^{[t+1]}} = \arg \max_{\theta} [ \sum_{i=1}^{I} \int \hat{q_i}(h_i) log [Pr(x_i,h_i|\theta)] dh_i ] $$</center>
+<center>$$ \hat{\theta}^{[t+1]} = \arg \max_{\theta} [ \sum_{i=1}^{I} \int \hat{q_i}(h_i) log [Pr(x_i,h_i|\theta)] dh_i ] $$</center>
 
 이 두 가지 step을 iterative하게 그림으로 나타내면 아래와 같습니다.
 
