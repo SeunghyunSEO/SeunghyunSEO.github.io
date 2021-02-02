@@ -9,6 +9,14 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Models with hidden variables </mark>
 
+우리가 맨처음에 Maximum likelihood 방법에 대해 논할 때 생각했던 그림을 봅시다.
+
+![likelihood1](https://user-images.githubusercontent.com/48202736/106548623-ad0d8480-6552-11eb-8f3f-fc87abfea625.png)
+
+우리는 단지 위의 그림처럼 한개의 봉우리를 가지고있는(unimodal) 가우시안 함수에 대해서 likelihood를 최대화 하는 파라메터(mean, variance)를 찾곤 했습니다.
+
+하지만 우리가 추정하고자하는 분포가 이보다 더 복잡하다면 어떡할까요? 예를들어 봉우리가 여러개인(multimodal)인 경우는요? 
+
 ![image1](https://user-images.githubusercontent.com/48202736/106545430-b85db180-654c-11eb-809d-e2a9727670df.png)
 
 ```Key idea```는 Pr(x) 분포에 우리가 알 수 없는 hidden variable h를 추가해서 생각해보자는 겁니다.
