@@ -25,10 +25,12 @@ toc_sticky: true
 그림으로 생각해보면 바로 아래와 같은 경우죠
 
 ![mog4](https://user-images.githubusercontent.com/48202736/106545469-c6133700-654c-11eb-9bde-f4787a1012ac.png)
+{: style="width: 70%;" class="center"}
 
 위에서 말했듯 ```Key idea```는 Pr(x) 분포에 우리가 알 수 없는 hidden variable h를 추가해서 생각해보자는 겁니다.
 
 ![hidden](https://user-images.githubusercontent.com/48202736/106546381-6b7ada80-654e-11eb-8dbb-dc703b8c3a5b.png)
+{: style="width: 70%;" class="center"}
 
 <center>$$ Pr(x) = \int Pr(x,h) dh $$</center>
 
@@ -54,15 +56,28 @@ toc_sticky: true
 - <mark style='background-color: #fff5b1'> E-Step & M-Step </mark>
 
 ![em1](https://user-images.githubusercontent.com/48202736/106545453-c01d5600-654c-11eb-9912-9b3dac3d146a.png)
+{: style="width: 70%;" class="center"}
 
 - <mark style='background-color: #fff5b1'> Mixture of Gaussian (MoG) Example </mark>
 
 
 ![mog1](https://user-images.githubusercontent.com/48202736/106545456-c1e71980-654c-11eb-9d08-494728c0b5cd.png)
+{: style="width: 70%;" class="center"}
+
 ![mog2](https://user-images.githubusercontent.com/48202736/106545460-c3184680-654c-11eb-8807-e7d84e8c5076.png)
+{: style="width: 70%;" class="center"}
+
 ![mog3](https://user-images.githubusercontent.com/48202736/106545466-c4e20a00-654c-11eb-8a0a-acd04d74c6a2.png)
+{: style="width: 70%;" class="center"}
+
 ![mog4](https://user-images.githubusercontent.com/48202736/106545469-c6133700-654c-11eb-9bde-f4787a1012ac.png)
+{: style="width: 70%;" class="center"}
+
 ![mog5](https://user-images.githubusercontent.com/48202736/106545473-c7dcfa80-654c-11eb-94dc-f753d31173d1.png)
+
 ![mog6](https://user-images.githubusercontent.com/48202736/106545477-c90e2780-654c-11eb-8d12-e4efb84b63ba.png)
+{: style="width: 70%;" class="center"}
+
 ![mog7](https://user-images.githubusercontent.com/48202736/106545479-cad7eb00-654c-11eb-90a8-b148882e7f9b.png)
+
 ![mog8](https://user-images.githubusercontent.com/48202736/106545486-cc091800-654c-11eb-8d07-5a7b85e8286b.png)
