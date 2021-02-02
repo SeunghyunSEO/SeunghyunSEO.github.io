@@ -141,15 +141,26 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 그리고 Full Covariance는 아래의 그림과 같이 어떤 Digonal Covariance와 회전 행렬(Rotation Matrix)의 곱으로 Decomposition할 수도 있습니다.  
 
 ![cov6 5](https://user-images.githubusercontent.com/48202736/106458941-785ae800-64d4-11eb-8d90-bb732b8bfd37.png)
+{: style="width: 60%;" class="center"}
+
+(여기서 분홍색이 Full Covariance고, 녹색이 Diagonal Covariance가 됩니다.)
 
 이는 수식으로 나타내면 다음과 같습니다.
 
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
 
+또한 우리가 예를들어 $$Pr(x) = Norm_x[\mu,\Sigma]$$라는 분포를 가지고 있을 때, $$y=Ax+b$$라는 선형 변환을 할 경우
+
+결과 $$y$$의 분포 또한 가우시안 분포를 따르게 됩니다.
+
+<center>$$Pr(x) = Norm_x[\mu,\Sigma]$$</center>
+<center>$$y=Ax+b$$</center>
+<center>$$Pr(y) = Norm_y[A\mu + b, A^T \Sigma A]$$</center>
+
+(Can be used to generate data from arbitrary Gaussians from standard one)
 
 ![cov7](https://user-images.githubusercontent.com/48202736/106457562-7b54d900-64d2-11eb-840d-c679d9fc872a.png)
 {: style="width: 60%;" class="center"}
-
 
 
 
