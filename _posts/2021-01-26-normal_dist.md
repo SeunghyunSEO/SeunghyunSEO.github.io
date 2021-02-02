@@ -163,8 +163,19 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 {: style="width: 60%;" class="center"}
 
 
+- <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
+
+가우시안 분포의 주변 분포(Marginal distribution) 또한 가우시안 분포가 되는 특성을 가지고 있습니다.
+
+![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
+{: style="width: 60%;" class="center"}
+
+
 
 - <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
+
+그리고 가우시안 분포의 주변 분포(Marginal distribution) 또한 가우시안 분포가 되는 특성을 가지고 있습니다.
+
 ![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
 {: style="width: 80%;" class="center"}
 
@@ -173,9 +184,6 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
-- <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
-![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
-{: style="width: 60%;" class="center"}
 
 
 
