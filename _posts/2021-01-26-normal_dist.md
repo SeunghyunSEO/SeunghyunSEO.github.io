@@ -195,7 +195,9 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 여기서 Conjugate 관계인 likelihood와 prior를 고르면 계산이 훨씬 수월하기 때문입니다.
 
 
-우리는 우선 likelihood가 가우시안인 경우를 가정하고 이와 conjugate관계인 분포들이 무엇이 있는지에 대해서 알아보도록 하겠습니다.
+우리는 우선 likelihood가 가우시안인 경우를 가정하고 이와 conjugate관계인 prior들이 무엇이 있는지에 대해서 알아보도록 하겠습니다.
+
+(이와 관련된 수식들은 옆의 링크에서 찾아볼 수 있습니다 : [link](https://en.wikipedia.org/wiki/Conjugate_prior#cite_note-murphy-10))
 
 - <mark style='background-color: #dcffe4'> Normal Inverse Gamma X Univariate Normal  </mark>
 
