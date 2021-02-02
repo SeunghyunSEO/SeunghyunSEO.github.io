@@ -201,7 +201,10 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 1. Univariate Normal Distribution과 Normal Inverse Gamma는 conjugate 관계입니다.
 
-이 두 분포를 곱하게 되면 하나의 새로운 (constant) x Normal Inverse Gamma 분포가 됩니다.
+이 두 분포를 곱하게 되면 하나의 새로운 (constant) x Normal Inverse Gamma 분포가 됩니다. (수식은 생략하겠습니다.)
+
+
+아래는 두 분포의 모양입니다.
 
 ![normal1](https://user-images.githubusercontent.com/48202736/106457506-6aa46300-64d2-11eb-849c-3f76dac4ca70.png)
 {: style="width: 60%;" class="center"}
@@ -216,12 +219,23 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
 
-2. Normal Distribution과 Normal Distribution는 conjugate 관계입니다.
+2. Normal Distribution과 Normal Distribution도 두개를 곱하면 새로운 Normal Distribution이 되는 conjugate 관계입니다. (수식은 생략하겠습니다.)
+
+
+아래는 두 분포의 곱을 나타낸 .
 
 ![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
 {: style="width: 60%;" class="center"}
 
 - <mark style='background-color: #dcffe4'> Normal inverse Wishart X Multivariate Normal  </mark>
+
+3. Multivariate Normal Distribution과 Normal inverse Wishart Distribution도 Conjugate 관계입니다.
+
+마찬가지로 수식을 계산하면 새로운 Normal inverse Wishart Distribution로 딱 맞아 떨어지게 돼서 이후 posterior를 계산하기 쉬워집니다. (마찬가지로 수식은 생략하겠습니다.)
+
+
+아래는 wishart 분포의 모양입니다.
+
 ![wishart1](https://user-images.githubusercontent.com/48202736/106459372-1b136680-64d5-11eb-9c1e-dd81432ee24c.png)
 {: style="width: 60%;" class="center"}
 
