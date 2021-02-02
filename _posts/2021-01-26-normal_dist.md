@@ -138,7 +138,7 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
 
-그리고 Full Covariance는 아래의 그림과 같이 어떤 Digonal Covariance와 회전 행렬(Rotation Matrix)의 곱으로 Decomposition할 수도 있습니다.  
+그리고 Full Covariance는 아래의 그림과 같이 어떤 Diagonal Covariance와 회전 행렬(Rotation Matrix)의 곱으로 Decomposition할 수도 있습니다.  
 
 ![cov6 5](https://user-images.githubusercontent.com/48202736/106458941-785ae800-64d4-11eb-8d90-bb732b8bfd37.png)
 {: style="width: 60%;" class="center"}
