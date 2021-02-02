@@ -38,7 +38,7 @@ toc_sticky: true
 
 <center>$$ Pr(x|\theta) = \int Pr(x,h|\theta) dh $$</center>
 
-이제 위의 pdf를 어떻게하면 데이터에 맞게 제대로 피팅할 수 있을까요? 
+과연 위의 pdf를 어떻게하면 데이터에 맞게 제대로 피팅할 수 있을까요? 
 
 <center>$$ \hat{\theta} = \arg \max_{\theta} [ \sum_{i=1}^{I} log [\int Pr(x_i,h_i|\theta) dh_i] ]  $$</center>
 
@@ -51,15 +51,28 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Lower Bound </mark>
 
+<center>$$ B[\{ q_i(h_i) \}, \theta] = \sum_{i=1}^{I} \int q_i(h_i) log[\frac{Pr(x,h_i|\theta)}{q_i(h_i)}]dh_{1...I} $$</center>
+
 ![lowerbound1](https://user-images.githubusercontent.com/48202736/106545443-bc89cf00-654c-11eb-9be5-301120d70938.png)
 
 - <mark style='background-color: #fff5b1'> E-Step & M-Step </mark>
 
+E Step은 분포 $$q_i(h_i)$$에 대해서 bound를 최대화 하는 것으로 수식으로 나타내면 아래와 같습니다.
+
+<center>$$ \hat{q_i}(h_i) = Pr(h_i|x_i,\theta^{[t]} = \frac{Pr(x_i|h_i,\theta^{[t]}) Pr(h_i|\theta^{[t]})}{Pr(x_i)} $$</center>
+
+M Step은 분포 $$\theta$$에 대해서 bound를 최대화 하는 것으로 수식으로 나타내면 아래와 같습니다.
+
+<center>$$ \hat{\theta^{[t+1]}} = \arg \max_{\theta} [ \sum_{i=1}^{I} \int \hat{q_i}(h_i) log [Pr(x_i,h_i|\theta)] dh_i ] $$</center>
+
+이 두 가지 step을 iterative하게 그림으로 나타내면 아래와 같습니다.
+
 ![em1](https://user-images.githubusercontent.com/48202736/106545453-c01d5600-654c-11eb-9912-9b3dac3d146a.png)
 {: style="width: 70%;" class="center"}
 
-- <mark style='background-color: #fff5b1'> Mixture of Gaussian (MoG) Example </mark>
 
+
+- <mark style='background-color: #fff5b1'> Mixture of Gaussian (MoG) Example </mark>
 
 ![mog1](https://user-images.githubusercontent.com/48202736/106545456-c1e71980-654c-11eb-9d08-494728c0b5cd.png)
 {: style="width: 70%;" class="center"}
