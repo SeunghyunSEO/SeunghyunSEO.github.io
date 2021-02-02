@@ -133,12 +133,16 @@ Covariance Matrix는 행렬의 모양에 따라서 아래와 같이 나눌 수 �
 ![cov4](https://user-images.githubusercontent.com/48202736/106457546-77c15200-64d2-11eb-8f11-8b9e20de6d86.png)
 {: style="width: 60%;" class="center"}
 
-![cov5](https://user-images.githubusercontent.com/48202736/106457553-7859e880-64d2-11eb-88e7-d3888e8f43da.png)
+Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 가지는 특성에 대해 살펴볼까요?
 
-![cov6 5](https://user-images.githubusercontent.com/48202736/106458941-785ae800-64d4-11eb-8d90-bb732b8bfd37.png)
-{: style="width: 60%;" class="center"}
+
+우선 Full Covariance Matrix를 제외한 Diagonal Covariance Matrix를 따르는 두 변수 $$x1,x2$$의 이변량 정규분포는
+
+아래와 같은 수식으로 두 변수의 독립적인 분포(정규 분포)의 곱으로 나타낼 수 있습니다. (독립성)
 
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
+
+그리고 Full Covariance는 아래의 그림과 같이 어떤 Digonal Covariance와 회전 행렬(Rotation Matrix)의 곱으로 Decomposition할 수도 있습니다.  
 
 ![cov7](https://user-images.githubusercontent.com/48202736/106457562-7b54d900-64d2-11eb-840d-c679d9fc872a.png)
 {: style="width: 60%;" class="center"}
