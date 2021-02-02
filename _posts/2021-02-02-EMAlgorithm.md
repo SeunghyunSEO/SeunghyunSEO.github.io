@@ -19,7 +19,14 @@ toc_sticky: true
 
 ![image1](https://user-images.githubusercontent.com/48202736/106545430-b85db180-654c-11eb-809d-e2a9727670df.png)
 
-```Key idea```는 Pr(x) 분포에 우리가 알 수 없는 hidden variable h를 추가해서 생각해보자는 겁니다.
+이럴 경우 우리는 찾고자 하는 p(x) 분포에 대해서 (물론 파라메터 $$\theta$$를 도입하겠죠) 우리가 알 수 없는 숨겨진 변수인 hidden variable을 도입해 생각할 수 있습니다. 
+
+
+그림으로 생각해보면 바로 아래와 같은 경우죠
+
+![mog4](https://user-images.githubusercontent.com/48202736/106545469-c6133700-654c-11eb-9bde-f4787a1012ac.png)
+
+위에서 말했듯 ```Key idea```는 Pr(x) 분포에 우리가 알 수 없는 hidden variable h를 추가해서 생각해보자는 겁니다.
 
 ![hidden](https://user-images.githubusercontent.com/48202736/106546381-6b7ada80-654e-11eb-8dbb-dc703b8c3a5b.png)
 
