@@ -106,7 +106,16 @@ ML로 구한 solution은 아래와 같을 수 있습니다.
 
 offer a probabilistic interpretation of deep learning models by inferring distributions over the models’ weights. The model offers robustness to over-fitting, uncertainty estimates, and can easily learn from small datasets.
 
-B
+Bayesian Neural Network(BNN, Bayesian NN)은 90년대에 이미 제안된 방법으로, 딥 러닝 모델의 파라메터(weight)을 점 추정(딱 정해진 값 0.2 이런식으로) 하지 않고 분포를 추정해서 확률적인 해석을 제공하고, 오버피팅을 방지해주며, 불확실성을 추론하게 해주는 장점이 있었습니다. 
+
+우리가 위에서 언급한 것 처럼, 딥러닝의 각레이어에 파라메터가 존재하면 그 파라메터 행렬에 대해서
+
+<center>$$p(W_i) = N (0, I)$$</center>
+
+라는 prior를 주는겁니다(여기서는 0-mean 가우시안 분포네요). (하지만 보통 편의성을 위해서 bias는 점추정 하는 경우도 있다고 합니다.)
+
+
+하지만 작은 데이터셋, 작은 딥러닝 모델에 대해서 잘 될지 모르겠으나, 요즘 사용하는 거대한 사이즈의 딥러닝 모델이나, 큰 데이터셋에 대해서는 말처럼 쉽게 inference를 할 수가 없습니다. 
 
 
 - <mark style='background-color: #fff5b1'> Variational Inference </mark>
