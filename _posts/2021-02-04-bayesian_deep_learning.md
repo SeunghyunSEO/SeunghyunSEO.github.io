@@ -32,6 +32,8 @@ toc_sticky: true
 
 3. [(Yarin Gal)THESIS: UNCERTAINTY IN DEEP LEARNINGLink to this paper](https://www.cs.ox.ac.uk/people/yarin.gal/website/thesis/thesis.pdf)
 
+4. [Weight Uncertainty in Neural Networks](https://arxiv.org/pdf/1505.05424)
+
 4. [NYU Bayesian Deep Learning : Tutorials](https://wjmaddox.github.io/assets/BNN_tutorial_CILVR.pdf)
 
 5. [Yarin Gal's Blog](https://www.cs.ox.ac.uk/people/yarin.gal/website/publications.html)
