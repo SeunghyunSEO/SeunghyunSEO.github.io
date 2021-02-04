@@ -24,9 +24,13 @@ toc_sticky: true
 
 그림으로 다시 볼까요
 
+- MLE for Linear Regression
+
 아래는 Maximum lieklihood 방법을 통해 likelihood를 크게 만드는 파라메터 하나만을 '점 추정'한 선형회귀의 결과입니다. 
 
 ![mle1](https://user-images.githubusercontent.com/48202736/106867120-91e87380-6710-11eb-8a5e-4b989f8f3f9e.png)
+
+- Bayesian Approach for Linear Regression
 
 아래는 Bayesian 방법을 통해 Inference한 방법입니다. 
 
@@ -44,11 +48,19 @@ toc_sticky: true
 
 모델이 자신있게 'class1'이라고 분류하는 모습을 볼 수 있습니다.
 
+하지만 아래의 그림을 보면 파라메터의 posterior 분포를 적분하는, 그러니까 모든 파라메터에 대해서 선을 다 그어보는(?) bayesian이기에 별 모양의 데이터가 들어갔을 때 class1 : 0.6, class2 : 0.4 같은 결과를 보이는걸 알 수 있습니다.
 
+
+(아래 그림은 아쉬워서? 이해를 돕기위해? 추가...)
+
+- MLE for Classification
 
 ![mle_cls1](https://user-images.githubusercontent.com/48202736/106867129-944acd80-6710-11eb-92b1-4c6aa7ee132f.png)
 
+- Bayesian Approach for Classification
+
 ![bayesian_cls1](https://user-images.githubusercontent.com/48202736/106867133-957bfa80-6710-11eb-8183-7f2ae9e97522.png)
+
 
 위의 그림을 보면 
 
