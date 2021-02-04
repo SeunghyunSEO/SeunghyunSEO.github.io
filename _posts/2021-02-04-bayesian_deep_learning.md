@@ -39,7 +39,6 @@ toc_sticky: true
 둘의 차이는 아래의 이미지를 보면 회귀 곡선이 데이터 포인트가 별로 없는 부분에 대해서는 variance가 엄청 크게 나타난다는 겁니다. 즉 (y값이 1일확률~3일 확률이 거의 같을 정도로 햇갈려 하는, 모델이 잘 모르겠다고 말하는것과 같죠) 
 
 
-
 분류 문제를 볼까요? 여기서는 조금 더 직관적인 그림이 있는 것 같아 책의 그림이 아닌 다른 그림을 가져왔습니다.
 
 ![BNN](https://user-images.githubusercontent.com/48202736/106858019-5c3d8d80-6704-11eb-8a3a-82846ae6ddf7.png)
@@ -68,6 +67,31 @@ toc_sticky: true
 
 이렇듯 베이지안 방법은 가능한 파라메터에 대해서 적분을 해야한다는 문제와 그리고 경우에 따라 (아니 대부분의 경우) posterior 계산이 어렵다는 문제가 있지만, Model Uncertainty(모델의 불확실성, 자신 없는 부분을 자신 없다고 하는것)을 캐치하는데 설득력이 있는 결과를 제시합니다. 
 
+
+- <mark style='background-color: #fff5b1'> MAP vs Bayesian Approach </mark>
+
+둘 다 베이즈 룰을 통해 likelihood,prior를 가지고 posterior를 구하긴 하지만 여기서 둘의 차이는 가능한 파라메터를 다 고려하느냐 마느냐의 문제입니다.
+
+우리가 아래와같은 점선에서 샘플링한 데이터에, 노이즈를 추가한 걸 학습데이터로 가지고 있다고 생각해봅시다.
+
+<img width="584" alt="nyu_reg1" src="https://user-images.githubusercontent.com/48202736/106869242-0a503400-6713-11eb-869d-8b0dcd8f6feb.png">
+
+ML로 구한 solution은 아래와 같을 수 있습니다.
+
+<img width="1232" alt="nyu_reg2" src="https://user-images.githubusercontent.com/48202736/106869244-0b816100-6713-11eb-9ed4-a90b76f0c05f.png">
+
+근데 여기에 파라메터 $$w$$에 대한 prior를 도입해서 posterior를 구해봅시다. 여기서, 가장 피크값만 취하면 MAP고 그림과같이 여러 w에 대해서 다 뽑아보고 적분을 취하는게 Bayesian Approach입니다. 
+(즉 다양한 직선들을 그어보는거죠)
+
+<img width="1249" alt="nyu_reg3" src="https://user-images.githubusercontent.com/48202736/106869248-0de3bb00-6713-11eb-8f73-f3de62591bf1.png">
+
+하지만 이는 데이터가 많아지면 posterior가 엄청나게 sharp해지기 때문에 결국 데이터가 엄청 많아지면 MAP로 한 점을 찍는것과 같아질것입니다.
+
+<img width="1237" alt="nyu_reg4" src="https://user-images.githubusercontent.com/48202736/106869254-0fad7e80-6713-11eb-92a2-e5ee352f9729.png">
+<img width="1246" alt="nyu_reg5" src="https://user-images.githubusercontent.com/48202736/106869259-10deab80-6713-11eb-885f-96fd38cd72e4.png">
+<img width="1232" alt="nyu_reg6" src="https://user-images.githubusercontent.com/48202736/106869263-120fd880-6713-11eb-935f-7ddbe37933e2.png">
+
+그러니 데이터가 많은 경우에 대해서는 그게 그거가 되긴 한다는 말입니다.
 
 - <mark style='background-color: #fff5b1'> Neural Network </mark>
 
