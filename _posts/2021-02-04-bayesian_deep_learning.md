@@ -51,7 +51,7 @@ toc_sticky: true
 하지만 아래의 그림을 보면 파라메터의 posterior 분포를 적분하는, 그러니까 모든 파라메터에 대해서 선을 다 그어보는(?) bayesian이기에 별 모양의 데이터가 들어갔을 때 class1 : 0.6, class2 : 0.4 같은 결과를 보이는걸 알 수 있습니다.
 
 
-(아래 그림은 아쉬워서? 이해를 돕기위해? 추가...)
+(아래 그림은 아쉬워서? 이해를 돕기위해? 추가했습니다...)
 
 - MLE for Classification
 
@@ -61,10 +61,11 @@ toc_sticky: true
 
 ![bayesian_cls1](https://user-images.githubusercontent.com/48202736/106867133-957bfa80-6710-11eb-8183-7f2ae9e97522.png)
 
-
-위의 그림을 보면 
+이렇듯 베이지안 방법은 가능한 파라메터에 대해서 적분을 해야한다는 문제와 그리고 경우에 따라 (아니 대부분의 경우) posterior 계산이 어렵다는 문제가 있지만 설득력이 있는 결과를 제시합니다.
 
 - <mark style='background-color: #fff5b1'> Neural Network </mark>
+
+우리가 알고싶은 것은 Bayesian Neural Network (BNN) 나아가 Bayesian Deep Learning 이기 때문에, 이번에는 Neural Network에 대해서 알아보도록 하겠습니다.
 
 - <mark style='background-color: #fff5b1'> Bayesian Neural Network (BNN) </mark>
 
