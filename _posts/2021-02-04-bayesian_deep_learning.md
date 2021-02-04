@@ -8,11 +8,9 @@ toc_sticky: true
 ---
 
 
-- <mark style='background-color: #fff5b1'> Neural Network </mark>
-
-
 - <mark style='background-color: #fff5b1'> Bayesian Approach </mark>
 
+- <mark style='background-color: #fff5b1'> Neural Network </mark>
 
 - <mark style='background-color: #fff5b1'> Bayesian Neural Network (BNN) </mark>
 
