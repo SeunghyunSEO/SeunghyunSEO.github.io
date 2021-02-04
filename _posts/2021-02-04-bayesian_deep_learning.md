@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 
-- <mark style='background-color: #fff5b1'> Bayesian Approach </mark>
+- <mark style='background-color: #fff5b1'> Bayesian Approach and Model Uncertainty </mark>
 
 머신러닝에서 Bayesian Approach는 무엇을 의미할까요?
 
@@ -39,6 +39,7 @@ toc_sticky: true
 둘의 차이는 아래의 이미지를 보면 회귀 곡선이 데이터 포인트가 별로 없는 부분에 대해서는 variance가 엄청 크게 나타난다는 겁니다. 즉 (y값이 1일확률~3일 확률이 거의 같을 정도로 햇갈려 하는, 모델이 잘 모르겠다고 말하는것과 같죠) 
 
 
+
 분류 문제를 볼까요? 여기서는 조금 더 직관적인 그림이 있는 것 같아 책의 그림이 아닌 다른 그림을 가져왔습니다.
 
 ![BNN](https://user-images.githubusercontent.com/48202736/106858019-5c3d8d80-6704-11eb-8a3a-82846ae6ddf7.png)
@@ -65,7 +66,8 @@ toc_sticky: true
 
 ![bayesian_cls1](https://user-images.githubusercontent.com/48202736/106867133-957bfa80-6710-11eb-8183-7f2ae9e97522.png)
 
-이렇듯 베이지안 방법은 가능한 파라메터에 대해서 적분을 해야한다는 문제와 그리고 경우에 따라 (아니 대부분의 경우) posterior 계산이 어렵다는 문제가 있지만 설득력이 있는 결과를 제시합니다.
+이렇듯 베이지안 방법은 가능한 파라메터에 대해서 적분을 해야한다는 문제와 그리고 경우에 따라 (아니 대부분의 경우) posterior 계산이 어렵다는 문제가 있지만, Model Uncertainty(모델의 불확실성, 자신 없는 부분을 자신 없다고 하는것)을 캐치하는데 설득력이 있는 결과를 제시합니다. 
+
 
 - <mark style='background-color: #fff5b1'> Neural Network </mark>
 
