@@ -101,7 +101,12 @@ ML로 구한 solution은 아래와 같을 수 있습니다.
 
 
 
+
 - <mark style='background-color: #fff5b1'> Bayesian Neural Network (BNN) </mark>
+
+offer a probabilistic interpretation of deep learning models by inferring distributions over the models’ weights. The model offers robustness to over-fitting, uncertainty estimates, and can easily learn from small datasets.
+
+B
 
 
 - <mark style='background-color: #fff5b1'> Variational Inference </mark>
