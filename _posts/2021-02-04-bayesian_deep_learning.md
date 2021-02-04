@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 
-- <mark style='background-color: #fff5b1'> Bayesian Approach and Model Uncertainty </mark>
+- <mark style='background-color: #fff5b1'> Bayesian Modeling and Model Uncertainty </mark>
 
 머신러닝에서 Bayesian Approach는 무엇을 의미할까요?
 
@@ -93,9 +93,13 @@ ML로 구한 solution은 아래와 같을 수 있습니다.
 
 그러니 데이터가 많은 경우에 대해서는 그게 그거가 되긴 한다는 말입니다.
 
-- <mark style='background-color: #fff5b1'> Neural Network </mark>
+- <mark style='background-color: #fff5b1'> 수식적으로 생각해보는 Bayesian Modeling </mark>
 
-우리가 알고싶은 것은 Bayesian Neural Network (BNN) 나아가 Bayesian Deep Learning 이기 때문에, 이번에는 Neural Network에 대해서 알아보도록 하겠습니다.
+자 이제 본격적으로 수식적으로 Bayesian Approach에 대한 Recap을 해보도록 하겠습니다.
+
+모든 수식의 notation은 베이지안 딥러닝의 고수이신 '[Yarin Gal](https://scholar.google.co.kr/citations?user=SIayDoQAAAAJ&hl=en&oi=ao)'의 [박사 논문(Thesis)](https://www.cs.ox.ac.uk/people/yarin.gal/website/publications.html)을 기준으로 작성하겠습니다.
+
+
 
 - <mark style='background-color: #fff5b1'> Bayesian Neural Network (BNN) </mark>
 
