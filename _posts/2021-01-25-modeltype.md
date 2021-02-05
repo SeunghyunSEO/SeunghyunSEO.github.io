@@ -209,12 +209,11 @@ Generative Classification Model의 경우를 살펴봅시다.
 그리고 저희가 원하는것은 마찬가지로 $$Pr(w \mid x)$$ 이기 때문에 마찬가지로 베이즈 룰을 이용해 구해보면 다음과 같은 결과를 얻을 수 있습니다.
 
 ![gen_class4](https://user-images.githubusercontent.com/48202736/106454682-78f08000-64ce-11eb-9f4c-f4bd67027b2a.png)
-{: style="width: 60%;" class="center"}
 
 $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다이렉트로 $$Pr(w \mid x)$$를 학습한 분포가 조금 차이가 있어 다.(우)
 
 ![gen_class4 5](https://user-images.githubusercontent.com/48202736/106454685-7a21ad00-64ce-11eb-9095-5c201c9edb86.png)
-{: style="width: 90%;" class="center"}
+{: style="width: 70%;" class="center"}
 
 
 어떤 차이가 있는지 감이 오셨나요...?
