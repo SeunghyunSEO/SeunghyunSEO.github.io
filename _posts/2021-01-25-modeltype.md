@@ -43,6 +43,11 @@ Discriminative Model은 $$Pr(w \mid x)$$ 를 모델링 하는 것이 목적입�
 > 1. $$x$$에 대해 적절한 prior를 고른다. <br>
 > 2. $$Pr(x \mid w,\theta)$$를 정한다. <br>
 
+```
+주의!, 여기서 Prior는 학습하고자하는 파라메터에 대한 prior가 아닙니다, x의 분포입니다. 용어가 좀 혼용돼 햇갈리실 
+```
+
+
 그리고 파라메터를 학습하고 추론하는것은 아래와 같습니다.
 
 > 1. Learning algorithm : 입력 $$x$$에 대해 적절한 prior $$Pr(x)$$를 고르고, $$x,w$$에 대해서 $$Pr(x \mid w)$$를 학습한다.<br>
