@@ -82,9 +82,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 <center>$$ Pr(\phi \vert X, w) = \frac{ Pr(w \vert X, \phi) Pr(\phi) }{ Pr(w \vert X) } $$</center>
 
-하지만 여기서 문제가 있습니다.
-
-바로 posterior를 위한 closed form solution이 따로 존재하지 않는다는 것인데요. (바로 베이즈룰을 사용할 때 분모에 있는 수식을 구하기 위한 적분을 계산할 수 없음)
+여기서 posterior의 최대 값을 계산하기 위한 closed form solution이 따로 존재하지 않는다는 것인데요. (바로 베이즈룰을 사용할 때 분모에 있는 수식을 구하기 위한 적분을 계산할 수 없음)
 
 이 posterior를 구해야 아래의 식을 편하게 적분할 수 있을텐데,
 
@@ -99,14 +97,31 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 Posterior를 근사시키는 방법은 사실 여러 가지가 있습니다. 
 
 > 1. Laplace Approximation <br>
-> 2. Variational Inference (+Practical Variational Inference for NN) <br>
+> 2. Variational Inference (VI) (+Practical Variational Inference for NN) <br>
 > 3. Markov Chain Monte Carlo (MCMC)  <br>
 > 4. Hamiltonian Monte Carlo (HMC) <br>
 
+많은 분들이 알고 계실법한 변분 추론 (Variational Inference, VI)는 이번에는 다루지 않고,
+
+가장 간단한 Laplace Approximation에 대해서만 생각해보도록 하겠습니다.
+
 - <mark style='background-color: #dcffe4'> Laplace Approximation </mark>
+
+아래와 같이 실제 full posterior가 파란색이 될거라고 (모르지만) 생각해봅시다. 
+우리는 이를 다루기 쉬운 가우시안 분포(빨간색)의 mean, variance를 여러가지로 조절해서 이와 똑같지는 않지만 유사한 분포를 얻을 수 있을겁니다.
 
 ![cls2](https://user-images.githubusercontent.com/48202736/107110380-b700f180-688a-11eb-8e65-ce0e99f29e0e.png)
 *Fig. Posterior를 간단한 어떤 다루기 쉬운 분포로 근사한다.*
+
+이제 새로 도입한 분포의 mean, variance를 최대한 posterior와 근사하게 구하면 되는데 
+
+이는 MAP를 통해서 구할 수 있습니다. 
+
+<center>$$ L = \sum_{i=1}^{L} log[Pr(w_i | x_i, \phi)] + log[Pr(\phi)] $$</center>
+
+mean을 먼저 구하고 covariance는 그 다음에 구하면 됩니다
+
+
 
 ![cls3](https://user-images.githubusercontent.com/48202736/107110381-b700f180-688a-11eb-937e-d3340fba0dc5.png)
 *Fig. 근사해서 구한 분포와 실제 분포는 크게 다르지 않음을 알 수 있다.*
