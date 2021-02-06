@@ -96,7 +96,14 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 - <mark style='background-color: #fff5b1'> Posterior Approximation </mark>
 
-- <mark style='background-color: #dcffe4'> Laplace Inference </mark>
+Posterior를 근사시키는 방법은 사실 여러 가지가 있습니다. 
+
+> 1. Laplace Approximation <br>
+> 2. Variational Inference (+Practical Variational Inference for NN) <br>
+> 3. Markov Chain Monte Carlo (MCMC)  <br>
+> 4. Hamiltonian Monte Carlo (HMC) <br>
+
+- <mark style='background-color: #dcffe4'> Laplace Approximation </mark>
 
 ![cls2](https://user-images.githubusercontent.com/48202736/107110380-b700f180-688a-11eb-8e65-ce0e99f29e0e.png)
 *Fig. Posterior를 간단한 어떤 다루기 쉬운 분포로 근사한다.*
