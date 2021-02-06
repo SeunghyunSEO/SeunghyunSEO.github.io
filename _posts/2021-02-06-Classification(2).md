@@ -35,7 +35,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 이는 Decision boundary가 아래의 그림같이 생겼기 때문인데요,
 
 ![cls5-1](https://user-images.githubusercontent.com/48202736/107110383-b8321e80-688a-11eb-9d60-901e301a7f81.png)
-*Fig. 3. Decision Boundary는 왼쪽과 같은 logistic 함수를 사용해서 만들기 때문입니다. decision boundary가 출력이 0.5인 부분이라고 하면 이 값을 전후로 굉장히 높은 확률로 class를 확신해서 분류하게 됩니다. *
+*Fig. 3. Decision Boundary는 왼쪽과 같은 logistic 함수를 사용해서 만듭니다. decision boundary가 출력이 0.5인 부분이라고 하면 이 값을 전후로 굉장히 높은 확률로 class를 확신해서 분류하게 됩니다.*
 
 이렇게 극단적으로 클래스를 나눠주지 말고 *Fig. 2*의 오른쪽 그림처럼 결정 경계 근처에 존재하는 테스트 데이터에 대해서 분류기가 주는 불확실성을 조금 더 표현해 줬으면 좋지 않을까요?
 
