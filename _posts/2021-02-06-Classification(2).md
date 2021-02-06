@@ -64,3 +64,6 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 
 
+- <mark style='background-color: #fff5b1'> References </mark>
+
+1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
