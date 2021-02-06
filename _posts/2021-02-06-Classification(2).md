@@ -69,7 +69,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 우리가 Bayesian Logistic Regression을 하기 위해 해야할 것은 아래의 식이므로 (파라메터에 대해 전부 적분),
 우리는 posterior또한 구해야 합니다.
 
-<center>Pr(w^{\ast} \vert x^{\ast}, X, W) = \int Pr(w^{\ast} \vert x^{\ast} \phi) Pr(\phi | X, W) d\phi <center>
+<center>$$ Pr(w^{\ast} \vert x^{\ast}, X, W) = \int Pr(w^{\ast} \vert x^{\ast} \phi) Pr(\phi | X, W) d\phi $$</center>
   
 
 사후분포(posterior)를 구하기 위해 구하고자 하는 파라메터에 대한 사전 분포(prior)를 도입해줍시다.
@@ -80,7 +80,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 베이즈룰을 적용해서 이제 posterior를 구해보도록 하죠.
 
-<center>Pr(\phi \vert X, w) = \frac{ Pr(w \vert X, \phi) Pr(\phi) }{ Pr(w \vert X) }</center>
+<center>$$ Pr(\phi \vert X, w) = \frac{ Pr(w \vert X, \phi) Pr(\phi) }{ Pr(w \vert X) } $$</center>
 
 하지만 여기서 문제가 있습니다.
 
@@ -88,7 +88,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 이 posterior를 구해야 아래의 식을 편하게 적분할 수 있을텐데,
 
-<center>Pr(w^{\ast} \vert x^{\ast}, X, W) = \int Pr(w^{\ast} \vert x^{\ast} \phi) Pr(\phi | X, W) d\phi <center>
+<center>$$ Pr(w^{\ast} \vert x^{\ast}, X, W) = \int Pr(w^{\ast} \vert x^{\ast} \phi) Pr(\phi | X, W) d\phi $$</center>
   
 그럴 수 없기때문에 우리는 approximation을 통해서 실제 posterior와 근사한 어떤 함수를 도입할겁니다.
 
