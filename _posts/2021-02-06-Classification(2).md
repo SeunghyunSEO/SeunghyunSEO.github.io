@@ -27,7 +27,7 @@ toc_sticky: true
 예를들어 MAP 방식으로 Decision Boundary를 정하는 것은 아래와 같은 문제가 있을 수 있는데, 
 MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라메터만을 주어진 학습 데이터를 통해 구해서 쓰는 것이기 때문에 Decision Boundary 근처에 어떤 데이터가 주어졌을 때 이를 class1이라고 과잉 확신 하는 경우가 있습니다. 
 
-(예를 들어, class1 :90%, class2:10%) 
+(예를 들어, class1 : 90%, class2 : 10%) 
 
 <img width="1182" alt="bayesian_cls" src="https://user-images.githubusercontent.com/48202736/107111166-0c400180-6891-11eb-93d1-6f6a16fba8b4.png">
 *Fig. 2. MAP(좌) vs Bayesian Approach(우), 이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h)*
@@ -39,7 +39,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 이렇게 극단적으로 클래스를 나눠주지 말고 *Fig. 2*의 오른쪽 그림처럼 결정 경계 근처에 존재하는 테스트 데이터에 대해서 분류기가 주는 불확실성을 조금 더 표현해 줬으면 좋지 않을까요?
 
-(예를 들어, class1 : 54%, class2:56%)
+(예를 들어, class1 : 54%, class2 : 56%)
 
 이러한 생각 때문에 우리는 Bayesian Approach를 통해서 조금 더 자연스러운 Inference를 하고싶은 겁니다.
 
