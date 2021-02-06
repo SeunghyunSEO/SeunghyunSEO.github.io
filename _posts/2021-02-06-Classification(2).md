@@ -7,7 +7,19 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> Bayesian logistic regression </mark>
+- <mark style='background-color: #fff5b1'> Bayesian Logistic Regression </mark>
+
+이번에는 Bayesian Logistic Regression에 대해 알아보도록 하겠습니다..
+
+우리가 흔히 머신러닝 방법론을 통해 분류, 회귀를 하는 방식은 크게 3가지가 있었습니다.
+
+이전 글들에서 많이 설명을 했기 때문에 이번에는 간략하게 요약만 하고 넘어가도록 하겠습니다.
+
+> 1. Maximum Likelihood (ML) : likelihood 를 정의하고 이를 최대화하는 단 하나의 값(점)을 찾는다. (점 추정) <br>
+> 2. Maximum A Posteriori (MAP) : likelihood를 정의하고 추가로 파라메터에 대한 prior를 정의해서 베이즈룰을 통해 posterior를 구한 뒤 이를 최대화하는 단 하나의 값(점)을 찾는다. (점 추정) <br>
+> 3. Bayesian Approach : 2번의 posterior 분포를 구하고 점 추정 하지 않고(분포 그대로), 추론 시 파라메터에 대해(posterior 분포를) 전부 적분해서 사용한다. <br>
+
+
 
 ![cls1](https://user-images.githubusercontent.com/48202736/107110376-b2d4d400-688a-11eb-832b-4cbb5babc175.png)
 *Fig. Logistic Regression (Classification)의 여러 변형*
