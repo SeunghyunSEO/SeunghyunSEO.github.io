@@ -45,3 +45,6 @@ toc_sticky: true
 
 
 
+- <mark style='background-color: #fff5b1'> References </mark>
+
+1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
