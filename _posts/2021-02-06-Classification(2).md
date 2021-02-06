@@ -12,7 +12,7 @@ toc_sticky: true
 이번에는 Bayesian Logistic Regression에 대해 알아보도록 하겠습니다.
 
 ![cls1](https://user-images.githubusercontent.com/48202736/107110376-b2d4d400-688a-11eb-832b-4cbb5babc175.png)
-*Fig. Logistic Regression (Classification)의 여러 변형*
+*Fig. 1. Logistic Regression (Classification)의 여러 변형*
 
 우리가 흔히 머신러닝 방법론을 통해 분류, 회귀를 하는 방식은 크게 3가지가 있었습니다.
 
@@ -25,20 +25,62 @@ toc_sticky: true
 분류 문제를 풀 경우에 우리는 일반적으로 ML,MAP 방식을 사용할 수 있지만 이는 어떤 부분에서는 문제가 있을 수 있습니다. 
 
 예를들어 MAP 방식으로 Decision Boundary를 정하는 것은 아래와 같은 문제가 있을 수 있는데, 
-MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라메터만을 주어진 학습 데이터를 통해 구해서 쓰는 것이기 때문에 Decision Boundary 근처에 어떤 데이터가 주어졌을 때 이를 class1이라고 과잉 확신 하는 경우가 있습니다. (예를 들어 class1 :0.9, class2:0.1) 
+MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라메터만을 주어진 학습 데이터를 통해 구해서 쓰는 것이기 때문에 Decision Boundary 근처에 어떤 데이터가 주어졌을 때 이를 class1이라고 과잉 확신 하는 경우가 있습니다. 
+
+(예를 들어, class1 :90%, class2:10%) 
 
 <img width="1182" alt="bayesian_cls" src="https://user-images.githubusercontent.com/48202736/107111166-0c400180-6891-11eb-93d1-6f6a16fba8b4.png">
-*Fig. MAP(좌) vs Bayesian Approach(우), 이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h)*
+*Fig. 2. MAP(좌) vs Bayesian Approach(우), 이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h)*
 
 이는 Decision boundary가 아래의 그림같이 생겼기 때문인데요,
 
 ![cls5-1](https://user-images.githubusercontent.com/48202736/107110383-b8321e80-688a-11eb-9d60-901e301a7f81.png)
-*Fig. Decision Boundary는 왼쪽과 같은 logistic 함수를 사용해서 만들기 때문입니다. decision boundary가 출력이 0.5인 부분이라고 하면 이 값을 전후로 굉장히 높은 확률로 class를 확신해서 분류하게 됩니다. *
+*Fig. 3. Decision Boundary는 왼쪽과 같은 logistic 함수를 사용해서 만들기 때문입니다. decision boundary가 출력이 0.5인 부분이라고 하면 이 값을 전후로 굉장히 높은 확률로 class를 확신해서 분류하게 됩니다. *
 
-하지만 우리는 위의 
-그렇기 때문에 우리는 가능한 decision boundary 를 많이 그려보고 이에 대해 
+이렇게 극단적으로 클래스를 나눠주지 말고 *Fig. 2*의 오른쪽 그림처럼 결정 경계 근처에 존재하는 테스트 데이터에 대해서 분류기가 주는 불확실성을 조금 더 표현해 줬으면 좋지 않을까요?
 
-- <mark style='background-color: #fff5b1'> Laplace Approximation </mark>
+(예를 들어, class1 : 54%, class2:56%)
+
+이러한 생각 때문에 우리는 Bayesian Approach를 통해서 조금 더 자연스러운 Inference를 하고싶은 겁니다.
+
+- <mark style='background-color: #dcffe4'> 수식으로 보는 Bayesian Logistic Regression </mark>
+
+자 이제 수식적으로 접근해보도록 합시다.
+
+> <mark style='background-color: #dcffe4'> Notation </mark> <br>
+> $$ x $$ : input state, 데이터 입력값 <br>
+> $$ w $$ : world state, x에 대응하는 값 <br>
+> $$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값 <br>
+
+우리는 이진 분류 문제에 대해서 likelihood를 베르누이 분포로 모델링 하는것을 이전의 글에서 충분히 이해했습니다.
+
+![ber1](https://user-images.githubusercontent.com/48202736/106453016-04b4dd00-64cc-11eb-9278-625d36eaa5be.png)
+{: style="width: 60%;" class="center"}
+*Fig. 4. Bernoulli Distribution*
+
+그렇기 때문에 우리는 likelihood를 다음과 같이 나타낼 수 있었죠.
+
+<center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} \lambda^{w_i}(1-\lambda)^{1-w_i} $$</center>
+
+<center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} (\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(1-\frac{1}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
+
+<center>$$ Pr(w|X,\phi) = \prod_{i=1}^{I} (\frac{1}{1+exp[-\phi^T x_i]})^{w_i}(\frac{exp[-\phi^T x_i]}{1+exp[-\phi^T x_i]})^{1-w_i} $$</center>
+
+여기에 구하고자 하는 파라메터에 대해서 사전 분포를 도입해줍시다.
+
+<center>$$ Pr(\Phi) = Norm_{\phi}[0,\sigma_p^2 I] $$</center> 
+
+(주의할점은 이 prior는 likelihood와 conjugate 관계가 아니기 때문에 둘을 곱하면 더럽게 계산이 될 수도 있습니다.)
+
+베이즈룰을 적용해서 이제 posterior를 구해보도록 하죠.
+
+<center>Pr(\phi \vert X, w) = \frac{ Pr(w \vert X, \phi) Pr(\phi) }{ Pr(w \vert X) }</center>
+
+
+
+- <mark style='background-color: #fff5b1'> Posterior Approximation </mark>
+
+- <mark style='background-color: #dcffe4'> Laplace Inference </mark>
 
 ![cls2](https://user-images.githubusercontent.com/48202736/107110380-b700f180-688a-11eb-8e65-ce0e99f29e0e.png)
 *Fig. Posterior를 간단한 어떤 다루기 쉬운 분포로 근사한다.*
