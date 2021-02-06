@@ -74,7 +74,7 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 사후분포(posterior)를 구하기 위해 구하고자 하는 파라메터에 대한 사전 분포(prior)를 도입해줍시다.
 
-<center>$$ Pr(\Phi) = Norm_{\phi}[0,\sigma_p^2 I] $$</center> 
+<center>$$ Pr(\phi) = Norm_{\phi}[0,\sigma_p^2 I] $$</center> 
 
 (주의할점은 이 prior는 likelihood와 conjugate 관계가 아니기 때문에 둘을 곱하면 더럽게 계산이 될 수도 있습니다.)
 
