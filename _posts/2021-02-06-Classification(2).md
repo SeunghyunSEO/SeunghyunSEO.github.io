@@ -28,8 +28,7 @@ toc_sticky: true
 MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라메터만을 주어진 학습 데이터를 통해 구해서 쓰는 것이기 때문에 Decision Boundary 근처에 어떤 데이터가 주어졌을 때 이를 class1이라고 과잉 확신 하는 경우가 있습니다. (예를 들어 class1 :0.9, class2:0.1) 
 
 <img width="1182" alt="bayesian_cls" src="https://user-images.githubusercontent.com/48202736/107111166-0c400180-6891-11eb-93d1-6f6a16fba8b4.png">
-(이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h))
-*Fig. MAP(좌) vs Bayesian Approach(우)*
+*Fig. MAP(좌) vs Bayesian Approach(우), 이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h)*
 
 이는 Decision boundary가 아래의 그림같이 생겼기 때문인데요,
 
