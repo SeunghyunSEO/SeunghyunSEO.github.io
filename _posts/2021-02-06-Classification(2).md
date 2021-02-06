@@ -82,13 +82,13 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 <center>$$ Pr(\phi \vert X, w) = \frac{ Pr(w \vert X, \phi) Pr(\phi) }{ Pr(w \vert X) } $$</center>
 
-여기서 posterior의 최대 값을 계산하기 위한 closed form solution이 따로 존재하지 않는다는 것인데요. (바로 베이즈룰을 사용할 때 분모에 있는 수식을 구하기 위한 적분을 계산할 수 없음)
+여기서 posterior의 최대 값을 계산하기 위한 closed form solution이 따로 존재하지 않습니다. 
 
-이 posterior를 구해야 아래의 식을 편하게 적분할 수 있을텐데,
+그리고 posterior가 엄청나게 식이 복잡해지기 때문에 아래의 적분을 통해 bayesian inference를 하기란 쉽지 않은데요,
 
 <center>$$ Pr(w^{\ast} \vert x^{\ast}, X, W) = \int Pr(w^{\ast} \vert x^{\ast} \phi) Pr(\phi | X, W) d\phi $$</center>
   
-그럴 수 없기때문에 우리는 approximation을 통해서 실제 posterior와 근사한 어떤 함수를 도입할겁니다.
+그렇기 때문에 우리는 실제 posterior와 근사한 어떤 함수를 approximation을 통해 구해서 사용하게 될 것입니다.
 
 (+ 회귀 문제에서 간단한 베이지안 선형 회귀를 할 경우에서는 Posterior가 계산이 쉽기 때문에 이런 문제는 없었습니다) 
 
@@ -115,11 +115,18 @@ Posterior를 근사시키는 방법은 사실 여러 가지가 있습니다.
 
 이제 새로 도입한 분포의 mean, variance를 최대한 posterior와 근사하게 구하면 되는데 
 
-이는 MAP를 통해서 구할 수 있습니다. 
+이는 아래의 Loss를 통해서 MAP를 통해서 구할 수 있습니다. 
 
 <center>$$ L = \sum_{i=1}^{L} log[Pr(w_i | x_i, \phi)] + log[Pr(\phi)] $$</center>
 
-mean을 먼저 구하고 covariance는 그 다음에 구하면 됩니다
+구해진 Approximate Posterior는 아래와 같습니다.
+
+<center>$$ Pr(\phi | X,W) \approx q(\phi) = Norm_{\phi}[\mu, \Sigma] $$</center>
+
+<center>$$ where \mu = \hat{\phi} $$</center>
+<center>$$ \Sigma = - $$</center>
+
+mean을 먼저 구하고 covariance는 그 다음에 구하면 됩니다.
 
 
 
