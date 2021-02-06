@@ -22,10 +22,14 @@ toc_sticky: true
 > 2. Maximum A Posteriori (MAP) : likelihood를 정의하고 추가로 파라메터에 대한 prior를 정의해서 베이즈룰을 통해 posterior를 구한 뒤 이를 최대화하는 단 하나의 값(점)을 찾는다. (점 추정) <br>
 > 3. Bayesian Approach : 2번의 posterior 분포를 구하고 점 추정 하지 않고(분포 그대로), 추론 시 파라메터에 대해(posterior 분포를) 전부 적분해서 사용한다. <br>
 
-분류 문제를 풀 경우에 데이터가 충분히 많으면 어느 방법을 써도 크게 문제가 없지만, 데이터가 적을 경우에는 특히 ML방식은 문제가 있을 수 있습니다. 
+분류 문제를 풀 경우에 우리는 일반적으로 ML,MAP 방식을 사용할 수 있지만 이는 어떤 부분에서는 문제가 있을 수 있습니다. 
 
-ML 방식으로 Decision Boundary
+예를들어 MAP 방식으로 Decision Boundary를 정하는 것은 아래와 같은 문제가 있을 수 있는데, 
+MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라메터만을 주어진 학습 데이터를 통해 구해서 쓰는 것이기 때문에 Decision Boundary 근처에 어떤 데이터가 주어졌을 때 이를 class1이라고 과잉 확신 하는 경우가 있습니다. (예를 들어 class1 :0.9, class2:0.1) 
+
+<img width="1182" alt="bayesian_cls" src="https://user-images.githubusercontent.com/48202736/107111166-0c400180-6891-11eb-93d1-6f6a16fba8b4.png">
 (이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h))
+*Fig. 점 추정*
 
 이번 글에서는 Logistic Regression의 Over-Confident를 막아주는 Baywsian Logistic Regression
 
