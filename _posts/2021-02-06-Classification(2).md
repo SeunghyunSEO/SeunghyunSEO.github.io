@@ -29,9 +29,14 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 <img width="1182" alt="bayesian_cls" src="https://user-images.githubusercontent.com/48202736/107111166-0c400180-6891-11eb-93d1-6f6a16fba8b4.png">
 (이미지 출처 : [A Bayesian graph convolutional network for reliable prediction of molecular properties with uncertainty quantification](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c9sc01992h))
-*Fig. 점 추정*
+*Fig. MAP(좌) vs Bayesian Approach(우)*
 
-이번 글에서는 Logistic Regression의 Over-Confident를 막아주는 Baywsian Logistic Regression
+이는 Decision boundary가 아래의 그림같이 생겼기 때문인데요,
+
+![cls5-1](https://user-images.githubusercontent.com/48202736/107110383-b8321e80-688a-11eb-9d60-901e301a7f81.png)
+*Fig. Decision Boundary는 왼쪽과 같은 logistic 함수를 사용해서 만들기 때문에, boundary 전후로 굉장히 높은 확률로 class를 확신해서 분류합니다. *
+
+그렇기 때문에 우리는 가능한 decision boundary 를 많이 그려보고 이에 대해 
 
 - <mark style='background-color: #fff5b1'> Laplace Approximation </mark>
 
