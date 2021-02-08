@@ -1,6 +1,6 @@
 ---
 title: Deep Learning Speech Papers
-categories: SpeechRecognition
+categories: Speech_Recognition
 tag: [tmp]
 
 toc: true
