@@ -1,5 +1,5 @@
 ---
-title: Classification (3/?) - Non-linear logistic regression, Kernelization and Gaussian process classification
+title: Classification (3/3) - Non-linear logistic regression, Kernelization and Gaussian process classification
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
