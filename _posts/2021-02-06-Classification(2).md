@@ -1,5 +1,5 @@
 ---
-title: Classification (2/?) - Bayesian logistic regression
+title: Classification (2/3) - Bayesian logistic regression
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
