@@ -1,5 +1,5 @@
 ---
-title: Books, Blogs & Lectures for Deep Learning 
+title: Books, Blogs and Lectures for Deep Learning 
 categories: Something
 tag: 
 
