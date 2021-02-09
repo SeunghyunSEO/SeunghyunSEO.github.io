@@ -553,98 +553,44 @@ $$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$
 
 - <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
 
-- 관찰 데이터 집합 \\( {\bf X}=({\bf x}\_1,...,{\bf x}\_n)^T \\) 가 주어졌을 때 데이터 \\( \{ {\bf x}\_n\} \\) 은 서로 독립적으로 발현된다. (*i.i.d*)
-- 각각의 관찰 데이터는 가우시안 분포를 따르게 되며 이를 가능도 함수로 이용할 때에는 보통 로그를 취해 사용하게 된다.
+관찰 데이터 집합 \\( {\bf X}=({\bf x}\_1,...,{\bf x}\_n)^T \\) 가 주어졌을 때 데이터 \\( \{ {\bf x}\_n\} \\) 은 서로 독립적으로 발현된다고 생각하겠습니다(*i.i.d*). 
+이 때, 각각의 관찰 데이터는 가우시안 분포를 따르게 되며 이를 가능도 함수로 이용할 때에는 보통 로그를 취해 사용하게 된다.
 
 $$\ln p({\bf X}|{\pmb \mu}, \Sigma) = -\frac{ND}{2}\ln(2\pi) - \frac{N}{2}\ln|\Sigma|-\frac{1}{2}\sum_{n=1}^{N}({\bf x}_n-{\pmb \mu})^T\Sigma^{-1}({\bf x}_n-{\pmb \mu}) \qquad{(2.118)}$$
 
-- 이 식은 사실 최종적으로는 다음 두가지 값에만 영향을 받게 된다.
+이 식은 사실 최종적으로는 아래의 두가지 값에만 영향을 받게 됩니다..
 
 $$\sum_{n=1}^{N}{\bf x}_n \qquad{(2.119)}$$
 
 $$\sum_{n=1}^{N}{\bf x}_n{\bf x}_n^T \qquad{(2.119)}$$
 
-- 이를 충분통계량(*sufficient statistics*)라고 부른다.
-
-- 가우시안 분포를 따르기 때문에 미분을 통해 최대값을 구할 수 있다.
+이를 충분통계량(*sufficient statistics*)라고 부릅니다. 이제 우리는 미분을 통해 0인 지점을 구하면 Maximum Likelihood Estimation의 해를 구할 수 있습니다.
 
 $$\dfrac{\partial}{\partial {\pmb \mu}}\ln p({\bf X}|{\pmb \mu}, \Sigma) = \sum_{n=1}^{N}\Sigma^{-1}({\bf x}_n-{\pmb \mu}) = 0 \qquad{(2.120)}$$
 
 $${\pmb \mu}_{ML} = \frac{1}{N}\sum_{n=1}^{N}{\bf x}_n \qquad{(2.121)}$$
 
-- 공분산의 최대값은 다음과 같다.
+공분산의 최대값은 다음과 같습니다.
 
 $$\Sigma_{ML} = \frac{1}{N}\sum_{n=1}{N}({\bf x}-{\pmb \mu}_{ML})({\bf x}-{\pmb \mu}_{ML})^T \qquad{(2.122)}$$ 
 
-- 이 식에서는 \\( {\pmb \mu}\_{ML} \\) 이 사용된다. 먼저 \\( {\pmb \mu}\_{ML} \\) 을 구하고 \\( \Sigma\_{ML} \\) 을 구하면 된다.
+이 식에서는 \\( {\pmb \mu}\_{ML} \\) 이 사용되기 때문에 먼저 \\( {\pmb \mu}\_{ML} \\) 을 구하고 \\( \Sigma\_{ML} \\) 을 구하면 됩니다.
 
-- 이 때의 평균 값은 다음과 같다.
+만약 Maximum Likelihood 해의 기대값을 실제 분포하에서 계산하게 되면 다음의 결과를 얻게 된다고 합니다.
 
 $$E[{\pmb \mu}_{ML}] = {\pmb \mu} \qquad{(2.123)}$$
 
 $$E[\Sigma_{ML}] = \frac{N-1}{N}\Sigma \qquad{(2.124)}$$
 
-- 이 내용은 1.2.4 절에서도 다룬 내용이다.
-    - MLE의 기대값에 대한 평균은 그냥 평균이 된다. (unbias)
-    - 하지만 분산값의 평균은 실제 분산 값보다 작다. (bias)
-    - 따라서 보통 이런 요소를 수정해서 분산값으로 다음 값을 사용한다. ( \\( \tilde{\Sigma} \\) 로 표기)
+여기서 평균의 최대 가능도 추정치의 기대값이 실제 평균과 동일함을 알 수 있는데, 공분산은 조금 다르게 됩니다. 이는 분산 값의 평균이 실제 분산보다 작은, 작 bias되어 있다는 소리입니다.
 
 $$\tilde{\Sigma} = \frac{1}{N-1}\sum_{n=1}^{N}({\bf x}_n - {\pmb \mu}_{ML})({\bf x}_n - {\pmb \mu}_{ML})^T \qquad{(2.125)}$$
 
-- 사실 이 내용은 자유도(degree of freedom)와 관련이 깊은 내용이다.
-- 통계학 서적을 참고해도 되나 사실 이후 과정을 전개함에 있어 위의 식만 알아도 큰 무리가 없기 때문에, 굳이 찾아서 볼 필요까지는 없다.
+(사실 이 내용은 자유도(degree of freedom)와 관련이 깊은 내용이 있다고 합니다, 통계학 서적을 참고해도 되나 사실 이후 과정을 전개함에 있어 위의 식만 알아도 큰 무리가 없기 때문에, 굳이 찾아서 볼 필요까지는 없다고 합니다.)
 
 
-----
+(미분해서 해를 구하는 과정은 생략합니다.)
 
-**(참고)**
-
-- 교재에는 없지만 가우시안 분포에 대한 MLE 유도를 간단히 정리해 놓는다.
-
-*Log Likelihood*
-
-$$\ln p({\bf X}|{\pmb \mu}, \Sigma) = -\frac{ND}{2}\ln(2\pi) - \frac{N}{2}\ln|\Sigma|-\frac{1}{2}\sum_{n=1}^{N}({\bf x}_n-{\pmb \mu})^T\Sigma^{-1}({\bf x}_n-{\pmb \mu})$$
-
-*Basic Equation*
-
-$$\frac{\partial (b^Ta)}{\partial a} = b$$
-
-$$\frac{\partial (a^TAa)}{\partial a} = (A+A^T)a$$
-
-$$\frac{\partial}{\partial A} tr(BA)=B^T$$
-
-$$\frac{\partial}{\partial A} \log|A|=(A^{-1})^T$$
-
-$$tr(ABC)=tr(CAB)=tr(BCA)$$
-
-*Mean*
-
-- \\( {\bf y}=({\bf x}-{\pmb \mu}) \\) 라 하면 다음의 식이 유도된다.
-
-$$\frac{\partial}{\partial {\pmb \mu}}({\bf x}-{\pmb \mu})^T\Sigma^{-1}({\bf x}-{\pmb \mu}) = \frac{\partial}{\partial {\bf y}}{\bf y}^T\Sigma^{-1}{\bf y} \frac{\partial {\bf y}}{\partial {\pmb \mu}} = -(\Sigma^{-1}+(\Sigma^{-1})^{T}){\bf y} \equiv -(\Lambda-\Lambda^T){\bf y}$$
-
-- 따라서
-
-$$\frac{\partial}{\partial {\pmb \mu}}l({\pmb \mu}, \Sigma) = -\frac{1}{2}\sum_{i=1}^{N}-2\Lambda({\bf x}_i-{\pmb \mu})=\Lambda\sum_{i=1}^{N}({\bf x}_i-{\pmb \mu}) = 0$$
-
-- 참고로 공분산은 대칭행렬이라서 위와 같이 전개된다. ( \\( \Sigma^{-1}=(\Sigma^{-1})^T \\))
-- 이제 *MLE* 평균은 다음과 같아진다.
-
-$${\pmb \mu}_{ML} = \frac{1}{N}\sum_{i=1}^{N}{\bf x}_i = \bar{\bf x}$$
-
-*Covariance*
-
-- 참고로 \\( \Lambda \equiv \Sigma^{-1} \\) 이고 \\( {\vert}\Lambda{\vert} = {\vert}\Sigma{\vert} \\) 이다.
-
-$$l(\Lambda) = \frac{N}{2}\ln|\Lambda| - \frac{1}{2}\sum_i tr[({\bf x}_i-{\pmb \mu})({\bf x}_i-{\pmb \mu})^T\Lambda] =  \frac{N}{2}\ln|\Lambda| - \frac{1}{2} tr[S_{\mu}\Lambda]$$
-
-$$S_{\mu} = \sum_{i=1}^{N}({\bf x}_i-{\pmb \mu})({\bf x}_i-{\pmb \mu})^T$$
-
-$$\frac{\partial l(\Lambda)}{\partial \Lambda} = \frac{N}{2}(\Lambda^{-1})^{T}-\frac{1}{2}S_{\mu}^T=0$$
-
-$$(\Lambda^{-1})^T = \Lambda^{-1}=\Sigma = \frac{1}{N}S_{\mu}$$
-
-$$\Sigma_{ML} = \frac{1}{N}\sum_{i=1}^{N}({\bf x}_i-\mu)({\bf x}_i-\mu)^T$$
 
 
 
@@ -654,27 +600,20 @@ $$\Sigma_{ML} = \frac{1}{N}\sum_{i=1}^{N}({\bf x}_i-\mu)({\bf x}_i-\mu)^T$$
 
 - <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
 
+순차 추정의 방법은 관찰 데이터 집합이 매우 커서 한번에 계산이 불가능할 때, 그리고 해를 구한 뒤 샘플이 계속 들어올 경우(on-memory) 사용할 수 있는 방법입니다. 한번에 한 샘플을 연산하고 버리게 됩니다.
 
-- 순차 추정의 방법
-    - 한번에 한 샘플을 연산하고 버림
-    - 관찰 데이터 집합이 매우 커서 한번에 계산이 불가능할 때 사용하기 좋다. (on-memory 불가 상황)
-
-- *MLE* 로 얻어진 \\( {\pmb \mu}_{ML} \\) 식을 업데이트 방식으로 바꾸어보자.
-    - \\( {\pmb \mu}_{ML} \\) 에서 마지막 샘플을 추출해보자.
+*MLE* 로 얻어진 \\( {\pmb \mu}_{ML} \\) 식을 업데이트 방식으로 바꾸어보겠습니다. \\( {\pmb \mu}_{ML} \\) 에서 마지막 샘플을 추출해보면 다음과 같습니다.
   
 $${\pmb \mu}_{ML}^{(N)} = \frac{1}{N} \sum_{n=1}^{N}{\bf x}_n = \frac{1}{N}{\bf x}_N + \frac{1}{N}\sum_{n=1}^{N-1}{\bf x}_n\\
 = \frac{1}{N}{\bf x}_N + \frac{N-1}{N}{\pmb \mu}_{ML}^{(N-1)}={\pmb \mu}_{ML}^{(N-1)}+\frac{1}{N}({\bf x}_N-{\pmb \mu}_{ML}^{(N-1)}) \qquad{(2.126)}$$
 
-- \\( N-1 \\) 개의 데이터로부터 추정된 \\( {\pmb \mu}\_{ML}^{(N-1)} \\) 와 \\( N \\) 번째 관측된 데이터를 이용하여 \\( {\pmb \mu}\_{ML}^{(N)} \\) 을 구한다.
-- \\( N \\) 의 값이 증가할수록 새로 관측되는 데이터의 기여도가 점점 작아지게 된다.
-- 한번에 계산을 처리하는 배치 방식으로부터 식을 유도해 내었기 때문에 실제 결과는 동일하게 된다.
-- 이런 방식은 매우 유용하지만 배치 방식의 식에서 업데이트 방식의 식을 항상 유도할 수 있는 것은 아니다.
-- 따라서 좀 더 일반화된 방식의 순차 처리 방식에 대해 알아볼 것이다.
+즉, \\( N-1 \\) 개의 데이터로부터 추정된 \\( {\pmb \mu}\_{ML}^{(N-1)} \\) 와 \\( N \\) 번째 관측된 데이터를 이용하여 \\( {\pmb \mu}\_{ML}^{(N)} \\) 을 구하게 됩니다.
+여기서 \\( N \\) 의 값이 증가할수록 새로 관측되는 데이터의 기여도가 점점 작아지게 됩니다.
+그리고 한번에 계산을 처리하는 배치 방식으로부터 식을 유도해 내었기 때문에 실제 결과는 동일하게 된다.
+하지만 이런 방식은 매우 유용하지만 배치 방식의 식에서 업데이트 방식의 식을 항상 유도할 수 있는 것은 아니다.
 
 
-
-
-
+(Robbins-Monro 생략)
 
 
 
@@ -682,24 +621,24 @@ $${\pmb \mu}_{ML}^{(N)} = \frac{1}{N} \sum_{n=1}^{N}{\bf x}_n = \frac{1}{N}{\bf 
 
 - <mark style='background-color: #dcffe4'> Bayesian inference for the Gaussian </mark>
 
+가우시안의 *MLE* 는 파라미터인 평균과 공분산에 대한 점추정(point estimation) 값이었습니다.
 
-- 가우시안의 *MLE* 는 파라미터인 평균과 공분산에 대한 점추정(point estimation) 값이다.
+이번에는 베이지안 방법론에 대해 알아볼건데요, 현재 likelihood로 가우시안 분포를 가정하고 있기 때문에 우리가 베이지안 추론을 하게될 경우는 크게 아래의 세가지로 나뉘게 됩니다. 
 
-
-- 분산 값을 알고 있을 때 평균 값의 추론
-- 평균 값을 알고 있을 때 분산 값의 추론
-- 평균, 분산 둘 다 모를 때의 두 값에 대한 추론
+- 1. 분산 값을 알고 있을 때 평균 값의 추론
+- 2. 평균 값을 알고 있을 때 분산 값의 추론
+- 3. 평균, 분산 둘 다 모를 때의 두 값에 대한 추론
     
-- 우선 1차원인 단변량 가우시안 분포부터 시작하도록 한다.
+우선은 쉽게 일변량 가우시안 분포부터 시작하도록 하겠습니다.
 
-- 우선 가우시안 분포가 하나 주어져있고, 이 때의 분산 값은 이미 알고 있다고 생각한다, 그리고 데이터는 \\( N \\) 번의 관찰 데이터 \\( {\bf x} = (x\_1,...,x\_N)^T \\) 가 주어졌다.
+우선 가우시안 분포가 하나 주어져있고, 이 때의 분산 값은 이미 알고 있다고 생각해 봅시다. 
+그리고 데이터는 \\( N \\) 번의 관찰 데이터 \\( {\bf x} = (x\_1,...,x\_N)^T \\) 가 주어졌습니다.
 
-- 가능도 함수를 구해보자.
+이제 가능도 함수를 구해볼까요?
 
 $$p({\bf x}|\mu) = \prod_{n=1}^{N}p(x_n|\mu) = \dfrac{1}{(2\pi\sigma^2)^{N/2}}\exp\left\{-\frac{1}{2\sigma^2}\sum_{n=1}^{N}(x_n-\mu)^2\right\} \qquad{(2.137)}$$
 
-
-- 이제 \\( p(\mu) \\) 에 대해 고민해보자. 이 함수는 \\( \mu \\) 의 사전 확률 함수로 공액(`conjugate`) 분포를 사용하게 될 것이다.
+이제  \\( p(\mu) \\) 에 대해 고민해보자. 이 함수는 \\( \mu \\) 의 사전 확률 함수로 공액(`conjugate`) 분포를 사용하게 될 것이다.
 - 따라서 여기서는 당연히 가우시안 분포로 고려한다.
 
 $$p(\mu) = N(\mu|\mu_0, \sigma_0^2) \qquad{(2.138)}$$
