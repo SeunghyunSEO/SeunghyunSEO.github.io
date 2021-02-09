@@ -302,7 +302,14 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 
 
 
-$$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = \left[ \begin{matrix}(x_1 - 2) & (x_2 -3)\end{matrix} \right]   \left[  \begin{matrix}   A & B \\ C & D \\  \end{matrix} \right]   \left[ \begin{matrix}(x_1 - 2) \\ (x_2 -3)\end{matrix} \right]   $$
+$$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = \left[ \begin{matrix}(x_1 - \mu_1) & (x_2 - \mu_2)\end{matrix} \right]   \left[  \begin{matrix}   A & B \\ C & D \\  \end{matrix} \right]   \left[ \begin{matrix}(x_1 - \mu_1) \\ (x_2 - \mu_2)\end{matrix} \right]   $$
+
+$$ if \space {\pmb \mu} = \left[ \begin{matrix} 2 \\ 3 \end{matrix} \right] \space and \space \pmb{\Sigma}^{-1} = \left[ \begin{matrix} 1 & 0 \\ 0 & 1 \\ \end{matrix} \right]  $$ 
+
+
+$$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = \left[ \begin{matrix}(x_1 - 2) & (x_2 - 3)\end{matrix} \right]   \left[  \begin{matrix}   1 & 0 \\ 0 & 1 \\  \end{matrix} \right]   \left[ \begin{matrix}(x_1 - 2) \\ (x_2 - 3)\end{matrix} \right]   $$
+
+$$ = {(x-2)}^2 + {(x-3)}^2 = r^2 $$
 
 
 
