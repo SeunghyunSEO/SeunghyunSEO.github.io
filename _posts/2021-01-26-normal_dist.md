@@ -324,6 +324,10 @@ $$ = {(x-2)}^2 + {(x-3)}^2 = r^2 $$
 
 
 
+
+
+
+
 - <mark style='background-color: #dcffe4'> EVD of Covariance Matrix </mark>
 
 ![evd](https://user-images.githubusercontent.com/48202736/107395495-3834de80-6b40-11eb-932d-a5f0c9471ee0.png)
@@ -349,6 +353,10 @@ $$y_i={\bf u}_i^T({\bf x}-{\pmb \mu}) \qquad{(2.51)}$$
 
 
 $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
+
+
+
+
 
 
 
@@ -441,6 +449,11 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 
 
+
+
+
+
+
 - <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
 
 - 제약(1) : 모수(parameter)의 개수
@@ -450,6 +463,9 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 - <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
 
 - <mark style='background-color: #dcffe4'> Marginal Gaussian distributions </mark>
+
+
+
 
 
 
@@ -551,6 +567,12 @@ $$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$
 
 
 
+
+
+
+
+
+
 - <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
 
 관찰 데이터 집합 \\( {\bf X}=({\bf x}\_1,...,{\bf x}\_n)^T \\) 가 주어졌을 때 데이터 \\( \{ {\bf x}\_n\} \\) 은 서로 독립적으로 발현된다고 생각하겠습니다(*i.i.d*). 
@@ -614,6 +636,10 @@ $${\pmb \mu}_{ML}^{(N)} = \frac{1}{N} \sum_{n=1}^{N}{\bf x}_n = \frac{1}{N}{\bf 
 
 
 (Robbins-Monro 생략)
+
+
+
+
 
 
 
