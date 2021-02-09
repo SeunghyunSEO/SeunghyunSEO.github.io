@@ -248,6 +248,8 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 {: style="width: 60%;" class="center"}
 
 
+
+
 - <mark style='background-color: #fff5b1'> 수식적으로 접근하는 Gaussian Distribution </mark>
 
 다음의 수식들은 PRML 책과 이 책에 대해  [깃허브 페이지](http://norman3.github.io/prml/docs/chapter02/3_1)를 참고했습니다.
@@ -256,6 +258,135 @@ $$N(x|\mu, \sigma^2) = \dfrac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{-\frac{1}{2\sig
 
 $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
 
-- <mark style='background-color: #fff5b1'> Maximum Likelihood for the Gaussian </mark>
+
+$$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{(2.44)}$$
+
+$${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
+
+
+
+$${\bf u}_i^T{\bf u}_j=I_{ij} \qquad{(2.46)}$$
+
+$$I_{ij}=\left\{\begin{array}{lr}1 & if\;i=j\\0 & otherwise\end{array}\right. \qquad{(2.47)}$$
+
+
+$${\bf \Sigma}=\sum_{i=1}^{D}{\lambda_i}{\bf u}_i{\bf u}_i^T \qquad{(2.48)}$$
+
+
+$${\bf \Sigma}^{-1}=\sum_{i=1}^{D}\dfrac{1}{\lambda_i}{\bf u}_i{\bf u}_i^T \qquad{(2.49)}$$
+
+
+$$\Delta^2 = \sum_{i=1}^{D}\frac{y_i^2}{\lambda_i} \qquad{(2.50)}$$
+
+$$y_i={\bf u}_i^T({\bf x}-{\pmb \mu}) \qquad{(2.51)}$$
+
+
+$${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
+
+
+- <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
+
+- 지금까지 가우시안 분포 \\( p({\bf x}) \\) 에서 \\( x=({\bf x}\_a, {\bf x}\_b) \\) 로 나누어 \\( p({\bf x}\_a\|{\bf x}\_b) \\) 와 \\( p({\bf x}\_a) \\) 도 가우시안 분포가 된다는 것을 확인했다.
+- 또 조건부 분포 \\( p({\bf x}\_a\|{\bf x}\_b) \\) 의 평균 값이 \\( {\bf x}\_b \\) 에 대한 선형 함수임을 확인했다.
+- 이제 가우시안 주변 확률 분포인 \\( p({\bf x}) \\) 와 가우시안 조건부 분포 \\( p({\bf y}\|{\bf x}) \\) 에 대해 살펴볼 것이다.
+    - 이 때 \\( p({\bf y}\|{\bf x}) \\) 의 평균 값은 \\( {\bf x} \\) 에 대한 선형함수이고 분산값은 \\( {\bf x} \\) 에 독립적이다.
+- 이는 가우시안 선형 모델 (linear Gaussian model) 의 한 예이다.
+    - 이와 관련된 내용은 8장에서 다시 다룰 것이다.
+
+$$p({\bf x}) = N({\bf x}\;|\;{\pmb \mu}, \Lambda^{-1}) \qquad{(2.99)}$$
+
+$$p({\bf y}|{\bf x}) = N({\bf y}\;|\;{\bf A} {\bf x}+{\bf b} , L^{-1}) \qquad{(2.100)}$$
+
+- 위와 같은 식이 주어졌다고 생각하면 된다.
+    - \\( p({\bf x}) \\) 는  가우시안 주변 확률
+    - \\( p({\bf y}\|{\bf x}) \\) 는 가우시안 조건부 확률
+        - 평균 : \\( {\bf x} \\) 에 대해 선형 함수
+        - 분산 : \\( {\bf x} \\) 와 독립적
+        - 만약 \\( {\bf x} \\) 는 \\( D \\) 차원이고, \\( {\bf y} \\) 는 \\( M \\) 차원 데이터라면 행렬 \\( {\bf A} \\) 는 \\( D \times M \\) 행렬이 된다.
+
+- 이번 절에서 하고자 하는 것은?
+    - 베이즈 이론를 활용하여,
+    - \\( p({\bf z}) = p({\bf x})p({\bf y}\|{\bf x}) \\) 인 식을 \\( p({\bf x}\|{\bf y})p({\bf y}) \\) 와 같은 식으로 전개함
+    - 곱의 법칙에 따라서 \\( p({\bf z}) \\) 즉, \\( p({\bf x}, {\bf y}) \\) 를 구할 수 있고,
+    - \\( p({\bf y}) \\) 와 \\( p({\bf x}\|{\bf y}) \\) 도 구할 수 있다.
+    - 이게 왜 필요할까 싶지만 이후 장에서 가끔 사용된다.
+        - 예를 들어 현재 분포를 \\( p({\bf x}) \\) 와 \\( p({\bf y}\|{\bf x}) \\) 를 만족하도록 만들어놓고, 최종적으로 \\( p({\bf y}) \\) 등을 만들어낸다.
+
+- 이후 과정은 증명 과정이다.
+
+- 우선 \\( {\bf x} \\) 와 \\( {\bf y} \\) 의 결합 확률을 \\( {\bf z} \\) 로 정의하자.
+
+$${\bf z} = \dbinom{ {\bf x} }{ {\bf y} } \qquad{(2.101)}$$
+
+- 이제 결합 분포에 로그를 씌운다.
+
+$$\ln{p({\bf z})} = \ln p({\bf x}) + \ln p({\bf y})\\
+= -\frac{1}{2}({\bf x}-{\pmb \mu})^T\Lambda({\bf x}-{\pmb \mu}) -\frac{1}{2}({\bf y}-{\bf A}{\bf x}-{\bf b})^T{L}({\bf y}-{\bf A}{\bf x}-{\bf b})+const \qquad{(2.102)}$$
+
+- 여기서 `const` 영역은 \\( {\bf x} \\) 나 \\( {\bf y} \\) 와는 상관없는 텀이다.
+- 그 외의 텀은 \\( {\bf z} \\) 의 요소들에 대한 이차형식(`quadratic`)의 함수이다.
+    - 앞서 이런 형태의 식에 대한 가우시안 분포 여부를 확인했었다.
+    - 따라서 이 분포도 가우시안 분포가 된다는 것을 알 수 있다.
+    
+- 어쨌거나 위의 식을 모두 전개하여 이 중 이차항만을 추려보자.
+    - 알다시피 공분산을 구하기 위해서이다.
+
+$$-\frac{1}{2}{\bf x}^T(\Lambda + {\bf A}^T\Lambda{\bf A}){\bf x} - \frac{1}{2}{\bf y}^T{\bf L}{\bf y} + \frac{1}{2}{\bf x}^T{\bf A}{\bf L}{\bf y}\\
+= -\frac{1}{2}\dbinom{ {\bf x} }{ {\bf y} }^T \left(\begin{array}{cc}\Lambda+{\bf A}^T{\bf L}{\bf A} & -{\bf A}^T{\bf L}\\-{\bf L}{\bf A} & {\bf L}\end{array} \right) \dbinom{ {\bf x} }{ {\bf y} } = -\frac{1}{2}{\bf z}^T{\bf R}{\bf z} \qquad{(2.103)}$$
+
+- 신기하게도 \\( {\bf z} \\) 에 대한 이차형식(`quadratic`) 형태의 식이 전개되었다.
+- 따라서 \\( R \\) 은 정확도 행렬이 된다. (공분산의 역행렬)
+
+$${\bf R} = \left(\begin{array}{cc}\Lambda+{\bf A}^T{\bf L}{\bf A} & -{\bf A}^T{\bf L}\\-{\bf L}{\bf A} & {\bf L}\end{array}\right) \qquad{(2.104)}$$
+
+- 역행렬을 만드는 식을 이용하여 공분산도 구할 수 있다.
+
+$$cov[{\bf z}]={\bf R}^{-1} = \left(\begin{array}{cc}\Lambda^{-1} & \Lambda^{-1}{\bf A}^T \\ {\bf A}\Lambda^{-1} & {\bf L}^{-1}+{\bf A}\Lambda^{-1}{\bf A}^T  \end{array}\right) \qquad{(2.105)}$$
+
+- 복잡해보이긴 해도 구할수 없는 식은 아니다.
+- 이제 일차항을 묶어 얻어진 계수와, 앞서 구한 공분산을 이용하여 평균을 구할 수 있다.
+- 일차항은 다음과 같다.
+
+$${\bf x}^T\Lambda{\pmb \mu} - {\bf x}^T{\bf A}^T{\bf L}{\bf b} + {\bf y}^T{\bf L}{\bf b} = \dbinom{ {\bf x} }{ {\bf y} }^T\dbinom{\Lambda{\pmb \mu}-{\bf A}^T{\bf L}{\bf b}}{ {\bf L}{\bf b} } \qquad{(2.106)}$$
+
+- 따라서 평균값은 다음과 같다.
+
+$$E[{\bf z}] = {\bf R}^{-1}\dbinom{ {\bf x} }{ {\bf y} }^T\dbinom{\Lambda{\pmb \mu}-{\bf A}^T{\bf L}{\bf b}}{ {\bf L}{\bf b} } \qquad{(2.107)}$$
+
+- \\( {\bf R}^{-1} \\) 을 대입하여 전개해보자. 최종 식으로 다음을 얻을 수 있다.
+
+$$E[{\bf z}] = \dbinom{ {\pmb \mu} }{ {\bf A} {\pmb \mu} - {\bf b}} \qquad{(2.108)}$$
+
+- 각 요소의 평균이 결국 \\( {\bf z} \\) 의 평균이 된다.
+    - 직관적으로 매우 당연한 결과이지만 이를 얻어내기까지의 수식 계산이 쉽지 않네.
+
+- 지금까지 결합 분포 \\( p({\bf x}, {\bf y}) \\) 를 살펴보았으므로 이제 주변 확률 분포(marginal distribution)를 살펴보도록 하자.
+- 여기에서는 앞서 다루었던 결합 분포의 성질을 이용하게 된다.
+- 얻은 결과는 다음과 같다. (식을 전개하기가 귀찮다.)
+
+$$E[{\bf y}] = {\bf A}{\pmb \mu} + {\bf b} \qquad{(2.109)}$$
+
+$$cov[{\bf y}] = {\bf L}^T + {\bf A}\Lambda^{-1}{\bf A}^T \qquad{(2.110)}$$
+
+- 여기서 \\( {\bf A}={\bf I} \\) 인 경우 두 가우시안의 관계가 *convolution* 관계라고 한다.
+    - 여기서 *convolution* 은 두 개의 가우시안 함수가 서로 오버랩되는 영역을 나타내는 식이라고 생각하면 된다.
+    - 이렇게 오버랩되는 영역도 마찬가지로 가우시안 분포를 따르게 된다.
+    - 이 때 생성되는 분포의 평균는 각각의 분포의 평균의 합의 평균이 되고 분산은 각각의 분포의 분산의 합의 평균이 된다.
+
+- 이제 조건 분포 \\( p({\bf x}\|{\bf y}) \\) 에 대해 좀 알아보도록 하자.
+- 이 때의 평균과 분산은 너무나도 쉽게 구해지는데, 왜냐하면 이미 앞에서 다 구했기 때문이다. (식 2.73, 2.15)
+
+$$\Sigma_{a|b}=\Lambda_{aa}^{-1}$$
+
+$${\pmb \mu}_{a|b}={\pmb \mu}_a - \Lambda_{aa}^{-1}\Lambda_{ab}({\bf x}_b-{\pmb \mu}_b)$$
+
+- 이걸 \\( p({\bf x}\|{\bf y}) \\) 에 맞게 대입만 하면 된다.
+
+$$E[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1}\{ {\bf A}^T{\bf L}({\bf y}-{\bf b})+\Lambda{\pmb \mu}\} \qquad{(2.111)}$$
+
+$$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$$
+
+
+- <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
 
 - <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
