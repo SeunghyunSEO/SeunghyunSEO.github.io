@@ -290,12 +290,18 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 
 근데 그 거리를 단순히 평균과의 거리를 재지 않고, 공변량을 반영해서 거리를 재겠다는 것이 핵심입니다.
 
-<img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
 ![md1](https://user-images.githubusercontent.com/48202736/107332890-144daa80-6af8-11eb-8b08-c6af1e1b7452.jpg)
 
 위의 그림에서 공변량을 반영해서 잰 Mahalanobis distance와 Euclidean distance 길이를 비교한 결과가 다르게 나타나는걸 알 수 있습니다.
 
-우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최대화해주는 분포를 
+우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최대화해주는 분포를 골랴아 할 것입니다.
+
+<img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
+
+위의 예시는 두 클러스터에 대해서 MD와 ED를 잰 예시입니다.
+
+
+
 
 
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
