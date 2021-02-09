@@ -248,6 +248,13 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 {: style="width: 60%;" class="center"}
 
 
+- <mark style='background-color: #fff5b1'> 수식적으로 접근하는 Gaussian Distribution </mark>
+
+다음의 수식들은 PRML 책과 이 책에 대해  [깃허브 페이지](http://norman3.github.io/prml/docs/chapter02/3_1)를 참고했습니다.
+
+$$N(x|\mu, \sigma^2) = \dfrac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{-\frac{1}{2\sigma^2}(x-\mu)^2\right\} \qquad{(2.42)}$$
+
+$$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
 
 - <mark style='background-color: #fff5b1'> Maximum Likelihood for the Gaussian </mark>
 
