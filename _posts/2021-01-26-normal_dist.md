@@ -336,10 +336,6 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 - <mark style='background-color: #dcffe4'> Jsacobian Matrix </mark>
-
-- 이제 가우시안 분포를 \\( {\bf y} \\) 좌표로 전환하는 것에 대해 좀 살펴보자.
-- \\( {\bf x} \\) 좌표계에서 \\( {\bf y} \\) 좌표계로 전환하는 것은 야코비안(Jacobian) 행렬 \\( {\bf J} \\) 를 이용한다.
-    - 이 식을 야코비안으로 발음할지 쟈코비안으로 발음할지 애매하기는 하다.
     
 $$J_{ij}=\dfrac{\partial x_i}{\partial y_i}=U_{ji} \qquad{(2.53)}$$
 
@@ -348,38 +344,34 @@ $$J_{ij}=\dfrac{\partial x_i}{\partial y_i}=U_{ji} \qquad{(2.53)}$$
     
 $$\int_{\bf x} f({\bf x})d{\bf x} = \int_{\bf y} f({\bf y})|{\bf J}|d{\bf y}$$
 
-- 식을 전개하기 앞서 필요한 식들을 좀 정리하자. 이미 앞서서 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 는 확인을 했다.
+이미 앞서서 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 는 확인
 
 $${\vert}{\bf J}{\vert}^2 = {\vert}{\bf U}^T{\vert}^2 = {\vert}{\bf U}^T{\vert}\;{\vert}{\bf U}{\vert} = {\vert}{\bf U}^T{\bf U}{\vert} = {\vert}{\bf I}{\vert} = 1 \qquad{(2.54)}$$
 
-- \\( U \\) 는 직교 행렬이므로 식을 전개하면 결국 \\( \|J\|=1 \\) 을 얻게 된다.
-- 이제 \\( \left\|\Sigma\right\| \\) 값을 구하면,
+- \\( U \\) 는 직교 행렬 \\( \|J\|=1 \\) 
 
 $$\left|\Sigma\right|^{\frac{1}{2}}=\prod_{j=1}^{D}\lambda_j^{\frac{1}{2}} \qquad{(2.55)}$$
 
-- 이제 식을 \\( x \\) 축에서 \\( y \\) 축으로 전환하여 본다. \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 을 대입하고 기타 식들을 추가하면,
+- \\( x \\) 축에서 \\( y \\) 축으로 전환 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 을 대입하고 기타 식들을 추가하면,
 
 $$p({\bf y}) = p(x)|{\bf J}| = \prod_{j=1}^{D}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp\left\{-\dfrac{y_j^2}{2\lambda_j}\right\} \qquad{(2.56)}$$
 
 - 식을 잘 살펴보면 서로 독립적인 \\( D \\) 개의 정규 분포의 확률 값이 단순 곱으로 이루어져 있다는 것을 알 수 있다.
 - 고유 벡터를 이용해서 축을 변환시켜 얻은 식은 결국 차원간 서로 독립적인 정규 분포를 만들어낸다.
-- 이 식을 적분해보자.
+- 이 식을 적분
 
 $$\int p({\bf y})d{\bf y} = \prod_{j=1}^{D} \int_{-\infty}^{\infty}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp \left\{-\dfrac{y_j^2}{2\lambda_j}\right\}dy_i=1 \qquad{(2.57)}$$
 
 - 역시나 확률 값이므로 각각의 차원에 대해 전구간 적분하면 크기가 1이고, 이를 \\( D \\) 차원만큼 곱해도 여전히 결과는 1이다.
-    - 이건 확률식이라 당연하다.
-    - 실제 얻어진 결과는 위의 그림에서 \\( {\bf y} \\) 축을 대상으로 회전 변환한 식이라 상상해보자.
 
 - 이제 가우시안 분포의 적률(moment)을 좀 살펴보도록 하자.
     - 참고로 적률(moment)은 고전 통계학에서 사용되었던 파라미터이다.
 
-- \\( {\bf x} \\) 축에 대해 평균값을 살펴볼 예정인데 우선 식 전개를 편하게 하기 위해 \\( {\bf z} = ({\bf x}-{\pmb \mu}) \\) 를 놓고 식을 전개한다.
+- \\( {\bf x} \\) 축에 대해 평균값을 살펴볼 예정인데 우선 식 전개를 편하게 하기 위해 \\( {\bf z} = ({\bf x}-{\pmb \mu}) \\) 를 놓고 식을 전개
 
 $$E[{\bf x}] = \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\}{\bf x}d{\bf x}\\
 = \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}({\bf z}+{\pmb \mu})d{\bf z} \qquad{(2.58)}$$
 
-- 위의 식은 \\( {\bf z} \\) 에 의해 좌우 대칭인 함수가 만들어진다. 
 - 여기에 \\( ({\bf z}+{\pmb \mu}) \\) 식이 추가되어 있으므로 \\( {\pmb \mu} \\) 만큼 평행이동한 함수이다.
 - 따라서 중심이 \\( {\pmb \mu} \\) 이고 좌우 대칭인 정규 함수가 만들어진다. 따라서 평균은 다음과 같다.
 
@@ -428,14 +420,14 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 - <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
 
+- 제약(1) : 모수(parameter)의 개수
 
-
-
-
+- 제약(2) : 분포의 모양이 단봉(unimodal)의 형태만 올 수 있음
 
 - <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
 
 - <mark style='background-color: #dcffe4'> Marginal Gaussian distributions </mark>
+
 
 
 
