@@ -322,6 +322,12 @@ $$ = {(x-2)}^2 + {(x-3)}^2 = r^2 $$
 
 
 
+
+
+- <mark style='background-color: #dcffe4'> EVD of Covariance Matrix </mark>
+
+![evd](https://user-images.githubusercontent.com/48202736/107395495-3834de80-6b40-11eb-932d-a5f0c9471ee0.png)
+
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
 
 
@@ -729,7 +735,6 @@ $$\mu_{ML} = \frac{1}{N}\sum_{n=1}^{N}x_n \qquad{(2.143)}$$
         - 이 의미는 정확도(precision) 가 계속 증가한다는 의미이고,
         - 결국 분포의 모양이 점점 높은 피크를 가지게 된다는 의미가 된다.
 
-![figure2.12]({{ site.baseurl }}/images/Figure2.12.png){:class="center-block" height="200px"}
 
 - 위의 그림은 실제 가우시안 분포를 따르는 확률 분포에 대한 사후 확률 분포를 도식화한 것이다.
 - \\( N \\) 이 증가할 수록 분산 값이 작아지는 것을 확인할 수 있다.
@@ -777,11 +782,7 @@ $$var[\lambda] = \frac{a}{b^2} \qquad{(2.148)}$$
 
 - \\( a \\) 와 \\( b \\) 의 여러 값에 대한 감마 분포를 그림으로 나타내면 다음과 같다.
 
-<div class="text-center">
-  <img src="{{ site.baseurl }}/images/Figure2.13a.png" alt="Figure 2.13a" height="150px" />
-  <img src="{{ site.baseurl }}/images/Figure2.13b.png" alt="Figure 2.13b" height="150px" />
-  <img src="{{ site.baseurl }}/images/Figure2.13b.png" alt="Figure 2.13c" height="150px" />
-</div>
+
 
 - \\( a>0 \\) 인 경우 감마 분포는 유한 적분(finite integral)이며 \\( a \ge 1 \\) 인 경우 분포 자체는 유한값이다.
     - 교재에는 이렇게 간단하게 적혀있으나 이게 무슨 말인지 모르겠다.
@@ -858,7 +859,6 @@ $$b=d-\frac{c^2}{2\beta}$$
 - 이 분포는 *Normal-Gamma* 분포의 형태 꼴이다.
 - 이를 도식화하면 다음과 같다.
 
-![figure2.14]({{ site.baseurl }}/images/Figure2.14.png){:class="center-block" height="200px"}
 
 - 위의 그림은 \\( \mu_0=0 \\) , \\( \beta=2 \\) , \\( a=5 \\) , \\( b=6 \\)  일 때의 컨투어이다.
 
@@ -893,21 +893,22 @@ $$p({\pmb \mu}, \Lambda|\mu_0, \beta, {\bf W}, v) = N({\pmb \mu}|{\pmb \mu}_0, (
 
 
 
-
 - <mark style='background-color: #dcffe4'> Student’s t-distribution </mark>
-
-
-
-
 
 - <mark style='background-color: #dcffe4'> Periodic variables </mark>
 
 
 
 
+
+
 - <mark style='background-color: #dcffe4'> Mixtures of Gaussians </mark>
 
+![mog1](https://user-images.githubusercontent.com/48202736/107395496-38cd7500-6b40-11eb-9ffd-453e52503ee8.png)
 
+![mog2](https://user-images.githubusercontent.com/48202736/107395499-39660b80-6b40-11eb-918d-f8b6dd83df6b.png)
+
+![mog3](https://user-images.githubusercontent.com/48202736/107395501-39660b80-6b40-11eb-8987-52c811df712f.png)
 
 
 
@@ -917,4 +918,5 @@ $$p({\pmb \mu}, \Lambda|\mu_0, \beta, {\bf W}, v) = N({\pmb \mu}|{\pmb \mu}_0, (
 출처 : [link](https://stats.stackexchange.com/questions/463706/are-neural-networks-mixture-models)
 
 ![mog](https://user-images.githubusercontent.com/48202736/107328636-5d9afb80-6af2-11eb-9554-f1bdea0b03ed.gif)
+
 ![neuralnet](https://user-images.githubusercontent.com/48202736/107328642-5ffd5580-6af2-11eb-8217-c7eb90d08bd2.gif)
