@@ -293,7 +293,13 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 
 ![md1](https://user-images.githubusercontent.com/48202736/107332890-144daa80-6af8-11eb-8b08-c6af1e1b7452.jpg)
 
+$$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{(2.44)}$$
+
+
 위의 그림에서 공변량을 반영해서 잰 Mahalanobis distance와 Euclidean distance 길이를 비교한 결과가 다르게 나타나는걸 알 수 있습니다.
+
+(여기서 수식에서 공분산 행렬이 항등 행렬 I가 될 경우, Mahalanobis distance =  Euclidean distance 가 됩니다.)
+
 
 우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최대화해주는 분포를 골랴아 할 것입니다.
 
