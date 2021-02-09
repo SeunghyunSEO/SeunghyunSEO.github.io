@@ -98,7 +98,6 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
 
-이를 수식으로 나타내면 tmp.
 
 - <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
