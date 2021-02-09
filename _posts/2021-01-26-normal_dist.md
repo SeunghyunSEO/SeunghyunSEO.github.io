@@ -306,7 +306,7 @@ $$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = \left[ \begin{
 
 
 
-우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최대화해주는 분포를 골랴아 할 것입니다.
+우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최소화해주는 분포를 골랴아 할 것입니다.
 
 <img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
 
