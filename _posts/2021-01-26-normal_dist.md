@@ -301,6 +301,11 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 (여기서 수식에서 공분산 행렬이 항등 행렬 I가 될 경우, Mahalanobis distance =  Euclidean distance 가 됩니다.)
 
 
+
+$$ \dbinom{ {\bf x} }{ {\bf y} }^T   \left[  \begin{array}   A & B \\ C & D  \end{array} \right]\dbinom{ {\bf x} }{ {\bf y} } $$
+
+
+
 우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최대화해주는 분포를 골랴아 할 것입니다.
 
 <img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
