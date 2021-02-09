@@ -5,6 +5,8 @@ tag: [MachineLearning,ML]
 
 toc: true
 toc_sticky: true
+
+comments: true
 ---
 
 - <mark style='background-color: #fff5b1'> ML solution for Modeling Gaussian Dist over Output, W </mark>
