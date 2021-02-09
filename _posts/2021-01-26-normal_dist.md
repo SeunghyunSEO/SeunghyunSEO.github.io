@@ -250,22 +250,53 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
+
+
+
+
+
+
+
 - <mark style='background-color: #fff5b1'> 수식적으로 접근하는 Gaussian Distribution </mark>
 
 다음의 수식들은 PRML 책과 이 책에 대해  [깃허브 페이지](http://norman3.github.io/prml/docs/chapter02/3_1)를 참고했습니다.
 
-
+아래의 수식은 일변량(Univariate Gaussian Distribution) 정규분포입니다.
 
 $$N(x|\mu, \sigma^2) = \dfrac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{-\frac{1}{2\sigma^2}(x-\mu)^2\right\} \qquad{(2.42)}$$
+
+그리고 아래의 수식은 다변량(Multivariate Gaussian Distribution) 정규분포입니다.
 
 $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
 
 
 
+
+
 - <mark style='background-color: #dcffe4'> Mahalanobis distance and euclidean diatance </mark>
 
+데이터의 변수가 2개 이상인 경우, 즉 다변량 정규분포를 생각할 때 특히 아래의 수식에서 지수상에 나타나는 이차식은 특히 중요합니다.
+
+$$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
+
+이 아래의 식을 바로 마할라노비스 거리(Mahalanobis distance)라고 합니다.
 
 $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{(2.44)}$$
+
+이 식이 중요한 이유는 출력 분포를 가우시안 분포로 모델링하는 경우 (일반적으로 회귀문제) maximum log-likelihood문제를 풀게 되면 자연스럽게 이 이차식이 나오게 되고,
+이 때 mean값에 대해 최적화를 할 경우 이 수식이 최대가 되는 값을 따라 mean을 정하기 때문입니다.
+
+즉 다차원 상에 뿌려진 데이터 x가 평균과 얼마나 떨어져있느냐를 재는 거리 식을 최대화 하는 거라는 거죠.
+
+근데 그 거리를 단순히 평균과의 거리를 재지 않고, 공변량을 반영해서 거리를 재겠다는 것이 핵심입니다.
+
+<img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
+![md1](https://user-images.githubusercontent.com/48202736/107332890-144daa80-6af8-11eb-8b08-c6af1e1b7452.jpg)
+
+위의 그림에서 공변량을 반영해서 잰 Mahalanobis distance와 Euclidean distance 길이를 비교한 결과가 다르게 나타나는걸 알 수 있습니다.
+
+우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최대화해주는 분포를 
+
 
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
 
