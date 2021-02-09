@@ -219,6 +219,7 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 ![inverse2](https://user-images.githubusercontent.com/48202736/106459199-db4c7f00-64d4-11eb-9738-f1254d5d8a05.png)
 {: style="width: 60%;" class="center"}
 
+
 - <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
 
 2. Normal Distribution과 Normal Distribution도 두개를 곱하면 새로운 Normal Distribution이 되는 conjugate 관계입니다. (수식은 생략하겠습니다.)
@@ -329,7 +330,95 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
+
+
+
+
+
 - <mark style='background-color: #dcffe4'> Jsacobian Matrix </mark>
+
+- 이제 가우시안 분포를 \\( {\bf y} \\) 좌표로 전환하는 것에 대해 좀 살펴보자.
+- \\( {\bf x} \\) 좌표계에서 \\( {\bf y} \\) 좌표계로 전환하는 것은 야코비안(Jacobian) 행렬 \\( {\bf J} \\) 를 이용한다.
+    - 이 식을 야코비안으로 발음할지 쟈코비안으로 발음할지 애매하기는 하다.
+    
+$$J_{ij}=\dfrac{\partial x_i}{\partial y_i}=U_{ji} \qquad{(2.53)}$$
+
+- 야코비안이 좌표 축 변환을 만들어 낼 때 어떻게 변화하는지 좀 알아야 하는데, 여기서는 간단하게 다음의 성질만을 기술해본다.
+    - 아주 간단하게만 이야기하자면 공간의 선형 변환시 발생되는 부피의 변화율을확률  식에 반영하자는 것.
+    
+$$\int_{\bf x} f({\bf x})d{\bf x} = \int_{\bf y} f({\bf y})|{\bf J}|d{\bf y}$$
+
+- 식을 전개하기 앞서 필요한 식들을 좀 정리하자. 이미 앞서서 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 는 확인을 했다.
+
+$${\vert}{\bf J}{\vert}^2 = {\vert}{\bf U}^T{\vert}^2 = {\vert}{\bf U}^T{\vert}\;{\vert}{\bf U}{\vert} = {\vert}{\bf U}^T{\bf U}{\vert} = {\vert}{\bf I}{\vert} = 1 \qquad{(2.54)}$$
+
+- \\( U \\) 는 직교 행렬이므로 식을 전개하면 결국 \\( \|J\|=1 \\) 을 얻게 된다.
+- 이제 \\( \left\|\Sigma\right\| \\) 값을 구하면,
+
+$$\left|\Sigma\right|^{\frac{1}{2}}=\prod_{j=1}^{D}\lambda_j^{\frac{1}{2}} \qquad{(2.55)}$$
+
+- 이제 식을 \\( x \\) 축에서 \\( y \\) 축으로 전환하여 본다. \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 을 대입하고 기타 식들을 추가하면,
+
+$$p({\bf y}) = p(x)|{\bf J}| = \prod_{j=1}^{D}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp\left\{-\dfrac{y_j^2}{2\lambda_j}\right\} \qquad{(2.56)}$$
+
+- 식을 잘 살펴보면 서로 독립적인 \\( D \\) 개의 정규 분포의 확률 값이 단순 곱으로 이루어져 있다는 것을 알 수 있다.
+- 고유 벡터를 이용해서 축을 변환시켜 얻은 식은 결국 차원간 서로 독립적인 정규 분포를 만들어낸다.
+- 이 식을 적분해보자.
+
+$$\int p({\bf y})d{\bf y} = \prod_{j=1}^{D} \int_{-\infty}^{\infty}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp \left\{-\dfrac{y_j^2}{2\lambda_j}\right\}dy_i=1 \qquad{(2.57)}$$
+
+- 역시나 확률 값이므로 각각의 차원에 대해 전구간 적분하면 크기가 1이고, 이를 \\( D \\) 차원만큼 곱해도 여전히 결과는 1이다.
+    - 이건 확률식이라 당연하다.
+    - 실제 얻어진 결과는 위의 그림에서 \\( {\bf y} \\) 축을 대상으로 회전 변환한 식이라 상상해보자.
+
+- 이제 가우시안 분포의 적률(moment)을 좀 살펴보도록 하자.
+    - 참고로 적률(moment)은 고전 통계학에서 사용되었던 파라미터이다.
+
+- \\( {\bf x} \\) 축에 대해 평균값을 살펴볼 예정인데 우선 식 전개를 편하게 하기 위해 \\( {\bf z} = ({\bf x}-{\pmb \mu}) \\) 를 놓고 식을 전개한다.
+
+$$E[{\bf x}] = \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\}{\bf x}d{\bf x}\\
+= \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}({\bf z}+{\pmb \mu})d{\bf z} \qquad{(2.58)}$$
+
+- 위의 식은 \\( {\bf z} \\) 에 의해 좌우 대칭인 함수가 만들어진다. 
+- 여기에 \\( ({\bf z}+{\pmb \mu}) \\) 식이 추가되어 있으므로 \\( {\pmb \mu} \\) 만큼 평행이동한 함수이다.
+- 따라서 중심이 \\( {\pmb \mu} \\) 이고 좌우 대칭인 정규 함수가 만들어진다. 따라서 평균은 다음과 같다.
+
+$$E[{\bf x}]={\pmb \mu} \qquad{(2.59)}$$
+
+- 이제 2차 적률(second order moments)에 대해 살펴보자.
+
+$$E[{\bf x}{\bf x}^T]=\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\}{\bf x}{\bf x}^Td{\bf x}\\
+= \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}({\bf z}+{\pmb \mu})({\bf z}+{\pmb \mu})^Td{\bf z}$$
+
+- 여기서 \\( ({\bf z}+{\pmb \mu})({\bf z}+{\pmb \mu})^T \\) 를 전개할 수 있다.
+- 이를 전개한 수식에서 \\( {\pmb \mu}{\bf z}^T \\) 와 \\( {\bf z}{\pmb \mu}^T \\) 는 서로 대칭 관계이므로 제거된다.
+- \\( {\bf u}{\bf u}^T \\) 는 수식에서 상수의 역할이므로 적분 바깥 쪽으로 나오게 된다. 
+- 결국 우리가 집중해야 할 요소는 \\( {\bf z}{\bf z}^T \\) 이다.
+- 참고로 \\( {\bf z} \\) 는 다음과 같이 고유벡터로 표현 가능하다.
+$${\bf z}=\sum_{j=1}^{D}y_j{\bf u}_j \qquad{(2.60)}$$
+
+- 여기서 \\( y_j={\bf u}_j^T{\bf z} \\) 이다.
+- 따라서 식을 다음과 같이 전개 가능하다.
+
+$$\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}{\bf z}{\bf z}^Td{\bf z}$$
+
+$$=\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\sum_{i=1}^{D}\sum_{j=1}^{D}{\bf u}_i{\bf u}_j^T\int \exp \left\{-\sum_{k=1}^{D}\frac{y_k^2}{2\lambda_k}\right\}y_iy_jd{\bf y}\\
+=\sum_{i=1}^{D}{\bf u}_i{\bf u}_j^T\lambda_i=\Sigma \qquad{(2.61)}$$
+
+- 원 식에 대입하면 다음과 같은 결과를 얻는다.
+
+$$E[{\bf x}{\bf x}^T]={\pmb \mu}{\pmb \mu}^T + \Sigma \qquad{(2.62)}$$
+
+- 뭐, 원래 알고 있던 2차 적률 값이다. (평균의 제곱과 분산의 합)
+- 이제 공분산(covariance) 값도 한번 구해보자.
+- \\( E[{\bf x}]={\pmb \mu} \\) 이므로 어차피 동일한 결과를 얻게 된다.
+
+$$cov[{\bf x}]=E[({\bf x}-E[{\bf x}])({\bf x}-E[{\bf x}])^T] \qquad{(2.63)}$$
+
+$$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
+
+
+
 
 
 
