@@ -460,6 +460,7 @@ $$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$
 
 - <mark style='background-color: #dcffe4'> GMM vs NN </mark>
 
+출처 : [link](https://stats.stackexchange.com/questions/463706/are-neural-networks-mixture-models)
 
 ![mog](https://user-images.githubusercontent.com/48202736/107328636-5d9afb80-6af2-11eb-9554-f1bdea0b03ed.gif)
 ![neuralnet](https://user-images.githubusercontent.com/48202736/107328642-5ffd5580-6af2-11eb-8217-c7eb90d08bd2.gif)
