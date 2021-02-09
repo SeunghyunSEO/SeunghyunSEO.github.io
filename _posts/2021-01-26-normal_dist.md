@@ -259,6 +259,10 @@ $$N(x|\mu, \sigma^2) = \dfrac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{-\frac{1}{2\sig
 $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
 
 
+
+- <mark style='background-color: #dcffe4'> Mahalanobis distance and euclidean diatance </mark>
+
+
 $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{(2.44)}$$
 
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
@@ -284,7 +288,31 @@ $$y_i={\bf u}_i^T({\bf x}-{\pmb \mu}) \qquad{(2.51)}$$
 $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
-- <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
+
+
+- <mark style='background-color: #dcffe4'> Jsacobian Matrix </mark>
+
+
+
+
+
+
+
+- <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
+
+
+
+
+
+
+- <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
+
+- <mark style='background-color: #dcffe4'> Marginal Gaussian distributions </mark>
+
+
+
+
+- <mark style='background-color: #dcffe4'> Bayes’ theorem for Gaussian variables </mark>
 
 - 지금까지 가우시안 분포 \\( p({\bf x}) \\) 에서 \\( x=({\bf x}\_a, {\bf x}\_b) \\) 로 나누어 \\( p({\bf x}\_a\|{\bf x}\_b) \\) 와 \\( p({\bf x}\_a) \\) 도 가우시안 분포가 된다는 것을 확인했다.
 - 또 조건부 분포 \\( p({\bf x}\_a\|{\bf x}\_b) \\) 의 평균 값이 \\( {\bf x}\_b \\) 에 대한 선형 함수임을 확인했다.
@@ -387,6 +415,40 @@ $$E[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1}\{ {\bf A}^T{\bf L}
 $$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$$
 
 
+
+
+
+
+
+
 - <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
 
+
 - <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
+
+
+
+
+
+
+
+
+
+
+- <mark style='background-color: #dcffe4'> Bayesian inference for the Gaussian </mark>
+
+
+
+
+- <mark style='background-color: #dcffe4'> Student’s t-distribution </mark>
+
+
+
+
+
+- <mark style='background-color: #dcffe4'> Periodic variables </mark>
+
+
+
+
+- <mark style='background-color: #dcffe4'> Mixtures of Gaussians </mark>
