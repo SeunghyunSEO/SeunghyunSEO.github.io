@@ -302,7 +302,7 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 
 
 
-$$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = [\begin{matrix}(x_1 - 2) & (x_2 -3)\end{matrix}] \left[  \begin{matrix}   A & B \\ C & D \\  \end{matrix} \right]  [\begin{matrix}(x_1 - 2) \\ (x_2 -3)\end{matrix}] $$
+$$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = \left[ \begin{matrix}(x_1 - 2) & (x_2 -3)\end{matrix} \right]   \left[  \begin{matrix}   A & B \\ C & D \\  \end{matrix} \right]   \left[ \begin{matrix}(x_1 - 2) \\ (x_2 -3)\end{matrix} \right]   $$
 
 
 
