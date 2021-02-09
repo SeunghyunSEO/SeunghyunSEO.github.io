@@ -302,7 +302,7 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 
 
 
-$$ \dbinom{ {\bf x} }{ {\bf y} }^T   \left[  \begin{array}   A & B \\ C & D  \end{array} \right]\dbinom{ {\bf x} }{ {\bf y} } $$
+$$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = [\begin{matrix}(x_1 - 2) & (x_2 -3)\end{matrix}] \left[  \begin{matrix}   A & B \\ C & D \\  \end{matrix} \right]  [\begin{matrix}(x_1 - 2) \\ (x_2 -3)\end{matrix}] $$
 
 
 
