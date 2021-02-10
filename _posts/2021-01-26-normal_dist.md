@@ -328,13 +328,11 @@ $$ = {(x-2)}^2 + {(x-3)}^2 = r^2 $$
 
 
 
-- <mark style='background-color: #dcffe4'> EVD of Covariance Matrix </mark>
-
-![evd](https://user-images.githubusercontent.com/48202736/107395495-3834de80-6b40-11eb-932d-a5f0c9471ee0.png)
+- <mark style='background-color: #dcffe4'> eigen vectors of Covariance Matrix </mark>
 
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
 
-
+![evd1](https://user-images.githubusercontent.com/48202736/107462187-e96a6180-6b9e-11eb-8337-469f0fe5945a.png)
 
 $${\bf u}_i^T{\bf u}_j=I_{ij} \qquad{(2.46)}$$
 
@@ -355,6 +353,7 @@ $$y_i={\bf u}_i^T({\bf x}-{\pmb \mu}) \qquad{(2.51)}$$
 $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
+![evd](https://user-images.githubusercontent.com/48202736/107395495-3834de80-6b40-11eb-932d-a5f0c9471ee0.png)
 
 
 
@@ -362,6 +361,18 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
+- <mark style='background-color: #dcffe4'> EVD and Multivariate Gaussian Distribution </mark>
+
+
+\mathcal{N}(x) 
+&amp;\propto \exp \left( -\dfrac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) \\
+&amp;= \exp \left( -\dfrac{1}{2} (x-\mu)^T V \Lambda^{-1} V^T (x-\mu) \right) \\
+&amp;= \exp \left( -\dfrac{1}{2} (V^T(x-\mu))^T  \Lambda^{-1} (V^T (x-\mu)) \right) \\
+&amp;= \exp \left( -\dfrac{1}{2} (V^{-1}(x-\mu))^T  \Lambda^{-1} (V^{-1} (x-\mu)) \right) \\
+
+
+![evd2](https://user-images.githubusercontent.com/48202736/107462196-ec655200-6b9e-11eb-9318-8440b055e64d.png)
+![evd3](https://user-images.githubusercontent.com/48202736/107462199-ecfde880-6b9e-11eb-9748-41fd24cc9283.png)
 
 
 
