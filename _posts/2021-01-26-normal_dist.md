@@ -517,9 +517,23 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 - 제약(2) : 분포의 모양이 단봉(unimodal)의 형태만 올 수 있음
  - 가우시안 분포는 일변량이던 다변량이던 봉우리가 하나인 uni-modal 형태인데, 이는 가우시안 분포를 여러개 합치는 Mixture of Gaussian(MoG)로 해결 할 수 있다.
 
+
+
+
+
+
+
+
 - <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
 
+![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
+{: style="width: 80%;" class="center"}
+
 - <mark style='background-color: #dcffe4'> Marginal Gaussian distributions </mark>
+
+![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
+{: style="width: 60%;" class="center"}
+
 
 
 
@@ -653,9 +667,9 @@ $${\pmb \mu}_{ML}^{(N)} = \frac{1}{N} \sum_{n=1}^{N}{\bf x}_n = \frac{1}{N}{\bf 
 
 이번에는 베이지안 방법론에 대해 알아볼건데요, 현재 likelihood로 가우시안 분포를 가정하고 있기 때문에 우리가 베이지안 추론을 하게될 경우는 크게 아래의 세가지로 나뉘게 됩니다. 
 
-- 1. 분산 값을 알고 있을 때 평균 값의 추론
-- 2. 평균 값을 알고 있을 때 분산 값의 추론
-- 3. 평균, 분산 둘 다 모를 때의 두 값에 대한 추론
+- 1.분산 값을 알고 있을 때 평균 값의 추론
+- 2.평균 값을 알고 있을 때 분산 값의 추론
+- 3.평균, 분산 둘 다 모를 때의 두 값에 대한 추론
     
 우선은 쉽게 일변량 가우시안 분포부터 시작하도록 하겠습니다.
 
