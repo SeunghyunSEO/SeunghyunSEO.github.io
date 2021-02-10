@@ -383,7 +383,13 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 <center>$$\mathcal{N}(x) \propto \exp \left( -\dfrac{1}{2} x'^T  \Lambda^{-1} x' \right) $$</center>
 <center>$$\propto \exp \left( \dfrac{{x'}_1^2}{\lambda_1^2} + \dfrac{{x'}_2^2}{\lambda_2^2} + \cdots + \dfrac{{x'}_D^2}{\lambda_D^2} \right) $$</center>
 
-![evd3](https://user-images.githubusercontent.com/48202736/107462199-ecfde880-6b9e-11eb-9748-41fd24cc9283.png)
+즉 어떤 Full covariance를 가지는 다변수 정규 분포는 Diagonal Covaariance를 쓰되 이를 회전해서 쓰는것과 같다는 것이다.
+
+![08 06 다변수정규분포_14_0](https://user-images.githubusercontent.com/48202736/107463090-d062b000-6ba0-11eb-9847-9cca6fef235e.png)
+(출처 : [link](https://datascienceschool.net/02%20mathematics/08.06%20%EB%8B%A4%EB%B3%80%EC%88%98%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC.html))
+
+
+
 
 
 
