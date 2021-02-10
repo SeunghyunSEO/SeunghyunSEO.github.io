@@ -257,6 +257,9 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
+
+
+
 - <mark style='background-color: #fff5b1'> 수식적으로 접근하는 Gaussian Distribution </mark>
 
 다음의 수식들은 PRML 책과 이 책에 대해  [깃허브 페이지](http://norman3.github.io/prml/docs/chapter02/3_1)를 참고했습니다.
@@ -291,6 +294,8 @@ $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{
 근데 그 거리를 단순히 평균과의 거리를 재지 않고, 공변량을 반영해서 거리를 재겠다는 것이 핵심입니다.
 
 ![md1](https://user-images.githubusercontent.com/48202736/107332890-144daa80-6af8-11eb-8b08-c6af1e1b7452.jpg)
+{: style="width: 80%;" class="center"}
+*Fig. 1. 마할라노비스 거리 vs 유클리디안 거리*
 
 $$\Delta^2 = ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) \qquad{(2.44)}$$
 
@@ -323,6 +328,8 @@ $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/
 (Mean Squred Error가 최소화 되는 분포이기도 함)
 
 <img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
+{: style="width: 100%;" class="center"}
+*Fig. 2. 두 분포간 마할라노비스 거리 vs 유클리디안 거리의 차이*
 
 위의 예시는 두 클러스터에 대해서 MD와 ED를 잰 예시입니다.
 
@@ -341,6 +348,8 @@ $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
 
 ![evd1](https://user-images.githubusercontent.com/48202736/107462187-e96a6180-6b9e-11eb-8337-469f0fe5945a.png)
+{: style="width: 100%;" class="center"}
+*Fig. 3. Eigen Value Decomposition*
 
 $${\bf u}_i^T{\bf u}_j=I_{ij} \qquad{(2.46)}$$
 
@@ -353,19 +362,18 @@ $${\bf \Sigma}=\sum_{i=1}^{D}{\lambda_i}{\bf u}_i{\bf u}_i^T \qquad{(2.48)}$$
 $${\bf \Sigma}^{-1}=\sum_{i=1}^{D}\dfrac{1}{\lambda_i}{\bf u}_i{\bf u}_i^T \qquad{(2.49)}$$
 
 
+
+![evd](https://user-images.githubusercontent.com/48202736/107395495-3834de80-6b40-11eb-932d-a5f0c9471ee0.png)
+{: style="width: 60%;" class="center"}
+*Fig. 4. 다변량 정규분포의 공분산 행렬은 고유벡터와 고유값으로 나타낼 수 있으며 마할라노비스 거리 또한 마찬가지*
+
+
 $$\Delta^2 = \sum_{i=1}^{D}\frac{y_i^2}{\lambda_i} \qquad{(2.50)}$$
 
 $$y_i={\bf u}_i^T({\bf x}-{\pmb \mu}) \qquad{(2.51)}$$
 
 
 $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
-
-
-![evd](https://user-images.githubusercontent.com/48202736/107395495-3834de80-6b40-11eb-932d-a5f0c9471ee0.png)
-
-
-
-
 
 
 
@@ -376,6 +384,8 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 <center>$$ \Sigma^{-1} = V \Lambda^{-1} V^T $$</center>
 
 ![evd2](https://user-images.githubusercontent.com/48202736/107462196-ec655200-6b9e-11eb-9318-8440b055e64d.png)
+{: style="width: 60%;" class="center"}
+*Fig. 5. Eigen Value Decompostiion*
 
 <center>$$\mathcal{N}(x) \propto \exp \left( -\dfrac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) $$</center>
 <center>$$ = \exp \left( -\dfrac{1}{2} (x-\mu)^T V \Lambda^{-1} V^T (x-\mu) \right) $$</center>
@@ -393,9 +403,11 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 <center>$$ \propto \exp \left( \dfrac{ {x'}_1^2 }{ \lambda_1^2 } + \dfrac{ {x'}_2^2 }{ \lambda_2^2 } + \cdots + \dfrac{ {x'}_D^2 }{ \lambda_D^2 } \right)
  $$</center>
 
-즉 어떤 Full covariance를 가지는 다변수 정규 분포는 Diagonal Covaariance를 쓰되 이를 회전해서 쓰는것과 같다는 것이다.
+즉 어떤 Full covariance는 Diagonal Covariance를 쓰되 이를 회전해서 쓰는것과 같다는 것이다.
 
 ![08 06 다변수정규분포_14_0](https://user-images.githubusercontent.com/48202736/107463090-d062b000-6ba0-11eb-9847-9cca6fef235e.png)
+{: style="width: 100%;" class="center"}
+*Fig. 6. Full Covariance vs Diagonal Covariance*
 (출처 : [link](https://datascienceschool.net/02%20mathematics/08.06%20%EB%8B%A4%EB%B3%80%EC%88%98%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC.html))
 
 
