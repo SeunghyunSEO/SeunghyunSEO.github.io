@@ -419,27 +419,26 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 - <mark style='background-color: #dcffe4'> Jsacobian Matrix </mark>
     
 $$J_{ij}=\dfrac{\partial x_i}{\partial y_i}=U_{ji} \qquad{(2.53)}$$
-
-- 야코비안이 좌표 축 변환을 만들어 낼 때 어떻게 변화하는지 좀 알아야 하는데, 여기서는 간단하게 다음의 성질만을 기술해본다.
-    - 아주 간단하게만 이야기하자면 공간의 선형 변환시 발생되는 부피의 변화율을확률  식에 반영하자는 것.
     
 $$\int_{\bf x} f({\bf x})d{\bf x} = \int_{\bf y} f({\bf y})|{\bf J}|d{\bf y}$$
 
-이미 앞서서 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 는 확인
+이미 앞서서 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 를 확인했기 때문에
 
 $${\vert}{\bf J}{\vert}^2 = {\vert}{\bf U}^T{\vert}^2 = {\vert}{\bf U}^T{\vert}\;{\vert}{\bf U}{\vert} = {\vert}{\bf U}^T{\bf U}{\vert} = {\vert}{\bf I}{\vert} = 1 \qquad{(2.54)}$$
 
-- \\( U \\) 는 직교 행렬 \\( \|J\|=1 \\) 
+입니다.
+
+여기서 \\( U \\) 는 직교 행렬 \\( \|J\|=1 \\) 
 
 $$\left|\Sigma\right|^{\frac{1}{2}}=\prod_{j=1}^{D}\lambda_j^{\frac{1}{2}} \qquad{(2.55)}$$
 
 - \\( x \\) 축에서 \\( y \\) 축으로 전환 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 을 대입하고 기타 식들을 추가하면,
 
-$$p({\bf y}) = p(x)|{\bf J}| = \prod_{j=1}^{D}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp\left\{-\dfrac{y_j^2}{2\lambda_j}\right\} \qquad{(2.56)}$$
+$$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
 
-- 식을 잘 살펴보면 서로 독립적인 \\( D \\) 개의 정규 분포의 확률 값이 단순 곱으로 이루어져 있다는 것을 알 수 있다.
-- 고유 벡터를 이용해서 축을 변환시켜 얻은 식은 결국 차원간 서로 독립적인 정규 분포를 만들어낸다.
-- 이 식을 적분
+위의식이 아래의식이 됩니다.
+
+$$p({\bf y}) = p(x)|{\bf J}| = \prod_{j=1}^{D}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp\left\{-\dfrac{y_j^2}{2\lambda_j}\right\} \qquad{(2.56)}$$
 
 $$\int p({\bf y})d{\bf y} = \prod_{j=1}^{D} \int_{-\infty}^{\infty}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp \left\{-\dfrac{y_j^2}{2\lambda_j}\right\}dy_i=1 \qquad{(2.57)}$$
 
