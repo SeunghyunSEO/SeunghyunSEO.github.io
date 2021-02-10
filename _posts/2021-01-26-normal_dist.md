@@ -510,6 +510,23 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 - <mark style='background-color: #dcffe4'> Bayes’ theorem for Gaussian variables </mark>
 
+---
+
+$$p({\bf x}) = N({\bf x}\;|\;{\pmb \mu}, \Lambda^{-1}) \qquad{(2.113)}$$
+
+$$p({\bf y}|{\bf x}) = N({\bf y}\;|\;{\bf A}{\bf x}+{\bf b}, {\bf L}^{-1}) \qquad{(2.114)}$$
+
+$$p({\bf y}) = N({\bf y}\;|\;{\bf A}{\pmb \mu}+{\bf b}, {\bf L}^{-1}+{\bf A}\Lambda^{-1}{\bf A}^T) \qquad{(2.115)}$$
+
+$$p({\bf x}|{\bf y}) = N({\bf x}\;|\;\Sigma\{ {\bf A}^T {\bf L}({\bf y}-{\bf b})+\Lambda{\pmb \mu}\}, \Sigma) \qquad{(2.116)}$$
+
+여기서 \\( \Sigma \\) 는 다음과 같습니다.
+
+$$\Sigma = (\Lambda + {\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.117)}$$
+
+---
+
+
 우리는 앞서 $$p(x)$$ 에 대해 다루다가, 이에 대한 conditional dist와 marginal dist에 대해 알아봤습니다.
 
 만약 우리가 $$p(x)$$와 $$p(y \vert x)$$가 있다고 합시다.
