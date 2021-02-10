@@ -376,13 +376,13 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 여기서
 
-<center>$$ \hat{x} = V^{-1}(x-\mu) $$</center>
+<center>$$ x' = V^{-1}(x-\mu) $$</center>
 
 그러므로
 
-<center>$$\mathcal{N}(x) \propto \exp \left( -\dfrac{1}{2} \hat{x}^T  \Lambda^{-1} \hat{x} \right) $$</center>
+<center>$$\mathcal{N}(x) \propto \exp \left( -\dfrac{1}{2} {x'}^T  \Lambda^{-1} {x'} \right) $$</center>
 
-<center>$$ \propto \exp \left( \dfrac{{\hat{x}}_1^2}{\lambda_1^2} + \dfrac{{\hat{x}}_2^2}{\lambda_2^2} + \cdots + \dfrac{{\hat{x}}_D^2}{\lambda_D^2} \right)
+<center>$$ \propto \exp \left( \dfrac{ {x'}_1^2 }{ \lambda_1^2 } + \dfrac{ {x'}_2^2 }{ \lambda_2^2 } + \cdots + \dfrac{ {x'}_D^2 }{ \lambda_D^2 } \right)
  $$</center>
 
 즉 어떤 Full covariance를 가지는 다변수 정규 분포는 Diagonal Covaariance를 쓰되 이를 회전해서 쓰는것과 같다는 것이다.
