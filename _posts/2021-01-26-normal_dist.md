@@ -580,6 +580,11 @@ $$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$
 
 $$\ln p({\bf X}|{\pmb \mu}, \Sigma) = -\frac{ND}{2}\ln(2\pi) - \frac{N}{2}\ln|\Sigma|-\frac{1}{2}\sum_{n=1}^{N}({\bf x}_n-{\pmb \mu})^T\Sigma^{-1}({\bf x}_n-{\pmb \mu}) \qquad{(2.118)}$$
 
+![ml1](https://user-images.githubusercontent.com/48202736/107461713-f20e6800-6b9d-11eb-8489-93922c309bdb.png)
+
+![ml2](https://user-images.githubusercontent.com/48202736/107461716-f2a6fe80-6b9d-11eb-95b4-dd6141b0d504.png)
+
+
 이 식은 사실 최종적으로는 아래의 두가지 값에만 영향을 받게 됩니다..
 
 $$\sum_{n=1}^{N}{\bf x}_n \qquad{(2.119)}$$
