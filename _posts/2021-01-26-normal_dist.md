@@ -403,8 +403,6 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 <center>$$ \propto \exp \left( \dfrac{ {x'}_1^2 }{ \lambda_1^2 } + \dfrac{ {x'}_2^2 }{ \lambda_2^2 } + \cdots + \dfrac{ {x'}_D^2 }{ \lambda_D^2 } \right)
  $$</center>
 
-즉 어떤 Full covariance는 Diagonal Covariance를 쓰되 이를 회전해서 쓰는것과 같다는 것이다.
-
 ![cov6](https://user-images.githubusercontent.com/48202736/106457557-798b1580-64d2-11eb-9a74-9bb91d598ac3.png)
 
 ![08 06 다변수정규분포_14_0](https://user-images.githubusercontent.com/48202736/107463090-d062b000-6ba0-11eb-9847-9cca6fef235e.png)
