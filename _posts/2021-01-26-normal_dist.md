@@ -311,10 +311,16 @@ $$  ({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu}) = \left[ \begin{
 $$ = {(x-2)}^2 + {(x-3)}^2 = r^2 $$
 
 
-마할라노비스 거리가 
+마할라노비스 거리가 중요한 이유는 뭘까요?
 
+$$N(x|\mu, \sigma^2) = \dfrac{1}{(2\pi\sigma^2)^{1/2}}\exp\left\{-\frac{1}{2\sigma^2}(x-\mu)^2\right\} \qquad{(2.42)}$$
 
-우리는 모든 데이터 포인트에 대해서 이 값을 더한 걸 최소화해주는 분포를 골랴아 할 것입니다.
+$$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
+
+그 이유는 앞서 말했듯 위의 likelihood를 최대화하기 위한 분포의 파라메터, 즉 mean, variance와 큰 관련이 있기 때문입니다. 
+만약 variance가 고정되어있고 mean값만 추정하는 상황이라면 우리는 모든 데이터 포인트에 대해서 평균과의 마할라노비스 거리를 더하고 이것을 최소화해주는 분포를 maximum likelihood의 해로 구하게 되는 것입니다.
+
+(Mean Squred Error가 최소화 되는 분포이기도 함)
 
 <img width="1040" alt="md" src="https://user-images.githubusercontent.com/48202736/107332867-0f88f680-6af8-11eb-9fdf-425430b1604b.png">
 
