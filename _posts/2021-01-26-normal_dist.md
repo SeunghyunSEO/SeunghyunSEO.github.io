@@ -508,12 +508,19 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 - <mark style='background-color: #dcffe4'> Bayes’ theorem for Gaussian variables </mark>
 
-- 이는 가우시안 선형 모델 (linear Gaussian model) 의 한 예이다.
+우리는 앞서 $$p(x)$$ 에 대해 다루다가, 이에 대한 conditional dist와 marginal dist에 대해 알아봤습니다.
+
+만약 우리가 $$p(x)$$와 $$p(y \vert x)$$가 있다고 합시다.
 
 $$p({\bf x}) = N({\bf x}\;|\;{\pmb \mu}, \Lambda^{-1}) \qquad{(2.99)}$$
 
 $$p({\bf y}|{\bf x}) = N({\bf y}\;|\;{\bf A} {\bf x}+{\bf b} , L^{-1}) \qquad{(2.100)}$$
 
+어떻게 해야 $$p(y)$$와 $$p(x \vert y)$$를 구할 수 있을까요?
+
+답은 베이즈룰을 사용하면 됩니다.
+
+우선 x,y에 대한 결합 분포를 $$z=(x,y)$$ 라고 하겠습니다. 
 
  - 베이즈 이론를 활용하여,
  - \\( p({\bf z}) = p({\bf x})p({\bf y}\|{\bf x}) \\) 인 식을 \\( p({\bf x}\|{\bf y})p({\bf y}) \\) 와 같은 식으로 전개함
