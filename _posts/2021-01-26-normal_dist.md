@@ -363,13 +363,26 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 - <mark style='background-color: #dcffe4'> EVD and Multivariate Gaussian Distribution </mark>
 
+다변수 정규분포에서 Covariance Matrix는 PSD이며 대칭이기 때문에 diagonalizable하다, 그러므로 아래와 같이 분리할 수 있다.
+
+<center>$$ \Sigma^{-1} = V \Lambda^{-1} V^T $$</center>
+
+![evd2](https://user-images.githubusercontent.com/48202736/107462196-ec655200-6b9e-11eb-9318-8440b055e64d.png)
 
 <center>$$\mathcal{N}(x) \propto \exp \left( -\dfrac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) $$</center>
 <center>$$ = \exp \left( -\dfrac{1}{2} (x-\mu)^T V \Lambda^{-1} V^T (x-\mu) \right) $$</center>
 <center>$$ = \exp \left( -\dfrac{1}{2} (V^T(x-\mu))^T  \Lambda^{-1} (V^T (x-\mu)) \right) $$</center>
 <center>$$ = \exp \left( -\dfrac{1}{2} (V^{-1}(x-\mu))^T  \Lambda^{-1} (V^{-1} (x-\mu)) \right) $$</center>
 
-![evd2](https://user-images.githubusercontent.com/48202736/107462196-ec655200-6b9e-11eb-9318-8440b055e64d.png)
+여기서
+
+<center>$$ x' = V^{-1}(x-\mu) $$</center>
+
+그러므로
+
+<center>$$\mathcal{N}(x) \propto \exp \left( -\dfrac{1}{2} x'^T  \Lambda^{-1} x' \right) $$</center>
+<center>$$\propto \exp \left( \dfrac{{x'}_1^2}{\lambda_1^2} + \dfrac{{x'}_2^2}{\lambda_2^2} + \cdots + \dfrac{{x'}_D^2}{\lambda_D^2} \right) $$</center>
+
 ![evd3](https://user-images.githubusercontent.com/48202736/107462199-ecfde880-6b9e-11eb-9748-41fd24cc9283.png)
 
 
