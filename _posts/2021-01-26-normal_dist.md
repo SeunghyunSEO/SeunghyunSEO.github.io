@@ -528,6 +528,9 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 
 
+
+
+
 - <mark style='background-color: #dcffe4'> Bayes’ theorem for Gaussian variables </mark>
 
 ---
@@ -557,94 +560,7 @@ $$p({\bf y}|{\bf x}) = N({\bf y}\;|\;{\bf A} {\bf x}+{\bf b} , L^{-1}) \qquad{(2
 
 어떻게 해야 $$p(y)$$와 $$p(x \vert y)$$를 구할 수 있을까요?
 
-답은 베이즈룰을 사용하면 됩니다.
-
-우선 x,y에 대한 결합 분포를 $$z=(x,y)$$ 라고 하겠습니다. 
-
- - 베이즈 이론를 활용하여,
- - \\( p({\bf z}) = p({\bf x})p({\bf y}\|{\bf x}) \\) 인 식을 \\( p({\bf x}\|{\bf y})p({\bf y}) \\) 와 같은 식으로 전개함
- - 곱의 법칙에 따라서 \\( p({\bf z}) \\) 즉, \\( p({\bf x}, {\bf y}) \\) 를 구할 수 있고,
- - \\( p({\bf y}) \\) 와 \\( p({\bf x}\|{\bf y}) \\) 도 구할 수 있다.
- - 이러면현재 분포를 \\( p({\bf x}) \\) 와 \\( p({\bf y}\|{\bf x}) \\) 를 만족하도록 만들어놓고, 최종적으로 \\( p({\bf y}) \\) 등을 만들어낸다.
-
-- 이후 과정은 증명 과정이다.
-
-- 우선 \\( {\bf x} \\) 와 \\( {\bf y} \\) 의 결합 확률을 \\( {\bf z} \\) 로 정의하자.
-
-$${\bf z} = \dbinom{ {\bf x} }{ {\bf y} } \qquad{(2.101)}$$
-
-- 이제 결합 분포에 로그를 씌운다.
-
-$$\ln{p({\bf z})} = \ln p({\bf x}) + \ln p({\bf y})\\
-= -\frac{1}{2}({\bf x}-{\pmb \mu})^T\Lambda({\bf x}-{\pmb \mu}) -\frac{1}{2}({\bf y}-{\bf A}{\bf x}-{\bf b})^T{L}({\bf y}-{\bf A}{\bf x}-{\bf b})+const \qquad{(2.102)}$$
-
-- 여기서 `const` 영역은 \\( {\bf x} \\) 나 \\( {\bf y} \\) 와는 상관없는 텀이다.
-- 그 외의 텀은 \\( {\bf z} \\) 의 요소들에 대한 이차형식(`quadratic`)의 함수이다.
-    - 앞서 이런 형태의 식에 대한 가우시안 분포 여부를 확인했었다.
-    - 따라서 이 분포도 가우시안 분포가 된다는 것을 알 수 있다.
-    
-- 어쨌거나 위의 식을 모두 전개하여 이 중 이차항만을 추려보자.
-    - 알다시피 공분산을 구하기 위해서이다.
-
-$$-\frac{1}{2}{\bf x}^T(\Lambda + {\bf A}^T\Lambda{\bf A}){\bf x} - \frac{1}{2}{\bf y}^T{\bf L}{\bf y} + \frac{1}{2}{\bf x}^T{\bf A}{\bf L}{\bf y}\\
-= -\frac{1}{2}\dbinom{ {\bf x} }{ {\bf y} }^T \left(\begin{array}{cc}\Lambda+{\bf A}^T{\bf L}{\bf A} & -{\bf A}^T{\bf L}\\-{\bf L}{\bf A} & {\bf L}\end{array} \right) \dbinom{ {\bf x} }{ {\bf y} } = -\frac{1}{2}{\bf z}^T{\bf R}{\bf z} \qquad{(2.103)}$$
-
-- 신기하게도 \\( {\bf z} \\) 에 대한 이차형식(`quadratic`) 형태의 식이 전개되었다.
-- 따라서 \\( R \\) 은 정확도 행렬이 된다. (공분산의 역행렬)
-
-$${\bf R} = \left(\begin{array}{cc}\Lambda+{\bf A}^T{\bf L}{\bf A} & -{\bf A}^T{\bf L}\\-{\bf L}{\bf A} & {\bf L}\end{array}\right) \qquad{(2.104)}$$
-
-- 역행렬을 만드는 식을 이용하여 공분산도 구할 수 있다.
-
-$$cov[{\bf z}]={\bf R}^{-1} = \left(\begin{array}{cc}\Lambda^{-1} & \Lambda^{-1}{\bf A}^T \\ {\bf A}\Lambda^{-1} & {\bf L}^{-1}+{\bf A}\Lambda^{-1}{\bf A}^T  \end{array}\right) \qquad{(2.105)}$$
-
-- 복잡해보이긴 해도 구할수 없는 식은 아니다.
-- 이제 일차항을 묶어 얻어진 계수와, 앞서 구한 공분산을 이용하여 평균을 구할 수 있다.
-- 일차항은 다음과 같다.
-
-$${\bf x}^T\Lambda{\pmb \mu} - {\bf x}^T{\bf A}^T{\bf L}{\bf b} + {\bf y}^T{\bf L}{\bf b} = \dbinom{ {\bf x} }{ {\bf y} }^T\dbinom{\Lambda{\pmb \mu}-{\bf A}^T{\bf L}{\bf b}}{ {\bf L}{\bf b} } \qquad{(2.106)}$$
-
-- 따라서 평균값은 다음과 같다.
-
-$$E[{\bf z}] = {\bf R}^{-1}\dbinom{ {\bf x} }{ {\bf y} }^T\dbinom{\Lambda{\pmb \mu}-{\bf A}^T{\bf L}{\bf b}}{ {\bf L}{\bf b} } \qquad{(2.107)}$$
-
-- \\( {\bf R}^{-1} \\) 을 대입하여 전개해보자. 최종 식으로 다음을 얻을 수 있다.
-
-$$E[{\bf z}] = \dbinom{ {\pmb \mu} }{ {\bf A} {\pmb \mu} - {\bf b}} \qquad{(2.108)}$$
-
-- 각 요소의 평균이 결국 \\( {\bf z} \\) 의 평균이 된다.
-    - 직관적으로 매우 당연한 결과이지만 이를 얻어내기까지의 수식 계산이 쉽지 않네.
-
-- 지금까지 결합 분포 \\( p({\bf x}, {\bf y}) \\) 를 살펴보았으므로 이제 주변 확률 분포(marginal distribution)를 살펴보도록 하자.
-- 여기에서는 앞서 다루었던 결합 분포의 성질을 이용하게 된다.
-- 얻은 결과는 다음과 같다. (식을 전개하기가 귀찮다.)
-
-$$E[{\bf y}] = {\bf A}{\pmb \mu} + {\bf b} \qquad{(2.109)}$$
-
-$$cov[{\bf y}] = {\bf L}^T + {\bf A}\Lambda^{-1}{\bf A}^T \qquad{(2.110)}$$
-
-- 여기서 \\( {\bf A}={\bf I} \\) 인 경우 두 가우시안의 관계가 *convolution* 관계라고 한다.
-    - 여기서 *convolution* 은 두 개의 가우시안 함수가 서로 오버랩되는 영역을 나타내는 식이라고 생각하면 된다.
-    - 이렇게 오버랩되는 영역도 마찬가지로 가우시안 분포를 따르게 된다.
-    - 이 때 생성되는 분포의 평균는 각각의 분포의 평균의 합의 평균이 되고 분산은 각각의 분포의 분산의 합의 평균이 된다.
-
-- 이제 조건 분포 \\( p({\bf x}\|{\bf y}) \\) 에 대해 좀 알아보도록 하자.
-- 이 때의 평균과 분산은 너무나도 쉽게 구해지는데, 왜냐하면 이미 앞에서 다 구했기 때문이다. (식 2.73, 2.15)
-
-$$\Sigma_{a|b}=\Lambda_{aa}^{-1}$$
-
-$${\pmb \mu}_{a|b}={\pmb \mu}_a - \Lambda_{aa}^{-1}\Lambda_{ab}({\bf x}_b-{\pmb \mu}_b)$$
-
-- 이걸 \\( p({\bf x}\|{\bf y}) \\) 에 맞게 대입만 하면 된다.
-
-$$E[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1}\{ {\bf A}^T{\bf L}({\bf y}-{\bf b})+\Lambda{\pmb \mu}\} \qquad{(2.111)}$$
-
-$$cov[{\bf x}|{\bf y}] = (\Lambda+{\bf A}^T{\bf L}{\bf A})^{-1} \qquad{(2.112)}$$
-
-
-
-
-
+답은 베이즈룰을 사용하면 됩니다. (증명은 생략하도록 하겠습니다...)
 
 
 
