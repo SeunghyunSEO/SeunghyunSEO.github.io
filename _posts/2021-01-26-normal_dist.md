@@ -364,12 +364,13 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 - <mark style='background-color: #dcffe4'> EVD and Multivariate Gaussian Distribution </mark>
 
 
+<center>$$
 \mathcal{N}(x) 
 &amp;\propto \exp \left( -\dfrac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) \right) \\
 &amp;= \exp \left( -\dfrac{1}{2} (x-\mu)^T V \Lambda^{-1} V^T (x-\mu) \right) \\
 &amp;= \exp \left( -\dfrac{1}{2} (V^T(x-\mu))^T  \Lambda^{-1} (V^T (x-\mu)) \right) \\
 &amp;= \exp \left( -\dfrac{1}{2} (V^{-1}(x-\mu))^T  \Lambda^{-1} (V^{-1} (x-\mu)) \right) \\
-
+$$</center>
 
 ![evd2](https://user-images.githubusercontent.com/48202736/107462196-ec655200-6b9e-11eb-9318-8440b055e64d.png)
 ![evd3](https://user-images.githubusercontent.com/48202736/107462199-ecfde880-6b9e-11eb-9748-41fd24cc9283.png)
