@@ -482,11 +482,18 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 
 
+
+
+
+
 - <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
 
 - 제약(1) : 모수(parameter)의 개수
+ - Full Covariance의 경우, 우리가 솔루션을 구할때 Covariance가 가지는 파라메터 개수 D(D+1)/2 + mean 파라메터 D를 합쳐 D(D+3)/2라는 수를 가지게 되기 때문에 계산하기가 어렵다.
+ 이럴 경우 대각 행렬의 형태를 지닌 공분산 행렬을 사용하면 대각형의 2D개만을 가지고 학습을 할 수도 있지만, 이렇게되면 표현력이 떨어진다.
 
 - 제약(2) : 분포의 모양이 단봉(unimodal)의 형태만 올 수 있음
+ - 가우시안 분포는 일변량이던 다변량이던 봉우리가 하나인 uni-modal 형태인데, 이는 가우시안 분포를 여러개 합치는 Mixture of Gaussian(MoG)로 해결 할 수 있다.
 
 - <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
 
