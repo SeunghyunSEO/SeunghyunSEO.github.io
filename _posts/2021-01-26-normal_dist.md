@@ -416,92 +416,6 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
-- <mark style='background-color: #dcffe4'> Jsacobian Matrix </mark>
-    
-$$J_{ij}=\dfrac{\partial x_i}{\partial y_i}=U_{ji} \qquad{(2.53)}$$
-    
-$$\int_{\bf x} f({\bf x})d{\bf x} = \int_{\bf y} f({\bf y})|{\bf J}|d{\bf y}$$
-
-이미 앞서서 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 를 확인했기 때문에
-
-$${\vert}{\bf J}{\vert}^2 = {\vert}{\bf U}^T{\vert}^2 = {\vert}{\bf U}^T{\vert}\;{\vert}{\bf U}{\vert} = {\vert}{\bf U}^T{\bf U}{\vert} = {\vert}{\bf I}{\vert} = 1 \qquad{(2.54)}$$
-
-입니다.
-
-여기서 \\( U \\) 는 직교 행렬 \\( \|J\|=1 \\) 
-
-$$\left|\Sigma\right|^{\frac{1}{2}}=\prod_{j=1}^{D}\lambda_j^{\frac{1}{2}} \qquad{(2.55)}$$
-
-- \\( x \\) 축에서 \\( y \\) 축으로 전환 \\( {\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \\) 을 대입하고 기타 식들을 추가하면,
-
-$$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/2}}\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\} \qquad{(2.43)}$$
-
-위의식이 아래의 식이 됩니다.
-
-$$p({\bf y}) = p(x)|{\bf J}| = \prod_{j=1}^{D}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp\left\{-\dfrac{y_j^2}{2\lambda_j}\right\} \qquad{(2.56)}$$
-
-$$\int p({\bf y})d{\bf y} = \prod_{j=1}^{D} \int_{-\infty}^{\infty}\dfrac{1}{(2\pi\lambda_j)^{1/2}}\exp \left\{-\dfrac{y_j^2}{2\lambda_j}\right\}dy_i=1 \qquad{(2.57)}$$
-
-
-이제 가우시안 분포의 적률(moment)을 좀 살펴 볼 것입니다.
-
-- \\( {\bf x} \\) 축에 대해 평균값을 살펴볼 예정인데 우선 식 전개를 편하게 하기 위해 \\( {\bf z} = ({\bf x}-{\pmb \mu}) \\) 를 놓고 식을 전개하면
-
-$$E[{\bf x}] = \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\}{\bf x}d{\bf x}\\
-= \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}({\bf z}+{\pmb \mu})d{\bf z} \qquad{(2.58)}$$
-
-여기에 \\( ({\bf z}+{\pmb \mu}) \\) 식이 추가되어 있으므로 \\( {\pmb \mu} \\) 만큼 평행이동한 함수가 되고, 따라서 중심이 \\( {\pmb \mu} \\) 이고 좌우 대칭인 정규 함수가 만들어진다. 따라서 평균은 다음과 같다.
-
-$$E[{\bf x}]={\pmb \mu} \qquad{(2.59)}$$
-
-2차 적률(second order moments)도 마찬가지로
-
-$$E[{\bf x}{\bf x}^T]=\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf x}-{\pmb \mu})^T{\bf \Sigma}^{-1}({\bf x}-{\pmb \mu})\right\}{\bf x}{\bf x}^Td{\bf x}\\
-= \dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}({\bf z}+{\pmb \mu})({\bf z}+{\pmb \mu})^Td{\bf z}$$
-
-- 여기서 \\( ({\bf z}+{\pmb \mu})({\bf z}+{\pmb \mu})^T \\) 를 전개할 수 있다.
-- 이를 전개한 수식에서 \\( {\pmb \mu}{\bf z}^T \\) 와 \\( {\bf z}{\pmb \mu}^T \\) 는 서로 대칭 관계이므로 제거된다.
-- \\( {\bf u}{\bf u}^T \\) 는 수식에서 상수의 역할이므로 적분 바깥 쪽으로 나오게 된다. 
-- 결국 우리가 집중해야 할 요소는 \\( {\bf z}{\bf z}^T \\) 이다.
-- 참고로 \\( {\bf z} \\) 는 다음과 같이 고유벡터로 표현 가능하다.
-$${\bf z}=\sum_{j=1}^{D}y_j{\bf u}_j \qquad{(2.60)}$$
-
-- 여기서 \\( y_j={\bf u}_j^T{\bf z} \\) 이다.
-- 따라서 식을 다음과 같이 전개 가능하다.
-
-$$\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\int\exp\left\{-\frac{1}{2}({\bf z})^T{\bf \Sigma}^{-1}({\bf z})\right\}{\bf z}{\bf z}^Td{\bf z}$$
-
-$$=\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\sum_{i=1}^{D}\sum_{j=1}^{D}{\bf u}_i{\bf u}_j^T\int \exp \left\{-\sum_{k=1}^{D}\frac{y_k^2}{2\lambda_k}\right\}y_iy_jd{\bf y}\\
-=\sum_{i=1}^{D}{\bf u}_i{\bf u}_j^T\lambda_i=\Sigma \qquad{(2.61)}$$
-
-원 식에 대입하면 다음과 같은 결과를 얻을 수 있습니다.
-
-$$E[{\bf x}{\bf x}^T]={\pmb \mu}{\pmb \mu}^T + \Sigma \qquad{(2.62)}$$
-
-2차 모멘트가 평균의 제곱과 분산의 합이라는 사실을 다시 확인하게 되었습니다.
-
-
-마지막으로 공분산(covariance) 값을 한번 구해보면
-
-\\( E[{\bf x}]={\pmb \mu} \\) 이므로 
-
-$$cov[{\bf x}]=E[({\bf x}-E[{\bf x}])({\bf x}-E[{\bf x}])^T] \qquad{(2.63)}$$
-
-$$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
-
-가 됩니다.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -509,11 +423,11 @@ $$cov[{\bf x}]=\Sigma \qquad{(2.64)}$$
 
 - <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
 
-- 제약(1) : 모수(parameter)의 개수
+제약(1) : 모수(parameter)의 개수
  - Full Covariance의 경우, 우리가 솔루션을 구할때 Covariance가 가지는 파라메터 개수 D(D+1)/2 + mean 파라메터 D를 합쳐 D(D+3)/2라는 수를 가지게 되기 때문에 계산하기가 어렵다.
  이럴 경우 대각 행렬의 형태를 지닌 공분산 행렬을 사용하면 대각형의 2D개만을 가지고 학습을 할 수도 있지만, 이렇게되면 표현력이 떨어진다.
 
-- 제약(2) : 분포의 모양이 단봉(unimodal)의 형태만 올 수 있음
+제약(2) : 분포의 모양이 단봉(unimodal)의 형태만 올 수 있음
  - 가우시안 분포는 일변량이던 다변량이던 봉우리가 하나인 uni-modal 형태인데, 이는 가우시안 분포를 여러개 합치는 Mixture of Gaussian(MoG)로 해결 할 수 있다.
 
 
