@@ -9,7 +9,12 @@ toc_sticky: true
 comments: true
 ---
 
-- <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
+{: class="table-of-content"}
+* TOC
+{:toc}
+
+
+## <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
 
 아래의 표에서 볼 수 있듯이, 간단하게 생각하면 
 
@@ -21,7 +26,7 @@ comments: true
 
 ![reg vs classification](https://user-images.githubusercontent.com/48202736/106451206-9111d080-64c9-11eb-875c-d5f1121d419d.png)
 
-- <mark style='background-color: #fff5b1'> Linear Regression </mark>
+## <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
 1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해봅시다.
 우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이 될 수 있습니다. 
@@ -44,7 +49,7 @@ comments: true
 
 (이미지 출처 : [link](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/01/20/ISL-linear-regression_ch3.html))
 
-- <mark style='background-color: #dcffe4'> Intuitive Animation for Linear Regression </mark>
+### <mark style='background-color: #dcffe4'> Intuitive Animation for Linear Regression </mark>
 
 입력 x 1차원, 출력 y 1차원 데이터에 대한 linear regression이 학습 되는 과정.
 
@@ -84,7 +89,7 @@ comments: true
 > $$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값 <br>
 
 
-- <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
+## <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
 
 우리가 위에서 w (혹은 y인데 책에서는 같은 의미로 world state, w를 사용했습니다.)에 대해서 가우시안 분포를 가정했기 때문에 
 우리가 모델링 하고자 하는 분포는 다음과 같습니다. 
@@ -107,7 +112,9 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 자 이제 우리는 모든 x,y data pair에 대한 식을 위처럼 얻게 되었습니다.
 
- - <mark style='background-color: #dcffe4'> likelihood </mark>
+
+
+### <mark style='background-color: #dcffe4'> likelihood </mark>
 
 우리가 찾고싶은 것은 전체 데이터셋에 대한 $$likelihood$$가 됩니다. 
 
@@ -128,7 +135,9 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
   
 이제 늘 그랬듯이 미분해서 0인 지점을 찾으면 우리는 likelihood를 가장 크게하는, 그러니까 현재 데이터를 가장 likely하게 표현하는 세 가지 파라메터를 구할 수 있습니다.
 
- - <mark style='background-color: #dcffe4'> solution </mark>
+
+
+### <mark style='background-color: #dcffe4'> solution </mark>
 
 위의 방법대로 풀면 우리가 Maximum likelihood 방법을 통해 구한 솔루션은 아래와 같게 됩니다.
 
@@ -141,7 +150,8 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 직선의 방정식을 구하고, 거기에 균일한 분산을 곁들인거죠.
 
 
-- <mark style='background-color: #fff5b1'> 가우시안 분포를 가정한 ML solution과 MSE의 관계  </mark> 
+
+## <mark style='background-color: #fff5b1'> 가우시안 분포를 가정한 ML solution과 MSE의 관계  </mark> 
 
 어떤 분들은 위의 솔루션이 맘에 들지 않을 수도 있습니다.
 
@@ -185,7 +195,7 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 결과적으로 노이즈가 가우시안 분포를 가진다는 가정하에, 즉 가우시안 분포로 y를 모델링 한 경우 $$likelihood$$를 maximize하는 방법이 일반적인 회귀에 쓰이는 MSE를 최소화 하는것과 같다는 걸 알 수 있습니다.
 
 
-- <mark style='background-color: #fff5b1'> MAP로 Linear Regression </mark> 
+## <mark style='background-color: #fff5b1'> MAP로 Linear Regression </mark> 
 
 우리는 앞서 ML과 MAP의 차이에 대해서 공부했었습니다. 사후 확률(posterior)는 likelihood에 prior 정보를 추가해 데이터가 별로 없을 때 likelihood를 약간 보정해주는 느낌이라고 설명했었습니다.
 
@@ -224,7 +234,7 @@ $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른
  {: style="width: 60%;" class="center"}
 
 
-- <mark style='background-color: #fff5b1'> Further Study </mark>
+## <mark style='background-color: #fff5b1'> Further Study </mark>
 
 지금까지 이야기 한 것 외에도, Bayesian Regression 방법과 Non-linear Regression 등등의 다양한 업그레이드 버전이 있습니다. 
 
@@ -233,7 +243,7 @@ $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른
 ![reg all](https://user-images.githubusercontent.com/48202736/106451237-9a02a200-64c9-11eb-933a-e6522c1c0a87.png)
 
 
-- <mark style='background-color: #fff5b1'> References </mark>
+## <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
 
