@@ -9,7 +9,14 @@ toc_sticky: true
 comments: true
 ---
 
-- <mark style='background-color: #fff5b1'> Learning and Inference </mark>
+---
+< 목차 >
+{: class="table-of-content"}
+* TOC
+{:toc}
+---
+
+## <mark style='background-color: #fff5b1'> Learning and Inference </mark>
 
 간단하게 말해서 대부분의 머신러닝 알고리즘의 해를 구하는 매커니즘은 다음과 같다고 할 수 있을 것 같습니다.
 
@@ -19,7 +26,7 @@ comments: true
 
 어떤 방식(ML, MAP, Bayesian)으로 어떤 분포를 학습하던 (x에대한 분포 $$Pr(x \mid y)$$ 이던 y에 대한 분포 $$Pr(y \mid x)$$이던) 목적은 곧 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 입니다.
 
-- <mark style='background-color: #fff5b1'> Generative vs Discriminative Models </mark>
+## <mark style='background-color: #fff5b1'> Generative vs Discriminative Models </mark>
 
 둘의 차이에 대해서 얘기하기 전에 notation을 다시 정하도록 하겠습니다.
 
@@ -36,7 +43,7 @@ Discriminative Model은 $$Pr(w \mid x)$$ 를 모델링 하는 것이 목적입�
 
 하지만 위에서도 말했듯 결국 추론시에 필요한 것은 '$$Pr(w \mid x)$$'가 됩니다.
 
-- <mark style='background-color: #fff5b1'> Generative Model </mark>
+## <mark style='background-color: #fff5b1'> Generative Model </mark>
 
 과연 '어떻게 $$Pr(w \mid x)$$를 모델링하는가?' 그에 대한 첫번째 방법으로 $$Pr(x \mid y)$$를 모델링 하는 방법이 있습니다.
 
@@ -65,7 +72,7 @@ Discriminative Model은 $$Pr(w \mid x)$$ 를 모델링 하는 것이 목적입�
 
 이에 대한 답은 아래에 예시를 들면서 설명을 해보도록 하도록 하고 우선은 넘어가도록 하겠습니다.
 
-- <mark style='background-color: #fff5b1'> Discriminative Model </mark>
+## <mark style='background-color: #fff5b1'> Discriminative Model </mark>
 
 Discriminative Model, 판별 모델의 경우
 
@@ -82,9 +89,9 @@ Discriminative Model, 판별 모델의 경우
 
 하지만 사실 생성 모델, 판별 모델 전부 말로는 와닿지 않습니다. 그래서 몇가지 예시(회귀,분류 문제)를 들어 두 모델의 차이를 이해해 보도록 하겠습니다. 
 
-- <mark style='background-color: #fff5b1'> Example 1 : Regression </mark>
+## <mark style='background-color: #fff5b1'> Example 1 : Regression </mark>
 
-- <mark style='background-color: #dcffe4'> Regression : Discriminative </mark>
+### <mark style='background-color: #dcffe4'> Regression : Discriminative </mark>
 
 Discriminative Regression Model의 경우를 살펴봅시다.
 
@@ -108,7 +115,7 @@ Inference를 할 때도 x 데이터를 넣고 y의 자표를 읽으면 끝입니
 ![dis_reg2](https://user-images.githubusercontent.com/48202736/106454596-552d3a00-64ce-11eb-8cd0-91f999bbd3bb.png)
 {: style="width: 60%;" class="center"}
 
-- <mark style='background-color: #dcffe4'> Regression : Generative </mark>
+### <mark style='background-color: #dcffe4'> Regression : Generative </mark>
 
 
 Generative Regression Model의 경우를 살펴봅시다.
@@ -167,11 +174,15 @@ w(혹은 편하게 y) 값이 1.72일 때 그 때의 학습 데이터 x가 어떻
 이제 분류 문제에 대해서도 똑같이 적용해보도록 하겠습니다.
 
 
-- <mark style='background-color: #fff5b1'> Example 2 : Classification </mark>
+
+
+## <mark style='background-color: #fff5b1'> Example 2 : Classification </mark>
 
 2개의 클래스를 판별하는 이진 분류 모델에 대해서 생각해보도록 하겠습니다.
 
-- <mark style='background-color: #dcffe4'> Classification : Discriminative </mark>
+
+
+### <mark style='background-color: #dcffe4'> Classification : Discriminative </mark>
 
 Discriminative Classification Model의 경우를 살펴봅시다.
 
@@ -188,7 +199,9 @@ Discriminative Classification Model의 경우를 살펴봅시다.
 
 Regression 때와 마찬가지로 $$Pr(w \mid x)$$ 에 대한 분포를 정의하고 그 분포의 파라메터를 학습했으니, 바로 입력 데이터 x를 넣어 추론할 수 있습니다.
 
-- <mark style='background-color: #dcffe4'> Classification : Generative </mark>
+
+
+### <mark style='background-color: #dcffe4'> Classification : Generative </mark>
 
 Generative Classification Model의 경우를 살펴봅시다.
 
@@ -231,7 +244,9 @@ $$Pr(x \mid w)$$를 학습한 뒤 구한 $$Pr(w \mid x)$$ 분포와 (좌) vs 다
 ![gen_class6](https://user-images.githubusercontent.com/48202736/106454687-7b52da00-64ce-11eb-97a5-1b7bb971a032.png)
 {: style="width: 90%;" class="center"}
 
-- <mark style='background-color: #fff5b1'> Intuition...? </mark>
+
+
+## <mark style='background-color: #fff5b1'> Intuition...? </mark>
 
 그전에 혹시 글의 서두에서 언급했던 궁금증이 생각 나시나요?
 
@@ -281,7 +296,7 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
 
 (비슷한 내용이라 더 자세하게 쓰지는 않겠습니다. 다만 위의 예시에서는 Generative Model $$Pr(x \mid y)$$를 학습하고 베이즈 룰을 통해 $$Pr(y \mid x)$$를 만들어내지 않고도 단순히 두 클래스의 분포에 테스트 입력 데이터를 넣었을 때 더 높은 확률을 나타내는 클래스로 와인을 분류하는 방법을 사용합니다.)
 
-- <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
+## <mark style='background-color: #fff5b1'> Generative Model vs Discriminative Model Pros and Cons </mark>
 
 - <mark style='background-color: #dcffe4'> Generative Model </mark>
   - <mark style='background-color: #ffdce0'> Pros </mark>
@@ -323,7 +338,7 @@ $$Pr(x \mid y)$$를 모델링한다는 것은 예를들어 분류 문제를 생�
 
   
 
-- <mark style='background-color: #fff5b1'> References </mark>
+## <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
 
