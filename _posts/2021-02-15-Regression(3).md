@@ -95,7 +95,7 @@ Pr(w_i \vert x_i, \theta) = Norm_{w_i}[\theta^T z_i, \sigma^2]
 $$
 
 $$
-where, \space z_i = \left[ \begin{matrix} 1 \ x_i \ x_i^2 \ x_i^3 \end{matrix} \right]
+where, \space z_i = \left[ \begin{matrix} 1 \\ x_i \\ x_i^2 \\ x_i^3 \end{matrix} \right]
 $$
 
 이 됩니다.
@@ -170,7 +170,7 @@ Pr(w_i \vert x_i,\theta) = Norm_{w_i}[\theta^T z_i, \sigma^2]
 $$
 
 $$
-where, \space z_i = \left[ \begin{matrix} 1 \ x_i \ x_i^2 \ x_i^3 \end{matrix} \right]
+where, \space z_i = \left[ \begin{matrix} 1 \\ x_i \\ x_i^2 \\ x_i^3 \end{matrix} \right]
 $$
 
 위의 수식에서 우리는 기저 함수들간의 가중치 합으로 데이터에 맞는 곡선을 구하기 위해서, 가중치를 구하면 됩니다.
@@ -200,11 +200,11 @@ $$ \hat{\phi} = \frac{(w-X^T\phi)^T(w-X^T \phi)}{I} $$
 $$
 Z = 
 \left[ \begin{matrix} 
-f_0[x_1] && f_1[x_1] && \cdots  && f_{M-1}[x_1] \ 
-f_0[x_2] && f_1[x_2] && \cdots  && f_{M-1}[x_2] \ 
-vdots  && \vdots  && \ddots  && \vdots  \ 
-f_0[x_N] && f_1[x_N] && \cdots  && f_{M-1}[x_N] \ 
-end{matrix} \right]
+f_0[x_1] && f_1[x_1] && \cdots  && f_{M-1}[x_1] \\ 
+f_0[x_2] && f_1[x_2] && \cdots  && f_{M-1}[x_2] \\ 
+\vdots  && \vdots  && \ddots  && \vdots  \\ 
+f_0[x_N] && f_1[x_N] && \cdots  && f_{M-1}[x_N] 
+\end{matrix} \right]
 $$
 
 위의 행렬을 바로 설계 행렬(design matrix)이라고 부릅니다.
