@@ -1,5 +1,5 @@
 ---
-title: Bayesian Deep Learning
+title: (미완)Bayesian Deep Learning
 categories: DeepLearning
 tag: [tmp]
 
@@ -7,8 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
+---
+< 목차 >
+{: class="table-of-content"}
+* TOC
+{:toc}
+---
 
-- <mark style='background-color: #fff5b1'> Bayesian Modeling and Model Uncertainty </mark>
+## <mark style='background-color: #fff5b1'> Bayesian Modeling and Model Uncertainty </mark>
 
 머신러닝에서 Bayesian Approach는 무엇을 의미할까요?
 
@@ -68,7 +74,9 @@ toc_sticky: true
 이렇듯 베이지안 방법은 가능한 파라메터에 대해서 적분을 해야한다는 문제와 그리고 경우에 따라 (아니 대부분의 경우) posterior 계산이 어렵다는 문제가 있지만, Model Uncertainty(모델의 불확실성, 자신 없는 부분을 자신 없다고 하는것)을 캐치하는데 설득력이 있는 결과를 제시합니다. 
 
 
-- <mark style='background-color: #fff5b1'> MAP vs Bayesian Approach </mark>
+
+
+## <mark style='background-color: #fff5b1'> MAP vs Bayesian Approach </mark>
 
 둘 다 베이즈 룰을 통해 likelihood,prior를 가지고 posterior를 구하긴 하지만 여기서 둘의 차이는 가능한 파라메터를 다 고려하느냐 마느냐의 문제입니다.
 
@@ -93,7 +101,10 @@ ML로 구한 solution은 아래와 같을 수 있습니다.
 
 그러니 데이터가 많은 경우에 대해서는 그게 그거가 되긴 한다는 말입니다.
 
-- <mark style='background-color: #fff5b1'> 수식적으로 생각해보는 Bayesian Modeling </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> 수식적으로 생각해보는 Bayesian Modeling </mark>
 
 자 이제 본격적으로 수식적으로 Bayesian Approach에 대한 Recap을 해보도록 하겠습니다.
 
@@ -102,7 +113,7 @@ ML로 구한 solution은 아래와 같을 수 있습니다.
 
 
 
-- <mark style='background-color: #fff5b1'> Bayesian Neural Network (BNN) </mark>
+## <mark style='background-color: #fff5b1'> Bayesian Neural Network (BNN) </mark>
 
 offer a probabilistic interpretation of deep learning models by inferring distributions over the models’ weights. The model offers robustness to over-fitting, uncertainty estimates, and can easily learn from small datasets.
 
@@ -118,16 +129,23 @@ Bayesian Neural Network(BNN, Bayesian NN)은 90년대에 이미 제안된 방법
 하지만 작은 데이터셋, 작은 딥러닝 모델에 대해서 잘 될지 모르겠으나, 요즘 사용하는 거대한 사이즈의 딥러닝 모델이나, 큰 데이터셋에 대해서는 말처럼 쉽게 inference를 할 수가 없습니다. 
 
 
-- <mark style='background-color: #fff5b1'> Variational Inference </mark>
 
 
-- <mark style='background-color: #fff5b1'> Bayesian Deep Learning </mark>
+## <mark style='background-color: #fff5b1'> Variational Inference </mark>
 
 
-- <mark style='background-color: #fff5b1'> Model Uncertainty </mark>
 
 
-- <mark style='background-color: #fff5b1'> References </mark>
+## <mark style='background-color: #fff5b1'> Bayesian Deep Learning </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Model Uncertainty </mark>
+
+
+
+
+## <mark style='background-color: #fff5b1'> References </mark>
 
 1. [[Drug Discovery] #2 가상탐색을 위한 신뢰할 수 있는 인공지능](https://medium.com/aitrics/drug-discovery-2-%EA%B0%80%EC%83%81%ED%83%90%EC%83%89%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%8B%A0%EB%A2%B0%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-7a4b4eb63106)
 
