@@ -9,7 +9,14 @@ toc_sticky: true
 comments: true
 ---
 
-- <mark style='background-color: #fff5b1'> ML solution for Modeling Gaussian Dist over Output, W </mark>
+---
+< 목차 >
+{: class="table-of-content"}
+* TOC
+{:toc}
+---
+
+## <mark style='background-color: #fff5b1'> ML solution for Modeling Gaussian Dist over Output, W </mark>
 
 우리는 이전에 회귀 문제, 그 중에서도 선형 회귀 문제를 푸는 방법에 대해 알아봤습니다.
 
@@ -36,7 +43,8 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 한발 더 나아가 가능한 모든 파라메터에 대해 적분하는 Bayesian 방법을 사용하는 것입니다.
 
 
-- <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
+
+## <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
 ![reg all](https://user-images.githubusercontent.com/48202736/106451883-83107f80-64ca-11eb-9078-86b1359f7dc7.png)
 
@@ -69,7 +77,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 오른쪽은 $$\phi$$의 분포를 나타냅니다. (variance는 나중에 다룰 예정)
 
 
-- <mark style='background-color: #dcffe4'> Inference </mark>
+### <mark style='background-color: #dcffe4'> Inference </mark>
 
 Bayesian Deep Learning 분야에서 유명한 Yarin Gal의 thesis를 보면 Bayesian Modeling에서의 Inference를 아래와 같이 정의하고 있습니다.
 
@@ -127,7 +135,7 @@ b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회
 
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
 
-- <mark style='background-color: #fff5b1'> 점 추정? 분포 추정? </mark>
+## <mark style='background-color: #fff5b1'> 점 추정? 분포 추정? </mark>
 
 ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ 분포를 구한뒤 분포의 가장 큰 값일 때의 파라메터를 찾는 것입니다.
 
@@ -136,7 +144,7 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 하지만 베이지안 관점에서는 테스트 데이터에 대한 정답을 추론할 때 마다 적분을 하기 위한 점이 아닌 posterior분포를 다 쓰기 때문에, '분포 추정'을 한다고 할 수 있습니다.
 
-- <mark style='background-color: #fff5b1'> Why Integral over all parameter? </mark>
+## <mark style='background-color: #fff5b1'> Why Integral over all parameter? </mark>
 
 위에서부터 글을 읽으시면서 "근데 왜 marginalization을 해야 하는거지? 왜 적분을 해야하는거지?"라는 생각을 하시는 분이 계실 것 같습니다.
 
@@ -165,7 +173,8 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 그래서 우리가 구하고 싶은 $$Pr(w^{\ast} \mid x^{\ast},X,w)$$ 를 위와 같은 식으로 나타내고 파라메터에 대해서 적분을 해서 없애버리는 겁니다.
 
 
-- <mark style='background-color: #fff5b1'> Limitation </mark>
+
+## <mark style='background-color: #fff5b1'> Limitation </mark>
 
 베이지안 방법으로 문제를 푸는 것은 상당히 괜찮은 접근으로 보입니다.
 
@@ -177,7 +186,8 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 위와 같이 $$posterior$$ 를 간단한 관계식으로 표현했지만, 사실 $$posterior$$를 구하기 위한 Bayes' Rule은 조금 더 복잡합니다.
 
-- <mark style='background-color: #dcffe4'> Bayes' Rule </mark>
+
+### <mark style='background-color: #dcffe4'> Bayes' Rule </mark>
 
 <center>$$posterior :  p(\theta \mid X,W) = \frac{p(W \mid X, \theta)p(\theta)}{p(W \mid X)}$$</center>
 
@@ -207,7 +217,7 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 다음에는 위에서 언급한 Bayesian Classification, Bayesian Neural Network 더 나아가 Bayesian Deep Learning에 대해서 더 알아보도록 하겠습니다.
 
 
-- <mark style='background-color: #fff5b1'> References </mark>
+## <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
 
