@@ -1,5 +1,5 @@
 ---
-title: Classification (2/3) - Bayesian logistic regression
+title: (미완)Classification (2/3) - Bayesian logistic regression
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
@@ -7,7 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> Bayesian Logistic Regression </mark>
+---
+< 목차 >
+{: class="table-of-content"}
+* TOC
+{:toc}
+---
+
+## <mark style='background-color: #fff5b1'> Bayesian Logistic Regression </mark>
 
 이번에는 Bayesian Logistic Regression에 대해 알아보도록 하겠습니다.
 
@@ -42,7 +49,11 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 이러한 생각 때문에 우리는 Bayesian Approach를 통해서 조금 더 자연스러운 Inference를 하고싶은 겁니다.
 
-- <mark style='background-color: #dcffe4'> 수식으로 보는 Bayesian Logistic Regression </mark>
+
+
+
+
+### <mark style='background-color: #dcffe4'> 수식으로 보는 Bayesian Logistic Regression </mark>
 
 자 이제 수식적으로 접근해보도록 합시다.
 
@@ -90,7 +101,10 @@ MAP는 posterior 분포로부터 최대값을 나타내는 단 하나의 파라�
 
 (+ 회귀 문제에서 간단한 베이지안 선형 회귀를 할 경우에서는 Posterior가 계산이 쉽기 때문에 이런 문제는 없었습니다) 
 
-- <mark style='background-color: #fff5b1'> Posterior Approximation </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Posterior Approximation </mark>
 
 Posterior를 근사시키는 방법은 사실 여러 가지가 있습니다. 
 
@@ -102,7 +116,10 @@ Posterior를 근사시키는 방법은 사실 여러 가지가 있습니다.
 
 가장 간단한 Laplace Approximation에 대해서만 생각해보도록 하겠습니다.
 
-- <mark style='background-color: #dcffe4'> Laplace Approximation </mark>
+
+
+
+### <mark style='background-color: #dcffe4'> Laplace Approximation </mark>
 
 아래와 같이 실제 full posterior가 파란색이 될거라고 (모르지만) 생각해봅시다. 
 우리는 이를 다루기 쉬운 가우시안 분포(빨간색)의 mean, variance를 여러가지로 조절해서 이와 똑같지는 않지만 유사한 분포를 얻을 수 있을겁니다.
@@ -130,15 +147,24 @@ mean을 먼저 구하고 covariance는 그 다음에 구하면 됩니다.
 ![cls3](https://user-images.githubusercontent.com/48202736/107110381-b700f180-688a-11eb-937e-d3340fba0dc5.png)
 *Fig. 근사해서 구한 분포와 실제 분포는 크게 다르지 않음을 알 수 있다.*
 
-- <mark style='background-color: #fff5b1'> Bayesian Inference </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Bayesian Inference </mark>
 
 *integral 수식*
 
-- <mark style='background-color: #fff5b1'> Approximation of Integral </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Approximation of Integral </mark>
 
 ![cls4](https://user-images.githubusercontent.com/48202736/107110382-b7998800-688a-11eb-9cca-bd4eccac089c.png)
 
-- <mark style='background-color: #fff5b1'> ML Solution vs Bayesian Solution </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> ML Solution vs Bayesian Solution </mark>
 
 ![cls5-1](https://user-images.githubusercontent.com/48202736/107110383-b8321e80-688a-11eb-9d60-901e301a7f81.png)
 *Fig. Maximum Likelihood로 단순히 Decision Boundary 하나를 '점 추정(point estimation)'한 결과*
@@ -148,6 +174,7 @@ mean을 먼저 구하고 covariance는 그 다음에 구하면 됩니다.
 
 
 
-- <mark style='background-color: #fff5b1'> References </mark>
+
+## <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
