@@ -84,13 +84,13 @@ $$
 이를 수식적으로 나타내면 아래와 같습니다.
 
 $$
-Pr(w_i \vert x_i) = Norm_{w_i}[\theta_0 + \theta_1 x_i + \theta_2 x_i^2 + \theta_3 x_i^3, \sigma^2 ]
+Pr(w_i \vert x_i, \theta) = Norm_{w_i}[\theta_0 + \theta_1 x_i + \theta_2 x_i^2 + \theta_3 x_i^3, \sigma^2 ]
 $$
 
 이를 간단하게 표현하면
 
 $$
-Pr(w_i \vert x_i) = Norm_{w_i}[\theta^T z_i, \sigma^2]
+Pr(w_i \vert x_i, \theta) = Norm_{w_i}[\theta^T z_i, \sigma^2]
 $$
 
 $$
@@ -144,6 +144,8 @@ $$
 *Fig. 각각의 기저함수와 그에 해당하는 학습된 가중치를 곱해 만들어 낸 최종 곡선의 모양은 (d)와 같다.*
 
 
+
+
 ### <mark style='background-color: #dcffe4'> Other Basis Functions </mark>
 
 코사인 기저 함수와 퓨리에 기저 함수 등이 있으며 이러한 기저 함수를 골라 사용하는것의 장점이 있겠으나 이 글에서는 다루지 않고 넘어가도록 하겠습니다.
@@ -156,10 +158,55 @@ $$
 
 
 
+
+
 ## <mark style='background-color: #fff5b1'> ML Solution for Non-Linear Regression </mark>
 
+자 이제 우리가 최종적으로 구하고자 하는 Non-Linear Regression의 해를 구해보겠습니다.
+
+$$
+Pr(w_i \vert x_i,\theta) = Norm_{w_i}[\theta^T z_i, \sigma^2]
+$$
+
+$$
+where, \space z_i = \left[ \begin{matrix} 1 \ x_i \ x_i^2 \ x_i^3 \end{matrix} \right]
+$$
+
+위의 수식에서 우리는 기저 함수들간의 가중치 합으로 데이터에 맞는 곡선을 구하기 위해서, 가중치를 구하면 됩니다.
+가우시안 분포를 가정한 경우, 우리는 간단하게 log-likelihood의 미분한 값이 0이 되는 값을 계산해 간단하게 닫힌 해(closed-form solution)을 구할 수 있었는데요.
+
+수식으로 나타내면 아래와 같게 됩니다.
+
+$$
+\bigtriangledown ln Pr(w_i \vert x_i) = \theta \sum_{i=1}^{N} \{ w_i - \phi^T f[x_i] \} {f[x_i]}^T = 0
+$$
+
+위의 수식의 해는 아래와 같게 되고,
+
+$$ \hat{\phi} = (ZZ^T)^{-1}Zw $$
+  
+$$ \hat{\phi} = \frac{(w-Z^T\phi)^T(w-Z^T \phi)}{I} $$
 
 
+만약 $$z_i=f[x_i]$$가 $$x_i$$가 되는 경우, 즉 기저 함수를 안 쓰는것과 같다고 생각하면, 이는 우리가 일반적으로 알고 있는 선형 회귀 문제와 같게 되고 이 때의 해는 아래와 같게 됩니다.
+
+$$ \hat{\phi} = (XX^T)^{-1}Xw $$
+
+$$ \hat{\phi} = \frac{(w-X^T\phi)^T(w-X^T \phi)}{I} $$
+
+여기서 $$Z$$는 데이터의 개수가 $$N$$개 이며 입력 차원이 $$M$$일 경우 $$N \times M$$ 함수가 되며,
+
+$$
+Z = 
+\left[ \begin{matrix} 
+\f_0[x_1] && \f_1[x_1] && \cdots  && \f_{M-1}[x_1] \ 
+\f_0[x_2] && \f_1[x_2] && \cdots  && \f_{M-1}[x_2] \ 
+\vdots  && \vdots  && \ddots  && \vdots  \ 
+\f_0[x_N] && \f_1[x_N] && \cdots  && \f_{M-1}[x_N] \ 
+\end{matrix} \right]
+$$
+
+위의 행렬을 바로 설계 행렬(design matrix)이라고 부릅니다.
 
 
 
