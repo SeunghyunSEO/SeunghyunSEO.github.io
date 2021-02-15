@@ -152,6 +152,8 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 직선의 방정식을 구하고, 거기에 균일한 분산을 곁들인거죠.
 
+(위의 수식은 일반적으로 최소 제곱 문제의 정규 방정식(Normal Equation) 이라고 부르기도 합니다.) 
+
 
 
 ## <mark style='background-color: #fff5b1'> 가우시안 분포를 가정한 ML solution과 MSE의 관계  </mark> 
