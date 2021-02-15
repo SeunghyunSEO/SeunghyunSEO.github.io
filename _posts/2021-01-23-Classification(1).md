@@ -7,9 +7,12 @@ toc: true
 toc_sticky: true
 ---
 
+---
+< 목차 >
 {: class="table-of-content"}
 * TOC
 {:toc}
+---
 
 ## <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
 
