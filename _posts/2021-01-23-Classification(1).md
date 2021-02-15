@@ -7,7 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
+{: class="table-of-content"}
+* TOC
+{:toc}
+
+## <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
 
 아래의 표에서 볼 수 있듯이, 간단하게 생각하면 
 
@@ -21,7 +25,7 @@ toc_sticky: true
 
 예를 들면) 연속적인 입력값 (이미지 등)을 이산적으로 ( 개= 1, [1 0 0] , 고양이=2, [0 1 0], 비행기=3, [0 0 1] ) 등으로 구분지어주는 이미지 분류 문제 같은 것입니다.
 
-- <mark style='background-color: #fff5b1'> Logistic Regression </mark>
+## <mark style='background-color: #fff5b1'> Logistic Regression </mark>
 
 로지스틱 회귀 정의 추가해야할듯
 
@@ -33,7 +37,7 @@ toc_sticky: true
 
 그 전에 우선 베르누이 분포에 대해서 remind를 해보도록 하겠습니다. 
 
-- <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
+### <mark style='background-color: #dcffe4'> Bernoulli Distribution </mark>
 
 베르누이 분포에 대해 쉽게 설명하기 위해 그림을 먼저 보도록 하겠습니다.
 
@@ -56,7 +60,7 @@ toc_sticky: true
 
 이 때 추정하고자 하는 파라메터는 성공 확률(편의상 이렇게 말하겠습니다. 경우에 따라 다르게 말할 수 있을 것 같습니다.), $$\lambda$$가 되겠죠? (가우시안 분포에서 평균,$$\mu$$와 분산,$$\sigma^2$$를 찾는게 목적이듯)
 
-- <mark style='background-color: #dcffe4'> Categorical Distribution </mark>
+### <mark style='background-color: #dcffe4'> Categorical Distribution </mark>
 
 +) 베르누이 분포와 유사한 분포로 Categorical(범주형) 분포가 있습니다.
 
@@ -78,7 +82,7 @@ Categorical 분포는 베르누이 분포와 크게 다르지 않지만, 발생 
 ![cat2](https://user-images.githubusercontent.com/48202736/106453058-1302f900-64cc-11eb-93cd-f2d6e69e3317.png)
 {: style="width: 60%;" class="center"}
 
-- <mark style='background-color: #dcffe4'> Back to Logistic Regression </mark>
+### <mark style='background-color: #dcffe4'> Back to Logistic Regression </mark>
 
 다시 본론으로 돌아가서 Logistic Regression에 대해 얘기해보겠습니다.
 
@@ -121,7 +125,7 @@ sigmoid 함수는 아래의 그림처럼 $$[-\infty,\infty]$$ 사이의 입력�
 ```
 
 
-- <mark style='background-color: #dcffe4'> Decision Boundary </mark>
+### <mark style='background-color: #dcffe4'> Decision Boundary </mark>
 
 조금 더 notation을 깔끔하게 써보겠습니다.
 
@@ -166,7 +170,7 @@ Logistic Regression은 사실 간단히 말해서 한마디로 정리할 수 있
 바로 "데이터로부터 학습을  최적의 Decistion Boundary를 정하는 것" 입니다.
 
 
-- <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
+### <mark style='background-color: #dcffe4'> Maximum Likelihood </mark>
 
 이제 어떻게 하면 위의 그림처럼 데이터로부터 최적의 Decision Boundary를 찾아낼 수 있는지,
 
@@ -216,7 +220,7 @@ $$likelihood$$ 다음과 같이 나타낼 수 있습니다.
 
 (임시 참조 링크, 나중에 정리해야함... [참조1](http://wanochoi.com/?p=5061), [참조2](https://stats.stackexchange.com/questions/949/when-is-logistic-regression-solved-in-closed-form)
 
-- <mark style='background-color: #dcffe4'> Optimization </mark>
+### <mark style='background-color: #dcffe4'> Optimization </mark>
 
 Logistic Regression이 닫힌 형태의 해가 존재하지 않기 때문에 이제는 다른 방법을 사용해 최적의 해를 찾아야 합니다. 
 
@@ -278,7 +282,10 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 '각 1번, 2번, 3번 point의 파라메터가 Decision Boundary를 어떻게 만들어 내는가?' 에 대한 결과가 c에 나타나 있습니다.
 
-- <mark style='background-color: #fff5b1'> Gradient Based Optimization </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Gradient Based Optimization </mark>
 
 그런데 과연 한 번 이동할 때 마다 어느 방향으로 이동해야 할 지가 고민입니다.
 
@@ -295,7 +302,7 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 <center>$$ \theta^{[t+1]} = \theta^{[t]} + \hat{\lambda} s $$</center>
 
-- <mark style='background-color: #dcffe4'> Steepest Gradient Descent  </mark>
+### <mark style='background-color: #dcffe4'> Steepest Gradient Descent  </mark>
 
 위의 아이디어를 적용한 방법을 gradient descent라고 합니다.
 
@@ -317,7 +324,7 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 
 이런 문제점을 해결하기 위해 2차 미분을 이용한 Newton's Method 라는 방법에 대해 한번 알아보도록 하겠습니다.
 
-- <mark style='background-color: #dcffe4'> Newton’s Method </mark>
+### <mark style='background-color: #dcffe4'> Newton’s Method </mark>
 
 ![newton1](https://user-images.githubusercontent.com/48202736/106453223-4e9dc300-64cc-11eb-9602-ff910a16174f.png)
 {: style="width: 60%;" class="center"}
@@ -327,12 +334,15 @@ Logistic Regression으로 돌아가보자면 $$likelihood$$와 $$log \space like
 ![opt__1](https://user-images.githubusercontent.com/48202736/106453232-5198b380-64cc-11eb-8033-2ca11cd62c80.png)
 ![line_search](https://user-images.githubusercontent.com/48202736/106453234-52314a00-64cc-11eb-9841-7805ca53825e.png)
 
-- <mark style='background-color: #dcffe4'> Optimization for Logistic Regression </mark>
+### <mark style='background-color: #dcffe4'> Optimization for Logistic Regression </mark>
 
 ![opt3](https://user-images.githubusercontent.com/48202736/106453210-4b0a3c00-64cc-11eb-8639-c057319334e8.png)
 ![logistic2](https://user-images.githubusercontent.com/48202736/106453116-28782300-64cc-11eb-8b91-77e052aa1cbe.png)
 
-- <mark style='background-color: #fff5b1'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Intuitive Animation for Logistic Regression (Binary Classification) </mark>
 
 Logistic Regression으로 분류 문제를 푼 경우 최적화를 통해 구한 $$\phi$$는 아래의 직선을 나타냅니다.
 
@@ -352,7 +362,9 @@ Logistic Regression이 학습되는 과정을 애니메이션으로 재생하면
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scratch-logistic-regression-gradient-descent-63b6beb1664c))
 
 
-- <mark style='background-color: #fff5b1'> ML vs MAP for Classification </mark>
+
+
+## <mark style='background-color: #fff5b1'> ML vs MAP for Classification </mark>
 
 우리는 $$likelihood$$ 다음과 같이 구한 뒤 이를 maximize하려고 했습니다.
 
@@ -382,7 +394,7 @@ $$likelihood$$ 는 베르누이 분포를 통해 모델링 했고, 적당히 $$p
 ```
 
 
-- <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
+## <mark style='background-color: #fff5b1'> Multiclass Logistic Regression </mark>
 
 여러개의 클래스를 분류하는 문제의 경우 이진 클래스를 분류하는 경우와 크게 다르지 않습니다. 다만 출력값을 Bernoulli 분포가 아닌 Categorical 분포로 모델링 하면 됩니다.
 
@@ -428,7 +440,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 
 
-- <mark style='background-color: #ffdce0'> Modeling Bernoulli Distribution over Model Output VS Binary Cross Entropy Loss  </mark>
+## <mark style='background-color: #ffdce0'> Modeling Bernoulli Distribution over Model Output VS Binary Cross Entropy Loss  </mark>
 
 이 글을 통해 처음 Logistic Regression 혹은 분류 문제를 접하신 분들이 아니라면, 아마 데이터를 클래스 2개로 분류하는 경우인, 이진 분류 문제를 풀 때 Loss Function으로 (Binary) Cross Entropy 를 쓴다는걸 아실겁니다. 
 
@@ -464,7 +476,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 이는 회귀문제에서 잘 알려진 Mean Squared Error (MSE) Loss를 minimize하는 것이 출력 값을 Gaussian 분포로 모델링한 $$likelihood$$를 maximize하는 것과 수식적으로 완벽하게 일치하는것과 같습니다. 
 
-- <mark style='background-color: #ffdce0'> Modeling Categorical Distribution over Model Output VS Cross Entropy Loss  </mark>
+## <mark style='background-color: #ffdce0'> Modeling Categorical Distribution over Model Output VS Cross Entropy Loss  </mark>
 
 마찬가지로, Categorical 분포로 모델링한 $$log \space likelihood$$를 최대화 하는 것은 Cross Entropy(CE) Loss를 최소화 하는것과 동일합니다. 
 
@@ -473,7 +485,9 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 <center>$$ CE \space Loss = \sum_{i=1}^{I} - t_i log (y_i) $$</center>
 
-- <mark style='background-color: #ffdce0'> Classification의 또다른 관점 </mark>
+
+
+## <mark style='background-color: #ffdce0'> Classification의 또다른 관점 </mark>
 
 앞서 배웠던 Classification들은 그게 이진 클래스 분류던, 다중 클래스 분류던 동일한 과정을 겪었는데, 이는 입력값과 클래스를 구분하는 Decision boundary가 될 파라메터와의 내적을 하는 것이었습니다.
 
@@ -558,7 +572,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 (논문 참조 : [Cao, Kaidi, Colin Wei, Adrien Gaidon, Nikos Arechiga, and Tengyu Ma. "Learning imbalanced datasets with label-distribution-aware margin loss." arXiv preprint arXiv:1906.07413 (2019).](https://arxiv.org/abs/1612.02295))
 
 
-- <mark style='background-color: #fff5b1'> Further Study </mark>
+## <mark style='background-color: #fff5b1'> Further Study </mark>
 
 이번에는 글이 굉장히 길었던 것 같습니다. 
 
@@ -575,7 +589,7 @@ sigmoid 함수가 하나의 입력값을 0~1 사이의 값으로 매핑해줍니
 
 (원래 Multi-Class Classification 이나 Cross Entropy 등 예정에 없던 내용이고, reference로 삼은 책에도 없는 내용이었지만 생각난김에 연관지어 넣은 내용입니다. 글을 쓰다보니 급발진 해서 굉장히 호흡이 길어졌습니다만... 나머지는 또 추후에  ㅠㅠ...) 
 
-- <mark style='background-color: #fff5b1'> References </mark>
+## <mark style='background-color: #fff5b1'> References </mark>
 
 1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
 
