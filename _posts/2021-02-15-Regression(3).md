@@ -57,6 +57,7 @@ $$
 
 
 
+
 ## <mark style='background-color: #fff5b1'> Basis Functions </mark>
 
 기저 함수에는 다양한 종류들이 존재할 수 있습니다. 
@@ -66,6 +67,9 @@ $$
 
 위에 그림에 나온 기저 함수들 외에도 푸리에 기저 함수, 코사인 기저 함수등이 사용될 수도 있습니다.
 이제 각각의 기저 함수가 사용될 경우 어떠한 비선형 곡선을 만들어 낼 수 있는지에 대해서 하나씩 살펴보도록 하겠습니다. 
+
+
+
 
 ### <mark style='background-color: #dcffe4'> Polynomial Regression </mark>
 
@@ -102,6 +106,9 @@ $$
 
 우리는 위의 식에서 어떠한 가중치를 곱해줄것인가?, 즉 각각의 기저함수와 곱해질 파라메터만을 ML 혹은 MAP로 학습하면 되는것입니다. (물론 fixed-variance 문제가 아니라면, variance도 구해야겠네요)
 
+
+
+
 ### <mark style='background-color: #dcffe4'> Radial Basis Functions </mark>
 
 그 다음으로 알아볼 것은 방사 기저 함수(Radial Basis Function, RBF) 혹은 가우시안 기저 함수(Gaussian Function)라고 불리는 기저 함수입니다.
@@ -120,15 +127,29 @@ $$
 ![reg2](https://user-images.githubusercontent.com/48202736/107945481-081f8c80-6fd3-11eb-94c4-71fdea34641d.png)
 *Fig. 각각의 기저함수와 그에 해당하는 학습된 가중치를 곱해 만들어 낸 최종 곡선의 모양은 (d)와 같다.*
 
+
+
+
 ### <mark style='background-color: #dcffe4'> Arc Tan Functions </mark>
 
+아까 위에서는 시그모이드 기저 함수에 대해서 설명했었는데 어차피 tanh 함수는 시그모이드와 $$tanh(a)=2\sigma(2a)-1$$의 관계를 가지고 있기 때문에 그게 그거이지만, 
+자료가 tanh 기저함수에 대한 그림 밖에 없기 때문에 tanh 함수로 생각해보도록 하겠습니다 :)
+
+<img width="1383" alt="basis6" src="https://user-images.githubusercontent.com/48202736/107968819-2ea0f000-6ff2-11eb-9922-57917d17c638.png">
+*Fig. 방사(가우시안) 기저 함수의 몇가지 예시(좌)와 이에 랜덤하게 가중치를 곱한 결과(우)*
+
+여태까지 계속 해왔던 얘기 이기 때문에 그림으로 이해하고 넘어가시면 될 것 같습니다.
+
 ![reg3](https://user-images.githubusercontent.com/48202736/107945484-08b82300-6fd3-11eb-9229-944ad2186d69.png)
+*Fig. 각각의 기저함수와 그에 해당하는 학습된 가중치를 곱해 만들어 낸 최종 곡선의 모양은 (d)와 같다.*
+
+
+### <mark style='background-color: #dcffe4'> Other Basis Functions </mark>
+
 
 
 <img width="1388" alt="basis3" src="https://user-images.githubusercontent.com/48202736/107968813-2cd72c80-6ff2-11eb-8df6-54ce6a70593c.png">
 <img width="1386" alt="basis4" src="https://user-images.githubusercontent.com/48202736/107968814-2d6fc300-6ff2-11eb-89be-bcda8b2a1e57.png">
-<img width="1384" alt="basis5" src="https://user-images.githubusercontent.com/48202736/107968816-2e085980-6ff2-11eb-9be0-28795e808329.png">
-<img width="1383" alt="basis6" src="https://user-images.githubusercontent.com/48202736/107968819-2ea0f000-6ff2-11eb-9922-57917d17c638.png">
 
 
 
