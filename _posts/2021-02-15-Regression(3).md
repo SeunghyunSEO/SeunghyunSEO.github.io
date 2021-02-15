@@ -136,7 +136,7 @@ $$
 자료가 tanh 기저함수에 대한 그림 밖에 없기 때문에 tanh 함수로 생각해보도록 하겠습니다 :)
 
 <img width="1383" alt="basis6" src="https://user-images.githubusercontent.com/48202736/107968819-2ea0f000-6ff2-11eb-9922-57917d17c638.png">
-*Fig. 방사(가우시안) 기저 함수의 몇가지 예시(좌)와 이에 랜덤하게 가중치를 곱한 결과(우)*
+*Fig. tanh 기저 함수의 몇가지 예시(좌)와 이에 랜덤하게 가중치를 곱한 결과(우)*
 
 여태까지 계속 해왔던 얘기 이기 때문에 그림으로 이해하고 넘어가시면 될 것 같습니다.
 
@@ -146,11 +146,13 @@ $$
 
 ### <mark style='background-color: #dcffe4'> Other Basis Functions </mark>
 
-
+코사인 기저 함수와 퓨리에 기저 함수 등이 있으며 이러한 기저 함수를 골라 사용하는것의 장점이 있겠으나 이 글에서는 다루지 않고 넘어가도록 하겠습니다.
 
 <img width="1388" alt="basis3" src="https://user-images.githubusercontent.com/48202736/107968813-2cd72c80-6ff2-11eb-8df6-54ce6a70593c.png">
-<img width="1386" alt="basis4" src="https://user-images.githubusercontent.com/48202736/107968814-2d6fc300-6ff2-11eb-89be-bcda8b2a1e57.png">
+*Fig. 코사인 기저 함수의 몇가지 예시(좌)와 이에 랜덤하게 가중치를 곱한 결과(우)*
 
+<img width="1386" alt="basis4" src="https://user-images.githubusercontent.com/48202736/107968814-2d6fc300-6ff2-11eb-89be-bcda8b2a1e57.png">
+*Fig. 퓨리에 기저 함수의 몇가지 예시(좌)와 이에 랜덤하게 가중치를 곱한 결과(우)*
 
 
 
