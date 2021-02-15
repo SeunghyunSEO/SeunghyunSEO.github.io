@@ -104,7 +104,21 @@ $$
 
 ### <mark style='background-color: #dcffe4'> Radial Basis Functions </mark>
 
+그 다음으로 알아볼 것은 방사 기저 함수(Radial Basis Function, RBF) 혹은 가우시안 기저 함수(Gaussian Function)라고 불리는 기저 함수입니다.
+
+<img width="1384" alt="basis5" src="https://user-images.githubusercontent.com/48202736/107968816-2e085980-6ff2-11eb-9be0-28795e808329.png">
+*Fig. 방사(가우시안) 기저 함수의 몇가지 예시(좌)와 이에 랜덤하게 가중치를 곱한 결과(우)*
+
+각각의 기저 함수는 아래와 같은 꼴이며
+
+$$
+z_i = exp[\frac{-(x_i-\alpha_i)}{\lambda}]
+$$
+
+마찬가지로 우리는 각 기저함수에 어떤 가중치를 줄 것인지만 학습을 통해 정하면 됩니다.
+
 ![reg2](https://user-images.githubusercontent.com/48202736/107945481-081f8c80-6fd3-11eb-94c4-71fdea34641d.png)
+*Fig. 각각의 기저함수와 그에 해당하는 학습된 가중치를 곱해 만들어 낸 최종 곡선의 모양은 (d)와 같다.*
 
 ### <mark style='background-color: #dcffe4'> Arc Tan Functions </mark>
 
@@ -115,6 +129,8 @@ $$
 <img width="1386" alt="basis4" src="https://user-images.githubusercontent.com/48202736/107968814-2d6fc300-6ff2-11eb-89be-bcda8b2a1e57.png">
 <img width="1384" alt="basis5" src="https://user-images.githubusercontent.com/48202736/107968816-2e085980-6ff2-11eb-9be0-28795e808329.png">
 <img width="1383" alt="basis6" src="https://user-images.githubusercontent.com/48202736/107968819-2ea0f000-6ff2-11eb-9922-57917d17c638.png">
+
+
 
 
 ## <mark style='background-color: #fff5b1'> ML Solution for Non-Linear Regression </mark>
