@@ -220,10 +220,18 @@ $$
 ![reg1](https://user-images.githubusercontent.com/48202736/107945467-03f36f00-6fd3-11eb-86ec-1a68cda77511.png)
 *Fig. 회귀 문제의 다양한 Variation*
 
-아래와 같은 그림을 보시면
+우리는 각 기저함수의 가중치들의 하나의 해를 구하는 '점 추정' 방식이 아니라 여러 가중치들에 대해서도 고려해 보고 싶은 것이죠.
 
 ![reg4](https://user-images.githubusercontent.com/48202736/107945486-0950b980-6fd3-11eb-917c-87da25117dd2.png)
+*Fig. Bayesian Approach for Regression using RBF*
 
+베이지안 추론을 하기 위한 수식을 쓰면 아래와 같습니다.
+
+$$
+Pr(w^{\ast} \vert z^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z w - \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^TZw, \sigma_p^w z^{\ast T} z^{\ast} - \sigma_p^2 z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^T z^{\ast} + \sigma^2 ]
+$$
+
+(위의 수식에서 $$\sigma^2$$ 는 marginal likelihood로 학습하면 됩니다.)
 
 
 
