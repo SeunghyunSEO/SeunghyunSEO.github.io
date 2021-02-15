@@ -28,6 +28,7 @@ comments: true
 ## <mark style='background-color: #fff5b1'> Non-Linear Regression </mark>
 
 ![reg1](https://user-images.githubusercontent.com/48202736/107945467-03f36f00-6fd3-11eb-86ec-1a68cda77511.png)
+*Fig. 회귀 문제의 다양한 Variation*
 
 위의 그림을 보시면 우리가 이번에 다루게 될 내용에 대해서 감이 오실 것 같습니다, 글로 써보면 아래와 같겠군요.
 
@@ -199,18 +200,27 @@ $$ \hat{\phi} = \frac{(w-X^T\phi)^T(w-X^T \phi)}{I} $$
 $$
 Z = 
 \left[ \begin{matrix} 
-\f_0[x_1] && \f_1[x_1] && \cdots  && \f_{M-1}[x_1] \ 
-\f_0[x_2] && \f_1[x_2] && \cdots  && \f_{M-1}[x_2] \ 
-\vdots  && \vdots  && \ddots  && \vdots  \ 
-\f_0[x_N] && \f_1[x_N] && \cdots  && \f_{M-1}[x_N] \ 
-\end{matrix} \right]
+f_0[x_1] && f_1[x_1] && \cdots  && f_{M-1}[x_1] \ 
+f_0[x_2] && f_1[x_2] && \cdots  && f_{M-1}[x_2] \ 
+vdots  && \vdots  && \ddots  && \vdots  \ 
+f_0[x_N] && f_1[x_N] && \cdots  && f_{M-1}[x_N] \ 
+end{matrix} \right]
 $$
 
 위의 행렬을 바로 설계 행렬(design matrix)이라고 부릅니다.
 
 
 
+
+
 ## <mark style='background-color: #fff5b1'> Bayesian Approach </mark>
+
+자 여기서 끝이 아닙니다. 우리가 Maximum likelihood solution을 구했으니 당연히 베이지안 방법으로도 문제를 풀어보고 싶겠죠? 
+
+![reg1](https://user-images.githubusercontent.com/48202736/107945467-03f36f00-6fd3-11eb-86ec-1a68cda77511.png)
+*Fig. 회귀 문제의 다양한 Variation*
+
+아래와 같은 그림을 보시면
 
 ![reg4](https://user-images.githubusercontent.com/48202736/107945486-0950b980-6fd3-11eb-917c-87da25117dd2.png)
 
