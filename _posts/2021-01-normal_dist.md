@@ -7,7 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> Why Gaussian Distribution? </mark>
+---
+< 목차 >
+{: class="table-of-content"}
+* TOC
+{:toc}
+---
+
+## <mark style='background-color: #fff5b1'> Why Gaussian Distribution? </mark>
 
 왜 우리는 가우시안 분포(정규 분포라고도 알려져 있음)에 대해서 잘 알아야할까요? 
 
@@ -67,7 +74,10 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 > $$\mu$$ : 평균(mean) <br>
 > $$\sigma^2$$ : 분산(variance) ($$\sigma^2 > 0$$) <br>
 
-- <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> Multivariate Gaussian Distribution </mark>
 
 이제 조금 변수의 개수를 늘려서 생각해볼까요? 다변량 정규분포의 식은 아래와 같습니다.
 
@@ -92,14 +102,17 @@ Univariate Gaussian Distribution의 모양과 수식은 아래와 같습니다.
 
 우리가 일반적으로 visualize하는데 한계가 존재하니 변수가 2개인 경우에 대해서 생각해봅시다. ($$x=[x1, x2]$$인 경우)
 
-- <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
+
+
+### <mark style='background-color: #dcffe4'> Bivariate Gaussian Distribution </mark>
 
 변수가 2개인 경우인 이변량 정규 분포는 아래와 같이 생겼습니다.
 
 ![image](https://user-images.githubusercontent.com/48202736/106379277-1b850200-63ee-11eb-85aa-aceece871413.png)
 
 
-- <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
+
+### <mark style='background-color: #dcffe4'> Covariance Matrix </mark>
 
 우리는 앞서 다변량 정규분포가 어떤 형태를 띄고있으며, 수식으로 어떻게 정의되어있는지 살펴봤습니다.
  
@@ -126,7 +139,9 @@ Covariance Matrix는 행렬의 모양에 따라서 아래와 같이 나눌 수 �
 
 3.그리고 이중에서 가장 간단하다고 할 수 있는 $$\sigma^2 I$$, Spherical Covariance Matrix의 수식과 그림이 (a,b)가 됩니다. 
 
-- <mark style='background-color: #dcffe4'> Property of Covariance Matrix </mark>
+
+
+### <mark style='background-color: #dcffe4'> Property of Covariance Matrix </mark>
 
 Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 가지는 특성에 대해 살펴볼까요?
 
@@ -162,7 +177,8 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 {: style="width: 60%;" class="center"}
 
 
-- <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
+
+## <mark style='background-color: #fff5b1'> Marginal Gaussian Distribution </mark>
 
 가우시안 분포의 주변 분포(Marginal distribution) 또한 가우시안 분포가 되는 특성을 가지고 있습니다.
 
@@ -171,7 +187,7 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
-- <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
+## <mark style='background-color: #fff5b1'> Conditional Gaussian Distribution </mark>
 
 그리고 가우시안 분포의 조건부 분포(Conditional distribution) 또한 가우시안 분포가 되는 특성이 있습니다.
 
@@ -185,7 +201,7 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
-- <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
+## <mark style='background-color: #fff5b1'> Conjugate Distribution  </mark>
 
 이번에는 가우시안 분포의 공액 분포(Conjugate Distribution)에 대해서 알아보도록 하겠습니다.
 
@@ -198,7 +214,9 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 (이와 관련된 수식들은 옆의 링크에서 찾아볼 수 있습니다 : [link](https://en.wikipedia.org/wiki/Conjugate_prior#cite_note-murphy-10))
 
-- <mark style='background-color: #dcffe4'> Normal Inverse Gamma X Univariate Normal  </mark>
+
+
+### <mark style='background-color: #dcffe4'> Normal Inverse Gamma X Univariate Normal  </mark>
 
 1. Univariate Normal Distribution과 Normal Inverse Gamma는 conjugate 관계입니다.
 
@@ -219,7 +237,8 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 {: style="width: 60%;" class="center"}
 
 
-- <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
+
+### <mark style='background-color: #dcffe4'> Normal X Nomral  </mark>
 
 2. Normal Distribution과 Normal Distribution도 두개를 곱하면 새로운 Normal Distribution이 되는 conjugate 관계입니다. (수식은 생략하겠습니다.)
 
@@ -230,7 +249,9 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 ![joint1](https://user-images.githubusercontent.com/48202736/106459122-bd7f1a00-64d4-11eb-87ee-82c04b877996.png)
 {: style="width: 60%;" class="center"}
 
-- <mark style='background-color: #dcffe4'> Normal inverse Wishart X Multivariate Normal  </mark>
+
+
+### <mark style='background-color: #dcffe4'> Normal inverse Wishart X Multivariate Normal  </mark>
 
 3. Multivariate Normal Distribution과 Normal inverse Wishart Distribution도 Conjugate 관계입니다.
 
@@ -260,7 +281,7 @@ Covariance Matrix가 어떤 모양을 가지느냐에 따라 정규 분포가 �
 
 
 
-- <mark style='background-color: #fff5b1'> 수식적으로 접근하는 Gaussian Distribution </mark>
+## <mark style='background-color: #fff5b1'> 수식적으로 접근하는 Gaussian Distribution </mark>
 
 다음의 수식들은 PRML 책과 이 책에 대해  [깃허브 페이지](http://norman3.github.io/prml/docs/chapter02/3_1)를 참고했습니다.
 
@@ -276,7 +297,7 @@ $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/
 
 
 
-- <mark style='background-color: #dcffe4'> Mahalanobis distance and euclidean diatance </mark>
+### <mark style='background-color: #dcffe4'> Mahalanobis distance and euclidean diatance </mark>
 
 데이터의 변수가 2개 이상인 경우, 즉 다변량 정규분포를 생각할 때 특히 아래의 수식에서 지수상에 나타나는 이차식은 특히 중요합니다.
 
@@ -343,7 +364,7 @@ $$N({\bf x}|{\pmb \mu}, {\bf \Sigma}) = \dfrac{1}{(2\pi)^{D/2}|{\bf \Sigma}|^{1/
 
 
 
-- <mark style='background-color: #dcffe4'> eigen vectors of Covariance Matrix </mark>
+### <mark style='background-color: #dcffe4'> eigen vectors of Covariance Matrix </mark>
 
 $${\bf \Sigma}{\bf u}_i = \lambda_i {\bf u}_i \qquad{(2.45)}$$
 
@@ -377,7 +398,7 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
-- <mark style='background-color: #dcffe4'> EVD and Multivariate Gaussian Distribution </mark>
+### <mark style='background-color: #dcffe4'> EVD and Multivariate Gaussian Distribution </mark>
 
 다변수 정규분포에서 Covariance Matrix는 PSD이며 대칭이기 때문에 diagonalizable하다, 그러므로 아래와 같이 분리할 수 있다.
 
@@ -421,7 +442,7 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
-- <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
+### <mark style='background-color: #dcffe4'> Limitation of Gaussian Distribution </mark>
 
 제약(1) : 모수(parameter)의 개수
  - Full Covariance의 경우, 우리가 솔루션을 구할때 Covariance가 가지는 파라메터 개수 D(D+1)/2 + mean 파라메터 D를 합쳐 D(D+3)/2라는 수를 가지게 되기 때문에 계산하기가 어렵다.
@@ -437,12 +458,12 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
-- <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
+### <mark style='background-color: #dcffe4'> Conditional Gaussian distributions </mark>
 
 ![cond1](https://user-images.githubusercontent.com/48202736/106459113-b8ba6600-64d4-11eb-9e9e-27ea3106bd8a.png)
 {: style="width: 80%;" class="center"}
 
-- <mark style='background-color: #dcffe4'> Marginal Gaussian distributions </mark>
+### <mark style='background-color: #dcffe4'> Marginal Gaussian distributions </mark>
 
 ![marg1](https://user-images.githubusercontent.com/48202736/106459120-bb1cc000-64d4-11eb-8947-9be05ce6ef70.png)
 {: style="width: 60%;" class="center"}
@@ -458,7 +479,7 @@ $${\bf y} = {\bf U}({\bf x}-{\pmb \mu}) \qquad{(2.52)}$$
 
 
 
-- <mark style='background-color: #dcffe4'> Bayes’ theorem for Gaussian variables </mark>
+### <mark style='background-color: #dcffe4'> Bayes’ theorem for Gaussian variables </mark>
 
 ---
 
@@ -497,7 +518,7 @@ $$p({\bf y}|{\bf x}) = N({\bf y}\;|\;{\bf A} {\bf x}+{\bf b} , L^{-1}) \qquad{(2
 
 
 
-- <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
+### <mark style='background-color: #dcffe4'> Maximum Likelihood for the Gaussian </mark>
 
 관찰 데이터 집합 \\( {\bf X}=({\bf x}\_1,...,{\bf x}\_n)^T \\) 가 주어졌을 때 데이터 \\( \{ {\bf x}\_n\} \\) 은 서로 독립적으로 발현된다고 생각하겠습니다(*i.i.d*). 
 이 때, 각각의 관찰 데이터는 가우시안 분포를 따르게 되며 이를 가능도 함수로 이용할 때에는 보통 로그를 취해 사용하게 된다.
@@ -549,7 +570,7 @@ $$\tilde{\Sigma} = \frac{1}{N-1}\sum_{n=1}^{N}({\bf x}_n - {\pmb \mu}_{ML})({\bf
 
 
 
-- <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
+### <mark style='background-color: #dcffe4'> Sequential Estimation  </mark>
 
 순차 추정의 방법은 관찰 데이터 집합이 매우 커서 한번에 계산이 불가능할 때, 그리고 해를 구한 뒤 샘플이 계속 들어올 경우(on-memory) 사용할 수 있는 방법입니다. 한번에 한 샘플을 연산하고 버리게 됩니다.
 
@@ -574,7 +595,7 @@ $${\pmb \mu}_{ML}^{(N)} = \frac{1}{N} \sum_{n=1}^{N}{\bf x}_n = \frac{1}{N}{\bf 
 
 
 
-- <mark style='background-color: #dcffe4'> Bayesian inference for the Gaussian </mark>
+### <mark style='background-color: #dcffe4'> Bayesian inference for the Gaussian </mark>
 
 가우시안의 *MLE* 는 파라미터인 평균과 공분산에 대한 점추정(point estimation) 값이었습니다.
 
@@ -786,16 +807,16 @@ $$p({\pmb \mu}, \Lambda|\mu_0, \beta, {\bf W}, v) = N({\pmb \mu}|{\pmb \mu}_0, (
 
 
 
-- <mark style='background-color: #dcffe4'> Student’s t-distribution </mark>
+### <mark style='background-color: #dcffe4'> Student’s t-distribution </mark>
 
-- <mark style='background-color: #dcffe4'> Periodic variables </mark>
-
-
+### <mark style='background-color: #dcffe4'> Periodic variables </mark>
 
 
 
 
-- <mark style='background-color: #dcffe4'> Mixtures of Gaussians </mark>
+
+
+### <mark style='background-color: #dcffe4'> Mixtures of Gaussians </mark>
 
 ![mog1](https://user-images.githubusercontent.com/48202736/107395496-38cd7500-6b40-11eb-9ffd-453e52503ee8.png)
 
