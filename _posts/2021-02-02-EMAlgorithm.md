@@ -7,7 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
-- <mark style='background-color: #fff5b1'> Models with hidden variables </mark>
+---
+< 목차 >
+{: class="table-of-content"}
+* TOC
+{:toc}
+---
+
+## <mark style='background-color: #fff5b1'> Models with hidden variables </mark>
 
 우리가 맨처음에 Maximum likelihood 방법에 대해 논할 때 생각했던 그림을 봅시다.
 
@@ -47,15 +54,24 @@ toc_sticky: true
 <center>$$ B[\{ q_i(h_i) \}, \theta] = \sum_{i=1}^{I} \int q_i(h_i) log[\frac{Pr(x,h_i|\theta)}{q_i(h_i)}]dh_{1...I} $$</center>
 <center>$$ \leq [ \sum_{i=1}^{I} log [\int Pr(x_i,h|\theta) dh_i] ]  $$</center>
 
-- <mark style='background-color: #fff5b1'> (E)xpectation and (M)aximization </mark>
 
-- <mark style='background-color: #fff5b1'> Lower Bound </mark>
+
+
+## <mark style='background-color: #fff5b1'> (E)xpectation and (M)aximization </mark>
+
+
+
+
+## <mark style='background-color: #fff5b1'> Lower Bound </mark>
 
 <center>$$ B[\{ q_i(h_i) \}, \theta] = \sum_{i=1}^{I} \int q_i(h_i) log[\frac{Pr(x,h_i|\theta)}{q_i(h_i)}]dh_{1...I} $$</center>
 
 ![lowerbound1](https://user-images.githubusercontent.com/48202736/106545443-bc89cf00-654c-11eb-9be5-301120d70938.png)
 
-- <mark style='background-color: #fff5b1'> E-Step & M-Step </mark>
+
+
+
+## <mark style='background-color: #fff5b1'> E-Step & M-Step </mark>
 
 우리가 사용할 log likelihood를 최대화 하는 방법은 E Step과 M Step이 결합된 EM Algorithm입니다.  
 
@@ -82,7 +98,7 @@ M Step은 분포 $$\theta$$에 대해서 bound를 최대화 하는 것으로 수
 
 
 
-- <mark style='background-color: #fff5b1'> Mixture of Gaussian (MoG) Example </mark>
+## <mark style='background-color: #fff5b1'> Mixture of Gaussian (MoG) Example </mark>
 
 ![mog1](https://user-images.githubusercontent.com/48202736/106545456-c1e71980-654c-11eb-9d08-494728c0b5cd.png)
 {: style="width: 70%;" class="center"}
