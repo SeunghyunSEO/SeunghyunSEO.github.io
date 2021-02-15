@@ -38,6 +38,9 @@ comments: true
 
 ## <mark style='background-color: #fff5b1'> Basis Functions </mark>
 
+<img width="1154" alt="스크린샷 2021-02-15 오후 9 54 57" src="https://user-images.githubusercontent.com/48202736/107949532-c2fe5900-6fd8-11eb-9117-40161f31dc8c.png">
+
+
 ### <mark style='background-color: #dcffe4'> Radial Basis Functions </mark>
 
 ![reg2](https://user-images.githubusercontent.com/48202736/107945481-081f8c80-6fd3-11eb-94c4-71fdea34641d.png)
