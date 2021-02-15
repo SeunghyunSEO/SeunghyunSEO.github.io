@@ -100,12 +100,7 @@ $$
 다만 그러할 경우 일반적으로 회귀 곡선이 주어진 데이터에만 너무 잘 피팅되는, 이른바 오버피팅이 일어날 수 있습니다.
 ```
 
-우리는 위의 식에서 어떠한 가중치를 곱해줄것인가?, 즉 각각의 만을 ML 혹은 MAP로 학습하면 되는것입니다. (물론 fixed-variance 문제가 아니라면, variance도 구해야겠네요)
-
-<img width="1388" alt="basis3" src="https://user-images.githubusercontent.com/48202736/107968813-2cd72c80-6ff2-11eb-8df6-54ce6a70593c.png">
-<img width="1386" alt="basis4" src="https://user-images.githubusercontent.com/48202736/107968814-2d6fc300-6ff2-11eb-89be-bcda8b2a1e57.png">
-<img width="1384" alt="basis5" src="https://user-images.githubusercontent.com/48202736/107968816-2e085980-6ff2-11eb-9be0-28795e808329.png">
-<img width="1383" alt="basis6" src="https://user-images.githubusercontent.com/48202736/107968819-2ea0f000-6ff2-11eb-9922-57917d17c638.png">
+우리는 위의 식에서 어떠한 가중치를 곱해줄것인가?, 즉 각각의 기저함수와 곱해질 파라메터만을 ML 혹은 MAP로 학습하면 되는것입니다. (물론 fixed-variance 문제가 아니라면, variance도 구해야겠네요)
 
 ### <mark style='background-color: #dcffe4'> Radial Basis Functions </mark>
 
@@ -116,7 +111,10 @@ $$
 ![reg3](https://user-images.githubusercontent.com/48202736/107945484-08b82300-6fd3-11eb-9229-944ad2186d69.png)
 
 
-
+<img width="1388" alt="basis3" src="https://user-images.githubusercontent.com/48202736/107968813-2cd72c80-6ff2-11eb-8df6-54ce6a70593c.png">
+<img width="1386" alt="basis4" src="https://user-images.githubusercontent.com/48202736/107968814-2d6fc300-6ff2-11eb-89be-bcda8b2a1e57.png">
+<img width="1384" alt="basis5" src="https://user-images.githubusercontent.com/48202736/107968816-2e085980-6ff2-11eb-9be0-28795e808329.png">
+<img width="1383" alt="basis6" src="https://user-images.githubusercontent.com/48202736/107968819-2ea0f000-6ff2-11eb-9922-57917d17c638.png">
 
 
 ## <mark style='background-color: #fff5b1'> ML Solution for Non-Linear Regression </mark>
