@@ -157,6 +157,6 @@ Bayesian Neural Network(BNN, Bayesian NN)은 90년대에 이미 제안된 방법
 
 4. [NYU Bayesian Deep Learning : Tutorials](https://wjmaddox.github.io/assets/BNN_tutorial_CILVR.pdf)
 
-5. [Yarin Gal's Blog](https://www.cs.ox.ac.uk/people/yarin.gal/website/publications.html)
+5. [Yarin Gal's Blog](http://mlg.eng.cam.ac.uk/yarin/blog_3d801aa532c1ce.html)
 
 6. [Bayesian Deep Learning NIPS Workshop](http://bayesiandeeplearning.org/)
