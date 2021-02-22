@@ -34,3 +34,7 @@ toc_sticky: true
 
 - 7.[How Does Batch Normalization Help Optimization? slides from MIT](https://www.microsoft.com/en-us/research/uploads/prod/2019/05/How-does-Batch-Normalization-Help-Optimization-slides.pdf)
 
+
+- [tmp1](https://medium.com/@SeoJaeDuk/archive-post-batch-normalization-and-internal-covariate-shift-1d47661d236f)
+- [tmp2](https://towardsdatascience.com/batch-normalization-in-3-levels-of-understanding-14c2da90a338)
+- [tmp3](https://e2eml.school/batch_normalization.html)
