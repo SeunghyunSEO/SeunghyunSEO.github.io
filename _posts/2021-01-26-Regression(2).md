@@ -50,7 +50,7 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 
 <img width="1070" alt="uncertainty" src="https://user-images.githubusercontent.com/48202736/108974258-a04efd00-76c8-11eb-8a52-1628c973b1dc.png">
 {: style="width: 60%;" class="center"}
-*Fig. uncertainty는 데이터 개수에 *
+*Fig. uncertainty는 데이터 개수에 종속적임( 분홍색 음영이 큰 것은 그 데이터 포인트x에서 불확실성이 크다는 것)*
 
 ## <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
