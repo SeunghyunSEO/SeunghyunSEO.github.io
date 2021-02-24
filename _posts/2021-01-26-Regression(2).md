@@ -76,7 +76,7 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 위의 사후 확률을 구하는 관계식을 이용해서 $$posterior$$를 구하면 다음과 같습니다.
 
 <center>$$ posterior : Pr(\theta|X,w) = Norm_\phi[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] $$</center>
-<center>$$ where A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
+<center>$$ where \space A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
 
 ![bayesian_prior](https://user-images.githubusercontent.com/48202736/106451896-8441ac80-64ca-11eb-8160-76bb74c748b4.png)
 
@@ -129,12 +129,14 @@ in contrast to deep learning literature where “inference” often means model 
 
 <center>$$ = Norm_{w^{\ast}}[\frac{1}{\sigma^2}x^{\ast T}A^{-1}Xw,x^{\ast T}A^{-1}x^{\ast} + \sigma^2] $$</center>
 
+<center>$$ where \space A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
+
 이렇게 하면 결과는 아래와 같이 됩니다.
 
 ![bayesian_inference](https://user-images.githubusercontent.com/48202736/106451903-8572d980-64ca-11eb-9312-cd3d6e0fe96f.png)
 
 a)는 추정하고자 하는 파라메터 $$\phi_0,\phi_1$$의 분포를 나타내는 것입니다.
-원래 MAP는 여기서 최대가 되는 값 하나만을 학습을 통해 구했으나, 이제는 b)처럼 가능한 파라메터 $$\phi^{1}$$, $$\phi^{2}$$, $$\phi^{3}$$ ... 에 대해서 모두 생각을 해보자는 것이죠.
+원래 MAP는 여기서 최대가 되는 값 하나만을 학습을 통해 구했으나, 이제는 b)처럼 가능한 파라메터 $$\phi_{1}$$, $$\phi_{2}$$, $$\phi_{3}$$ ... 에 대해서 모두 생각을 해보자는 것이죠.
 
 
 b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회귀의 직선이 어떻게 표현되는지를 나타냅니다.
