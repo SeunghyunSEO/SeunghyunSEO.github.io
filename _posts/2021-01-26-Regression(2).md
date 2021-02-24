@@ -239,7 +239,14 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 이런 경우를 'The true posterior cannot usually be evaluated analytically.' 혹은 'the true posterior is intractable' 하다고 합니다.
 
-이를 해결하기 위해서는 $$true \space posterior$$와 유사하지만 계산하기 쉬운 분포로 근사(approximate)를 해서 문제를 풉니다.
+이를 해결하기 위해서는 $$true \space posterior$$와 유사하지만 계산하기 쉬운 분포로 근사(approximate)를 해서 문제를 풀게 됩니다.
+
+이렇게 근사하는 방법들에는 Laplace Approximation, Variational Inference 등이 있습니다.
+
+![yaringal_nn](https://user-images.githubusercontent.com/48202736/108978674-32f19b00-76cd-11eb-8249-11bef9ffb51d.jpg)
+*Fig. 뉴럴 네트워크를 분포 추정한다...?*
+![yaringal_nn_dropout](https://user-images.githubusercontent.com/48202736/108978682-3553f500-76cd-11eb-80a2-6f09c4d6cdc6.jpg)
+*Fig. 뉴럴 네트워크를 분포 추정하는, 즉 베이지안 방법으로 접근하는것은 곧 Dropout을 하는것과 같다는 것을 수식적으로 증명한 Yarin Gal*
 
 <br><br>
 
