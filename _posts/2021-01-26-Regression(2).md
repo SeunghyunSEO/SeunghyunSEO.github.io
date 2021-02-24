@@ -142,14 +142,27 @@ b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회
 
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
 
+
 ## <mark style='background-color: #fff5b1'> 점 추정? 분포 추정? </mark>
 
 ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ 분포를 구한뒤 분포의 가장 큰 값일 때의 파라메터를 찾는 것입니다.
 
 즉 이를 '점 추정' 한다고 할 수 있습니다.
 
+반면에 베이지안 관점에서는 테스트 데이터에 대한 정답을 추론할 때 마다 적분을 하기 위한 점이 아닌 posterior분포를 다 사용하는, '분포 추정'을 한다고 할 수 있습니다.
 
-하지만 베이지안 관점에서는 테스트 데이터에 대한 정답을 추론할 때 마다 적분을 하기 위한 점이 아닌 posterior분포를 다 쓰기 때문에, '분포 추정'을 한다고 할 수 있습니다.
+하지만 만약 우리가 가지고 있는 데이터가 많아지다못해 무한대에 가까워지면 이는 점점 posterior 분포를 어느 한 점을 나타내는 delta function에 가깝게 만듭니다. 
+이 때의 인퍼런스를한 결과는 점 추정을 하는 ML, MAP와 동일해집니다. (최대값 찾는거랑 똑같으니)
+
+<img width="1232" alt="nyu1" src="https://user-images.githubusercontent.com/48202736/108975280-ad202080-76c9-11eb-8102-2c3b7a9b23b8.png">
+*Fig. 일반적인 선형회귀의 ML 솔루션은 MSE Loss의 최소값*
+
+<img width="1249" alt="nyu2" src="https://user-images.githubusercontent.com/48202736/108975297-b0b3a780-76c9-11eb-965f-6a2670b134cd.png">
+<img width="1237" alt="nyu3" src="https://user-images.githubusercontent.com/48202736/108975302-b1e4d480-76c9-11eb-98bb-3829f9d06f49.png">
+<img width="1246" alt="nyu4" src="https://user-images.githubusercontent.com/48202736/108975307-b27d6b00-76c9-11eb-8d79-16cddef9192d.png">
+<img width="1232" alt="nyu5" src="https://user-images.githubusercontent.com/48202736/108975311-b3160180-76c9-11eb-81c6-618b788a86fd.png">
+*Fig. 데이터가 많아질수록 posterior가 delta function 가까워지는 모습*
+
 
 ## <mark style='background-color: #fff5b1'> Why Integral over all parameter? </mark>
 
