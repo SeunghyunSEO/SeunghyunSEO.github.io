@@ -131,7 +131,9 @@ in contrast to deep learning literature where “inference” often means model 
 
 <center>$$ where \space A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
 
-이렇게 하면 결과는 아래와 같이 됩니다.
+이렇게 구한 식은 우리가 데이터 집합 $$(X,W)$$ 와 적절히 가정한 prior,likelihood분포가 있다면 어떤 테스트 데이터 x가 들어왔을때 그때의 output w의 분포를 파라메터를 추정하지 않고 나타낼 수 있다는 겁니다.
+
+여기서 우리는 마지막 솔루션이 $$\sigma$$에만 종속되어있다는 것을 알 수 있는데요, 일반적으로 이 값들은 정해져있거나 (fixed variance) 그렇지 않을 경우 marginal likelihood를 최적화 하는 방법으로 (maximum likelihood) 구해놓은 뒤에 사용합니다. (구해놓으면 그 뒤로는 바로바로 사용 가능 하다는 소리)
 
 ![bayesian_inference](https://user-images.githubusercontent.com/48202736/106451903-8572d980-64ca-11eb-9312-cd3d6e0fe96f.png)
 
@@ -143,6 +145,8 @@ b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회
 
 
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
+
+
 
 
 ## <mark style='background-color: #fff5b1'> 점 추정? 분포 추정? </mark>
@@ -245,3 +249,6 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 2. [Gal, Yarin. "Uncertainty in deep learning." University of Cambridge 1, no. 3 (2016): 4.](https://www.cs.ox.ac.uk/people/yarin.gal/website/blog_2248.html)
 
+3. [What My Deep Model Doesn't Know... from Yarin Gal](http://mlg.eng.cam.ac.uk/yarin/blog_3d801aa532c1ce.html)
+
+4. [NYU Bayesian Deep Learning : Tutorials](https://wjmaddox.github.io/assets/BNN_tutorial_CILVR.pdf)
