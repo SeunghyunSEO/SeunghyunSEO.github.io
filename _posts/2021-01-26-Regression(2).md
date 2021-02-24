@@ -26,6 +26,7 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 
 ![reg2](https://user-images.githubusercontent.com/48202736/106451874-81df5280-64ca-11eb-9837-a6507323d0c3.png)
 {: style="width: 60%;" class="center"}
+*Fig. 일반적인 점 추정 방식의 회귀 곡선*
 
 위의 그림은 MAP로 최적의 파라메터를 구했을 때의 그림입니다.
 
@@ -33,16 +34,23 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 그치만 사실 뭔가 불편합니다.
 
 
-뭐가 불편하냐면 그것은 모든 x 에 대해 y 분포가 제 각기 다른데도 불구하고 (데이터 개수 다름), 우리가 찾은 직선은 전구간에 걸쳐 다 똑같은 굵기라는 것입니다. 
+뭐가 불편하냐면 그것은 모든 실제로 x 에 대해 y 분포가 제 각기 다른데도 불구하고 (즉 샘플링 된 데이터의 밀도가 다름), 우리가 찾은 직선은 전구간에 걸쳐 다 똑같은 굵기라는 것입니다. 
 
 
-이는 다르게 말하면 전 구간에 있어 동일한 confidence를 가지고 있다, 즉 데이터가 없는 부분에서 over-confident 하다는 문제를 보인다는 것입니다.
+즉 전 구간에 있어 동일한 confidence를 가지고 있다, 즉 데이터가 없는 부분에서 over-confident 하다는 문제를 보인다는 것입니다.
 
 
 이를 해결하기 위해서 어떻게할까요? 당장 생각할 수 있는 방법은 $$posterior$$ 가장 큰 값 하나만 구하는 MAP를 사용하지 말고, 
 한발 더 나아가 가능한 모든 파라메터에 대해 적분하는 Bayesian 방법을 사용하는 것입니다.
 
+모든 구간에 동일한 confidence를 주지 않는 방법은 다르게 말하면 우리의 목표는 데이터 밀도가 적거나 데이터가 없는 부분에 대해서는 우리가 추정한 곡선이 잘 모르겠다는 의미로 큰 variance를 갖게 하는, 즉 uncertainty를 나타내는 것 입니다.
 
+![yarin_1](https://user-images.githubusercontent.com/48202736/108974445-d2605f00-76c8-11eb-9ce7-8a2e16d695a5.png)
+*Fig. 데이터 밀도에 따라서 confident가 달라짐, 즉 불확실성(uncertainty)를 나타내는 곡선을 얻어냄*
+
+<img width="1070" alt="uncertainty" src="https://user-images.githubusercontent.com/48202736/108974258-a04efd00-76c8-11eb-8a52-1628c973b1dc.png">
+{: style="width: 60%;" class="center"}
+*Fig. uncertainty는 데이터 개수에 *
 
 ## <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
