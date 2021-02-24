@@ -146,6 +146,9 @@ b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회
 
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
 
+마지막으로 우리가 구한 사후 분포의 mean에 관한 수식을 전부 풀어쓰면 아래와 같습니다.
+
+$$ Pr(w^{\ast} \vert x^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} x^{\ast T} X w - \frac{\sigma_p^2}{\sigma^2} x^{\ast T} X (X^TX + \frac{\sigma^2}{\sigma_p^2} I)^{-1} X^TXw, \space \sigma_p^2 x^{\ast T} x^{\ast} - \sigma_p^2 x^{\ast T} X (X^TX + \frac{\sigma^2}{\sigma_p^2} I)^{-1} X^T x^{\ast} + \sigma^2 ] $$
 
 
 
