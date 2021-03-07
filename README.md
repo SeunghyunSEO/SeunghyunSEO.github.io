@@ -32,5 +32,6 @@ http://seunghyunseo.github.io
   - [ ] wav2vec
   - [ ] RNN-T
   - [ ] Straming ASR
+  - [ ] Spoken Language Understanding Overview
   - [ ] Tacotron
   - [ ] Flow-TTS
