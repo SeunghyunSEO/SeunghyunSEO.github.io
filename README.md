@@ -22,6 +22,13 @@ http://seunghyunseo.github.io
   - [ ] k-means
   - [ ] Clustering
 - Deep Learning
+  - [ ] Error Back Propagation 
+  - [ ] From AE to VAE 
+  - [ ] RNN, LSTM, GRU
+  - [ ] Dropout (+Bayesian)
+  - [ ] Batch Norm, Layer Norm, Power Norm ...
+  - [ ] Adam, adamw
+  - [ ] 
 - Reinforcement Learning
   - [ ] RL from lillog 번역
 - Deep Learning Papers
