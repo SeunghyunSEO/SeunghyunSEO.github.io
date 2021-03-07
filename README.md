@@ -4,3 +4,12 @@
 
 
 http://seunghyunseo.github.io
+
+
+## TBC
+- Machine Learning
+  - [ ] MLE
+  - [ ] MAP
+- Deep Learning
+- Reinforcement Learning
+- Deep Learning Papers
