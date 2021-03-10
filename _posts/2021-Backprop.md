@@ -1,7 +1,7 @@
 ---
-title: About BackPropagation
-categories: DeepLearning
-tag: [DeepLearning]
+title: Optimization, Gradient Descent and BackPropagation
+categories: MachineLearning
+tag: [MachineLearning,ML]
 
 toc: true
 toc_sticky: true
