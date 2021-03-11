@@ -1,5 +1,5 @@
 ---
-title: Bayesian Approach
+title: <MLE & MAP> Bayesian Approach
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
