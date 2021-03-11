@@ -3,6 +3,7 @@ layout: page
 title: Categories
 ---
 
+
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
@@ -13,6 +14,8 @@ title: Categories
   <div class="tags-expo-section">
 <!--     {% assign sorted_cats = site.categories | sort %}  -->
 <!--     {% for tag in sorted_cats %} -->
+<!--     {% assign category = page.category | default: page.title %}
+    {% for tag in site.categories[category] %} -->
     {% for tag in site.categories %}
     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
     <ul class="tags-expo-posts">
