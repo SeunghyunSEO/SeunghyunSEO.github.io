@@ -1,5 +1,5 @@
 ---
-title: (미완)Classification (2/3) - Bayesian logistic regression
+title: (미완)Classification (2/4) - Bayesian logistic regression
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
