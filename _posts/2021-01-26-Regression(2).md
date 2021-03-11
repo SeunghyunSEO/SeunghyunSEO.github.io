@@ -1,5 +1,5 @@
 ---
-title: Regression (2/3) - Bayesian Linear Regression
+title: Regression (2/4) - Bayesian Linear Regression
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
