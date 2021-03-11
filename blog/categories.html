@@ -45,6 +45,7 @@ title: Categories
 <!--       {% assign tmp = tag[1] | sort: 'title'%} -->
 <!--       {% assign sorted_posts = tmp | reversed %} -->
       {% assign sorted_posts = tag[1] | sort: 'title' %}
+<!--       {% assign sorted_posts = tag[1] | sort: 'title' | reverse %} -->
       {% for post in sorted_posts %}
         <h4><a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
       <li style="margin-bottom: -0.7rem;">
