@@ -1,5 +1,5 @@
 ---
-title: Bias Variance Decomposition (Trade-off)
+title: (미완)Bias Variance Decomposition (Trade-off)
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
