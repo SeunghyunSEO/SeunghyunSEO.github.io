@@ -248,17 +248,6 @@ $$
 
 
 
-## <mark style='background-color: #fff5b1'> Kernel Trick </mark>
-
-### <mark style='background-color: #dcffe4'> Gaussian Proccess Regression </mark>
-
-### <mark style='background-color: #dcffe4'> Example : RBF Kernel  </mark>
-
-![reg5](https://user-images.githubusercontent.com/48202736/107945487-09e95000-6fd3-11eb-8087-6a7b8363506b.png)
-
-
-
-
 
 
 ## <mark style='background-color: #fff5b1'> References </mark>
