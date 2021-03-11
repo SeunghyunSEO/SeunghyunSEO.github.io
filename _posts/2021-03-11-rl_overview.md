@@ -1,6 +1,6 @@
 ---
 title: (미완)Reinforcement Learning(RL) Overview
-categories: ReinforcementLearning
+categories: Reinforcement_Learning_and_Deep_Reinforcement_Learning
 tag: [RL]
 
 toc: true
