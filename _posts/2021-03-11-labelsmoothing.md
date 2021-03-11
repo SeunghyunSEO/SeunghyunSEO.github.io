@@ -1,5 +1,5 @@
 ---
-title: (미완)Normalization Series
+title: (미완)Label Smoothing
 categories: DeepLearning
 tag: [tmp]
 
