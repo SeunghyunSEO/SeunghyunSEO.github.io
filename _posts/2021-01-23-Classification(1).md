@@ -1,5 +1,5 @@
 ---
-title: (미완)Classification (1/4) - Logistic Regression (+α)
+title: (미완)<Classification (1/4)> - Logistic Regression (+α)
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
