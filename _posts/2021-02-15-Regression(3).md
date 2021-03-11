@@ -1,5 +1,5 @@
 ---
-title: (미완)Regression (3/3) - Non-linear regression, Kernelization and Gaussian processes
+title: (미완)Regression (3/4) - Non-linear regression, Kernelization and Gaussian processes
 
 categories: MachineLearning
 tag: [MachineLearning,ML]
