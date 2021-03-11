@@ -43,9 +43,8 @@ title: Categories
     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
     <ul class="tags-expo-posts">
 <!--       {% assign tmp = tag[1] | sort: 'title'%} -->
-<!--       {% assign sorted_posts = tmp | reversed %} -->
+<!--       {% assign sorted_posts = tmp | reverse %} -->
       {% assign sorted_posts = tag[1] | sort: 'title' %}
-<!--       {% assign sorted_posts = tag[1] | sort: 'title' | reverse %} -->
       {% for post in sorted_posts %}
         <h4><a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
       <li style="margin-bottom: -0.7rem;">
