@@ -14,6 +14,7 @@ title: Categories
     {% for tag in site.categories %}
     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
     <ul class="tags-expo-posts">
+      {% assign category = page.title %}
       {% for post in tag[1] %}
         <h4><a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
       <li style="margin-bottom: -0.7rem;">
