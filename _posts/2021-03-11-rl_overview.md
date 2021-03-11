@@ -1,5 +1,5 @@
 ---
-title: (미완)A (Long) Peek into Reinforcement Learning - Lil'log
+title: (미완)Reinforcement Learning(RL) Overview
 categories: ReinforcementLearning
 tag: [RL]
 
