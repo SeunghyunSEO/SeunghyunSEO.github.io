@@ -47,11 +47,11 @@ title: Categories
       {% assign sorted_posts = tag[1] | sort: 'title' %}
       {% for post in sorted_posts %}
         <h4><a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-      <li style="margin-bottom: -0.7rem;">
-        {{ post.title }} 
-        <small class="post-date">{{ post.date | date_to_string }}</small>
-      </li>
-      </a></h4>
+        <li style="margin-bottom: -0.7rem;">
+          {{ post.title }} 
+          <small class="post-date">{{ post.date | date_to_string }}</small>
+        </li>
+        </a></h4>
       {% endfor %}
     </ul><br>
     {% endfor %}
