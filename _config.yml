@@ -31,12 +31,10 @@ nav:
   Contents:           
 #     - '/blog/'
     - { Categories: '/blog/categories/' }
-#     - { Tags: '/blog/tags/' }
   About:          
     - '/about/'
 
 # Where are tags and categories displayed
-# tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 # Gems
