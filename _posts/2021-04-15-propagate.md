@@ -1,5 +1,5 @@
 ---
-title: (미완) (Paper) Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning
+title: (미완) (Paper) Propagate Yourself, Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning
 categories: DeepLearning
 tag: [tmp]
 
