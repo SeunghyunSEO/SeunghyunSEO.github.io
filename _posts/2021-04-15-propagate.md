@@ -18,9 +18,18 @@ toc_sticky: true
 
 ## <mark style='background-color: #fff5b1'> Introduction </mark>
 
+![Fig1](/assets/images/PRML_5.1_to_5.2/propagate_fig1.png)
+*Fig.*
+
 ## <mark style='background-color: #fff5b1'> Related Works </mark>
 
 ## <mark style='background-color: #fff5b1'> Method </mark>
+
+![Fig2](/assets/images/PRML_5.1_to_5.2/propagate_fig2.png)
+*Fig.*
+
+![Fig3](/assets/images/PRML_5.1_to_5.2/propagate_fig3.png)
+*Fig.*
 
 ## <mark style='background-color: #fff5b1'> Experiments and Results </mark>
 
