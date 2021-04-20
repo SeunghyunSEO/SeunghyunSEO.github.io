@@ -1,5 +1,5 @@
 ---
-title: (미완)Reinforcement Learning(RL) Overview
+title: (미완) Reinforcement Learning(RL) Overview
 categories: Reinforcement_Learning_and_Deep_Reinforcement_Learning
 tag: [RL]
 
