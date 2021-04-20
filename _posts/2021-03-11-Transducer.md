@@ -1,5 +1,5 @@
 ---
-title: (미완)RNN-Transducer
+title: (미완)Transducer
 categories: Speech_Recognition
 tag: [tmp]
 
@@ -14,13 +14,18 @@ toc_sticky: true
 {:toc}
 ---
 
-## <mark style='background-color: #fff5b1'> Common Automatic Speech Recognition (ASR) Models </mark>
+Transducer 
+
+## <mark style='background-color: #fff5b1'> Common Approaches for Deep Learning based E2E ASR Model) </mark>
+
+![seq2seq](/assets/images/NLP_RL/seq2seq.png)
+*Fig. tmp*
 
 ### <mark style='background-color: #dcffe4'> CTC-based model (2006, 2014, ...) </mark>
 
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
 
-### <mark style='background-color: #dcffe4'> RNN-Transducer(RNN-T)-based model (2012, 2018, ...) </mark>
+### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2018, ...) </mark>
 
 ## <mark style='background-color: #fff5b1'> References </mark>
 
