@@ -28,6 +28,13 @@ toc_sticky: true
 
 ### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2018, ...) </mark>
 
+
+![neural_transducer](/assets/images/rnnt/neural_transducer.png)
+*Fig. neural transducer*
+
+![neural_transducer2](/assets/images/rnnt/neural_transducer2.png)
+*Fig. neural transducer*
+
 ## <mark style='background-color: #fff5b1'> References </mark>
 
 - Blog
