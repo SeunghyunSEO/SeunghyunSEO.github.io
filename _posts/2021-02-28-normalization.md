@@ -1,5 +1,5 @@
 ---
-title: (미완)Normalization Series
+title: (yet)Normalization Series
 categories: DeepLearning
 tag: [tmp]
 
