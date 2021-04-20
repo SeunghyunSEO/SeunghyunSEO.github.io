@@ -50,7 +50,7 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 이 음성의 길이가 2초일 경우 sampling rate가 8000이라면 16000차원인데, 이를 입력으로 사용해 디코딩 해야 할 정답 길이는 19차원(글자) 라는 미스 매치를 Miss-Alignment 문제라고 합니다.
 이를 해결 하기 위해 2006년에 제안된 방법이 바로 Connectionist Temporal Classification (CTC) loss 입니다.
 
-복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와 그림으로 나타낼 수 있습니다.
+CTC는 복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와 그림으로 나타낼 수 있습니다.
 
 ![ctc](/assets/images/rnnt/shinji2.png)
 *Fig. CTC 기반 Model*
