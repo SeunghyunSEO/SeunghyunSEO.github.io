@@ -104,7 +104,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 ![hybrid2](/assets/images/rnnt/shinji5.png)
 *Fig. CTC 기법과 Attention 기법을 합쳐 loss를 구성한 Hybrid 모델. 이는 Attetnion과 CTC만을 가지고 구성된 단일 모델들의 단점을 상호 보완한다.*
 
-
+(물론 어텐션의 alignment를 monotonic하게 제안하기 위해서 [MoChA(Monotonic Chunk wise Attention)](https://arxiv.org/pdf/1712.05382) 이라는 논문이 제안되거나 가우시안을 사용한 어텐션 등이 제안되기도 하였습니다.)
 
 
 
