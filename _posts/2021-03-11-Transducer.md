@@ -66,9 +66,25 @@ CTC를 사용한 모델은 여러가지 특성을 가질 수 있는데요, 이�
 
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
 
+Seq2Seq ASR 모델은 자연어 처리(NLP) 분야에서 제안된 기계 번역 (Neural Machine Translation, NMT)와 유사한 모델로 입력 시퀀스를 인코더를 통해 Hidden Reperesentation Vector들로 나타낸 뒤
+이들을 바탕으로 디코더에서 토큰을 하나씩 디코딩 하고, 그렇게 만들어진 토큰들을 다음 디코딩 할 때 정보로 주어 또 디코딩을 하고 ... 디코딩이 끝났다는 <EOS> 토큰을 뱉을 때 까지 계속 디코딩을 하는 
+Autoregressive 디코딩을 하는 모델입니다. 여기에 '과연 각 토큰들을 디코딩 할 때 인코더가 출력한 정보(벡터)들 중 어떠한 정보를 참조해서 디코딩 해야 할 까?' 라는 의문을 해결하여 Seq2Seq 성능을 대폭 증가시킨 Attention Mechanism을 추가한 것이 Attention 기반 Seq2Seq 모델이 되는 것입니다. 즉 Attention Mechanism이 각 토큰과 입력 음성을 어떻게 Align해야 하는지를 CTC와는 다른 방식으로 해결했다고 볼 수 있습니다.
+
 ![attention](/assets/images/rnnt/shinji3.png)
 *Fig. Attention 기반 Seq2Seq Model*
 
+Attention 기반 기법도 몇가지 특징이 있는데요,
+
+- 1.Encoder가 전통적인 ASR모델의 Acoustic Model 중 DNN 파트를 담당하며, Decoder가 Language Model을, Attention이 HMM 파트를 담당한다고 볼 수 있다. (해석적?)
+- 2.토큰을 출력할 때 CTC와 다르게 조건부로 이전 토큰들을 입력으로 주기 때문에 더욱 정확하고 말이 되는 문장을 출력할 수 있다. (추가적인 LM 없이)
+- 3.하지만 어텐션 모델은 CTC와 다르게 Monotonic한 Alignment를 생성해야 한다는 제한이 없기 때문에 다양한 Alignment를 만들어 낼 수 있고, 이는 학습을 어렵게 한다. 
+
+입니다.
+
+
+이러한 문제를 해결하기 위해서 CTC와 Attention을 결합한 기법이 제안되기도 했습니다. 
+모델은 아래와 같고, 이렇게 함으로써 CTC Loss가 학습 초기 Monotonic Alignment를 배우게끔 하여 더욱 전체 모델을 잘 학습할 수 있게 합니다. 
+(추가적으로 두가지 모델을 결합한 형태이기 때문에 앙상블(Ensemble)한 효과를 간접적으로 누림으로써 성능을 올려줍니다.)
 
 ![hybrid](/assets/images/rnnt/shinji4.png)
 
@@ -78,8 +94,14 @@ CTC를 사용한 모델은 여러가지 특성을 가질 수 있는데요, 이�
 
 ### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2018, ...) </mark>
 
+자 이제, 일반적인 딥러닝 기반 E2E ASR모델 기법들 중 두 가지를 간단하게 알아봤고 Transducer에 대해서 알아보도록 하겠습니다.
+
+Transducer가 CTC를 보완한 버전이라고 하여 일반적으로 논문들에서는 두 가지를 비교하여 아래처럼 나타내곤 합니다.
+
 ![rnnt_model](/assets/images/rnnt/asr.png)
 *Fig. CTC-based Model vs Transducer-based Model*
+
+(감이 잘 안오시죠? 저도요 ... ㅠ)
 
 
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
