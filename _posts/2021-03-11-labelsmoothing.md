@@ -1,5 +1,5 @@
 ---
-title: (미완)Label Smoothing
+title: (yet)Label Smoothing
 categories: DeepLearning
 tag: [tmp]
 
