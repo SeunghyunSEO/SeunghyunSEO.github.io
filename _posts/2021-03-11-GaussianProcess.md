@@ -1,5 +1,5 @@
 ---
-title: (미완)Gaussian Process
+title: (yet)Gaussian Process
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
