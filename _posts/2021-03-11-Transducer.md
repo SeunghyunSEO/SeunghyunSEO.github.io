@@ -39,15 +39,26 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 
 
 
+
 ### <mark style='background-color: #dcffe4'> CTC-based model (2006, 2014, ...) </mark>
 
 ![ctc](/assets/images/rnnt/shinji2.png)
 *Fig. CTC 기반 Model*
 
+
+
+
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
 
 ![attention](/assets/images/rnnt/shinji3.png)
 *Fig. Attention 기반 Seq2Seq Model*
+
+
+![hybrid](/assets/images/rnnt/shinji4.png)
+
+![hybrid2](/assets/images/rnnt/shinji5.png)
+*Fig. CTC 기법과 Attention 기법을 합쳐 loss를 구성한 Hybrid 모델. 이는 Attetnion과 CTC만을 가지고 구성된 단일 모델들의 단점을 상호 보완한다.*
+
 
 ### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2018, ...) </mark>
 
