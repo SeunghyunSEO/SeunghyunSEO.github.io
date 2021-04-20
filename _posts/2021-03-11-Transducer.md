@@ -14,12 +14,13 @@ toc_sticky: true
 {:toc}
 ---
 
-Transducer 
+[Transducer]((https://arxiv.org/pdf/1211.3711)) 모델이란 [Connectionist Temporal Classification (CTC)](https://www.cs.toronto.edu/~graves/icml_2006.pdf) 을 제안한 Alex Graves 가 2012년에 처음 제안한 개념으로 CTC의 단점을 보완한 업그레이드 버전이라고 보면 됩니다.
+처음 되었을 때와 마찬가지로 일반적인 경우 Recurrent Neural Networks (RNNs) 를 내부 모듈로 사용하기 때문에 RNN-Tranducer (RNN-T) 라고 부르곤 하지만, 최근에는 [Transformer-Transducer](https://arxiv.org/pdf/2002.02562) 가 제안되는 등 다양한 Variation이 존재합니다.
 
 ## <mark style='background-color: #fff5b1'> Common Approaches for Deep Learning based E2E ASR Model) </mark>
 
-![seq2seq](/assets/images/NLP_RL/seq2seq.png)
-*Fig. tmp*
+![asr](/assets/images/rnnt/asr.png)
+*Fig. 일반적인 딥러닝 기반 End-to-End(E2E) 음성인식 (Automatic Speech Recognition, ASR) 모델들.*
 
 ### <mark style='background-color: #dcffe4'> CTC-based model (2006, 2014, ...) </mark>
 
@@ -36,3 +37,4 @@ Transducer
   - 2. [A Neural Transducer](https://arxiv.org/pdf/1511.04868)
   - 3. [Exploring Neural Transducers for End-to-End Speech Recognition](https://arxiv.org/pdf/1707.07413)
   - 4. [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621)
+  - 5. [Transformer Transducer: A Streamable Speech Recognition Model with Transformer Encoders and RNN-T Loss](https://arxiv.org/pdf/2002.02562)
