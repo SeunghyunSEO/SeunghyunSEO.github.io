@@ -1,5 +1,5 @@
 ---
-title: (미완)Graph Model
+title: (yet)Graph Model
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
