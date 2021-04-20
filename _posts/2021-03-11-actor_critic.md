@@ -1,5 +1,5 @@
 ---
-title: (미완)Actor-Critic and Soft Actor Critic
+title: (yet)Actor-Critic and Soft Actor Critic
 categories: Reinforcement_Learning_and_Deep_Reinforcement_Learning
 tag: [RL]
 
