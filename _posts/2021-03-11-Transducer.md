@@ -40,10 +40,26 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 
 ### <mark style='background-color: #dcffe4'> CTC-based model (2006, 2014, ...) </mark>
 
+음성인식같은 Seq2Seq 모델의 가장 큰 문제점은 Alignment가 맞지 않는다는 것입니다.
+예를 들어 "안녕하세요, 저는 대학원생 입니다." 라고 녹음된 전화 음성이 있다고 할 때, 이 음성의 길이가 2초일 경우 sampling rate가 8000이라면 16000차원인데, 이를 입력으로 사용해 디코딩 해야 할 정답 길이는 19차원(글자) 라는 미스 매치를 Miss-Alignment 문제라고 하는데, 이를 해결 하기 위해 2006년에 제안된 방법이 바로 Connectionist Temporal Classification (CTC) loss 입니다.
+
+복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와 그림으로 나타낼 수 있습니다.
+
 ![ctc](/assets/images/rnnt/shinji2.png)
 *Fig. CTC 기반 Model*
 
+CTC 기반 모델은 입력을 인코더에 통과시켜 인코딩한 벡터들을 가지고 그 벡터들을 일일히 토큰(문자(char),단어(word) 등)으로 바꾸고 특정한 규칙에 의해 최종적으로 정답 Sentence를 만들어내는 것입니다.
 
+```
+디코딩 된 모든 토큰들 : "A A _ _ P P P _ P P _ L _ E"
+최종 출력 : "A P P L E"
+```
+
+CTC를 사용한 모델은 여러가지 특성을 가질 수 있는데요, 이는 아래와 같습니다.
+
+- 1. 인코더가 뱉은 각각의 최종 벡터들은 조건부 독립이라고 가정 (HMM과 비슷)하고 이들을 특수한 토큰 <Blank> 를 포함해 쭉 디코딩(예측)한다.
+- 2. 입력 X 와 출력 Y 사이의 Alignment를 다이나믹 프로그래밍을 사용해 효율적으로 찾아낸다.
+- 3. 1번에서 말한 것 처럼 조건부 독립을 가정하기 때문에 만들어진 문장이 자연스럽지 않다. (발음 그대로 만들어지는 경우도 많음) => 언어 모델 (Language Model, LM) 을 따로 사용하는 방법으로 해결 가능. 
 
 
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
