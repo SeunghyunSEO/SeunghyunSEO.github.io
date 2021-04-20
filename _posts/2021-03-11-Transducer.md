@@ -66,7 +66,10 @@ CTC를 사용한 모델은 여러가지 특성을 가질 수 있는데요, 이�
 
 - 인코더가 뱉은 각각의 최종 벡터들은 조건부 독립이라고 가정 (HMM과 비슷)하고 이들을 특수한 토큰 <Blank> 를 포함해 쭉 디코딩(예측)한다.
 - 입력 X 와 출력 Y 사이의 Alignment를 다이나믹 프로그래밍을 사용해 효율적으로 찾아낸다.
-- 1번에서 말한 것 처럼 조건부 독립을 가정하기 때문에 만들어진 문장이 자연스럽지 않다. (발음 그대로 만들어지는 경우도 많음) => 언어 모델 (Language Model, LM) 을 따로 사용하는 방법으로 해결 가능. 
+- **<span style="color:#e01f1f">1번에서 말한 것 처럼 조건부 독립을 가정하기 때문에 만들어진 문장이 자연스럽지 않다.</span>** (발음 그대로 만들어지는 경우도 많음) => 언어 모델 (Language Model, LM) 을 따로 사용하는 방법으로 해결 가능. 
+
+
+
 
 
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
@@ -82,9 +85,11 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 - Encoder가 전통적인 ASR모델의 Acoustic Model 중 DNN 파트를 담당하며, Decoder가 Language Model을, Attention이 HMM 파트를 담당한다고 볼 수 있다. (해석적?)
 - 토큰을 출력할 때 CTC와 다르게 조건부로 이전 토큰들을 입력으로 주기 때문에 더욱 정확하고 말이 되는 문장을 출력할 수 있다. (추가적인 LM 없이)
-- 하지만 어텐션 모델은 CTC와 다르게 Monotonic한 Alignment를 생성해야 한다는 제한이 없기 때문에 다양한 Alignment를 만들어 낼 수 있고, 이는 학습을 어렵게 한다. 
+- **<span style="color:#e01f1f">하지만 어텐션 모델은 CTC와 다르게 Monotonic한 Alignment를 생성해야 한다는 제한이 없기 때문에 다양한 Alignment를 만들어 낼 수 있고, 이는 학습을 어렵게 한다. 
+</span>**
 
 입니다.
+
 
 
 이러한 문제를 해결하기 위해서 CTC와 Attention을 결합한 기법이 제안되기도 했습니다. 
@@ -95,6 +100,9 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 ![hybrid2](/assets/images/rnnt/shinji5.png)
 *Fig. CTC 기법과 Attention 기법을 합쳐 loss를 구성한 Hybrid 모델. 이는 Attetnion과 CTC만을 가지고 구성된 단일 모델들의 단점을 상호 보완한다.*
+
+
+
 
 
 ### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2018, ...) </mark>
