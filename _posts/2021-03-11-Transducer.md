@@ -103,7 +103,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 Transducer가 CTC를 보완한 버전이라고 하여 일반적으로 논문들에서는 두 가지를 비교하여 아래처럼 나타내곤 합니다.
 
-![rnnt_model](/assets/images/rnnt/asr.png)
+![rnnt_model](/assets/images/rnnt/rnnt_model.png)
 *Fig. CTC-based Model vs Transducer-based Model*
 
 (감이 잘 안오시죠? 저도요 ... ㅠ)
