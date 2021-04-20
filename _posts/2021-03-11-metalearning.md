@@ -1,5 +1,5 @@
 ---
-title: (미완) Meta-Learning
+title: (yet) Meta-Learning
 categories: DeepLearning
 tag: [DeepLearning]
 
