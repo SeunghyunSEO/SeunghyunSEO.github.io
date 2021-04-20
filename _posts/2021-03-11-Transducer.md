@@ -48,7 +48,7 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
 
-
+![attention](/assets/images/rnnt/shinji3.png)
 *Fig. Attention 기반 Seq2Seq Model*
 
 
