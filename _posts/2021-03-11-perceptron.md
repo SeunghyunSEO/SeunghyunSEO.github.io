@@ -1,5 +1,5 @@
 ---
-title: (미완)Linear Discriminant (3/3) Perceptron Algorithm
+title: (yet)Linear Discriminant (3/3) Perceptron Algorithm
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
