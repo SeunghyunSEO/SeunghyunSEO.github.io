@@ -88,11 +88,10 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 - 토큰을 출력할 때 CTC와 다르게 조건부로 이전 토큰들을 입력으로 주기 때문에 더욱 정확하고 말이 되는 문장을 출력할 수 있다. (추가적인 LM 없이)
 - **<span style="color:#e01f1f">하지만 어텐션 모델은 CTC와 다르게 Monotonic한 Alignment를 생성해야 한다는 제한이 없기 때문에 다양한 Alignment를 만들어 낼 수 있고, 이는 학습을 어렵게 한다. 
 </span>**
-- 전체 음성에 대해서 어텐션을 수행하기 때문에 Straming(온라인, 실시간) 모델에 적합하지 않.
+- 전체 음성에 대해서 어텐션을 수행하기 때문에 Straming(온라인, 실시간) 모델에 적합하지 않다.
 - 어텐션을 계산하는 데 시간이 많이 소요되며, Autoregressive Decoding 또한 시간을 많이 잡아먹는다.  
 
 입니다.
-
 
 
 위에서 언급한 세번 문제를 해결하기 위해서 CTC와 Attention을 결합한 기법이 제안되기도 했습니다. 
@@ -104,7 +103,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 ![hybrid2](/assets/images/rnnt/shinji5.png)
 *Fig. CTC 기법과 Attention 기법을 합쳐 loss를 구성한 Hybrid 모델. 이는 Attetnion과 CTC만을 가지고 구성된 단일 모델들의 단점을 상호 보완한다.*
 
-(물론 어텐션의 alignment를 monotonic하게 제안하기 위해서 [MoChA(Monotonic Chunk wise Attention)](https://arxiv.org/pdf/1712.05382) 이라는 논문이 제안되거나 가우시안을 사용한 어텐션 등이 제안되기도 하였습니다.)
+(이렇게 결합하는 방법 외에도 어텐션의 alignment를 monotonic하게 제안하기 위해서 [MoChA(Monotonic Chunk wise Attention)](https://arxiv.org/pdf/1712.05382) 이라는 논문이 제안되거나 가우시안을 사용한 어텐션 등이 제안되기도 하였습니다.)
 
 
 
