@@ -20,7 +20,7 @@ toc_sticky: true
 ## <mark style='background-color: #fff5b1'> Common Approaches for Deep Learning based E2E ASR Model) </mark>
 데이터와 적당한 모델만 있으면 되는 딥러닝 기반 End-to-End (E2E) 음성인식 (Automatic Speech Recognition, ASR) 모델과 달리 전통적인 ASR 모델은 음성에 대한 전문적인 Domain Knowledge와 딥러닝 기법과 비교해 상당히 복잡한 모델링이 요구되었습니다.
 
-![traditional_asr](/assets/images/rnnt/shinji1.png.png)
+![traditional_asr](/assets/images/rnnt/shinji1.png)
 *Fig. 딥러닝 기반 E2E ASR 모델이 제안되기 전의 음성인식 모델*
 
 하지만 딥러닝기반 E2E기법들이 차례대로 등장하면서 CTC(2006~), Transducer(2012~), Attention-based Seq2Seq(2014~) 복잡한 모델링이 없이도 엄청난 음성 인식 성공률을 보여주며 음성인식의 인식 레벨은 한단계 업그레이드 되었습니다.
