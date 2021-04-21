@@ -86,9 +86,8 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 - Encoder가 전통적인 ASR모델의 Acoustic Model 중 DNN 파트를 담당하며, Decoder가 Language Model을, Attention이 HMM 파트를 담당한다고 볼 수 있다. (해석적?)
 - 토큰을 출력할 때 CTC와 다르게 조건부로 이전 토큰들을 입력으로 주기 때문에 더욱 정확하고 말이 되는 문장을 출력할 수 있다. (추가적인 LM 없이)
-- **<span style="color:#e01f1f">하지만 어텐션 모델은 CTC와 다르게 Monotonic한 Alignment를 생성해야 한다는 제한이 없기 때문에 다양한 Alignment를 만들어 낼 수 있고, 이는 학습을 어렵게 한다. 
-</span>**
-- 전체 음성에 대해서 어텐션을 수행하기 때문에 Straming(온라인, 실시간) 모델에 적합하지 않다.
+- 하지만 어텐션 모델은 CTC와 다르게 Monotonic한 Alignment를 생성해야 한다는 제한이 없기 때문에 다양한 Alignment를 만들어 낼 수 있고, 이는 학습을 어렵게 한다.
+- **<span style="color:#e01f1f">전체 음성에 대해서 어텐션을 수행하기 때문에 Straming(온라인, 실시간) 모델에 적합하지 않다. </span>**
 - 어텐션을 계산하는 데 시간이 많이 소요되며, Autoregressive Decoding 또한 시간을 많이 잡아먹는다.  
 
 입니다.
