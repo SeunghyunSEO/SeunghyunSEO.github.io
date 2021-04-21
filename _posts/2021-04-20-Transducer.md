@@ -132,7 +132,7 @@ $$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subse
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
 
-하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 acoustic-only 모델 입니다.
+하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 `acoustic-only model` 입니다.
 
 
 
@@ -141,12 +141,12 @@ $$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subse
 <center>
 $$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) $$
 $$ where \space \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset {\{ Z \cup <b>\}}^{T+U} $$
-<center>
+</center>
   
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i 번째$$ 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
 
-즉, Transducer는 박스로 나눠서 디코딩을 하는데, 예를 들어 $$i$$번째 박스를 디코딩 하는데 있어, 입력 음성 (acoustic inputs sequence)와 $$i-1$$ 번째 박스에서의 토큰들을 조건부로 주어 $$i$$ 번째 박스를 디코딩 하는, 즉 하나의 분리된 뉴럴 네트워크 모듈(RNN이라고 하겠습니다 우선)을 추가한 거죠. 즉 이는 language model을 따로 하나 더 두고 acoustic 과 language model을 jointly 학습하는 것이라고 볼 수 있습니다.  
+즉, Transducer는 박스로 나눠서 디코딩을 하는데, 예를 들어 $$i$$번째 박스를 디코딩 하는데 있어, 입력 음성 (acoustic inputs sequence)와 $$i-1$$ 번째 박스에서의 토큰들을 조건부로 주어 $$i$$ 번째 박스를 디코딩 하는, 즉 하나의 분리된 뉴럴 네트워크 모듈(RNN이라고 하겠습니다 우선)을 추가한 거죠. 즉 이는 `language model`을 따로 하나 더 두고 acoustic 과 language model을 jointly 학습하는 것이라고 볼 수 있습니다.  
 
 Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
 
