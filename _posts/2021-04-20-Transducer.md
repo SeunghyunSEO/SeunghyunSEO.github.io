@@ -140,7 +140,6 @@ $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_
 
 <center>
 $$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) $$
-$$ where \space \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset { \{ Z \cup <b>\} }^{T+U} $$
 </center>
   
 
