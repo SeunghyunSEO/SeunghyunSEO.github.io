@@ -119,15 +119,15 @@ Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 �
 
 우선 notation들에 대해서 확실히 하겠습니다.
 
-- $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$\x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.   
+- $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.   
 - $$ U $$는 정답이 될 문장의 길이를 나타내고, $$y=(y_1,\cdots,y_U)$$ 는 각 frame x를 디코딩 해 만들어낸 독립적인 출력 벡터들 이며, 여기서 $$y_u \in Z$$ 이며 Z는 문맥적으로 독립 (context-independent, CI)인 (phonemes, graphems or word-pieces)등을 나타냅니다.
-- 특수한 토큰 (special token) 으로 $$y_0 = \<sos\>$$ 가 있으며, $$blank$$를 나타내는 토큰은 $$\<b\>$$라고  합니다.  
+- 특수한 토큰 (special token) 으로 $$y_0 = <sos>$$ 가 있으며, $$blank$$를 나타내는 토큰은 $$<b>$$라고  합니다.  
 
 notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
 
 <center>
 $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) $$
-$$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup \<b\> \}}^T $$ 
+$$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup <b> \}}^T $$ 
 </center>
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
@@ -140,7 +140,7 @@ $$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subse
 
 <center>
 $$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) $$
-$$ where \space \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset {\{ Z \cup \<b\>\}}^{T+U} $$
+$$ where \space \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset {\{ Z \cup <b>\}}^{T+U} $$
 <center>
   
 
