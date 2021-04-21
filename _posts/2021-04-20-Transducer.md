@@ -33,6 +33,9 @@ toc_sticky: true
 ![e2e_asr](/assets/images/rnnt/asr.png)
 *Fig. 일반적인 딥러닝 기반 E2E ASR 기법들, 왼쪽부터 차례대로 CTC, Tranducer, Attention 기반 기법들이다.*
 
+(이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
+
+
 이 중 CTC, ATtention 기반 기법과 다르게, Transducer는 상대적으로 적게 연구가 되었지만 최근 실시간 음성인식 (Straeming-ASR) 의 중요성등이 대두되면서 주목을 받아왔습니다.
 Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 또한 최근 Attention기반 기법과 비교해 성능이 뒤쳐지지 않는다는 논문들이 많이 나오고 있기도 합니다.
 그렇기에 최근에는 Transducer와 Attention 기반 Sequence-to-Sequence(Seq2Seq) 모델 (LAS나 트랜스포머 기반 기법)을 같이 사용하는 Two-Pass 기법이 제안되기도 해왔습니다. 
@@ -110,10 +113,6 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 자 이제, 일반적인 딥러닝 기반 E2E ASR모델 기법들 중 두 가지를 간단하게 알아봤고 Transducer에 대해서 알아보도록 하겠습니다.
 
-Transducer가 CTC를 보완한 버전이라고 하여 일반적으로 논문들에서는 두 가지를 비교하여 아래처럼 나타내곤 합니다.
-
-![rnnt_model](/assets/images/rnnt/rnnt_model.png)
-*Fig. CTC-based Model vs Transducer-based Model*
 
 Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 길이보다 작아야 한다는 점과, 출력 토큰들의 조건부 독립 가정을 해결해 성능을 끌어올렸는데요,
 수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
@@ -128,24 +127,38 @@ notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
 
 <center>
 $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) $$
+$$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup <b> \}}^T $$ 
 </center>
 
-여기서 $$ \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup <b> \}}^T $$ 는 특수한 `<blank>` 토큰과 중복되는 토큰을 제거하여 최종 결과물 y를 산출하는 길이 T의 프레임-레벨(frame-level)의 alignemnts를 나타냅니다.
- 
+입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
 
-Transducer의 수식은 아래와 같습니다.
+하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 acoustic-only 모델 입니다.
+
+
+
+반면 Transducer의 수식은 아래와 같습니다.
 
 <center>
-P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} )
+$$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) $$
+$$ where \space \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset { Z \cup \<b\>}^{T+U} $$
 <center>
   
-????여기서 $$ \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset { Z \cup \<b\>}^{T+U} $$ 는 최종 결과물 y를 산출하는 T개의 `<blank>`와  alignment seqeucne.
 
-
-  
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i 번째$$ 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
 
+즉, Transducer는 박스로 나눠서 디코딩을 하는데, 예를 들어 $$i$$번째 박스를 디코딩 하는데 있어, 입력 음성 (acoustic inputs sequence)와 $$i-1$$ 번째 박스에서의 토큰들을 조건부로 주어 $$i$$ 번째 박스를 디코딩 하는, 즉 하나의 분리된 뉴럴 네트워크 모듈(RNN이라고 하겠습니다 우선)을 추가한 거죠. 즉 이는 language model을 따로 하나 더 두고 acoustic 과 language model을 jointly 학습하는 것이라고 볼 수 있습니다.  
 
+Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
+
+![rnnt_model](/assets/images/rnnt/rnnt_model.png)
+*Fig. CTC-based Model vs Transducer-based Model*
+
+조금 와닿지 않는 것 같아서 아래의 그림을 사용하도록 하겠습니다.
+
+![rnnt_model](/assets/images/rnnt/rnnt_model.png)
+*Fig. CTC-based Model vs Transducer-based Model*
+
+(이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
 
 
 
