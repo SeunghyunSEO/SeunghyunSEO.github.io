@@ -127,7 +127,7 @@ notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
 
 <center>
 $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) $$
-$$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup <b> \}}^T $$ 
+$$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup \<b\> \}}^T $$ 
 </center>
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
@@ -140,7 +140,7 @@ $$ where \space \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subse
 
 <center>
 $$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) $$
-$$ where \space \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset { Z \cup \<b\>}^{T+U} $$
+$$ where \space \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset {\{ Z \cup \<b\>\}}^{T+U} $$
 <center>
   
 
