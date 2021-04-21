@@ -9,9 +9,10 @@ toc_sticky: true
 
 $$\rightarrow$$ [[Post written by lilian Weng](https://lilianweng.github.io/lil-log/2018/02/19/a-long-peek-into-reinforcement-learning.html#common-approaches)]
 
-```
-위의 포스트는 OpenAI의 머신 러닝 연구자인 [lilian Weng](https://scholar.google.com/citations?user=dCa-pW8AAAAJ)이 작성한 강화학습에 대한 전반적인 개념에 대한 글입니다.
-```
+
+위의 포스트는 OpenAI의 머신 러닝 연구자인 [lilian Weng](https://scholar.google.com/citations?user=dCa-pW8AAAAJ)이 작성한 강화학습에 대한 전반적인 개념에 대한 글이며
+본 포스트는 위의 글을 상당 부분 참고하여 만들어 졌습니다..
+
 
 ![image](https://user-images.githubusercontent.com/48202736/106112753-fa73a580-6190-11eb-961b-d598ee0902a3.png)
 {: style="width: 40%;" class="center"}
