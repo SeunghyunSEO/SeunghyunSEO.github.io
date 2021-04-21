@@ -155,7 +155,7 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 조금 와닿지 않는 것 같아서 아래의 그림을 사용하도록 하겠습니다.
 
-![rnnt_model](/assets/images/rnnt/rnnt_model.png)
+![ctc_vs_rnnt](/assets/images/rnnt/ctc_rnnt.png)
 *Fig. CTC-based Model vs Transducer-based Model*
 
 (이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
