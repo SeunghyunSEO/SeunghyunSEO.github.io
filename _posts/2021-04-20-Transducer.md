@@ -107,7 +107,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 
 
-### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2018, ...) </mark>
+### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2013, 2018, ...) </mark>
 
 자 이제, 일반적인 딥러닝 기반 E2E ASR모델 기법들 중 두 가지를 간단하게 알아봤고 Transducer에 대해서 알아보도록 하겠습니다.
 
@@ -116,7 +116,39 @@ Transducer가 CTC를 보완한 버전이라고 하여 일반적으로 논문들�
 ![rnnt_model](/assets/images/rnnt/rnnt_model.png)
 *Fig. CTC-based Model vs Transducer-based Model*
 
-(감이 잘 안오시죠? 저도요 ... ㅠ)
+Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 길이보다 작아야 한다는 점과, 출력 토큰들의 조건부 독립 가정을 해결해 성능을 끌어올렸는데요,
+수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
+
+우선 notation들에 대해서 확실히 하겠습니다.
+
+- $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$\x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.   
+- $$ U $$는 정답이 될 문장의 길이를 나타내고, $$y=(y_1,\cdots,y_U)$$ 는 각 frame x를 디코딩 해 만들어낸 독립적인 출력 벡터들 이며, 여기서 $$y_u \in Z$$ 이며 Z는 문맥적으로 독립 (context-independent, CI)인 (phonemes, graphems or word-pieces)등을 나타냅니다.
+- 특수한 토큰 (special token) 으로 $$y_0 = \<sos\>$$ 가 있으며, $$blank$$를 나타내는 토큰은 $$\<b\>$$라고  합니다.  
+
+notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
+
+<center>
+$$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) $$
+</center>
+
+여기서 $$ \hat{y} = (\hat{y_1}, \cdots, \hat{y_T}) \in A_{CTC}(x,y) \subset {\{ Z \cup <b> \}}^T $$ 는 특수한 `<blank>` 토큰과 중복되는 토큰을 제거하여 최종 결과물 y를 산출하는 길이 T의 프레임-레벨(frame-level)의 alignemnts를 나타냅니다.
+ 
+
+Transducer의 수식은 아래와 같습니다.
+
+<center>
+P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} )
+<center>
+  
+????여기서 $$ \hat{y} = (\hat{y}, \cdots, \hat{y_{T+U}}) \in A_{RNNT}(x,y) \subset { Z \cup \<b\>}^{T+U} $$ 는 최종 결과물 y를 산출하는 T개의 `<blank>`와  alignment seqeucne.
+
+
+  
+CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i 번째$$ 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
+
+
+
+
 
 
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
@@ -131,6 +163,7 @@ Transducer가 CTC를 보완한 버전이라고 하여 일반적으로 논문들�
   - [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/)
 - Paper
   - [Sequence Transduction with Recurrent Neural Networks](https://arxiv.org/pdf/1211.3711)
+  - [Speech Recognition with Deep Recurrent Neural Networks](https://arxiv.org/pdf/1303.5778)
   - [A Neural Transducer](https://arxiv.org/pdf/1511.04868)
   - [Exploring Neural Transducers for End-to-End Speech Recognition](https://arxiv.org/pdf/1707.07413)
   - [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621)
