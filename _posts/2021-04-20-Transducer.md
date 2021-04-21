@@ -127,6 +127,9 @@ notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
 
 <center>
 $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) $$
+</center>
+
+<center>
 $$ where \space \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T $$ 
 </center>
 
