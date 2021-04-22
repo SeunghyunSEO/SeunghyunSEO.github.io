@@ -188,7 +188,7 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 
 
 
-![neural_transducer2](/assets/images/rnnt/neural_transducer2.png)
+![neural_transducer2](/assets/images/rnnt/neural_transducer2.png){: width="80%"}
 *Fig. Neural Transducer의 디테일한 다이어그램. 빨간 박스 부분의 음성에 대해서만 인코딩을 진행해 hidden vectors를 뽑고 이에 대해 Transducer가 최종적으로 토큰들을 출력한다. 여기서 Transducer는 Attention을 사용한 Seq2Seq와 같은 역할을 수행한다.*
 
 
