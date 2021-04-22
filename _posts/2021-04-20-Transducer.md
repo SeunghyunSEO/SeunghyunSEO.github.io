@@ -184,6 +184,10 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 제안한 음성인식 논문 중 `Neural Transducer`(An Online Sequence-to-Sequence Model Using Partial Conditioning) 라는 논문이 있었습니다. 논문의 요지는 Seq2Seq 논문을 개선시켰다는 것인데요. 짧게 요약하자면, 'Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이고 나서야 문장 추론을 시작하기 때문에, 연산을 하는데 시간이 오래걸리며 전체 음성을 다 봐야 한다는 단점이 있기 때문에 실시간 음성인식에 적합하지 않기 때문에 RNN-Transducer와 비슷 하지만, 두 개의 독립된 연산을 하는 네트워크를(Prediction Network, Joint Network) 가정하지 않고 하나의 모듈을 사용한다는 점과 어텐션 매커니즘을 Block 단위로(partially observed speech input, partially generated text output sequence) 적용한다는 점에서 차이가 있는 새로운 Transdcuer 모델을 제안한다' 입니다. 
 
+![all_seq2seq](/assets/images/rnnt/all_seq2seq.png)
+*Fig. 왼쪽부터 차례대로 CTC-based Model, Seq2Seq with Attention Model, RNN-T Model, RNN-T with Attention Model *
+
+
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
 *Fig. Attention-based Seq2Seq Model vs Neural Transducer, 본 논문에서는 CTC와의 비교 보다는 CTC이후 Seq2Seq 태스크에서 훨씬 성공적으로 평가받았던 Attention기반 Seq2Seq 모델과 제안하는 모델을 비교했다. Seq2Seq 모델(좌)을 보면 입력을 다 받고난 후에야 추론할 수 있음을  볼 수 있다. Neural Transducer(우) 모델을 잘 보면, 입력 음성 전체가 아닌 특정 단위(Blcok)에 대해서만 이전의 Transducer가 전달한 Hidden State과 함께 입력으로 사용해 토큰들을 예측하고 또 이를 다음 블럭 예측할 때의 Transducer에 전달한다.*
 
@@ -236,5 +240,8 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
   - [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621)
   - [Transformer Transducer: A Streamable Speech Recognition Model with Transformer Encoders and RNN-T Loss](https://arxiv.org/pdf/2002.02562)
   - [Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
+  - [A Comparison of Sequence-to-Sequence Models for Speech Recognition](http://www.isca-speech.org/archive/Interspeech_2017/pdfs/0233.PDF)
+  - [End-to-End Attention-based Large Vocabulary Speech Recognition](https://arxiv.org/pdf/1508.04395)
+  - [Listen, Attend and Spell](https://arxiv.org/pdf/1508.01211)
 - Others
   - [End-to-End Speech Recognition by Following my Research History from Shinji Watanabe](https://deeplearning.cs.cmu.edu/F20/document/slides/shinji_watanabe_e2e_asr_bhiksha.pdf)
