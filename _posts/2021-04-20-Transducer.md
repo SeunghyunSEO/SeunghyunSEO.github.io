@@ -145,7 +145,10 @@ $$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \v
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
 
-즉, Transducer는 박스로 나눠서 디코딩을 하는데, 예를 들어 $$i$$번째 박스를 디코딩 하는데 있어, 입력 음성 (acoustic inputs sequence)와 $$i-1$$ 번째 박스에서의 토큰들을 조건부로 주어 $$i$$번째 박스를 디코딩 하는, 즉 하나의 분리된 뉴럴 네트워크 모듈(RNN이라고 하겠습니다 우선)을 추가한 거죠. 즉 이는 `language model`을 따로 하나 더 두고 acoustic 과 language model을 jointly 학습하는 것이라고 볼 수 있습니다.  
+즉, Transducer는 박스로 나눠서 디코딩을 하는데, 예를 들어 $$i$$번째 박스를 디코딩 하는데 있어, 입력 음성 (acoustic inputs sequence)와 $$i-1$$ 번째 박스에서의 토큰들을 조건부로 주어 $$i$$번째 박스를 디코딩 하는, 즉 하나의 분리된 뉴럴 네트워크 모듈(RNN이라고 하겠습니다 우선)을 추가한 거죠. 즉 이는 `language model(prediction network)`을 따로 하나 더 두고 acoustic 과 language model을 jointly`(joint network)` 학습하는 것이라고 볼 수 있습니다.
+
+이말은, prediction network는 텍스트만을 이용해서 따로 RNN-LM 학습하듯 학습할 수 있다는 것이죠.
+
 
 Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
 
@@ -179,12 +182,23 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 
 
+
+
+
 ### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition </mark>
 
 [Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
 
 
+
+
+
+
 ### <mark style='background-color: #dcffe4'> Transformer Transducer </mark>
+
+
+
+
 
 
 
