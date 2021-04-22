@@ -100,7 +100,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 모델은 아래와 같고, 이렇게 함으로써 CTC Loss가 학습 초기 Monotonic Alignment를 배우게끔 하여 더욱 전체 모델을 잘 학습할 수 있게 합니다. 
 (추가적으로 두가지 모델을 결합한 형태이기 때문에 앙상블(Ensemble)한 효과를 간접적으로 누림으로써 성능을 올려줍니다.)
 
-![hybrid](/assets/images/rnnt/shinji4.png){: width="80%"}
+![hybrid](/assets/images/rnnt/shinji4.png){: width="85%"}
 
 ![hybrid2](/assets/images/rnnt/shinji5.png)
 *Fig. CTC 기법과 Attention 기법을 합쳐 loss를 구성한 Hybrid 모델. 이는 Attetnion과 CTC만을 가지고 구성된 단일 모델들의 단점을 상호 보완한다.*
