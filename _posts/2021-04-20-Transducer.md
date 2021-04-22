@@ -109,7 +109,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 
 
-### <mark style='background-color: #dcffe4'> Transducer-based model (2012, 2013, 2018 ...) </mark>
+## <mark style='background-color: #fff5b1'> Transducer-based model (2012, 2013, 2018 ...) </mark>
 
 자 이제, 일반적인 딥러닝 기반 E2E ASR모델 기법들 중 두 가지를 간단하게 알아봤고 Transducer에 대해서 알아보도록 하겠습니다.
 
@@ -152,6 +152,8 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 ![ctc_vs_rnnt](/assets/images/rnnt/rnnt_model.png)
 *Fig. CTC-based Model vs Transducer-based Model*
 
+(이미지 출처 : [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621))
+
 조금 와닿지 않는 것 같아서 아래의 그림을 사용하도록 하겠습니다.
 
 ![ctc_vs_rnnt2](/assets/images/rnnt/ctc_rnnt.png)
@@ -161,6 +163,11 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 
 
+
+
+
+### <mark style='background-color: #dcffe4'> Neural Transducer </mark>
+
 아래는 Neural Transducer의 그림입니다.
 
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
@@ -168,6 +175,18 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 ![neural_transducer2](/assets/images/rnnt/neural_transducer2.png)
 *Fig. neural transducer*
+
+
+
+
+### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition </mark>
+
+[Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
+
+
+### <mark style='background-color: #dcffe4'> Transformer Transducer </mark>
+
+
 
 ## <mark style='background-color: #fff5b1'> References </mark>
 
@@ -180,5 +199,6 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
   - [Exploring Neural Transducers for End-to-End Speech Recognition](https://arxiv.org/pdf/1707.07413)
   - [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621)
   - [Transformer Transducer: A Streamable Speech Recognition Model with Transformer Encoders and RNN-T Loss](https://arxiv.org/pdf/2002.02562)
+  - [Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
 - Others
   - [End-to-End Speech Recognition by Following my Research History from Shinji Watanabe](https://deeplearning.cs.cmu.edu/F20/document/slides/shinji_watanabe_e2e_asr_bhiksha.pdf)
