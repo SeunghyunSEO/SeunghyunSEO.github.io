@@ -198,14 +198,16 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 
 [Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
 
-
+![twopass](/assets/images/rnnt/twopass.png)
+*Fig. Two-Pass Decoding을 하는 Transducer 모델.*
 
 
 
 
 ### <mark style='background-color: #dcffe4'> Transformer Transducer </mark>
 
-
+![transformer_transducer](/assets/images/rnnt/transformer_transducer.png)
+*Fig. Transformer Transducer.*
 
 
 
