@@ -174,12 +174,14 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 제안한 음성인식 논문 중 `Neural Transducer`(An Online Sequence-to-Sequence Model Using Partial Conditioning) 라는 논문이 있었습니다. 논문의 요지는 Seq2Seq 논문을 개선시켰다는 것인데요. 짧게 요약하자면, 'Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이고 나서야 문장 추론을 시작하기 때문에, 연산을 하는데 시간이 오래걸리며 전체 음성을 다 봐야 한다는 단점이 있기 때문에 실시간 음성인식에 적합하지 않기 때문에 RNN-Transducer와 비슷 하지만, 두 개의 독립된 연산을 하는 네트워크를 가정하지 않고 하나의 모듈을 사용한다는 점과 어텐션 매커니즘을 Block 단위로(partially observed speech input, partially generated text output sequence ) 적용한다는 점에서 차이가 있는 새로운 Transdcuer 모델을 제안한다' 입니다. 
 
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
-*Fig. Attention-based Seq2Seq Model vs Neural Transducer, 본 논문에서는 CTC와의 비교 보다는 CTC이후 Seq2Seq 태스크에서 훨씬 성공적으로 평가받았던 Attention기반 Seq2Seq 모델과 제안하는 모델을 비교했다. Neural Transducer(우) 모델을 잘 보면, 입력 음성 전체가 아닌 특정 단위(Blcok)에 대해서만 이전의 Transducer가 전달한 Hidden State과 함께 입력으로 사용해 토큰들을 예측하고 또 이를 다음 블럭 예측할 때의 Transducer에 전달한다. *
+*Fig. Attention-based Seq2Seq Model vs Neural Transducer, 본 논문에서는 CTC와의 비교 보다는 CTC이후 Seq2Seq 태스크에서 훨씬 성공적으로 평가받았던 Attention기반 Seq2Seq 모델과 제안하는 모델을 비교했다. Seq2Seq 모델(좌)을 보면 입력을 다 받고난 후에야 추론할 수 있음을  볼 수 있다. Neural Transducer(우) 모델을 잘 보면, 입력 음성 전체가 아닌 특정 단위(Blcok)에 대해서만 이전의 Transducer가 전달한 Hidden State과 함께 입력으로 사용해 토큰들을 예측하고 또 이를 다음 블럭 예측할 때의 Transducer에 전달한다. *
 
 모델은 온라인 음성인식을 위해서 계속해서 `블럭 단위의 음성 벡터들(Blocks of speech inputs)`을 끊임없이 받고, 한번 블럭 단위의 음성을 받으면, `단어 덩어리(chunks of outputs)`를 뱉습니다. 
 출력된 토큰은 때로는 아무것도 없을 수도 있으며(받은 음성이 뭣도 아니라고 판단해서), 토큰을 생성하는 것은 Seq2Seq 모델과 같은 방식으로 수행되지만, 블럭 단위에 대해서만 Attention을 진행하기 때문에 앞서 말한 것 처럼 전체 음성에 대해 Attention을 진행할 필요가 없다는 점에서 차별점이 있습니다.
 
 
+또 다른 차이점이 있는데, 논문에서는 네트워크를 학습할 때 과연 '각 블럭마다의 정답을 어떻게 할당할 것인가?' 즉, 다시 말해서 '어떻게 입력과 출력의 alignment를 설정할 것인가?'에 대해서 이야기 합니다.
+가장 일반적인 두 가지 Approach가 있는데 하나는 Alignment를 잠재 변수(latent variable)로 두고 계산 하는 것이며, 다른 하나는 다른 알고리즘을 통해서 Alignment를 만들고 이를 maximize하는 방향으로 학습하는 것입니다. `CTC`의 경우는 전자의 방법을 사용하는데, `Neural Transducer`는 음성 입력뿐만 아니라 출력, 즉 alignment에 대해서도 조건(condition)이 걸리기 때문에 사용할 수 없으며, 이를 해결해 학습하기 위해서 다이나믹 프로그래밍(Dynamic Programming)을 통해서 `Approximate Best Alignments`를 계산해 낼 수 있는지를 보여줍니다.
 
 
 
