@@ -48,7 +48,7 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 
 ### <mark style='background-color: #dcffe4'> CTC-based model (2006, 2014, ...) </mark>
 
-음성인식같은 Seq2Seq 모델의 가장 큰 문제점은 Alignment가 맞지 않는다는 것입니다.
+음성인식같은 어떤 길이가 서로 다른 입력 Sequence를 출력 Sequence로 Mapping 시키는 task의 가장 큰 문제점은 Alignment가 맞지 않는다는 것입니다.
 예를 들어 "안녕하세요, 저는 대학원생 입니다." 라고 녹음된 전화 음성이 있다고 해 보도록 하겠습니다.
 이 음성의 길이가 2초일 경우 sampling rate가 8000이라면 16000차원인데, 이를 입력으로 사용해 디코딩 해야 할 정답 길이는 19차원(글자) 라는 미스 매치를 Miss-Alignment 문제라고 합니다.
 이를 해결 하기 위해 2006년에 제안된 방법이 바로 Connectionist Temporal Classification (CTC) loss 입니다.
