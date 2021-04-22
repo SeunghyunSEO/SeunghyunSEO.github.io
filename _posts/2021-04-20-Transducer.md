@@ -152,7 +152,7 @@ CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 �
 
 Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
 
-![ctc_vs_rnnt](/assets/images/rnnt/rnnt_model.png)
+![ctc_vs_rnnt](/assets/images/rnnt/rnnt_model.png){: width="70"}
 *Fig. CTC-based Model vs Transducer-based Model*
 
 (이미지 출처 : [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621))
