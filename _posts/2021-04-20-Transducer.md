@@ -56,7 +56,7 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 CTC는 복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와 그림으로 나타낼 수 있습니다.
 
 ![ctc](/assets/images/rnnt/shinji2.png)
-*Fig. CTC 기반 Model*
+*Fig. CTC 기반 ASR Model, 입력 음성에 대해서 인코딩을 하고 (보통 디코더에 비해서 인코더가 엄청 큽니다.) 디코더는 각 Encodede Representation Vectors를 토큰들로 하나씩 매핑해줍니다. 그리고는 <blank> 토큰과 중복되는 토큰들을 규칙에 따라 제거하여 최종 출력 문장을 만듭니다.*
 
 모델이 하는 일은 입력을 인코더에 통과시켜 인코딩한 벡터들을 가지고 그 벡터들을 일일히 토큰(문자(char),단어(word) 등)으로 바꾸고 특정한 규칙에 의해 최종적으로 정답 Sentence를 만들어내는 것입니다.
 
@@ -83,7 +83,7 @@ Seq2Seq ASR 모델은 자연어 처리(NLP) 분야에서 제안된 기계 번역
 Autoregressive 디코딩을 하는 모델입니다. 여기에 '과연 각 토큰들을 디코딩 할 때 인코더가 출력한 정보(벡터)들 중 어떠한 정보를 참조해서 디코딩 해야 할 까?' 라는 의문을 해결하여 Seq2Seq 성능을 대폭 증가시킨 Attention Mechanism을 추가한 것이 Attention 기반 Seq2Seq 모델이 되는 것입니다. 즉 Attention Mechanism이 각 토큰과 입력 음성을 어떻게 Align해야 하는지를 CTC와는 다른 방식으로 해결했다고 볼 수 있습니다.
 
 ![attention](/assets/images/rnnt/shinji3.png)
-*Fig. Attention 기반 Seq2Seq Model*
+*Fig. 일반적인 Attention 기반 Seq2Seq Model, 인코딩 된 벡터들(Memory, Representation Vectors)의 정보를 이용하여(Attention Mechanism) 토큰을 하나씩 생성해 냅니다. CTC와 다르게 토큰을 하나씩 만들 때 이전까지 만들어진 토큰 정보를 음성 정보와 같이 이용합니다(Conditional).*
 
 Attention 기반 기법도 몇가지 특징이 있는데요,
 
