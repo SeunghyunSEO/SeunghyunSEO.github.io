@@ -143,7 +143,7 @@ $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
 
-하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 `acoustic-only model` 입니다.
+하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 `Acoustic-Only model` 입니다.
 
 
 
@@ -156,9 +156,10 @@ $$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \v
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
 
-즉, Transducer는 박스로 나눠서 디코딩을 하는데, 예를 들어 $$i$$번째 박스를 디코딩 하는데 있어, 입력 음성 (acoustic inputs sequence)와 $$i-1$$ 번째 박스에서의 토큰들을 조건부로 주어 $$i$$번째 박스를 디코딩 하는, 즉 하나의 분리된 뉴럴 네트워크 모듈(RNN이라고 하겠습니다 우선)을 추가한 거죠. 즉 이는 `language model(prediction network)`을 따로 하나 더 두고 acoustic 과 language model을 jointly`(joint network)` 학습하는 것이라고 볼 수 있습니다.
+Transducer는 `Language Model(Prediction Network)`을 따로 하나 더 두고 이것이 뱉은 벡터들과, 음성 인코더에서 뱉은 음성 벡터들을 종합하여 `(Joint Network)`가 최종 디코딩을 하게 된다는 것입니다. 즉 Acoustic 과 Language model을 jointly 학습하는 것입니다.
 
-이말은, prediction network는 텍스트만을 이용해서 따로 RNN-LM 학습하듯 학습할 수 있다는 것이죠.
+
+두 개의 분리된 네트워크(Prediction Network, Joint network)가 존재 하기 때문에, Prediction Network는 텍스트만을 이용해서 따로 RNN-LM 학습하듯 학습 해 사용할 수 있다고 .
 
 
 Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
