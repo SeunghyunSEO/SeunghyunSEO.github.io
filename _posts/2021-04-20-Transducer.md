@@ -169,7 +169,7 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 
 
-### <mark style='background-color: #dcffe4'> Neural Transducer (2016) </mark>
+### <mark style='background-color: #dcffe4'> Neural Transducer (2015) </mark>
 
 Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 제안한 음성인식 논문 중 `Neural Transducer`(An Online Sequence-to-Sequence Model Using Partial Conditioning) 라는 논문이 있었습니다. 논문의 요지는 Seq2Seq 논문을 개선시켰다는 것인데요. 짧게 요약하자면, 'Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이고 나서야 문장 추론을 시작하기 때문에, 연산을 하는데 시간이 오래걸리며 전체 음성을 다 봐야 한다는 단점이 있기 때문에 실시간 음성인식에 적합하지 않기 때문에 RNN-Transducer와 비슷 하지만, 두 개의 독립된 연산을 하는 네트워크를 가정하지 않고 하나의 모듈을 사용한다는 점과 어텐션 매커니즘을 Block 단위로(partially observed speech input, partially generated text output sequence ) 적용한다는 점에서 차이가 있는 새로운 Transdcuer 모델을 제안한다' 입니다. 
 
@@ -194,7 +194,7 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 
 
 
-### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition </mark>
+### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition (2019) </mark>
 
 [Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
 
@@ -204,7 +204,7 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 
 
 
-### <mark style='background-color: #dcffe4'> Transformer Transducer </mark>
+### <mark style='background-color: #dcffe4'> Transformer Transducer (2020) </mark>
 
 ![transformer_transducer](/assets/images/rnnt/transformer_transducer.png)
 *Fig. Transformer Transducer.*
