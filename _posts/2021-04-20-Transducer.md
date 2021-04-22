@@ -109,7 +109,10 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 
 
 
-## <mark style='background-color: #fff5b1'> Transducer-based model (2012, ...) </mark>
+## <mark style='background-color: #fff5b1'> Transducer-based model </mark>
+
+
+### <mark style='background-color: #dcffe4'> RNN-Transducer(RNN-T) (2012, ...) </mark>
 
 자 이제, 일반적인 딥러닝 기반 E2E ASR모델 기법들 중 두 가지를 간단하게 알아봤고 Transducer에 대해서 알아보도록 하겠습니다.
 
