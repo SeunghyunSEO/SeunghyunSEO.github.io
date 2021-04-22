@@ -164,14 +164,14 @@ Transducer는 `Language Model(Prediction Network)`을 따로 하나 더 두고 �
 
 Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
 
-![ctc_vs_rnnt](/assets/images/rnnt/rnnt_model.png){: width="70%"}
-*Fig. CTC-based Model vs Transducer-based Model*
+![ctc_rnnt_attention](/assets/images/rnnt/ctc_rnnt_attention.png)
+*Fig. CTC-based Model, Seq2Seq with Attention Model and Transducer-based Model*
 
 (이미지 출처 : [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621))
 
 조금 와닿지 않는 것 같아서 아래의 그림을 사용하도록 하겠습니다.
 
-![ctc_vs_rnnt2](/assets/images/rnnt/ctc_rnnt.png){: width="70%"}
+![ctc_rnnt_attention2](/assets/images/rnnt/asr.png)
 *Fig. Transducer Model은 CTC와 다르게 Joint Network와 Prediction Network가 존재한다.*
 
 (이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
