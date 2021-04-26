@@ -99,7 +99,7 @@ Autoregressive 디코딩을 하는 모델입니다.
 *Fig. 일반적인 Attention 기반 Seq2Seq Model, 인코딩 된 벡터들(Memory, Representation Vectors)의 정보를 이용하여(Attention Mechanism) 토큰을 하나씩 생성해 냅니다. CTC와 다르게 토큰을 하나씩 만들 때 이전까지 만들어진 토큰 정보를 음성 정보와 같이 이용합니다(Conditional).*
 
 ![attention_operation](/assets/images/rnnt/attention.png){: width="60%"}
-*Fig. Attention Mechanism을 사용한 Seq2Seq의 이해 : 입력된 음성들 중 어느 부분에 집중해서 이번 토큰을 만들어내야 하는가? 를 반영한 context vector와 이전까지 만들어진 토큰 정보를 이용해 최종적으로 토큰을 만들어냄*
+*Fig. Attention Mechanism을 사용한 Seq2Seq의 이해 : `입력된 음성들 중 어느 부분에 집중해서 이번 토큰을 만들어내야 하는가?` 를 반영한 context vector와 이전까지 만들어진 토큰 정보를 이용해 최종적으로 토큰을 만들어냄*
 
 Attention 기반 기법도 몇가지 특징이 있는데요,
 
