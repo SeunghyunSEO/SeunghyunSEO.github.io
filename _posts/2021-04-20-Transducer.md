@@ -304,10 +304,25 @@ asd
 
 ### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition (2019) </mark>
 
-[Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)
+[Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)은 아래의 그림과 같이 Transducer Decoder가 예측한 일정 부분의 시퀀스와 음향 정보를 조건부(conditional)로 하여 Seq2Seq 모델인 LAS의 Decoder 를 이용하여 한번 더 디코딩 해주는 모델입니다. 
 
 ![twopass](/assets/images/rnnt/twopass.png){: width="30%"}
 *Fig. Two-Pass Decoding을 하는 Transducer 모델.*
+
+본 논문에서는 특이하게 학습시에 두 가지 로스를 사용합니다.
+
+첫 번째 로스는 $$x,y^{\ast}$$ 가 각각 입력 음성과 정답 시퀀스를 의미할 때, RNNT와 Seq2Seq(LAS) Loss를 결합(interpolation)한 loss이고
+
+$$
+L_{combined}(x,y^{\ast}} = \lambda L_{RNNT}(x,y^{\ast}) + (1-\lambda) L_{LAS}(x,y^{\ast})
+$$
+
+다른 로스는 ~입니다.
+
+$$
+L_{MWER}(x,y^{\ast}) + \lambda_{MLE} log P(y^{ast} \vert x)
+$$
+
 
 
 
