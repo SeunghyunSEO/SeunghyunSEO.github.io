@@ -273,7 +273,7 @@ RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각
 
 입니다. 
 
-![lugosch_rnnt3](/assets/images/rnnt/lugosch_rnnt3.png)
+![lugosch_rnnt3](/assets/images/rnnt/lugosch_rnnt3.png){: width="70%"}
 *Fig. RNN-T Network 는 3가지의 Sub Networks를 가지고 있다.*
 
 
@@ -319,7 +319,7 @@ $$
 (수식이 조금 보기 그런 것 같은데, 결론은 매 time-step 에서 각 토큰들에 대해 합이 1인 softmax distribution 으로 나타내겠다는 것이며, $$t,u$$ 두 가지가 조건부로 걸려 있기 때문에, $$t=1$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 , $$t=2$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지, ... , $$t=T$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 모든 확률을 구해낼 수 있습니다.)
 
 
-![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png){: width="70%"}
+![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png)
 *Fig. Joiner (Joint Network)는 두 개의 벡터를 더해서 토큰을 생성한다. (여러 자료를 섞어서만들었기 때문에 term이 다를 수 있습니다.) 여기서는 $$\phi$$가 공백 토큰입니다.*
 
 
