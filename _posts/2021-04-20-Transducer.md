@@ -204,7 +204,7 @@ $$
 우리의 목적은 이를 최대화 하는 `Maximum Likelihood Estimation` 문제를 푸는 것 입니다. (혹은 우리는 위의 수식에 negative log likelihood (nll)을 취한 후 이를 최소화 하는 이른 바 `CTC Loss`를 최소화 하는 방향으로 파라메터를 업데이트 합니다.) 
 
 
-($$L$$의 확률을 계산 해 내는 것은 미분 가능 (differentiable) 하기 때문에 정답 레이블 $$L$$에 대한 확률을 구해내기만 하면 오차 역전파 (Error Backpropagation) 알고리즘으로 쉽게 학습이 가능합니다. 하지만 $$p(\pi \vert X)$$ 하나를 계산하는 것들은 쉽기 쉬워도, 이를 가능한 모든 path에 대해서 계산 해 더하는 것은 어렵기에 `Forward-Backward Algorithm` 과 `Dynamic Programming (DP)`를 사용해 CTC Loss를 계산해 냅니다.) 
+($$L$$의 확률을 계산 해 내는 것은 미분 가능 (differentiable) 하기 때문에 정답 레이블 $$L$$에 대한 확률을 구해내기만 하면 오차 역전파 (Error Backpropagation) 알고리즘으로 쉽게 학습이 가능합니다. 하지만 $$p(\pi \vert X)$$ 하나를 계산하는 것들은 쉽기 쉬워도, 이를 가능한 모든 path에 대해서 계산 해 더하는 것은 어렵기에 `Forward-Backward Algorithm` 과 `Dynamic Programming (DP)`를 사용해 효율적으로 CTC Loss를 계산해내야 합니다. ( 생략)) 
 
 
 하지만 위의 수식에서 보시면 아시겠지만 (또한 글의 서두에서 이야기 했듯) CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는, 즉 각 출력 토큰들에 대해서는 독립인 (independent) 이른 바 `Acoustic-Only model` 라고 할 수 있습니다.
