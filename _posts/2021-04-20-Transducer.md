@@ -381,13 +381,34 @@ CTC와 RNNT 모두 $$blank$$ 토큰을 이용해 alignment를 디자인 하지�
 ![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
 *Fig. Lattice of Paths in CTC vs RNNT*
 
-+RNN-T는 $$x_t$$ 가 만들어내는 아웃풋 subsequence가 최소 1개 이상일 것이기 때문에, CTC가 가지는 문제 중 하나인, '출력 시퀀스가 입력 시퀀스 보다 짧아야 잘 작용한다'를 해결할 수 있다고 합니다.
+RNN-T는 $$x_t$$ 가 만들어내는 아웃풋 subsequence가 최소 1개 이상일 것이기 때문에, CTC가 가지는 문제 중 하나인, '출력 시퀀스가 입력 시퀀스 보다 짧아야 잘 작용한다'를 해결할 수 있다고 합니다.
+
+
+마지막으로 우리는 RNN-T를 학습 시키는 방법에 대해서 알아볼 것입니다. CTC와 마찬가지로 RNNT 또한 $$(x,y)$$ 사이의 실제 alignment를 알 수 없기 때문에, 우리는 정답 레이블에 대해서 가능한 모든 alignment path에 대한 확률 값들을 더한 뒤 이를 음의 log 값을 취한 (negative log likelihood) $$ - log p(y \vert x) $$ 를 최소화 하려고 합니다 (RNN-T Loss를 최소화).
 
 
 
 
 
-그리고 RNN-T를 사용함으로써 우리가 얻을 수 있는 이득은 다음과 같습니다.
+
+
+
+
+![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt10.png)
+*Fig. $$h_{t,u}$$의 의미*
+
+
+
+
+
+
+
+
+
+
+
+
+RNN-T를 사용함으로써 우리가 얻을 수 있는 이득은 다음과 같습니다.
 
 - Since one input data can generate a label sequence of arbitrary length, theoretically, the RNN-transducer can map input sequence to an output sequence of arbitrary length, whether it is longer or shorter than the input.
 - Since the prediction network is an RNN structure, each state update is based on previous state and output labels. Therefore, the RNN-transducer can model the interdependence within output sequence, that is, it can learn the language model knowledge.
