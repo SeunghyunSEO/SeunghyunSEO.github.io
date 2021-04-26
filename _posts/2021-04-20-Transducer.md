@@ -142,6 +142,13 @@ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, 
 $$
 
 
+$$ 
+where \space \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T 
+$$ 
+
+
+
+
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
 
@@ -156,6 +163,9 @@ $$
 P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) 
 $$
 
+$$ 
+where \space \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset { \{ Z \cup <b>\} }^{T+U} 
+$$
   
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
