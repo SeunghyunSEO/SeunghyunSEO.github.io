@@ -335,12 +335,8 @@ $$
 *Fig. RNNT의 loop*
 
 
-수식과 그림에서 볼 수 있듯, $$p(k \in V' \vert t,u)$$(그림에서는 $$h_{t,u}$$)는 $$f_t$$와 $$g_u$$의 함수이며, $$f_t$$는 $$x_t$$로 부터 나오며, $$g_u$$는 sequence $$\{l_1, \cdots, l_{u-1}\}$$로 부터 나오기 때문에, Joint Network 는 다음과 같은 역할을 한다고 볼 수 있습니다 :
-
-
-주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$를 사용해서, u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$를 계산합니다.
-그리고 이것은 decoding process를 위한 확률 분포 정보 (probability distribution information)을 제공합니다.
-
+수식과 그림에서 볼 수 있듯, $$p(k \in V' \vert t,u)$$(그림에서는 $$h_{t,u}$$)는 $$f_t$$와 $$g_u$$의 함수이며, $$f_t$$는 $$x_t$$로 부터 나오며, $$g_u$$는 sequence $$\{l_1, \cdots, l_{u-1}\}$$로 부터 나오기 때문에, 
+RNN-T는 이전에 주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$ 정보를 u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$ 계산하는데 사용합니다. 
 
 
 
@@ -348,6 +344,19 @@ $$
 
 ![rnnt_lattice](/assets/images/rnnt/rnnt.png){: width="70%"}
 *Fig. Lattice of Paths in RNNT*
+
+
+![lugosch_rnnt6](/assets/images/rnnt/lugosch_rnnt6.png)
+*Fig. RNNT의 Alignment 예시 1*
+
+![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png)
+*Fig. RNNT의 loop*
+
+![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png)
+*Fig. RNNT의 loop*
+
+![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt9.png)
+*Fig. RNNT의 loop*
 
 
 ![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
