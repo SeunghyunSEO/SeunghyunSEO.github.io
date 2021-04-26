@@ -386,33 +386,43 @@ RNN-T는 $$x_t$$ 가 만들어내는 아웃풋 subsequence가 최소 1개 이상
 
 
 
+There are usually too many possible alignments to compute the loss function by just adding them all up directly. To compute the sum efficiently, we compute the “forward variable” α t , u , for 1 ≤ t ≤ T and 0 ≤ u ≤ U :
 
 
+CTC와 마찬가지로 너무 많은 가능한 alignment들이 존재하기 때문에 우리는 $$1 \leq t \leq T$$와 $$0 \leq u \leq U$$에 대해서 `forward variable`, $$\alpha_{t,u}$$를 계산합니다 : 
+
+$$
+\alpha_{t,u} = \alpha_{t-1,u} \cdot h_{t-1,u}[\phi] + \alpha_{t,u-1} \cdot h_{t,u-1}[y_{u-1}]
+$$
+
+이를 그림으로 나타내면 아래와 같고
 
 
+![lugosch_rnnt10](/assets/images/rnnt/lugosch_rnnt10.png)
+*Fig. $$\alpha_{t,u}$$는 $$\alpha_{t-1,u}$$와 $$\alpha_{t,u-1}$$를 사용해 계산할 수 있다.*
 
 
-![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt10.png)
-*Fig. $$h_{t,u}$$의 의미*
+이렇게 구한 graph 내의 모든 노드들에 대한 $$\alpha_{t,u}$$를 사용해 우리는 마지막 노드에서의 `forward variable`을 사용해 $$p(y \vert x) $$를 구할 수 있습니다 :
 
+$$
+p(y \vert x) = \alpha_{T,U} h_{T,U}[\phi]
+$$
 
+마지막으로 $$log$$를 취해 나타낼 수 있으며,
 
+$$
+log p(y \vert x) = log (\alpha_{T,U}) + log (h_{T,U}[\phi])
+$$
 
+우리는 gradient를 계산하기 위해서, $$\alpha_{t,u}$$를 계산해 낸 것의 역 과정인 `backward variable`인 $$\beta_{t,u}$$ 를 모든 노드에 대해서 구해 내고 이를 사용해서 효율적으로 log-likelihood, $$p(y \vert x)$$를 이용한 학습을 진행할 수 있습니다.
 
-
-
-
-
-
-
+***
 
 RNN-T를 사용함으로써 우리가 얻을 수 있는 이득은 다음과 같습니다.
 
 - Since one input data can generate a label sequence of arbitrary length, theoretically, the RNN-transducer can map input sequence to an output sequence of arbitrary length, whether it is longer or shorter than the input.
 - Since the prediction network is an RNN structure, each state update is based on previous state and output labels. Therefore, the RNN-transducer can model the interdependence within output sequence, that is, it can learn the language model knowledge.
 - Since Joint Network uses both language model and acoustic model output to calculate probability distribution, RNN-Transducer models the interdependence between input sequence and output sequence, achieving joint training of language model and the acoustic model.
-
-
 
 
 
@@ -423,6 +433,9 @@ RNN-T 알고리즘은 CTC를 개선시켰음에도, 몇 가지 단점이 존재�
 
 ![Wang_3](/assets/images/rnnt/Wang_3.png)
 *Fig. 각 ASR 알고리즘들의 특징(장단점)*
+
+위의 그래프에서 보여지듯, RNNT가 CTC를 개선하기 위해서 서브 네트워크를 추가시켰고, 디코딩 방식에 시간이 조금 더 걸리는 대신 음성 인식 정확도를 상당히 향상시킨 모델이지만, 그럼에도 음성 전체를 보고 Autoregressive Decoding을 하는 Seq2Seq에 비해 정확도가 좋지 않습니다. 다만 정확도도 어느정도 가져가는 대신, 스트리밍에 적합한 latency (delay)를 가지고 있기 때문에 실시간 음성 인식기를 만드는데 지속적으로 연구가 되고 있습니다.
+
 
 
 
