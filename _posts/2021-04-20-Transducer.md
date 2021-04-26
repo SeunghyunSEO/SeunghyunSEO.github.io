@@ -220,7 +220,7 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 
 
 #### Model and Notation
-  - $$x_{1,/cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉 매트릭스)
+  - $$x_{1,\cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉 매트릭스)
   - $$x_i$$ : $$i$$ 번째 featrue vector
   - $$W$$ : block size
   - $$\frac{L}{W}$$ : the number of blocks
