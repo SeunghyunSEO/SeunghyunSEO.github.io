@@ -426,5 +426,6 @@ $$
   - [A Comparison of Sequence-to-Sequence Models for Speech Recognition](http://www.isca-speech.org/archive/Interspeech_2017/pdfs/0233.PDF)
   - [End-to-End Attention-based Large Vocabulary Speech Recognition](https://arxiv.org/pdf/1508.04395)
   - [Listen, Attend and Spell](https://arxiv.org/pdf/1508.01211)
+  - [An Overview of End-to-End Automatic Speech Recognition](https://www.mdpi.com/2073-8994/11/8/1018/pdf)
 - Others
   - [End-to-End Speech Recognition by Following my Research History from Shinji Watanabe](https://deeplearning.cs.cmu.edu/F20/document/slides/shinji_watanabe_e2e_asr_bhiksha.pdf)
