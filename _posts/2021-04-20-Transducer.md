@@ -236,18 +236,36 @@ $$ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\codts,e_{b-1}}) = \
 $$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
 $$ c_m = f_{context} (s_m, h_{((b−1)W +1),\codts,bW} ; \theta ) $$
 $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
-$$  $$
+$$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
 </center>
 
 #### Computing $$f_{context}$$
+
+<center>
+$$e_j^m = f_{attention} (s_m,h_(b-1)W+j;\theta)$$
+$$\alpha_m = softmax([e_1^m;e_2^m;\codts;e_W^m])$$
+$$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
+</center>
 
 #### Addressing End of Blocks
 
 #### Training
 
+<center>
+$$ p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\codts,(S+B)} \vert x_{1,\codts,L} )$$
+</center>
+
+
+<center>
+$$ \frac{\partial}{\partial{\theta}} log p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L} ) \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}, \tilde{y_{1,\cdots,S}} ) \frac{\partial}{\partial{\theta}} log p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}) $$
+</center>
+
+
 #### Inference
 
-
+<center>
+$$ \tilde{y_{1,\cdots,S}} = argmax_{y_{1,\cdots,S'}, e_{1,\cdots,N}} \sum_{b=1}^{N} log p( y_{e_{(b-1) +1 }, \cdots, e_b } \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{(b-1)}}) $$
+</center>
 
 
 
