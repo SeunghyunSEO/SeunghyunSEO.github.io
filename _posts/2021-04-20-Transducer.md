@@ -339,20 +339,30 @@ $$
 RNN-T는 이전에 주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$ 정보를 u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$ 계산하는데 사용합니다. 
 
 
+
+$$(x,y)$$ 페어가 존재할 때, Transducer는 $$x,y$$ 사이의 가능한 모든 단조로운 (monotonic) alignments 정의하게 되는데, 이 때 입력 음성의 길이가 $$T=4$$ 이고, 출력의 길이가 "CAT", 즉 $$U=3$$이라고 할 때, 우리는 이를 아래처럼 그래프로 나타낼 수 있습니다.
+
+![lugosch_rnnt6](/assets/images/rnnt/lugosch_rnnt6.png)
+*Fig. Alignment Graph for "CAT"*
+
+알고리즘이 처음 제안된 논문인 [Sequence Transduction with Recurrent Neural Networks](https://arxiv.org/pdf/1211.3711) 에서도 마찬가지로 아래와 같은 그림으로 alignment를 나타냈지만,
+
 ![rnnt_lattice](/assets/images/rnnt/rnnt.png){: width="70%"}
 *Fig. Lattice of Paths in RNNT*
 
-
-$$(x,y)$$  the Transducer defines a set of possible monotonic alignments between x x and y y . For example, consider an input sequence of length T = 4 T = 4 and an output sequence (“CAT”) of length U = 3 U = 3 . We can illustrate the set of alignments using a graph6 like this:
-
-![lugosch_rnnt6](/assets/images/rnnt/lugosch_rnnt6.png)
-*Fig. RNNT의 Alignment Graph*
+이에 대해서 차분히 생각해보기 위해서 아래와 같이 예를 들어 보겠습니다.
 
 ![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png)
-*Fig. RNNT의 Alignment 예시 1 : $$z=\phi,C,A,\phi,T,\phi,\phi$$*
+*Fig. "CAT"의 Alignment 예시 1 : $$z=\phi,C,A,\phi,T,\phi,\phi$$*
 
 ![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png)
-*Fig. RNNT의 Alignment 예시 2 : $$z=C,\phi,A,\phi,T,\phi,\phi$$*
+*Fig. "CAT"의 Alignment 예시 2 : $$z=C,\phi,A,\phi,T,\phi,\phi$$*
+
+
+우리는 하나의 alignment path에 대한 확률을 그래프의 각각의 edge에 대한 곱을 통해서 구할 수 있는데,
+
+$$z=\phi,C,A,\phi,T,\phi,\phi$$
+
 
 ![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt9.png)
 *Fig. RNNT의 loop*
