@@ -267,9 +267,9 @@ Transducer는 `Prediction Network (Language Model)`을 따로 하나 더 두고 
 
 RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각 
 
-- Transcription Network : $$F(x)$$
-- Prediction Network : $$P(y,g)$$
-- Joint Network : $$J(f,g)$$
+- `Transcription Network (Acoustic Model)` : $$F(x)$$
+- `Prediction Network (Language Model)` : $$P(y,g)$$
+- `Joint Network` : $$J(f,g)$$
 
 입니다. 
 
