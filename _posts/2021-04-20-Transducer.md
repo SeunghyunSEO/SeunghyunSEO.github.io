@@ -188,7 +188,7 @@ where $$ Z'^{T} $$ denote the collection of all sequences of length T that defin
 
 즉 $$ p(\pi \vert X) $$ 는 음성을 입력받아 정답 시퀀스의 모든 가능한 path중 하나에 대한 확률 분포(probability distribution conditioned only speech input, $$X$$)이며, 
 
-(여기서 output sequenc의 길이 speech input sequence 의 길이 $$T$$와 같습니다. (다만 최종 인퍼런스 할 때 중복 레이블을 제거하는 등의 정해진 규칙을 따라 최종 출력 문장을 만들어 냅니다.)
+(여기서 output sequence의 길이 speech input sequence 의 길이 $$T$$와 같습니다. (다만 최종 인퍼런스 할 때 중복 레이블을 제거하는 등의 정해진 규칙을 따라 최종 출력 문장을 만들어 냅니다.)
 
 ![Wang_1](/assets/images/rnnt/Wang_1.png)
 
