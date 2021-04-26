@@ -88,7 +88,7 @@ CTC를 사용한 모델은 요약하자면 아래와 같습니다.
 
 ### <mark style='background-color: #dcffe4'> Attention-based model (2014, ...) </mark>
 
-Seq2Seq ASR 모델은 자연어 처리(NLP) 분야에서 제안된 기계 번역 (Neural Machine Translation, NMT)와 유사한 모델로 입력 시퀀스를 인코더를 통해 Hidden Reperesentation Vector들로 나타낸 뒤
+Seq2Seq ASR 모델은 자연어 처리(NLP) 분야에서 제안된 기계 번역 (Neural Machine Translation, NMT) 모델과 유사한 모델로 입력 시퀀스를 인코더를 통해 Hidden Reperesentation Vector들로 나타낸 뒤
 이들을 바탕으로 디코더에서 토큰을 하나씩 디코딩 하고, 그렇게 만들어진 토큰들을 다음 디코딩 할 때 정보로 주어 또 디코딩을 하고 ... `디코딩이 끝났다`는 의미의 <EOS> 토큰을 뱉을 때 까지 계속 디코딩을 하는 
 Autoregressive 디코딩을 하는 모델입니다. 
  
