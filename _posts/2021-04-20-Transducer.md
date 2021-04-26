@@ -101,7 +101,7 @@ Autoregressive 디코딩을 하는 모델입니다.
 ![attention_operation](/assets/images/rnnt/attention.png){: width="60%"}
 *Fig. Attention Mechanism을 사용한 Seq2Seq의 이해 : `입력된 음성들 중 어느 부분에 집중해서 이번 토큰을 만들어내야 하는가?` 를 반영한 context vector와 이전까지 만들어진 토큰 정보를 이용해 최종적으로 토큰을 만들어냄*
 
-Attention 기반 기법도 몇가지 특징이 있는데요,
+Attention 기반 기법도 몇가지 특징이 있는데요, 이는 아래와 같습니다.
 
 - Encoder가 전통적인 ASR모델의 Acoustic Model 중 DNN 파트를 담당하며, Decoder가 Language Model을, Attention이 HMM 파트를 담당한다고 볼 수 있다. (해석적?)
 - 토큰을 출력할 때 CTC와 다르게 `조건부(Conditional)`로 이전 토큰들을 입력으로 주기 때문에 더욱 정확하고 말이 되는 문장을 출력할 수 있다. (추가적인 LM 없이)
@@ -109,10 +109,11 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 - **<span style="color:#e01f1f">전체 음성에 대해서 어텐션을 수행하기 때문에 Straming(온라인, 실시간) 모델에 적합하지 않다. </span>**
 - 어텐션을 계산하는 데 시간이 많이 소요되며, 조건부로 토큰을 받아 생성하는 `Autoregressive Decoding` 또한 시간을 많이 잡아먹는다.  
 
-입니다.
+
+물론 어텐션을 사용한 모델이 음성인식이 요구하는 단조로운(Monotonic)한 alignment를 만들어내지 못하는 것은 아닙니다. 다만 초기 학습에 어렵다는 것이죠.
 
 ![alignment](/assets/images/rnnt/alignment.png){: width="80%"}
-*Fig. 물론 어텐션을 사용한 모델이 음성인식이 요구하는 단조로운(Monotonic)한 alignment를 만들어내지 못하는 것은 아닙니다. 다만 초기 학습에 어렵다는 것이죠.*
+*Fig. 잘 학습된 Seq2Seq with Attention Model의 Alignment*
 
 
 
