@@ -281,6 +281,9 @@ RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각
 `Transcription Network` ($$F(x)$$) : 이 네트워크는 인코더 네트워크고, 음성 입력 벡터(speech input vector)들을 특징 벡터 (feature vector)로 변환해주는 `Acoustic Model` 입니다. 길이 $$T$$의 $$X=\{x_1,\cdots,x_T\}$$를 받아 $$F=\{f_1,\cdots,f_T\}$$로 매핑해줍니다. t번째 벡터 $$f_t$$ 는 Vocabulary의 크기에 $$+1$$을 한 $$\vert V \vert +1$$ 차원의 벡터 입니다. 
 
 
+
+
+
 `Prediction Network` ($$P(y,g)$$) : Language Model 역할을 하는, Decoder의 한 part 입니다. RNN 네트워크이며, 이 네트워크는 output label sequence 내의 interdependencies 를 모델링 합니다 (반대로 Transdcription Network는 acoustic input간 dependencies를 모델링 합니다). $$P(l)$$은 maintains a hidden state $$h_u$$ and an output value $$g_u$$ for any label location $$u \in [1, N]$$. 네트워크 내의 계산되는 과정(loop calculation process)은 아래와 같습니다.
 
 $$
@@ -291,29 +294,40 @@ $$
 g_u = W_{h0} h_u + b_0
 $$
 
-위의 수식이 의미하는 바는, output sequence $$l_{[1:u-1]}$$ 를 $$l_u$$ 
+위의 수식이 의미하는 바는, output sequence $$l_{[1:u-1]}$$의 마지막 $$u-1$$ 번째 벡터를 $$l_u$$ 를 만들어 내는 데 사용한다는 겁니다.
+즉 이전까지의 정보를 내포하고 있는 히든 벡터를 사용하는 거죠. ($$h_u$$를 계산하는 수식에 $$l_{u-1}$$ 뿐만 아니라 $$h_{u-1}$$도 사용한다는 것을 알 수 있으며, 이는 여태까지의 문맥 정보를 내포하고 있는 벡터임)
 
 간단하게 표햔해서 이를 $$g_u = P(l_{[1:u-1]})$$ 로 나타낼 수 있으며, $$g_u$$는 마찬가지로 $$\vert V \vert +1$$ 차원의 벡터입니다. 
 
 
-`Joint Network` ($$J(f,g)$$) : 
 
+
+
+
+`Joint Network` ($$J(f,g)$$) : input과 ouput 사이의 alignment job을 하는 네트워크 입니다. 예를 들어서 $$t \in [1,T], u \in [1,N]$$ 에 대해서, Joint Network는 Transcription Network의 출력인 $$f_t$$ 와 Prediction Network의 출력인 $$g_u$$를 사용해서 output location, $$u$$에서의 최종 출력을 계산 해 냅니다.
 
 $$
 e(k,t,u) = exp(f_t^k + g_u^k)
 $$
 
-
 $$
 p(k \in V' \vert t,u) = \frac{ e(k,t,u) }{ \sum_{k' \in V'} e(k',t,u) }
 $$
 
+($$f_t^k, g_u^k$$ 를 
+
+
+수식에서 볼 수 있듯, $$p(k \in V' \vert t,u)$$는 $$f_t$$와 $$g_u$$의 함수이며, $$f_t$$는 $$x_t$$로 부터 나오며, $$g_u$$는 sequence $$\{l_1, \cdots, l_{u-1}\}$$로 부터 나오기 때문에, Joint Network 는 다음과 같은 역할을 한다고 볼 수 있습니다 :
+
+
+주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$를 사용해서, u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$를 계산합니다.
+그리고 이것은 decoding process를 위한 확률 분포 정보 (probability distribution information)을 제공합니다.
 
 
 
 
 
-RNN-Transducer가 디코딩 하는 방법은 가난하게 말해서 다음과 같습니다.
+RNN-Transducer가 디코딩 하는 방법은 간단하게 말해서 다음과 같습니다.
 
 - $$t$$번째 input $$x_t$$ 를 읽을 때 마다, 모델은 empty label, "-"를 뱉기 전 까지 계속해서 label을 생성해 냅니다.
 - 만약 empty label, "-"을 만나게 되면, RNN-T는 다음 input $$x_{t+1}$$ 를 사용해서 위의 프로세스를 모든 input sequence 벡터들을 읽을 때 까지 반복합니다.
