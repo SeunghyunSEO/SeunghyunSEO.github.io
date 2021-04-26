@@ -161,9 +161,9 @@ $$
 P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) 
 $$
 
-
+<center>
 where $$ \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T  $$
-
+</center>
 
 $$A_{CTC}(x,y)$$는 수식에서 말한 것과 같이 $$x,y$$간 가능한 alignment를 모두 포함하는 set이며,
 
@@ -172,8 +172,9 @@ p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi Z'^{T}
 $$
 
 
+<center>
 where $$ Z'^{T} $$ denote the collection of all sequences of length T that defined on the Vocabulary $$Z'$$.
-
+</center>
 
 $$ p(\pi \vert X) $$ 는 음성을 입력받아 정답 시퀀스의 모든 가능한 path중 하나에 대한 확률 분포(probability distribution conditioned only speech input, $$X$$) 값을 구해낼 수 있습니다. 
 
@@ -204,9 +205,9 @@ $$
 P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) 
 $$
 
-
+<center>
 where $$ \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset { \{ Z \cup <b>\} }^{T+U} $$
-
+</center>
   
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
