@@ -231,6 +231,8 @@ asd
 $$ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  $$
 </center>
 
+asd
+
 #### Next Step Prediction
 
 asd
@@ -258,7 +260,11 @@ asd
 
 #### Addressing End of Blocks
 
+asd
+
 #### Training
+
+asd
 
 <center>
 $$ p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L} )$$
@@ -270,14 +276,17 @@ asd
 $$ \frac{\partial}{\partial{\theta}} log p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L} ) \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}, \tilde{y_{1,\cdots,S}} ) \frac{\partial}{\partial{\theta}} log p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}) $$
 </center>
 
+asd
 
 #### Inference
+
+asd
 
 <center>
 $$ \tilde{y_{1,\cdots,S}} = argmax_{y_{1,\cdots,S'}, e_{1,\cdots,N}} \sum_{b=1}^{N} log p( y_{e_{(b-1) +1 }, \cdots, e_b } \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{(b-1)}}) $$
 </center>
 
-
+asd
 
 ### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition (2019) </mark>
 
