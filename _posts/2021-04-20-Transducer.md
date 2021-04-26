@@ -214,9 +214,30 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
   - $$ \tilde{y_{i,\cdots,(i+k)}}$$ : Transducer가 매 블럭마다 예측하는 시퀀스, 즉 $$k$$개의 token을 생성함. 하지만 $$0 \leq k \leq M$$ 인데, 이 말은 즉 k가 0일 수도(이번 block에서는 아무 토큰도 안 나올 수도) 있다는 것을 의미함.
   - $$ <e> $$ symbol : 매 Transducer가 예측하는 시퀀스를 감싸는 symbol임 (vocab에 있음). 이 심볼은 트랜스듀서가 디코딩을 시작할지, 아니면 다음 블럭으로 넘어갈지를 나타냄. 만약 트랜스듀서가 생성한 토큰이 0개라면 이 심볼은 CTC의 $$<blank>$$와 유사한 역할을 함(is akin to).
   - $$ Y $$ : (음성 $$\rightarrow$$ 정답) 간 가능한 모든 경우의 수의 집합 (set of all alignments of output sequence)을 의미하며, 위에서 언급한 $$ \tilde{y_{1,\cdots,S}} $$ 는 이러한 다양한 alignment로 부터 산출될(transduced) 수 있음.
-  - $$ y_{1,\codts,(S+B)} \in Y $$ 는 가능한 alignment중 어떤 것도 가능한데, 여기서 $$y$$가 $$\tilde{y}$$보다 $$B$$ 만큼 큰(긴) 이유는 앞서 말한 것 처럼 블럭마다의 레이블에 $$<e>$$ 토큰이 꼈기 때문임
+  - $$ y_{1,\cdots,(S+B)} \in Y $$ 는 가능한 alignment중 어떤 것도 가능한데, 여기서 $$y$$가 $$\tilde{y}$$보다 $$B$$ 만큼 큰(긴) 이유는 앞서 말한 것 처럼 블럭마다의 레이블에 $$<e>$$ 토큰이 꼈기 때문임
+
+
+늘 그렇듯 머신러닝에서 우리가 원하는 것은 Likelihood를 최대화 하는 방향으로 네트워크 파라메터를 학습 하는 것이기 때문에, $$p(\tilde{y_{1,\codts,S}} \vert X_{1,\cdots,L})$$ 와  $$p(y_{1,\codts,(S+B)} \vert X_{1,\cdots,L})$$ 를 계산하는 방법에 대해서 알아보도록 할 것입니다.
+
+먼저 output seqeuence $$y_{1,\cdots,e_b}$$ 
+
+<cetner>
+$$ p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \prod_{b'=2}^{b} p( y_{(e_{b'-1}+1),\cdots,e'} \vert x_{1,\codts,b'W}, y_{1,\codts,e_{b'-1}} ) $$
+</center>
+
+
+<cetner>
+$$ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\codts,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  $$
+</center>
 
 #### Next Step Prediction
+
+<cetner>
+$$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
+$$ c_m = f_{context} (s_m, h_{((b−1)W +1),\codts,bW} ; \theta ) $$
+$$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
+$$  $$
+</center>
 
 #### Computing $$f_{context}$$
 
