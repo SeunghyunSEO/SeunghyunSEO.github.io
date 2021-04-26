@@ -225,11 +225,26 @@ $$
 
 where $$ \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset { \{ Z \cup <b>\} }^{T+U} $$
 
-  
+
+수식적으로 보기에도 CTC와 Transducer는 크게 다르지 않은데요, 그도 그럴것이 이들의 목적은 같습니다.
+
+- 1. 두 알고리즘 모두 음성인식의 'forced segmentation alignment problem' 문제를 풀기 위한 loss function이다.
+- 2. 두 알고리즘 모두 $$blank$$ 라는 특수한 토큰을 도입했다.
+- 3. 두 알고리즘 모두 정답 label sequecne 대해 가능한 모든 alignment에 대한 (all possible path) 확률을 구하고, 이들을 합쳐서 정답 label sequence에 대한 최종 확률을 구해낸다.
+
+하지만 이들이 가지고 있는 결정적인 차이점이 있습니다.
+
+- 1. path를 만들어 내는 방식(process)가 다르다.
+- 2. 그렇게 만들어진 path에 대한 확률을 계산하는 방식(path probability calculation methods)이 완전히 다르다.
+
+입니다.
+
+
+
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
 
-Transducer는 `Language Model(Prediction Network)`을 따로 하나 더 두고 이것이 뱉은 벡터들과, 음성 인코더에서 뱉은 음성 벡터들을 종합하여 `(Joint Network)`가 최종 디코딩을 하게 된다는 것입니다. 즉 Acoustic 과 Language model을 jointly 학습하는 것입니다.
+Transducer는 `Prediction Network (Language Model)`을 따로 하나 더 두고 이것이 뱉은 벡터들과, 음성 인코더에서 뱉은 음성 벡터들을 종합하여 `Joint Network`가 최종 디코딩을 하게 된다는 것입니다. 즉 Acoustic 과 Language model을 jointly 학습하는 것입니다.
 
 
 두 개의 분리된 네트워크(Prediction Network, Joint network)가 존재 하기 때문에, Prediction Network는 텍스트만을 이용해서 따로 RNN-LM 학습하듯 학습 해 사용할 수 있다고 .
