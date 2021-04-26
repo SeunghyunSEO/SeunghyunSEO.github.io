@@ -69,7 +69,7 @@ CTC는 복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와
 
 최종 출력 : "c a t"
 ```
-*CTC Decoding Example, 위에는 하나의 디코딩 예시만 들었지만 사실 위와 같은 규칙으로 최종 출력을 만들 수 있는 경우의 수는 많으며, CTC는 이러한 가능한 모든 alignment를 잠재 변수(latent varialbe)로 생각하여 학습하는 모델입니다.
+*CTC Decoding Example, 위에는 하나의 디코딩 예시만 들었지만 사실 위와 같은 규칙으로 최종 출력을 만들 수 있는 경우의 수는 많으며, CTC는 이러한 가능한 모든 alignment를 잠재 변수(latent varialbe)로 생각하여 학습하는 모델입니다.*
 
 ![Wang_2](/assets/images/rnnt/Wang_2.png)
 *Fig. Path examples in CTC.*
