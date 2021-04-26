@@ -113,7 +113,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요, 이는 아래와 �
 물론 어텐션을 사용한 모델이 음성인식이 요구하는 단조로운(Monotonic)한 alignment를 만들어내지 못하는 것은 아닙니다. 다만 초기 학습에 어렵다는 것이죠.
 
 ![alignment](/assets/images/rnnt/alignment.png){: width="80%"}
-*Fig. 잘 학습된 Seq2Seq with Attention Model의 Alignment*
+*Fig. 잘 학습된 Seq2Seq with Attention Model의 단조로운 (Monotonic) Alignment*
 
 
 
