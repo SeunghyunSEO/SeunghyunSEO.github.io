@@ -109,7 +109,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요, 이는 아래와 �
 - 어텐션을 계산하는 데 시간이 많이 소요되며, 조건부로 토큰을 받아 생성하는 `Autoregressive Decoding` 또한 시간을 많이 잡아먹는다.  
 
 
-물론 어텐션을 사용한 모델이 음성인식이 요구하는 단조로운(Monotonic)한 alignment를 만들어내지 못하는 것은 아닙니다. 다만 초기 학습에 어렵다는 것이죠.
+물론 어텐션을 사용한 모델이 음성인식이 요구하는 단조로운 (Monotonic) alignment를 만들어내지 못하는 것은 아닙니다. 다만 초기 학습에 어렵다는 것이죠.
 
 ![alignment](/assets/images/rnnt/alignment.png){: width="80%"}
 *Fig. 잘 학습된 Seq2Seq with Attention Model의 단조로운 (Monotonic) Alignment*
@@ -118,7 +118,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요, 이는 아래와 �
 
 위에서 언급한 네번 문제를 해결하기 위해서 CTC와 Attention을 결합한 기법이 제안되기도 했습니다. 
 모델은 아래와 같고, 이렇게 함으로써 CTC Loss가 학습 초기 Monotonic Alignment를 배우게끔 하여 더욱 전체 모델을 잘 학습할 수 있게 합니다. 
-(추가적으로 두가지 모델을 결합한 형태이기 때문에 앙상블(Ensemble)한 효과를 간접적으로 누림으로써 성능을 올려줍니다.)
+(추가적으로 두가지 모델을 결합한 형태이기 때문에 앙상블 (Ensemble)한 효과를 간접적으로 누림으로써 성능을 올려줍니다.)
 
 ![hybrid](/assets/images/rnnt/shinji4.png){: width="85%"}
 
