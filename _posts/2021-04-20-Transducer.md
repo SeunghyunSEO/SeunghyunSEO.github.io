@@ -138,7 +138,7 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 길이보다 작아야 한다는 점과, 출력 토큰들의 조건부 독립 가정을 해결해 성능을 끌어올렸는데요,
 수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
 
-우선 notation들에 대해서 확실히 하겠습니다.
+우선 `notation`에 대해서 확실히 하겠습니다.
 
 - $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.  
 - 특수한 토큰 (special token) 으로 $$y_0 = <sos>$$ 가 있으며, $$blank$$를 나타내는 토큰은 $$<b>$$라고  합니다. 
@@ -156,17 +156,26 @@ $$
 P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) 
 $$
 
-$$ 
-where \space \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T 
-$$ 
 
-($$A_{CTC}(x,y)$$는 수식에서 말한 것과 같이 $$x,y$$간 가능한 alignment를 모두 포함하는 set입니다. 
-이러한 텀이 익숙하지 않으신 분들(저 포함...)을 위해서 원본 CTC 수식을 적어보자면 아래와 같습니다.)
+where $$ \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T  $$
 
 
+$$A_{CTC}(x,y)$$는 수식에서 말한 것과 같이 $$x,y$$간 가능한 alignment를 모두 포함하는 set이며,
+
 $$ 
-p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi V'^{T}
+p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi Z'^{T}
 $$
+
+
+where $$ Z'^{T} $$ denote the collection of all sequences of length T that defined on the Vocabulary $$Z'$$.
+
+
+$$ p(\pi \vert X) $$ 는 음성을 입력받아 정답 시퀀스의 모든 가능한 path중 하나에 대한 확률 분포(probability distribution conditioned only speech input, $$X$$) 값을 구해낼 수 있습니다. 
+
+![Wang_1](/assets/images/rnnt/Wang_1.png)
+
+![Wang_2](/assets/images/rnnt/Wang_2.png)
+*Fig. Path examples in CTC. 즉 위에서 말한 $$\pi$$는 예를 들자면, 'c-aat' 인 것.*
 
 $$ 
 p(L|X) = \sum_{\pi \in B^{-1}(L)} p(\pi \vert X)
@@ -186,9 +195,9 @@ $$
 P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) 
 $$
 
-$$ 
-where \space \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset { \{ Z \cup <b>\} }^{T+U} 
-$$
+
+where $$ \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset { \{ Z \cup <b>\} }^{T+U} $$
+
   
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
