@@ -331,14 +331,11 @@ $$
 
 
 
-![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png)
-*Fig. Joiner (Joint Network)는 두 개의 벡터를 더해서 토큰을 생성한다. (여러 자료를 섞어서만들었기 때문에 term이 다를 수 있습니다.) 여기서는 $$\phi$$가 공백 토큰입니다.*
+![lugosch_rnnt5](/assets/images/rnnt/lugosch_rnnt5.png)
+*Fig. RNNT의 loop*
 
 
- 
-
-
-수식에서 볼 수 있듯, $$p(k \in V' \vert t,u)$$는 $$f_t$$와 $$g_u$$의 함수이며, $$f_t$$는 $$x_t$$로 부터 나오며, $$g_u$$는 sequence $$\{l_1, \cdots, l_{u-1}\}$$로 부터 나오기 때문에, Joint Network 는 다음과 같은 역할을 한다고 볼 수 있습니다 :
+수식과 그림에서 볼 수 있듯, $$p(k \in V' \vert t,u)$$(그림에서는 $$h_{t,u}$$)는 $$f_t$$와 $$g_u$$의 함수이며, $$f_t$$는 $$x_t$$로 부터 나오며, $$g_u$$는 sequence $$\{l_1, \cdots, l_{u-1}\}$$로 부터 나오기 때문에, Joint Network 는 다음과 같은 역할을 한다고 볼 수 있습니다 :
 
 
 주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$를 사용해서, u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$를 계산합니다.
