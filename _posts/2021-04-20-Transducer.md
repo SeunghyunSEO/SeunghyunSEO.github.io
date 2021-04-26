@@ -264,14 +264,70 @@ Transducer는 `Prediction Network (Language Model)`을 따로 하나 더 두고 
 (이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
 
 
-위의 그림을 이용해서 조금 더 Transducer에 대해서 알아보자면,
+위의 그림을 이용해서 조금 더 Transducer에 대해서 얘기해 보도록 하겠습니다. 일단 Transducer가 RNN-Transducer (RNN-T) 라고 하겠습니다.
+
+RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각 
+
+- Transcription Network : $$F(x)$$
+- Prediction Network : $$P(y,g)$$
+- Joint Network : $$J(f,g)$$
+
+입니다. 각 네트워크를 조금 더 디테일하게 살펴보자면,
+
+
+Transcription Network ($$F(x)$$) : 이 네트워크는 인코더 네트워크고, 음성 입력 벡터(speech input vector)들을 특징 벡터 (feature vector)로 변환해주는 `Acoustic Model` 입니다. 길이 $$T$$의 $$X=\{x_1,\cdots,x_T\}$$를 받아 $$F=\{f_1,\cdots,f_T\}$$로 매핑해줍니다. t번째 벡터 $$f_t$$ 는 Vocabulary의 크기에 $$+1$$을 한 $$\vert V \vert +1$$ 차원의 벡터 입니다. 
+
+
+Prediction Network ($$P(y,g)$$) : Language Model 역할을 하는, Decoder의 한 part 입니다. RNN 네트워크이며, 이 네트워크는 output label sequence 내의 interdependencies 를 모델링 합니다 (반대로 Transdcription Network는 acoustic input간 dependencies를 모델링 합니다). $$P(l)$$은 maintains a hidden state $$h_u$$ and an output value $$g_u$$ for any label location $$u \in [1, N]$$. 네트워크 내의 계산되는 과정(loop calculation process)은 아래와 같습니다.
+
+$$
+h_u = H(W_{ih} l_{u-1} + W_{hh} h_{u-1} + b_h)
+$$
+
+$$
+g_u = W_{h0} h_u + b_0
+$$
+
+위의 수식이 의미하는 바는, output sequence $$l_{[1:u-1]}$$ 를 $$l_u$$ 
+
+간단하게 표햔해서 이를 $$g_u = P(l_{[1:u-1]})$$ 로 나타낼 수 있으며, $$g_u$$는 마찬가지로 $$\vert V \vert +1$$ 차원의 벡터입니다. 
+
+
+Joint Network ($$J(f,g)$$) : 
+
+
+$$
+e(k,t,u) = exp(f_t^k + g_u^k)
+$$
+
+
+$$
+p(k \in V' \vert t,u) = \frac{ e(k,t,u) }{ \sum_{k' \in V'} e(k',t,u) }
+$$
+
+
+RNN-Transducer가 디코딩 하는 방법은 가난하게 말해서 다음과 같습니다.
+
+- $$t$$번째 input $$x_t$$ 를 읽을 때 마다, 모델은 empty label, "-"를 뱉기 전 까지 계속해서 label을 생성해 냅니다.
+- 만약 empty label, "-"을 만나게 되면, RNN-T는 다음 input $$x_{t+1}$$ 를 사용해서 위의 프로세스를 모든 input sequence 벡터들을 읽을 때 까지 반복합니다.
+- $$x_t$$ 가 만들어내는 아웃풋 subsequence가 최소 1개 이상일 것이기 때문에, CTC가 가지는 문제 중 하나인, '출력 시퀀스가 입력 시퀀스 보다 짧아야 잘 작용한다'를 해결할 수 있습니다.
+
+
+그리고 RNN-T를 사용함으로써 우리가 얻을 수 있는 이득은 다음과 같습니다.
+
+- Since one input data can generate a label sequence of arbitrary length, theoretically, the RNN-transducer can map input sequence to an output sequence of arbitrary length, whether it is longer or shorter than the input.
+- Since the prediction network is an RNN structure, each state update is based on previous state and output labels. Therefore, the RNN-transducer can model the interdependence within output sequence, that is, it can learn the language model knowledge.
+- Since Joint Network uses both language model and acoustic model output to calculate probability distribution, RNN-Transducer models the interdependence between input sequence and output sequence, achieving joint training of language model and the acoustic model.
 
 
 
+RNN-T 알고리즘은 CTC를 개선시켰음에도, 몇 가지 단점이 존재하는데, 우선 첫 번째는 학습 시키기 쉽지 않다는 것 입니다. 그러므로 보통 각 Sub Networks를 사전 학습 (pre-training) 시켜야 합니다. 그 다음으로는, RNN-T의 계산 과정에 포함되어있는 unreasonable paths 인데요, 예를 들어 첫 번째 입력 $$x_t$$가 정답 레이블 sequence에 대한 토큰을 모두 출력해버리면 나머지 입력들이 모두 공백 토큰을 뽑아내게 되고 이는 알고리즘 상에는 문제가 없지만, 분명히 말이 안되는 거죠. 
 
 
+이러한 문제점들은 분명 다른 논문들에서 개선이 되긴 했으나, 여전히 RNN-T가 모든 음성인식 task에서 만능인 것은 아닙니다. 
 
-
+![Wang_3](/assets/images/rnnt/Wang_3.png)
+*Fig. 각 ASR 알고리즘들의 특징(장단점)*
 
 
 
