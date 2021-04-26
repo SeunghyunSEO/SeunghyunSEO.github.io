@@ -418,7 +418,7 @@ $$
 
 ***
 
-RNN-T를 사용함으로써 우리가 얻을 수 있는 이득은 다음과 같습니다.
+마지막으로 RNN-T를 사용함으로써 우리가 얻을 수 있는 이득에 대해 정리하자면 (이미 앞에서 다 얘기한 것 같지만...) 다음과 같습니다.
 
 - Since one input data can generate a label sequence of arbitrary length, theoretically, the RNN-transducer can map input sequence to an output sequence of arbitrary length, whether it is longer or shorter than the input.
 - Since the prediction network is an RNN structure, each state update is based on previous state and output labels. Therefore, the RNN-transducer can model the interdependence within output sequence, that is, it can learn the language model knowledge.
