@@ -398,7 +398,7 @@ $$
 이를 그림으로 나타내면 아래와 같고
 
 
-![lugosch_rnnt10](/assets/images/rnnt/lugosch_rnnt10.png)
+![lugosch_rnnt10](/assets/images/rnnt/lugosch_rnnt10.png){: width="60%"}
 *Fig. $$\alpha_{t,u}$$는 $$\alpha_{t-1,u}$$와 $$\alpha_{t,u-1}$$를 사용해 계산할 수 있다.*
 
 
