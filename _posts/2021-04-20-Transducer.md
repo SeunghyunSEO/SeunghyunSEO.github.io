@@ -60,11 +60,21 @@ CTC는 복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와
 
 모델이 하는 일은 입력을 인코더에 통과시켜 인코딩한 벡터들을 가지고 그 벡터들을 일일히 토큰(문자(char),단어(word) 등)으로 바꾸고 특정한 규칙에 의해 최종적으로 정답 Sentence를 만들어내는 것입니다.
 
+![Wang_1](/assets/images/rnnt/Wang_1.png)
+*Fig. CTC 알고리즘에서 정답 label sequence가 'cat'일 경우 가능한 모든 path들은 위와 같다. (총 7개 이며 정답 길이가 길수록 기하급수적으로 늘어난다.)*
+
 ```
-디코딩 된 모든 토큰들 : "A A _ _ P P P _ P P _ L _ E"
-최종 출력 : "A P P L E"
+디코딩 된 모든 토큰들의 예시 1 : "c - a a - t"
+디코딩 된 모든 토큰들의 예시 2 : "c - a - t t -"
+
+최종 출력 : "c a t"
 ```
-*CTC Decoding Example, 위에는 하나의 디코딩 예시만 들었지만 사실 위와 같은 규칙으로 최종 출력을 만들 수 있는 경우의 수는 많으며, CTC는 이러한 가능한 모든 alignment를 잠재 변수(latent varialbe)로 생각하여 학습하는 모델입니다.*
+*CTC Decoding Example, 위에는 하나의 디코딩 예시만 들었지만 사실 위와 같은 규칙으로 최종 출력을 만들 수 있는 경우의 수는 많으며, CTC는 이러한 가능한 모든 alignment를 잠재 변수(latent varialbe)로 생각하여 학습하는 모델입니다.
+
+![Wang_2](/assets/images/rnnt/Wang_2.png)
+*Fig. Path examples in CTC.*
+
+
 
 CTC를 사용한 모델은 요약하자면 아래와 같습니다.
 
@@ -130,9 +140,14 @@ Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 �
 
 우선 notation들에 대해서 확실히 하겠습니다.
 
-- $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.   
-- $$ U $$는 정답이 될 문장의 길이를 나타내고, $$y=(y_1,\cdots,y_U)$$ 는 각 frame x를 디코딩 해 만들어낸 독립적인 출력 벡터들 이며, 여기서 $$y_u \in Z$$ 이며 Z는 문맥적으로 독립 (context-independent, CI)인 (phonemes, graphems or word-pieces)등을 나타냅니다.
-- 특수한 토큰 (special token) 으로 $$y_0 = <sos>$$ 가 있으며, $$blank$$를 나타내는 토큰은 $$<b>$$라고  합니다.  
+- $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.  
+- 특수한 토큰 (special token) 으로 $$y_0 = <sos>$$ 가 있으며, $$blank$$를 나타내는 토큰은 $$<b>$$라고  합니다. 
+- $$ Z $$ : Vocabulary, 이며 토큰 하나가 가질 수 있는 차원의 수 입니다. (A, B, C ... Z) 
+- $$ Z' $$ : \{ Z \cup <b> \} 
+- $$ U $$는 정답이 될 문장의 길이를 나타내고, $$y=(y_1,\cdots,y_U)$$ 는 각 frame x를 디코딩 해 만들어낸 독립적인 출력 토큰 벡터들 입니다., 여기서 $$y_u \in Z'$$ 입니다.
+- 즉 $$y_t$$ 는 $$t$$번째 time-step의 출력 벡터이고, 이 벡터는 $$ y_t = (y_t^1, \cdots, y_t^{\vert Z+1 \vert}) $$ 으로 각 토큰이 될 확률들을 포함하고 있습니다. (예를 들어, $$y_t^1$$ 는 'a'일 확률, $$y_t^2$$ 는 'b'일 확률 ... $$y_t^{\vert V+1 \vert}$$ 는 '<b>'일 확률
+ 
+
 
 notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
 
@@ -141,13 +156,21 @@ $$
 P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) 
 $$
 
-
 $$ 
 where \space \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T 
 $$ 
 
+($$A_{CTC}(x,y)$$는 수식에서 말한 것과 같이 $$x,y$$간 가능한 alignment를 모두 포함하는 set입니다. 
+이러한 텀이 익숙하지 않으신 분들(저 포함...)을 위해서 원본 CTC 수식을 적어보자면 아래와 같습니다.)
 
 
+$$ 
+p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi V'^{T}
+$$
+
+$$ 
+p(L|X) = \sum_{\pi \in B^{-1}(L)} p(\pi \vert X)
+$$
 
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
