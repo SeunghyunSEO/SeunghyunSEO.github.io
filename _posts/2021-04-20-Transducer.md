@@ -453,7 +453,7 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 입니다. 
 
 ![all_seq2seq](/assets/images/rnnt/all_seq2seq.png)
-*Fig. 왼쪽부터 차례대로 CTC-based Model, Seq2Seq with Attention Model, RNN-T Model, RNN-T with Attention Model *
+*Fig. 왼쪽부터 차례대로 CTC-based Model, Seq2Seq with Attention Model, RNN-T Model, RNN-T with Attention Model*
 
 
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
