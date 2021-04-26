@@ -339,21 +339,20 @@ $$
 RNN-T는 이전에 주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$ 정보를 u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$ 계산하는데 사용합니다. 
 
 
-
-
-
 ![rnnt_lattice](/assets/images/rnnt/rnnt.png){: width="70%"}
 *Fig. Lattice of Paths in RNNT*
 
 
+$$(x,y)$$  the Transducer defines a set of possible monotonic alignments between x x and y y . For example, consider an input sequence of length T = 4 T = 4 and an output sequence (“CAT”) of length U = 3 U = 3 . We can illustrate the set of alignments using a graph6 like this:
+
 ![lugosch_rnnt6](/assets/images/rnnt/lugosch_rnnt6.png)
-*Fig. RNNT의 Alignment 예시 1*
+*Fig. RNNT의 Alignment Graph*
 
 ![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png)
-*Fig. RNNT의 loop*
+*Fig. RNNT의 Alignment 예시 1 : $$z=\phi,C,A,\phi,T,\phi,\phi$$*
 
 ![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png)
-*Fig. RNNT의 loop*
+*Fig. RNNT의 Alignment 예시 2 : $$z=C,\phi,A,\phi,T,\phi,\phi$$*
 
 ![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt9.png)
 *Fig. RNNT의 loop*
