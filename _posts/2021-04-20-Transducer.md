@@ -240,17 +240,15 @@ where $$ \hat{y} = ( \hat{y}, \cdots, \hat{y_{T+U}} ) \in A_{RNNT}(x,y) \subset 
 입니다.
 
 
-
-
-CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
+이 두가지 중 아래에 2번은 수식에서도 알 수 있는데요, CTC에서는 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 어떠한 $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
 
 Transducer는 `Prediction Network (Language Model)`을 따로 하나 더 두고 이것이 뱉은 벡터들과, 음성 인코더에서 뱉은 음성 벡터들을 종합하여 `Joint Network`가 최종 디코딩을 하게 된다는 것입니다. 즉 Acoustic 과 Language model을 jointly 학습하는 것입니다.
 
 
-두 개의 분리된 네트워크(Prediction Network, Joint network)가 존재 하기 때문에, Prediction Network는 텍스트만을 이용해서 따로 RNN-LM 학습하듯 학습 해 사용할 수 있다고 .
+(두 개의 분리된 네트워크(Prediction Network, Joint network)가 존재 하고, 특히 Prediction Network는 텍스트만을 이용해서 따로 RNN-LM 학습하듯 학습 해 사용할 수 있다고 합니다.)
 
 
-Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
+다시 그림을 볼까요? Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하는데,
 
 ![ctc_rnnt_attention](/assets/images/rnnt/ctc_rnnt_attention.png)
 *Fig. CTC-based Model, Seq2Seq with Attention Model and Transducer-based Model*
@@ -259,10 +257,19 @@ Transducer와 CTC를 일반적으로 아래처럼 비교하여 나타내곤 하�
 
 조금 와닿지 않는 것 같아서 아래의 그림을 사용하도록 하겠습니다.
 
+
 ![ctc_rnnt_attention2](/assets/images/rnnt/asr.png)
 *Fig. Transducer Model은 CTC와 다르게 Joint Network와 Prediction Network가 존재한다.*
 
 (이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
+
+
+위의 그림을 이용해서 조금 더 Transducer에 대해서 알아보자면,
+
+
+
+
+
 
 
 
