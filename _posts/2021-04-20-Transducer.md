@@ -134,11 +134,9 @@ Attention 기반 기법도 몇가지 특징이 있는데요, 이는 아래와 �
 
 ### <mark style='background-color: #dcffe4'> RNN-Transducer(RNN-T) (2012, ...) </mark>
 
-자 이제, 일반적인 딥러닝 기반 E2E ASR모델 기법들 중 두 가지를 간단하게 알아봤고 Transducer에 대해서 알아보도록 하겠습니다.
-
-
-Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 길이보다 작아야 한다는 점과, 출력 토큰들의 조건부 독립 가정을 해결해 성능을 끌어올렸는데요,
-수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
+Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 길이보다 작아야 한다는 점과, 출력 토큰들의 조건부 독립 가정을 해결해 성능을 끌어올린 알고리즘 입니다.
+또한 Attention을 사용한 Seq2Seq 모델의 단점도 어느정도 커버하는 모델입니다. (물론 만능은 아닙니다. 일장일단이 있죠)
+우선 수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
 
 
 ![ctc_rnnt_attention](/assets/images/rnnt/ctc_rnnt_attention.png)
