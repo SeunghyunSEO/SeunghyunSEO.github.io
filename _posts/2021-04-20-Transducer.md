@@ -272,13 +272,16 @@ RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각
 - Prediction Network : $$P(y,g)$$
 - Joint Network : $$J(f,g)$$
 
-입니다. 각 네트워크를 조금 더 디테일하게 살펴보자면,
+입니다. 
 
 
-Transcription Network ($$F(x)$$) : 이 네트워크는 인코더 네트워크고, 음성 입력 벡터(speech input vector)들을 특징 벡터 (feature vector)로 변환해주는 `Acoustic Model` 입니다. 길이 $$T$$의 $$X=\{x_1,\cdots,x_T\}$$를 받아 $$F=\{f_1,\cdots,f_T\}$$로 매핑해줍니다. t번째 벡터 $$f_t$$ 는 Vocabulary의 크기에 $$+1$$을 한 $$\vert V \vert +1$$ 차원의 벡터 입니다. 
+각 네트워크를 조금 더 디테일하게 살펴보자면,
 
 
-Prediction Network ($$P(y,g)$$) : Language Model 역할을 하는, Decoder의 한 part 입니다. RNN 네트워크이며, 이 네트워크는 output label sequence 내의 interdependencies 를 모델링 합니다 (반대로 Transdcription Network는 acoustic input간 dependencies를 모델링 합니다). $$P(l)$$은 maintains a hidden state $$h_u$$ and an output value $$g_u$$ for any label location $$u \in [1, N]$$. 네트워크 내의 계산되는 과정(loop calculation process)은 아래와 같습니다.
+`Transcription Network` ($$F(x)$$) : 이 네트워크는 인코더 네트워크고, 음성 입력 벡터(speech input vector)들을 특징 벡터 (feature vector)로 변환해주는 `Acoustic Model` 입니다. 길이 $$T$$의 $$X=\{x_1,\cdots,x_T\}$$를 받아 $$F=\{f_1,\cdots,f_T\}$$로 매핑해줍니다. t번째 벡터 $$f_t$$ 는 Vocabulary의 크기에 $$+1$$을 한 $$\vert V \vert +1$$ 차원의 벡터 입니다. 
+
+
+`Prediction Network` ($$P(y,g)$$) : Language Model 역할을 하는, Decoder의 한 part 입니다. RNN 네트워크이며, 이 네트워크는 output label sequence 내의 interdependencies 를 모델링 합니다 (반대로 Transdcription Network는 acoustic input간 dependencies를 모델링 합니다). $$P(l)$$은 maintains a hidden state $$h_u$$ and an output value $$g_u$$ for any label location $$u \in [1, N]$$. 네트워크 내의 계산되는 과정(loop calculation process)은 아래와 같습니다.
 
 $$
 h_u = H(W_{ih} l_{u-1} + W_{hh} h_{u-1} + b_h)
@@ -293,7 +296,7 @@ $$
 간단하게 표햔해서 이를 $$g_u = P(l_{[1:u-1]})$$ 로 나타낼 수 있으며, $$g_u$$는 마찬가지로 $$\vert V \vert +1$$ 차원의 벡터입니다. 
 
 
-Joint Network ($$J(f,g)$$) : 
+`Joint Network` ($$J(f,g)$$) : 
 
 
 $$
