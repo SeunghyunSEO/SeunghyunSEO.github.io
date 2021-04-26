@@ -361,11 +361,21 @@ $$(x,y)$$ 페어가 존재할 때, Transducer는 $$x,y$$ 사이의 가능한 모
 
 우리는 하나의 alignment path에 대한 확률을 그래프의 각각의 edge에 대한 곱을 통해서 구할 수 있는데,
 
-$$z=\phi,C,A,\phi,T,\phi,\phi$$
+$$
+z=\phi,C,A,\phi,T,\phi,\phi
+$$
 
+의 경우 $$p(z \vert x)$$ 확률은 아래와 같이 나타낼 수 있습니다. 
+
+$$
+p(z \vert x) = h_{1,0}[\phi] \cdot h_{2,0}[C] \cdot h_{2,1}[A] \cdot h_{2,2}[\phi] \cdot h_{3,2}[T] \cdot h_{3,3}[\phi] \cdot h_{4,3}[\phi] 
+$$
+
+여기서 $$h_{t,u}$$는 아래의 그림에서 볼 수 있듯, 그래프의 edge입니다.
 
 ![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt9.png)
-*Fig. RNNT의 loop*
+*Fig. $$h_{t,u}$$의 의미*
+
 
 
 ![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
