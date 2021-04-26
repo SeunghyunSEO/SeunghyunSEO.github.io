@@ -225,12 +225,15 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 $$ p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \prod_{b'=2}^{b} p( y_{(e_{b'-1}+1),\cdots,e'} \vert x_{1,\cdots,b'W}, y_{1,\cdots,e_{b'-1}} ) $$
 </center>
 
+asd
 
 <cetner>
 $$ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  $$
 </center>
 
 #### Next Step Prediction
+
+asd
 
 <cetner>
 $$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
@@ -239,13 +242,19 @@ $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
 </center>
 
+asd
+
 #### Computing $$f_{context}$$
+
+asd
 
 <center>
 $$e_j^m = f_{attention} (s_m,h_(b-1)W+j;\theta)$$
 $$\alpha_m = softmax([e_1^m;e_2^m;\cdots;e_W^m])$$
 $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
 </center>
+
+asd
 
 #### Addressing End of Blocks
 
@@ -255,6 +264,7 @@ $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
 $$ p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L} )$$
 </center>
 
+asd
 
 <center>
 $$ \frac{\partial}{\partial{\theta}} log p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L} ) \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}, \tilde{y_{1,\cdots,S}} ) \frac{\partial}{\partial{\theta}} log p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}) $$
