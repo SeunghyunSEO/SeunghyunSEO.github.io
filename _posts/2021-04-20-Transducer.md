@@ -241,19 +241,14 @@ p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots
 $$
 
 
-asd
-
 
 $$ 
 p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  
 $$
 
 
-asd
-
 #### Next Step Prediction
 
-asd
 
 
 $$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
@@ -262,11 +257,8 @@ $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
 
 
-asd
-
 #### Computing $$f_{context}$$
 
-asd
 
 
 $$e_j^m = f_{attention} (s_m,h_(b-1)W+j;\theta)$$
@@ -274,15 +266,12 @@ $$\alpha_m = softmax([e_1^m;e_2^m;\cdots;e_W^m])$$
 $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
 
 
-asd
-
 #### Addressing End of Blocks
 
 asd
 
 #### Training
 
-asd
 
 
 $$ 
@@ -290,7 +279,6 @@ p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\cdots,(S
 $$
 
 
-asd
 
 
 $$ 
@@ -298,19 +286,15 @@ $$
 $$
 
 
-asd
-
 #### Inference
 
-asd
+
 
 
 $$ 
 \tilde{y_{1,\cdots,S}} = argmax_{y_{1,\cdots,S'}, e_{1,\cdots,N}} \sum_{b=1}^{N} log p( y_{e_{(b-1) +1 }, \cdots, e_b } \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{(b-1)}}) 
 $$
 
-
-asd
 
 ### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition (2019) </mark>
 
