@@ -284,18 +284,18 @@ RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각
 
 
 
-`Prediction Network` ($$P(y,g)$$) : Language Model 역할을 하는, Decoder의 한 part 입니다. RNN 네트워크이며, 이 네트워크는 output label sequence 내의 interdependencies 를 모델링 합니다 (반대로 Transdcription Network는 acoustic input간 dependencies를 모델링 합니다). $$P(l)$$은 maintains a hidden state $$h_u$$ and an output value $$g_u$$ for any label location $$u \in [1, N]$$. 네트워크 내의 계산되는 과정(loop calculation process)은 아래와 같습니다.
+`Prediction Network` ($$P(y,g)$$) : Language Model 역할을 하는, Decoder의 한 part 입니다. RNN 네트워크이며, 이 네트워크는 output label sequence 내의 interdependencies 를 모델링 합니다 (반대로 Transdcription Network는 acoustic input간 dependencies를 모델링 합니다). $$P(l)$$은 maintains a hidden state $$hidden_u$$ and an output value $$g_u$$ for any label location $$u \in [1, N]$$. 네트워크 내의 계산되는 과정(loop calculation process)은 아래와 같습니다.
 
 $$
-h_u = H(W_{ih} l_{u-1} + W_{hh} h_{u-1} + b_h)
+hidden_u = H(W_{ih} l_{u-1} + W_{hh} hidden_{u-1} + b_h)
 $$
 
 $$
-g_u = W_{h0} h_u + b_0
+g_u = W_{h0} hidden_u + b_0
 $$
 
 위의 수식이 의미하는 바는, output sequence $$l_{[1:u-1]}$$의 마지막 $$u-1$$ 번째 벡터를 $$l_u$$ 를 만들어 내는 데 사용한다는 겁니다.
-즉 이전까지의 정보를 내포하고 있는 히든 벡터를 사용하는 거죠. ($$h_u$$를 계산하는 수식에 $$l_{u-1}$$ 뿐만 아니라 $$h_{u-1}$$도 사용한다는 것을 알 수 있으며, 이는 여태까지의 문맥 정보를 내포하고 있는 벡터임)
+즉 이전까지의 정보를 내포하고 있는 히든 벡터를 사용하는 거죠. ($$hidden_u$$를 계산하는 수식에 $$l_{u-1}$$ 뿐만 아니라 $$h_{u-1}$$도 사용한다는 것을 알 수 있으며, 이는 여태까지의 문맥 정보를 내포하고 있는 벡터임)
 
 간단하게 표햔해서 이를 $$g_u = P(l_{[1:u-1]})$$ 로 나타낼 수 있으며, $$g_u$$는 마찬가지로 $$\vert V \vert +1$$ 차원의 벡터입니다. 
 
