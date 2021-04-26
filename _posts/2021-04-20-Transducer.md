@@ -136,9 +136,11 @@ Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 �
 
 notation이 위와 같을 때 CTC 수식은 아래와 같습니다.
 
-<center>
-$$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) $$
-</center>
+
+$$ 
+P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_1, \cdots  ,x_t) 
+$$
+
 
 
 입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
@@ -149,9 +151,11 @@ $$ P(y|x) = \sum_{\hat{y} \in A_{CTC}(x,y)} \prod_{i=1}^{T} P(\hat{y_t} \vert x_
 
 반면 Transducer의 수식은 아래와 같습니다.
 
-<center>
-$$ P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) $$
-</center>
+
+$$ 
+P(y|x) = \sum_{ \hat{y} \in A_{RNNT}(x,y) } \prod_{i=1}^{T+U} P( \hat{y_i} \vert x_1, \cdots, x_{t_i}, y_0, \cdots, y_{u_{i-1}} ) 
+$$
+
   
 
 CTC의 수식에서 모든 생성되는 토큰들이 $$t=1$$부터 $$T$$까지 조건부 독립을 가정하고 만들어졌다면, Transducer는 수식에서도 알 수 있듯이, $$i$$번째 토큰을 만들어내는 데 음성과 이전까지 만들어진 토큰들을 조건부로 주어 디코딩하게 됩니다. 
@@ -221,15 +225,19 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 
 먼저 output seqeuence $$y_{1,\cdots,e_b}$$ 
 
-<cetner>
-$$ p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \prod_{b'=2}^{b} p( y_{(e_{b'-1}+1),\cdots,e'} \vert x_{1,\cdots,b'W}, y_{1,\cdots,e_{b'-1}} ) $$
-</center>
+
+$$ 
+p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \prod_{b'=2}^{b} p( y_{(e_{b'-1}+1),\cdots,e'} \vert x_{1,\cdots,b'W}, y_{1,\cdots,e_{b'-1}} ) 
+$$
+
 
 asd
 
-<cetner>
-$$ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  $$
-</center>
+
+$$ 
+p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  
+$$
+
 
 asd
 
@@ -237,12 +245,12 @@ asd
 
 asd
 
-<cetner>
+
 $$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
 $$ c_m = f_{context} (s_m, h_{((b−1)W +1),\cdots,bW} ; \theta ) $$
 $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
-</center>
+
 
 asd
 
@@ -250,11 +258,11 @@ asd
 
 asd
 
-<center>
+
 $$e_j^m = f_{attention} (s_m,h_(b-1)W+j;\theta)$$
 $$\alpha_m = softmax([e_1^m;e_2^m;\cdots;e_W^m])$$
 $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
-</center>
+
 
 asd
 
@@ -266,15 +274,19 @@ asd
 
 asd
 
-<center>
-$$ p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L} )$$
-</center>
+
+$$ 
+p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L} )
+$$
+
 
 asd
 
-<center>
-$$ \frac{\partial}{\partial{\theta}} log p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L} ) \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}, \tilde{y_{1,\cdots,S}} ) \frac{\partial}{\partial{\theta}} log p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}) $$
-</center>
+
+$$ 
+\frac{\partial}{\partial{\theta}} log p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L} ) \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}, \tilde{y_{1,\cdots,S}} ) \frac{\partial}{\partial{\theta}} log p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}) 
+$$
+
 
 asd
 
@@ -282,9 +294,11 @@ asd
 
 asd
 
-<center>
-$$ \tilde{y_{1,\cdots,S}} = argmax_{y_{1,\cdots,S'}, e_{1,\cdots,N}} \sum_{b=1}^{N} log p( y_{e_{(b-1) +1 }, \cdots, e_b } \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{(b-1)}}) $$
-</center>
+
+$$ 
+\tilde{y_{1,\cdots,S}} = argmax_{y_{1,\cdots,S'}, e_{1,\cdots,N}} \sum_{b=1}^{N} log p( y_{e_{(b-1) +1 }, \cdots, e_b } \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{(b-1)}}) 
+$$
+
 
 asd
 
