@@ -142,6 +142,12 @@ Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 �
 수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
 
 
+![ctc_rnnt_attention](/assets/images/rnnt/ctc_rnnt_attention.png)
+*Fig. CTC-based Model, Seq2Seq with Attention Model and Transducer-based Model*
+
+(이미지 출처 : [Streaming End-to-end Speech Recognition For Mobile Devices](https://arxiv.org/pdf/1811.06621))
+
+
 
 
 #### 1. CTC
