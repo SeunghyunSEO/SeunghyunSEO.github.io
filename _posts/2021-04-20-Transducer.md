@@ -186,13 +186,13 @@ where $$ Z'^{T} $$ denote the collection of all sequences of length T that defin
 ![Wang_2](/assets/images/rnnt/Wang_2.png)
 *Fig. Path examples in CTC. 즉 위에서 말한 $$\pi$$는 예를 들자면, 'c-aat' 인 것.*
 
-진짜 정답 $$L$$의 가능한 모든 path $$\pi \in B^{-1} (L)$$ 들의 $$ p(\pi \vert X) $$  확률 분포값을 모두 더한 것이 최종적으로 우리가 원하는 `Likelihood`가 되며 
+진짜 정답 $$L$$의 가능한 모든 path $$\pi \in B^{-1} (L)$$ 들의 $$ p(\pi \vert X) $$  확률 분포값을 모두 더한 것이 최종적으로 우리가 원하는 Likelihood가 되며 
 
 $$ 
 p(L|X) = \sum_{\pi \in B^{-1}(L)} p(\pi \vert X)
 $$
 
-우리의 목적은 이를 최대화 하는 `Maximize Log Likelihood` 입니다. (혹은 우리는 위의 수식에 `negative log likelihood (nll)`을 취한 후 이를 최소화 하는 이른 바 `CTC Loss`를 최소화 하는 방향으로 파라메터를 업데이트 합니다.) 
+우리의 목적은 이를 최대화 하는 `Maximum Likelihood Estimation` 문제를 푸는 것 입니다. (혹은 우리는 위의 수식에 negative log likelihood (nll)을 취한 후 이를 최소화 하는 이른 바 `CTC Loss`를 최소화 하는 방향으로 파라메터를 업데이트 합니다.) 
 
 
 ($$L$$의 확률을 계산 해 내는 것은 differentiable하며, $$p(\pi \vert X)$$ 하나를 계산하는 것들은 쉽지만, 이것들을 모두 구해서 더하는 것은 어렵기에 `Forward-Backward Algorithm` 과 `Dynamic Programming (DP)`를 사용해 CTC Loss를 계산해 냅니다.) 
