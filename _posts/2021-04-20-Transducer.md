@@ -315,6 +315,13 @@ p(k \in V' \vert t,u) = \frac{ e(k,t,u) }{ \sum_{k' \in V'} e(k',t,u) }
 $$
 
 (수식이 조금 보기 그런 것 같은데, 결론은 매 time-step 에서 각 토큰들에 대해 합이 1인 softmax distribution 으로 나타내겠다는 것이며, $$t,u$$ 두 가지가 조건부로 걸려 있기 때문에, $$t=1$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 , $$t=2$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지, ... , $$t=T$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 모든 확률을 구해낼 수 있습니다.)
+
+![rnnt_lattice](/assets/images/rnnt/rnnt.png){: width="70%"}
+*Fig. Lattice of Paths in RNNT*
+
+
+![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
+*Fig. Lattice of Paths in CTC vs RNNT*
  
 
 
