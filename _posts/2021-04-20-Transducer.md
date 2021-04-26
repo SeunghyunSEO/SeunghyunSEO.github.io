@@ -45,7 +45,6 @@ Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 
 
 
 
-
 ### <mark style='background-color: #dcffe4'> CTC-based model (2006, 2014, ...) </mark>
 
 음성인식같은 어떤 길이가 서로 다른 입력 Sequence를 출력 Sequence로 Mapping 시키는 task의 가장 큰 문제점은 Alignment가 맞지 않는다는 것입니다.
@@ -274,6 +273,9 @@ RNN-T는 3개의 Sub Networks로 이루어져있는데, 이는 각각
 
 입니다. 
 
+![lugosch_rnnt3](/assets/images/rnnt/lugosch_rnnt3.png)
+*Fig. RNN-T Network 는 3가지의 Sub Networks를 가지고 있다.*
+
 
 각 네트워크를 조금 더 디테일하게 살펴보자면,
 
@@ -316,12 +318,23 @@ $$
 
 (수식이 조금 보기 그런 것 같은데, 결론은 매 time-step 에서 각 토큰들에 대해 합이 1인 softmax distribution 으로 나타내겠다는 것이며, $$t,u$$ 두 가지가 조건부로 걸려 있기 때문에, $$t=1$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 , $$t=2$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지, ... , $$t=T$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 모든 확률을 구해낼 수 있습니다.)
 
-![rnnt_lattice](/assets/images/rnnt/rnnt.png){: width="70%"}
-*Fig. Lattice of Paths in RNNT*
+
+![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png)
+*Fig. Joiner (Joint Network)는 두 개의 벡터를 더해서 토큰을 생성한다. (여러 자료를 섞어서만들었기 때문에 term이 다를 수 있습니다.) 여기서는 $$\phi$$가 공백 토큰입니다.*
 
 
-![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
-*Fig. Lattice of Paths in CTC vs RNNT*
+- $$t=1$$, $$u=0$$, $$y={}$$(empty list) 부터 시작한다.
+- $$f_t$$와 $$g_u$$를 계산한다.
+- $$f_t$$와 $$g_u$$를 사용해서 $$h_{t,u}$$ 를 계산한다 (그림에선 $$h_{t,u}$$ 수식에선 $$p(k \in V' \vert t,u)$$.
+- 만약 $$h_{t,u}$$ 가 공백이 아니고 의미 있는 label 이라면 $$u = u + 1$$로 한 스텝 전진하고, label을 y에 append하고, 다시 predictor에 이를 넣는다. 만약 그게 아니라 공백 토큰이라면, 아무것도 y에 append 하지 않으며 (output하지 않으며) time step, $$t$$만 $$t=t+1$$로 한 스텝 전진한다.
+- 만약 $$t=T+1$$이면 루프를 탈출하고, 아니면 2번으로 가서 반복한다.
+
+
+
+![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png)
+*Fig. Joiner (Joint Network)는 두 개의 벡터를 더해서 토큰을 생성한다. (여러 자료를 섞어서만들었기 때문에 term이 다를 수 있습니다.) 여기서는 $$\phi$$가 공백 토큰입니다.*
+
+
  
 
 
@@ -330,6 +343,19 @@ $$
 
 주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}$$과 t번째 입력 $$x_t$$를 사용해서, u 번째 output location에 대한 label distribution $$P( l_u \vert \{l_1,\cdots,l_{u-1}\},x_t )$$를 계산합니다.
 그리고 이것은 decoding process를 위한 확률 분포 정보 (probability distribution information)을 제공합니다.
+
+
+
+
+
+
+![rnnt_lattice](/assets/images/rnnt/rnnt.png){: width="70%"}
+*Fig. Lattice of Paths in RNNT*
+
+
+![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
+*Fig. Lattice of Paths in CTC vs RNNT*
+
 
 
 
