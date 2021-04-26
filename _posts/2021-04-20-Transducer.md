@@ -138,6 +138,11 @@ Attention 기반 기법도 몇가지 특징이 있는데요,
 Tranduscer는 위에서 언급한 CTC의 문제점 중 출력 길이가 입력 길이보다 작아야 한다는 점과, 출력 토큰들의 조건부 독립 가정을 해결해 성능을 끌어올렸는데요,
 수식으로 CTC와 Transducer를 먼저 생각해보도록 하겠습니다.
 
+
+
+
+#### 1. CTC
+
 우선 `notation`에 대해서 확실히 하겠습니다.
 
 - $$x=(x_1, \cdots, x_T)$$ 는 input acoustic frames 입니다. 음향 벡터들이죠. 각 벡터들은 $$x_t \in \mathbb{R}^d$$ 의 d가 80차원이며 (log-mel filterbank 사용) $$T$$는 시퀀스 길이를 나타냅니다.  
@@ -187,6 +192,10 @@ $$
 하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 `Acoustic-Only model` 입니다.
 
 
+
+
+
+#### 2. Transducer
 
 반면 Transducer의 수식은 아래와 같습니다.
 
@@ -251,7 +260,7 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 *Fig. Neural Transducer의 디테일한 다이어그램. 빨간 박스 부분의 음성에 대해서만 인코딩을 진행해 hidden vectors를 뽑고 이에 대해 Transducer가 최종적으로 토큰들을 출력한다. 여기서 Transducer는 Attention을 사용한 Seq2Seq와 같은 역할을 수행한다.*
 
 
-#### Model and Notation
+#### 1. Model and Notation
   - $$x_{1,\cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉 매트릭스)
   - $$x_i$$ : $$i$$ 번째 featrue vector
   - $$W$$ : block size
@@ -279,7 +288,7 @@ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \pro
 $$
 
 
-#### Next Step Prediction
+#### 2. Next Step Prediction
 
 
 
@@ -289,7 +298,7 @@ $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
 
 
-#### Computing $$f_{context}$$
+#### 3. Computing $$f_{context}$$
 
 
 
@@ -298,11 +307,11 @@ $$\alpha_m = softmax([e_1^m;e_2^m;\cdots;e_W^m])$$
 $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
 
 
-#### Addressing End of Blocks
+#### 4. Addressing End of Blocks
 
 asd
 
-#### Training
+#### 5. Training
 
 
 
@@ -318,7 +327,7 @@ $$
 $$
 
 
-#### Inference
+#### 6. Inference
 
 
 
