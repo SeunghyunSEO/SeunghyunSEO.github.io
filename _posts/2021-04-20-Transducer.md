@@ -205,6 +205,26 @@ Alex Glaves에 의해 제안된 제안된 `RNN-Tranducer` 이후 Google에서 �
 *Fig. Neural Transducer의 디테일한 다이어그램. 빨간 박스 부분의 음성에 대해서만 인코딩을 진행해 hidden vectors를 뽑고 이에 대해 Transducer가 최종적으로 토큰들을 출력한다. 여기서 Transducer는 Attention을 사용한 Seq2Seq와 같은 역할을 수행한다.*
 
 
+#### Model and Notation
+  - $$x_{1,/cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉 매트릭스)
+  - $$x_i$$ : $$i$$ 번째 featrue vector
+  - $$W$$ : block size
+  - $$\frac{L}{W}$$ : the number of blocks
+  - $$ \tilde{y_{1,\cdots,S}} $$ : 정답(target) 시퀀스 (길이 $$S$$)
+  - $$ \tilde{y_{i,\cdots,(i+k)}}$$ : Transducer가 매 블럭마다 예측하는 시퀀스, 즉 $$k$$개의 token을 생성함. 하지만 $$0 \leq k \leq M$$ 인데, 이 말은 즉 k가 0일 수도(이번 block에서는 아무 토큰도 안 나올 수도) 있다는 것을 의미함.
+  - $$ <e> $$ symbol : 매 Transducer가 예측하는 시퀀스를 감싸는 symbol임 (vocab에 있음). 이 심볼은 트랜스듀서가 디코딩을 시작할지, 아니면 다음 블럭으로 넘어갈지를 나타냄. 만약 트랜스듀서가 생성한 토큰이 0개라면 이 심볼은 CTC의 $$<blank>$$와 유사한 역할을 함(is akin to).
+  - $$ Y $$ : (음성 $$\rightarrow$$ 정답) 간 가능한 모든 경우의 수의 집합 (set of all alignments of output sequence)을 의미하며, 위에서 언급한 $$ \tilde{y_{1,\cdots,S}} $$ 는 이러한 다양한 alignment로 부터 산출될(transduced) 수 있음.
+  - $$ y_{1,\codts,(S+B)} \in Y $$ 는 가능한 alignment중 어떤 것도 가능한데, 여기서 $$y$$가 $$\tilde{y}$$보다 $$B$$ 만큼 큰(긴) 이유는 앞서 말한 것 처럼 블럭마다의 레이블에 $$<e>$$ 토큰이 꼈기 때문임
+
+#### Next Step Prediction
+
+#### Computing $$f_{context}$$
+
+#### Addressing End of Blocks
+
+#### Training
+
+#### Inference
 
 
 
