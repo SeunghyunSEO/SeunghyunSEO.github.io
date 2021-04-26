@@ -342,7 +342,7 @@ RNN-T는 이전에 주어진 historical output sequence $$\{l_1,\cdots,l_{u-1}\}
 
 $$(x,y)$$ 페어가 존재할 때, Transducer는 $$x,y$$ 사이의 가능한 모든 단조로운 (monotonic) alignments 정의하게 되는데, 이 때 입력 음성의 길이가 $$T=4$$ 이고, 출력의 길이가 "CAT", 즉 $$U=3$$이라고 할 때, 우리는 이를 아래처럼 그래프로 나타낼 수 있습니다.
 
-![lugosch_rnnt6](/assets/images/rnnt/lugosch_rnnt6.png)
+![lugosch_rnnt6](/assets/images/rnnt/lugosch_rnnt6.png){: width="70%"}
 *Fig. Alignment Graph for "CAT"*
 
 알고리즘이 처음 제안된 논문인 [Sequence Transduction with Recurrent Neural Networks](https://arxiv.org/pdf/1211.3711) 에서도 마찬가지로 아래와 같은 그림으로 alignment를 나타냈지만,
