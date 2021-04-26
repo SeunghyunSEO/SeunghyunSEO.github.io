@@ -352,10 +352,10 @@ $$(x,y)$$ 페어가 존재할 때, Transducer는 $$x,y$$ 사이의 가능한 모
 
 이에 대해서 차분히 생각해보기 위해서 아래와 같이 예를 들어 보겠습니다.
 
-![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png){: width="60%"}
+![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png){: width="70%"}
 *Fig. "CAT"의 Alignment 예시 1 : $$z=\phi,C,A,\phi,T,\phi,\phi$$*
 
-![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png){: width="60%"}
+![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png){: width="70%"}
 *Fig. "CAT"의 Alignment 예시 2 : $$z=C,\phi,A,\phi,T,\phi,\phi$$*
 
 
