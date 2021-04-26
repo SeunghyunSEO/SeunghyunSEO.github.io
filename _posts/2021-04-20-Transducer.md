@@ -180,7 +180,7 @@ where $$ \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \
 수식을 조금 더 살펴보자면, 위의 수식에서 $$\sum$$ 수식 안의 $$\prod$$는 아래와 같은 의미를 가지고 있습니다. 
 
 $$ 
-p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi Z'^{T}
+p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi \in Z'^{T}
 $$
 
 where $$ Z'^{T} $$ denote the collection of all sequences of length T that defined on the Vocabulary $$Z'$$.
