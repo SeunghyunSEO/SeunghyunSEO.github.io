@@ -376,21 +376,12 @@ $$
 ![lugosch_rnnt9](/assets/images/rnnt/lugosch_rnnt9.png)
 *Fig. $$h_{t,u}$$의 의미*
 
-
+CTC와 RNNT 모두 $$blank$$ 토큰을 이용해 alignment를 디자인 하지만, 각 알고리즘의 alignment에 대한 격자 구조를 살펴보면 아래와 같은 차이가 있습니다. 
 
 ![ctc_rnnt_lattice](/assets/images/rnnt/deepvoice3_alignment.png)
 *Fig. Lattice of Paths in CTC vs RNNT*
 
-
-
-
-
-
-RNN-Transducer가 디코딩 하는 방법은 간단하게 말해서 다음과 같습니다.
-
-- $$t$$번째 input $$x_t$$ 를 읽을 때 마다, 모델은 empty label, "-"를 뱉기 전 까지 계속해서 label을 생성해 냅니다.
-- 만약 empty label, "-"을 만나게 되면, RNN-T는 다음 input $$x_{t+1}$$ 를 사용해서 위의 프로세스를 모든 input sequence 벡터들을 읽을 때 까지 반복합니다.
-- $$x_t$$ 가 만들어내는 아웃풋 subsequence가 최소 1개 이상일 것이기 때문에, CTC가 가지는 문제 중 하나인, '출력 시퀀스가 입력 시퀀스 보다 짧아야 잘 작용한다'를 해결할 수 있습니다.
++RNN-T는 $$x_t$$ 가 만들어내는 아웃풋 subsequence가 최소 1개 이상일 것이기 때문에, CTC가 가지는 문제 중 하나인, '출력 시퀀스가 입력 시퀀스 보다 짧아야 잘 작용한다'를 해결할 수 있다고 합니다.
 
 
 
