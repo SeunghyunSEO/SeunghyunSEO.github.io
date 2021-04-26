@@ -319,7 +319,7 @@ $$
 (수식이 조금 보기 그런 것 같은데, 결론은 매 time-step 에서 각 토큰들에 대해 합이 1인 softmax distribution 으로 나타내겠다는 것이며, $$t,u$$ 두 가지가 조건부로 걸려 있기 때문에, $$t=1$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 , $$t=2$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지, ... , $$t=T$$ 일 때, $$u=1$$ 부터 $$u=N$$ 까지 모든 확률을 구해낼 수 있습니다.)
 
 
-![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png)
+![lugosch_rnnt4](/assets/images/rnnt/lugosch_rnnt4.png){: width="70%"}
 *Fig. Joiner (Joint Network)는 두 개의 벡터를 더해서 토큰을 생성한다. (여러 자료를 섞어서만들었기 때문에 term이 다를 수 있습니다.) 여기서는 $$\phi$$가 공백 토큰입니다.*
 
 
@@ -352,10 +352,10 @@ $$(x,y)$$ 페어가 존재할 때, Transducer는 $$x,y$$ 사이의 가능한 모
 
 이에 대해서 차분히 생각해보기 위해서 아래와 같이 예를 들어 보겠습니다.
 
-![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png)
+![lugosch_rnnt7](/assets/images/rnnt/lugosch_rnnt7.png){: width="60%"}
 *Fig. "CAT"의 Alignment 예시 1 : $$z=\phi,C,A,\phi,T,\phi,\phi$$*
 
-![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png)
+![lugosch_rnnt8](/assets/images/rnnt/lugosch_rnnt8.png){: width="60%"}
 *Fig. "CAT"의 Alignment 예시 2 : $$z=C,\phi,A,\phi,T,\phi,\phi$$*
 
 
