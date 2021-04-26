@@ -165,32 +165,40 @@ $$
 where $$ \hat{y} = ( \hat{y_1}, \cdots, \hat{y_T} ) \in A_{CTC}(x,y) \subset { \{ Z \cup <b> \} }^T  $$
 
 
-$$A_{CTC}(x,y)$$는 수식에서 말한 것과 같이 $$x,y$$간 가능한 alignment를 모두 포함하는 set이며,
+($$A_{CTC}(x,y)$$는 수식에서 말한 것과 같이 $$x,y$$간 가능한 alignment를 모두 포함하는 set입니다.)
+
+
+수식을 조금 더 살펴보자면, 위의 수식에서 $$\sum$$ 수식 안의 $$\prod$$는 아래와 같은 의미를 가지고 있습니다. 
 
 $$ 
 p(\pi \vert X) = \prod_{t=1}^{T} y_t^{\pi_t}, \forall \pi Z'^{T}
 $$
 
-
-
 where $$ Z'^{T} $$ denote the collection of all sequences of length T that defined on the Vocabulary $$Z'$$.
 
 
-$$ p(\pi \vert X) $$ 는 음성을 입력받아 정답 시퀀스의 모든 가능한 path중 하나에 대한 확률 분포(probability distribution conditioned only speech input, $$X$$) 값을 구해낼 수 있습니다. 
+즉 $$ p(\pi \vert X) $$ 는 음성을 입력받아 정답 시퀀스의 모든 가능한 path중 하나에 대한 확률 분포(probability distribution conditioned only speech input, $$X$$)이며, 
+
+(여기서 output sequenc의 길이 speech input sequence 의 길이 $$T$$와 같습니다. (다만 최종 인퍼런스 할 때 중복 레이블을 제거하는 등의 정해진 규칙을 따라 최종 출력 문장을 만들어 냅니다.)
 
 ![Wang_1](/assets/images/rnnt/Wang_1.png)
 
 ![Wang_2](/assets/images/rnnt/Wang_2.png)
 *Fig. Path examples in CTC. 즉 위에서 말한 $$\pi$$는 예를 들자면, 'c-aat' 인 것.*
 
+진짜 정답 $$L$$의 가능한 모든 path $$\pi \in B^{-1} (L)$$ 들의 $$ p(\pi \vert X) $$  확률 분포값을 모두 더한 것이 최종적으로 우리가 원하는 `Likelihood`가 되며 
+
 $$ 
 p(L|X) = \sum_{\pi \in B^{-1}(L)} p(\pi \vert X)
 $$
 
+우리의 목적은 이를 최대화 하는 `Maximize Log Likelihood` 입니다. (혹은 우리는 위의 수식에 `negative log likelihood (nll)`을 취한 후 이를 최소화 하는 이른 바 `CTC Loss`를 최소화 하는 방향으로 파라메터를 업데이트 합니다.) 
 
-입력 음성과 정답 문장 간의 가능한 alignment들을 모두 생각하고 이를 모두 더한 확률을 구하는 것이죠.
 
-하지만 CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는 이른 바 `Acoustic-Only model` 입니다.
+($$L$$의 확률을 계산 해 내는 것은 differentiable하며, $$p(\pi \vert X)$$ 하나를 계산하는 것들은 쉽지만, 이것들을 모두 구해서 더하는 것은 어렵기에 `Forward-Backward Algorithm` 과 `Dynamic Programming (DP)`를 사용해 CTC Loss를 계산해 냅니다.) 
+
+
+하지만 위의 수식에서 보시면 아시겠지만 (또한 글의 서두에서 이야기 했듯) CTC는 앞서 말한 것 처럼 매 토큰을 디코딩하는데 있어, 입력 음성 (acoustic input sequence)에 대한 정보만을 사용하는, 즉 각 출력 토큰들에 대해서는 독립인 (independent) 이른 바 `Acoustic-Only model` 라고 할 수 있습니다.
 
 
 
