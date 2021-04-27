@@ -510,27 +510,27 @@ $$
 첫 번째 블럭에 대해서 생각해보면, 전에 만들어진 subseqeuence가 존재하지 않기 때문에 참조 (conditional)할 게 없기 때문에
 
 $$
-p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) = p(y_{1,\cdots,e_1}
+p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) 
 $$
 
 가 됩니다. 자 이제 2번째 블럭에 대해서 생각해보면 이제 1번째 블럭에서 만든 시퀀스를 참조할 수 있기 때문에 아래와 같이 쓸 수 있습니다.
 
 $$ 
-p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{b'}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) 
+p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{2-1}+1),\cdots,e_{b'}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) 
 $$
 
 $$ 
-= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) 
+= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) 
 $$
 
 3 번째 블럭에 대해 생각해보면 
 
 $$ 
-p(y_{1,\cdots,e_3} \vert x_{1,\cdots,3W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) p( y_{(e_{3-1}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{3-1}} ) 
+p(y_{1,\cdots,e_3} \vert x_{1,\cdots,3W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) \cdot p( y_{(e_{3-1}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{3-1}} ) 
 $$
 
 $$ 
-= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
+= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) \cdot p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
 $$
 
 이를 모든 블럭에대해서 수행하면 됩니다.
@@ -548,7 +548,7 @@ $$
 p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}}) = \prod_{m=e_{1}+1}^{e_2} p(y_m \vert x_{1,2W}, y_{1,\cdots,(m-1)})  
 $$
 
-이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 이렇게 만들어 낸 $$p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}})$$를 사용해서 2번째 블럭에서의 확률을 $$ p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) $$ 처럼 계산 해 내는 거죠.
+이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 이렇게 만들어 낸 $$p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}})$$를 사용해서 2번째 블럭에서의 확률을 $$ p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) $$ 처럼 계산 해 내는 거죠.
 
 
 
