@@ -459,16 +459,16 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 ![neural_transducer](/assets/images/rnnt/neural_transducer.png)
 *Fig. Attention-based Seq2Seq Model vs Neural Transducer, 본 논문에서는 CTC와의 비교 보다는 CTC이후 Seq2Seq 태스크에서 훨씬 성공적으로 평가받았던 Attention기반 Seq2Seq 모델과 제안하는 모델을 비교했다. Seq2Seq 모델(좌)을 보면 입력을 다 받고난 후에야 추론할 수 있음을  볼 수 있다. Neural Transducer(우) 모델을 잘 보면, 입력 음성 전체가 아닌 특정 단위(Blcok)에 대해서만 이전의 Transducer가 전달한 Hidden State과 함께 입력으로 사용해 토큰들을 예측하고 또 이를 다음 블럭 예측할 때의 Transducer에 전달한다.*
 
-모델은 온라인 음성인식을 위해서 계속해서 `블럭 단위의 음성 벡터들(Blocks of speech inputs)`을 끊임없이 받고, 한번 블럭 단위의 음성을 받으면, `단어 덩어리(chunks of outputs)`를 뱉습니다. 
+모델은 온라인 음성인식을 위해서 계속해서 `블럭 단위의 음성 벡터들(Blocks of speech inputs)`을 끊임없이 받고, 한번 블럭 단위의 음성을 받으면, `단어 덩어리(chunks of outputs)`를 뱉습니다. (블럭 단위에 대해서 수행한다는 데 있어서 기존의 RNN-T 그리고 Seq2Seq와의 차이점이 있습니다.)
 출력된 토큰은 때로는 아무것도 없을 수도 있으며(받은 음성이 뭣도 아니라고 판단해서), 토큰을 생성하는 것은 Seq2Seq 모델과 같은 방식으로 수행되지만, 블럭 단위에 대해서만 Attention을 진행하기 때문에 앞서 말한 것 처럼 전체 음성에 대해 Attention을 진행할 필요가 없다는 점에서 차별점이 있습니다.
 
 
 또 다른 차이점이 있는데, 논문에서는 네트워크를 학습할 때 과연 '각 블럭마다의 정답을 어떻게 할당할 것인가?' 즉, 다시 말해서 '어떻게 입력과 출력의 alignment를 설정할 것인가?'에 대해서 이야기 합니다.
-가장 일반적인 두 가지 Approach가 있는데 하나는 Alignment를 잠재 변수(latent variable)로 두고 계산 하는 것이며, 다른 하나는 다른 알고리즘을 통해서 Alignment를 만들고 이를 maximize하는 방향으로 학습하는 것입니다. `CTC`의 경우는 전자의 방법을 사용하는데, `Neural Transducer`는 음성 입력뿐만 아니라 출력, 즉 alignment에 대해서도 조건(condition)이 걸리기 때문에 사용할 수 없으며, 이를 해결해 학습하기 위해서 다이나믹 프로그래밍(Dynamic Programming)을 통해서 `Approximate Best Alignments`를 계산해 낼 수 있는지를 보여줍니다.
+가장 일반적인 두 가지 Approach가 있는데 하나는 Alignment를 잠재 변수(latent variable)로 두고 계산 하는 것이며, 다른 하나는 다른 알고리즘을 통해서 Alignment를 만들고 이를 maximize하는 방향으로 학습하는 것입니다. `CTC`의 경우는 전자의 방법을 사용하는데, `Neural Transducer`는 음성 입력뿐만 아니라 출력, 즉 alignment에 대해서도 조건(condition)이 걸리기 때문에 이러한 방법을 사용할 수 없으며, 이를 해결하기 위해 본 논문에서는 다이나믹 프로그래밍(Dynamic Programming)을 통해서 `Approximate Best Alignments`를 계산해 낼 수 있는지를 보여줍니다.
 
 
 
-![neural_transducer2](/assets/images/rnnt/neural_transducer2.png){: width="80%"}
+![neural_transducer2](/assets/images/rnnt/neural_transducer2.png)
 *Fig. Neural Transducer의 디테일한 다이어그램. 빨간 박스 부분의 음성에 대해서만 인코딩을 진행해 hidden vectors를 뽑고 이에 대해 Transducer가 최종적으로 토큰들을 출력한다. 여기서 Transducer는 Attention을 사용한 Seq2Seq와 같은 역할을 수행한다.*
 
 
