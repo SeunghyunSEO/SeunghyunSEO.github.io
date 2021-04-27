@@ -497,7 +497,7 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 
 
 $$ 
-p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \prod_{b'=2}^{b} p( y_{(e_{b'-1}+1),\cdots,e'} \vert x_{1,\cdots,b'W}, y_{1,\cdots,e_{b'-1}} ) 
+p(y_{1,\cdots,e_b} \vert x_{1,\cdots,bW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \prod_{b'=2}^{b} p( y_{(e_{b'-1}+1),\cdots,e_{b'}} \vert x_{1,\cdots,b'W}, y_{1,\cdots,e_{b'-1}} ) 
 $$
 
 입력 음성의 길이가 $$L=50$$이고, block하나의 길이가 $$W=5$$이라고 해보도록 하겠습니다. 그렇다면 총 블럭의 수, $$N=\frac{50}{5}=10$$이 되겠고 $$b$$또한 $$b \in 1 \cdots 10$$이 됩니다.
@@ -505,10 +505,35 @@ $$
 음성인식의 결과물인 출력의 길이 또한 $$S=30$$이라고 가정하고, 어떻게 각 블럭마다 align을 해줬는지는 상관 하지 않고, 매 블럭마다 $$3$$개의 토큰이 할당됐다고 생각해보겠습니다. 패딩을해주면 한 블럭당 $$4$$개가 되겠네요. 그렇다면 첫 번째 블럭의 마지막 인덱스 $$e_1=4$$가 됩니다.
 
 
+위의 수식을 다시 곱씹어 보겠습니다.
 
+첫 번째 블럭에 대해서 생각해보면, 전에 만들어진 subseqeuence가 존재하지 않기 때문에 참조 (conditional)할 게 없기 때문에
 
+$$
+p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) = p(y_{1,\cdots,e_1}
+$$
 
+가 됩니다. 자 이제 2번째 블럭에 대해서 생각해보면 이제 1번째 블럭에서 만든 시퀀스를 참조할 수 있기 때문에 아래와 같이 쓸 수 있습니다.
 
+$$ 
+p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{b'}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) 
+$$
+
+$$ 
+= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) 
+$$
+
+3 번째 블럭에 대해 생각해보면 
+
+$$ 
+p(y_{1,\cdots,e_3} \vert x_{1,\cdots,3W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) p( y_{(e_{3-1}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{3-1}} ) 
+$$
+
+$$ 
+= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
+$$
+
+이를 N개에 
 
 
 위의 수식에서 $$\prod$$에 있는 수식은 
