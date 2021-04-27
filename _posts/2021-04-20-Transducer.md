@@ -437,6 +437,7 @@ $$
 위의 그래프에서 보여지듯, RNNT가 CTC를 개선하기 위해서 서브 네트워크를 추가시켰고, 디코딩 방식에 시간이 조금 더 걸리는 대신 음성 인식 정확도를 상당히 향상시킨 모델이지만, 그럼에도 음성 전체를 보고 Autoregressive Decoding을 하는 Seq2Seq에 비해 정확도가 좋지 않습니다. 다만 정확도도 어느정도 가져가는 대신, 스트리밍에 적합한 latency (delay)를 가지고 있기 때문에 실시간 음성 인식기를 만드는데 지속적으로 연구가 되고 있습니다.
 
 
+(Transdcuder가 어떻게 구현이 되어있는지 더 알아보고 싶으신 분이 계시다면, 제가 포스팅을 하면서 많이 참고한 [Loren Lugosch의 Transducer Tutorial](https://github.com/lorenlugosch/transducer-tutorial)을 체크 해 보시면 좋을 것 같습니다.)
 
 
 
