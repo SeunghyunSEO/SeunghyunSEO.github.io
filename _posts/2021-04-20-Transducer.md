@@ -460,7 +460,7 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 *Fig. Attention-based Seq2Seq Model vs Neural Transducer, 본 논문에서는 CTC와의 비교 보다는 CTC이후 Seq2Seq 태스크에서 훨씬 성공적으로 평가받았던 Attention기반 Seq2Seq 모델과 제안하는 모델을 비교했다. Seq2Seq 모델(좌)을 보면 입력을 다 받고난 후에야 추론할 수 있음을  볼 수 있다. Neural Transducer(우) 모델을 잘 보면, 입력 음성 전체가 아닌 특정 단위(Blcok)에 대해서만 이전의 Transducer가 전달한 Hidden State과 함께 입력으로 사용해 토큰들을 예측하고 또 이를 다음 블럭 예측할 때의 Transducer에 전달한다.*
 
 모델은 온라인 음성인식을 위해서 계속해서 `블럭 단위의 음성 벡터들(Blocks of speech inputs)`을 끊임없이 받고, 한번 블럭 단위의 음성을 받으면, `단어 덩어리(chunks of outputs)`를 뱉습니다. (블럭 단위에 대해서 수행한다는 데 있어서 기존의 RNN-T 그리고 Seq2Seq와의 차이점이 있습니다.)
-출력된 토큰은 때로는 아무것도 없을 수도 있으며(받은 음성이 뭣도 아니라고 판단해서), 토큰을 생성하는 것은 Seq2Seq 모델과 같은 방식으로 수행되지만, 블럭 단위에 대해서만 Attention을 진행하기 때문에 앞서 말한 것 처럼 전체 음성에 대해 Attention을 진행할 필요가 없다는 점에서 차별점이 있습니다.
+여기서 출력된 output sequence는 때로는 아무것도 없을 수도 있으며(받은 음성이 뭣도 아니라고 판단해서), 토큰을 생성하는 것은 Seq2Seq 모델과 같은 방식으로 수행되지만, 블럭 단위에 대해서만 Attention을 진행하기 때문에 앞서 말한 것 처럼 전체 음성에 대해 Attention을 진행할 필요가 없다는 점에서 차별점이 있습니다.
 
 
 또 다른 차이점이 있는데, 논문에서는 네트워크를 학습할 때 과연 '각 블럭마다의 정답을 어떻게 할당할 것인가?' 즉, 다시 말해서 '어떻게 입력과 출력의 alignment를 설정할 것인가?'에 대해서 이야기 합니다.
@@ -472,21 +472,27 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 *Fig. Neural Transducer의 디테일한 다이어그램. 빨간 박스 부분의 음성에 대해서만 인코딩을 진행해 hidden vectors를 뽑고 이에 대해 Transducer가 최종적으로 토큰들을 출력한다. 여기서 Transducer는 Attention을 사용한 Seq2Seq와 같은 역할을 수행한다.*
 
 
-#### 1. Model and Notation
-  - $$x_{1,\cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉 매트릭스)
+#### 0. Model and Notation
+  - $$x_{1,\cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉, 매트릭스)
   - $$x_i$$ : $$i$$ 번째 featrue vector
-  - $$W$$ : block size
-  - $$\frac{L}{W}$$ : the number of blocks
+  - $$W$$ : 블럭의 크기 (block size) 
+  - $$\frac{L}{W}$$ : 블럭의 수 (the number of blocks) 
   - $$ \tilde{y_{1,\cdots,S}} $$ : 정답(target) 시퀀스 (길이 $$S$$)
-  - $$ \tilde{y_{i,\cdots,(i+k)}}$$ : Transducer가 매 블럭마다 예측하는 시퀀스, 즉 $$k$$개의 token을 생성함. 하지만 $$0 \leq k \leq M$$ 인데, 이 말은 즉 k가 0일 수도(이번 block에서는 아무 토큰도 안 나올 수도) 있다는 것을 의미함.
-  - $$ <e> $$ symbol : 매 Transducer가 예측하는 시퀀스를 감싸는 symbol임 (vocab에 있음). 이 심볼은 트랜스듀서가 디코딩을 시작할지, 아니면 다음 블럭으로 넘어갈지를 나타냄. 만약 트랜스듀서가 생성한 토큰이 0개라면 이 심볼은 CTC의 $$<blank>$$와 유사한 역할을 함(is akin to).
-  - $$ Y $$ : (음성 $$\rightarrow$$ 정답) 간 가능한 모든 경우의 수의 집합 (set of all alignments of output sequence)을 의미하며, 위에서 언급한 $$ \tilde{y_{1,\cdots,S}} $$ 는 이러한 다양한 alignment로 부터 산출될(transduced) 수 있음.
-  - $$ y_{1,\cdots,(S+B)} \in Y $$ 는 가능한 alignment중 어떤 것도 가능한데, 여기서 $$y$$가 $$\tilde{y}$$보다 $$B$$ 만큼 큰(긴) 이유는 앞서 말한 것 처럼 블럭마다의 레이블에 $$<e>$$ 토큰이 꼈기 때문임
+  - $$ \tilde{y_{i,\cdots,(i+k)}}$$ : Transducer가 매 블럭마다 예측하는 시퀀스, 즉 매 input block 마다 $$k$$개의 token을 생성함(총 $$N=\frac{L}{W}$$번). 하지만 $$0 \leq k \leq M$$ 인데, 이 말은 즉 k가 0일 수도(이번 block에서는 아무 토큰도 안 나올 수도) 있다는 것을 의미함.
+  - $$ <e> $$ symbol : 매 Transducer가 예측하는 시퀀스를 감싸는 symbol임 (vocab에 있음). 이 심볼은 트랜스듀서가 디코딩을 시작할지, 아니면 다음 블럭으로 넘어갈지를 의미하는 토큰임. 만약 트랜스듀서가 생성한 토큰이 0개라면 이 심볼은 CTC의 $$<blank>$$와 유사한 역할을 함(is akin to).
+  - $$ Y $$ : (음성 $$\rightarrow$$ 정답) 간 가능한 모든 alignment path에 대한 집합 (set of all alignments of output sequence)을 의미하며, 위에서 언급한 $$ \tilde{y_{1,\cdots,S}} $$ 는 이러한 다양한 alignment로 부터 산출될(transduced) 수 있음.
+  - $$ y_{1,\cdots,(S+B)} \in Y $$ 는 가능한 alignment중 어떤 것도 가능한데, 여기서 $$y$$가 $$\tilde{y}$$보다 $$B$$ 만큼 출력 차원이 큰(긴) 이유는 앞서 말한 것 처럼 블럭마다의 레이블에 $$<e>$$ 토큰을 앞 뒤로 추가 (padding) 했기 때문임 
+  - $$e_b$$ (블럭의 넘버, $$b \in 1 \cdots N$$) 는 $$b^{th}$$ block에서 생성한 seqeunce y의 마지막 토큰에 대한 index를 나타냄. 즉, $$e_0=0$$ (0번째 block의 마지막 토큰의 인덱스를 의미) 이며, $$e_N = (S+B)$$ (마지막 block의 마지막 토큰의 인덱스를 의미) 이고, 그러므로 매 block b 마다 $$y_{e_b} = <e>$$ 임.  
 
 
-늘 그렇듯 머신러닝에서 우리가 원하는 것은 Likelihood를 최대화 하는 방향으로 네트워크 파라메터를 학습 하는 것이기 때문에, $$p(\tilde{y_{1,\cdots,S}} \vert X_{1,\cdots,L})$$ 와  $$p(y_{1,\cdots,(S+B)} \vert X_{1,\cdots,L})$$ 를 계산하는 방법에 대해서 알아보도록 할 것입니다.
 
-먼저 output seqeuence $$y_{1,\cdots,e_b}$$ 
+
+#### 1. How to compute probability of each block
+
+늘 그렇듯 머신러닝에서 우리가 원하는 것은 Likelihood를 최대화 하는 방향으로 네트워크 파라메터를 학습 하는 것이기 때문에, 각 alignment에 대한 확률을 의미하는 $$p(y_{1,\cdots,(S+B)} \vert X_{1,\cdots,L})$$를 계산하는 방법과 그렇게 구해낸 확률들을 이용해 계산한 $$p(\tilde{y_{1,\cdots,S}} \vert X_{1,\cdots,L})$$ 를 최대화 하는 방법에 대해서 알아보도록 할 것입니다.
+
+
+우리가 $$p(y_{1,\cdots,(S+B)} \vert X_{1,\cdots,L})$$에 대해서 계산하기 위해서는 각 Block에 대한 확률을 먼저 구해야 하는데요, output seqeuence $$y_{1,\cdots,e_b}$$ 에 대한 확률을 생각해보면 다음과 같습니다 :
 
 
 $$ 
@@ -500,6 +506,8 @@ p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \pro
 $$
 
 
+
+
 #### 2. Next Step Prediction
 
 
@@ -508,6 +516,9 @@ $$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
 $$ c_m = f_{context} (s_m, h_{((b−1)W +1),\cdots,bW} ; \theta ) $$
 $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
+
+
+
 
 
 #### 3. Computing $$f_{context}$$
@@ -519,9 +530,15 @@ $$\alpha_m = softmax([e_1^m;e_2^m;\cdots;e_W^m])$$
 $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
 
 
+
+
+
 #### 4. Addressing End of Blocks
 
 asd
+
+
+
 
 #### 5. Training
 
@@ -539,6 +556,9 @@ $$
 $$
 
 
+
+
+
 #### 6. Inference
 
 
@@ -547,6 +567,14 @@ $$
 $$ 
 \tilde{y_{1,\cdots,S}} = argmax_{y_{1,\cdots,S'}, e_{1,\cdots,N}} \sum_{b=1}^{N} log p( y_{e_{(b-1) +1 }, \cdots, e_b } \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{(b-1)}}) 
 $$
+
+
+
+
+
+
+
+
 
 
 ### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition (2019) </mark>
@@ -574,10 +602,17 @@ $$
 
 
 
+
+
+
+
 ### <mark style='background-color: #dcffe4'> Transformer Transducer (2020) </mark>
 
 ![transformer_transducer](/assets/images/rnnt/transformer_transducer.png)
 *Fig. Transformer Transducer.*
+
+
+
 
 
 
