@@ -595,10 +595,9 @@ $$
 p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}}) = \prod_{m=e_{1}+1}^{e_2} p(y_m \vert x_{1,2W}, y_{1,\cdots,(m-1)})  
 $$
 
-이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 이렇게 만들어 낸 $$p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}})$$를 사용해서 2번째 블럭에서의 확률을 $$ p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) $$ 처럼 계산 해 내게 됩니다.
+이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 
 
-
-그렇다면 여기서 next step probability term 인 $$ p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)}) $$ 는 어떻게 구할까요? 이에 대해 조금 더 알아보도록 하겠습니다.
+그렇다면 여기서 next step probability term 인 $$ p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)}) $$ 는 어떻게 구할까요? 이번에는  대해 조금 더 알아보도록 하겠습니다.
 
 
 
