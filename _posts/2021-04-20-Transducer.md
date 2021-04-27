@@ -680,9 +680,8 @@ Neural Transducer 이외에도, Transducer는 많은 upgrade 버전과 variation
 ![twopass](/assets/images/rnnt/twopass.png){: width="30%"}
 *Fig. Two-Pass Decoding을 하는 Transducer 모델.*
 
-본 논문에서는 특이하게 학습시에 두 가지 로스를 사용합니다.
 
-첫 번째 로스는 $$x,y^{\ast}$$ 가 각각 입력 음성과 정답 시퀀스를 의미할 때, RNNT와 Seq2Seq(LAS) Loss를 결합(interpolation)한 loss이고
+본 논문에서는 학습시에 두 가지 로스를 사용하는데, 첫 번째 로스는 $$x,y^{\ast}$$ 가 각각 입력 음성과 정답 시퀀스를 의미할 때, RNNT와 Seq2Seq(LAS) Loss를 결합(interpolation)한 loss이고
 
 $$
 L_{combined}(x,y^{\ast}) = \lambda L_{RNNT}(x,y^{\ast}) + (1-\lambda) L_{LAS}(x,y^{\ast})
@@ -700,20 +699,22 @@ $$
 - RNN-T를 먼저 학습함. 
 - RNN-T의 Acoustic Encoder를 프리징 한 후 LAS decoder를 붙혀 학습함. 
 - 마지막으로 Shared Encoder를 사용한 전체 모델을 $$L_{combined}$$ loss를 사용해 파인튜닝 함.
+- RNN-T의 출력을 입력으로 하는 LAS part를 MWER loss를 활용해 추가적으로 학습함.
 
-이에 추가적으로, 
 
-
+이러한 네트워크는 Seq2Seq 모델인 LAS의 decoder가 RNN-T가 뱉은 문장을 입력으로 받아 `rescoring`을 해주는 것으로 성능을 향상 시켰습니다.
 
 
 
 
 ### <mark style='background-color: #dcffe4'> Transformer Transducer (2020) </mark>
 
+또한 Transdcuer 중에는 RNN이 아닌 Transformer를 내부 모듈로 사용하는 네트워크도 있는데 ([Transformer Transducer: A Streamable Speech Recognition Model with Transformer Encoders and RNN-T Loss](https://arxiv.org/pdf/2002.02562)), 
+
 ![transformer_transducer](/assets/images/rnnt/transformer_transducer.png)
 *Fig. Transformer Transducer.*
 
-
+물론 트랜스포머 모듈을 사용하는 것 이외에도 contribution이 있지만 이러한 모델이 있다는 것만 언급해두고 넘어가도록 하겠습니다.
 
 
 
