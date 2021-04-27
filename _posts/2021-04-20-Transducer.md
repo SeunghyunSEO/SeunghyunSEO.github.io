@@ -698,8 +698,8 @@ $$
 
 - RNN-T를 먼저 학습함. 
 - RNN-T의 Acoustic Encoder를 프리징 한 후 LAS decoder를 붙혀 학습함. 
-- 마지막으로 Shared Encoder를 사용한 전체 모델을 $$L_{combined}$$ loss를 사용해 파인튜닝 함.
-- RNN-T의 출력을 입력으로 하는 LAS part를 MWER loss를 활용해 추가적으로 학습함.
+- 마지막으로 Shared Encoder를 사용한 전체 모델을 $$L_{combined}$$를 사용해 파인튜닝 함.
+- RNN-T의 출력을 입력으로 하는 LAS part를 $$L_{MWER}$$를 활용해 추가적으로 학습함.
 
 
 이러한 네트워크는 Seq2Seq 모델인 LAS의 decoder가 RNN-T가 뱉은 문장을 입력으로 받아 `rescoring`을 해주는 것으로 성능을 향상 시켰습니다.
