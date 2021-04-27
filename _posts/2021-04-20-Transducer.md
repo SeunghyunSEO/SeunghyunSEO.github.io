@@ -493,7 +493,12 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 늘 그렇듯 머신러닝에서 우리가 원하는 것은 Likelihood를 최대화 하는 방향으로 네트워크 파라메터를 학습 하는 것이기 때문에, 각 alignment에 대한 확률을 의미하는 $$p(y_{1,\cdots,(S+B)} \vert X_{1,\cdots,L})$$를 계산하는 방법과 그렇게 구해낸 확률들을 이용해 계산한 $$p(\tilde{y_{1,\cdots,S}} \vert X_{1,\cdots,L})$$ 를 최대화 하는 방법에 대해서 알아보도록 할 것입니다.
 
 
-우리가 $$p(y_{1,\cdots,(S+B)} \vert X_{1,\cdots,L})$$에 대해서 계산하기 위해서는 각 Block에 대한 확률을 먼저 구해야 하는데요, output seqeuence $$y_{1,\cdots,e_b}$$ 에 대한 확률을 생각해보면 다음과 같습니다 :
+우리가 $$p(y_{1,\cdots,(S+B)} \vert X_{1,\cdots,L})$$에 대해서 계산하기 위해서는 각 Block에 대한 확률을 먼저 구해야 하는데요, 
+
+![neural_transducer3](/assets/images/rnnt/neural_transducer3.png){: width="80%"}
+*Fig. Block에 대해서 디코딩을 하는 Neural Transducer*
+
+output seqeuence $$y_{1,\cdots,e_b}$$ 에 대한 확률을 생각해보면 다음과 같습니다 :
 
 
 $$ 
@@ -504,6 +509,8 @@ $$
 
 음성인식의 결과물인 출력의 길이 또한 $$S=30$$이라고 가정하고, 어떻게 각 블럭마다 align을 해줬는지는 상관 하지 않고, 매 블럭마다 $$3$$개의 토큰이 할당됐다고 생각해보겠습니다. 패딩을해주면 한 블럭당 $$4$$개가 되겠네요. 그렇다면 첫 번째 블럭의 마지막 인덱스 $$e_1=4$$가 됩니다.
 
+![neural_transducer4](/assets/images/rnnt/neural_transducer4.png){: width="80%"}
+*Fig. *
 
 위의 수식을 곱씹어 보겠습니다.
 
