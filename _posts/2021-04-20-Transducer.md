@@ -625,7 +625,7 @@ $$ c_m = f_{context} (s_m, h_{((b−1)W +1),\cdots,bW} ; \theta ) $$
 $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
 
-간단하게 말로 하자면, 블럭이 진행되면서 처음부터 현재 블럭까지 맥락 정보를 전파하는 Transducer에는 2가지 RNN가 있는데, 이들 중 한 Layer (Language Model)가 전파하는 문장적인 정보를 담은 벡터들과, 음성 정보를 담아 전파하는 RNN Layer (Acoustic Model) 가 출력한 해당 블럭 내의 벡터들을 `어떠한 특별한 연산 (operation)` 을 통해서 계산하고, 다시 이렇게 만들어진 최종 벡터들을 입력으로 하는 (즉 음성, 문자에 대한 종합적인 정보를 가지고 있는 벡터, $$f_{context}$$) Transducer의 나머지 RNN이 최종 토큰 출력 $$y_m$$을 출력한다는 겁니다.
+위의 수식을 말로 풀어보자면, 블럭이 진행되면서 처음부터 현재 블럭까지 맥락 정보를 전파하는 Transducer에는 2가지 RNN가 있는데, 이들 중 한 Layer (Language Model)가 전파하는 문장적인 정보를 담은 벡터들과, 음성 정보를 담아 전파하는 RNN Layer (Acoustic Model) 가 출력한 해당 블럭 내의 벡터들을 `어떠한 특별한 연산 (operation)` 을 통해서 계산하고, 다시 이렇게 만들어진 최종 벡터들을 입력으로 하는 (즉 음성, 문자에 대한 종합적인 정보를 가지고 있는 벡터, $$f_{context}$$) Transducer의 나머지 RNN이 최종 토큰 출력 $$y_m$$을 출력한다는 겁니다.
 
 
 
@@ -643,7 +643,7 @@ $$c_m=\sum_{j=1}^W \alpha_j^m h_(b-1)W+j $$
 ![attention_operation](/assets/images/rnnt/attention.png){: width="60%"}
 *Fig. Remind : Attention Mechanism*
 
-
+Neural Transducer는 "Block 단위로 RNN-Transducer의 매커니즘 대로 연산을 하는데, 여기에 Attention Mechanism을 이용해 좀 더 강력하게 음성 정보에 집중하게 해줬고, 또한 RNN-Transducer 처럼 Prediction Network (Language Model)을 따로 두는 느낌이 아니라, jointly operate 하는 Transducer를 사용함으로써, 효과를 끌어 올리겠다"는 목적으로 네트워크를 구성한 겁니다.
 
 #### 4. Addressing End of Blocks
 
