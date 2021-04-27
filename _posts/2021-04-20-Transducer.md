@@ -690,7 +690,7 @@ $$
 다른 로스는 MWER loss와 MLE loss를 합친 loss 입니다.
 
 $$
-L_{MWER}(x,y^{\ast}) + \lambda_{MLE} log P(y^{ast} \vert x)
+L_{MWER}(x,y^{\ast}) + \lambda_{MLE} log P(y^{\ast} \vert x)
 $$
 
 논문에서는 제안한 학습 방법은 다음과 같습니다.
