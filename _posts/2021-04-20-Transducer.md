@@ -651,37 +651,13 @@ Neural Transducer는 "Block 단위로 RNN-Transducer의 매커니즘 대로 연�
 
 
 
-
-
-#### 4. Addressing End of Blocks
-
-asd
-
-
-
-
-#### 5. Training
-
-
+#### 4. Training and Inference
 
 $$ 
 p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L}) = \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L} )
 $$
 
-
-
-
-$$ 
-\frac{\partial}{\partial{\theta}} log p(\tilde{y_{1,\cdots,S}} \vert x_{1,\cdots,L} ) \sum_{y \in Y} p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}, \tilde{y_{1,\cdots,S}} ) \frac{\partial}{\partial{\theta}} log p(y_{1,\cdots,(S+B)} \vert x_{1,\cdots,L}) 
-$$
-
-
-
-
-
-#### 6. Inference
-
-
+CTC나 Transducer에서와 마찬가지로, 모델은 위의 수식에 $$log$$를 취한 log-likelihood 를 최대화 하는 방향으로 학습하면 되는데요, 
 
 
 $$ 
@@ -699,7 +675,7 @@ $$
 
 ### <mark style='background-color: #dcffe4'> Two-Pass End-to-End Speech Recognition (2019) </mark>
 
-[Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)은 아래의 그림과 같이 Transducer Decoder가 예측한 일정 부분의 시퀀스와 음향 정보를 조건부(conditional)로 하여 Seq2Seq 모델인 LAS의 Decoder 를 이용하여 한번 더 디코딩 해주는 모델입니다. 
+Neural Transducer 이외에도, Transducer는 많은 upgrade 버전과 variation이 존재하는데요, 그 중 [Two-Pass End-to-End Speech Recognition](https://arxiv.org/pdf/1908.10992)에서 제안된 모델은 아래의 그림과 같이 Transducer Decoder가 예측한 일정 부분의 시퀀스와 음향 정보를 조건부(conditional)로 하여 Seq2Seq 모델인 LAS의 Decoder 를 이용하여 한번 더 디코딩 해주는 모델입니다. 
 
 ![twopass](/assets/images/rnnt/twopass.png){: width="30%"}
 *Fig. Two-Pass Decoding을 하는 Transducer 모델.*
@@ -712,14 +688,20 @@ $$
 L_{combined}(x,y^{\ast}) = \lambda L_{RNNT}(x,y^{\ast}) + (1-\lambda) L_{LAS}(x,y^{\ast})
 $$
 
-다른 로스는 ~입니다.
+다른 로스는 MWER loss와 MLE loss를 합친 loss 입니다.
 
 $$
 L_{MWER}(x,y^{\ast}) + \lambda_{MLE} log P(y^{ast} \vert x)
 $$
 
+논문에서는 제안한 학습 방법은 다음과 같습니다.
 
 
+- RNN-T를 먼저 학습함. 
+- RNN-T의 Acoustic Encoder를 프리징 한 후 LAS decoder를 붙혀 학습함. 
+- 마지막으로 Shared Encoder를 사용한 전체 모델을 $$L_{combined}$$ loss를 사용해 파인튜닝 함.
+
+이에 추가적으로, 
 
 
 
