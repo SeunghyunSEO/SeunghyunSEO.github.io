@@ -505,7 +505,7 @@ $$
 음성인식의 결과물인 출력의 길이 또한 $$S=30$$이라고 가정하고, 어떻게 각 블럭마다 align을 해줬는지는 상관 하지 않고, 매 블럭마다 $$3$$개의 토큰이 할당됐다고 생각해보겠습니다. 패딩을해주면 한 블럭당 $$4$$개가 되겠네요. 그렇다면 첫 번째 블럭의 마지막 인덱스 $$e_1=4$$가 됩니다.
 
 
-위의 수식을 다시 곱씹어 보겠습니다.
+위의 수식을 곱씹어 보겠습니다.
 
 첫 번째 블럭에 대해서 생각해보면, 전에 만들어진 subseqeuence가 존재하지 않기 때문에 참조 (conditional)할 게 없기 때문에
 
@@ -530,10 +530,57 @@ p(y_{1,\cdots,e_3} \vert x_{1,\cdots,3W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots
 $$
 
 $$ 
-= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) \cdot p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
+= p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) \cdot p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
 $$
 
 이를 모든 블럭에대해서 수행하면 됩니다.
+
+$$
+p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) 
+$$
+
+$$ 
+p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) 
+$$
+
+$$ 
+p(y_{1,\cdots,e_3} \vert x_{1,\cdots,3W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) \cdot p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
+$$
+
+$$
+\vdots 
+$$
+
+
+$$ 
+p(y_{1,\cdots,e_N} \vert x_{1,\cdots,NW}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) \cdots p( y_{(e_{N-1}+1),\cdots,e_{N}} \vert x_{1,\cdots,NW}, y_{1,\cdots,e_{N}} )
+$$
+
+위에서 우리가 예시로 든 $$L,W,N,S$$ 등을 수식에 대입 해 보면
+
+$$
+p(y_{1,\cdots,4} \vert x_{1,\cdots,5}) = p(y_{1,\cdots,4} \vert x_{1,\cdots,5}) 
+$$
+
+$$ 
+p(y_{1,\cdots,8} \vert x_{1,\cdots,10}) = p(y_{1,\cdots,4} \vert x_{1,\cdots,5}) \cdot p( y_{5,\cdots,8} \vert x_{1,\cdots,10}, y_{1,\cdots,e_{1}} ) 
+$$
+
+$$ 
+p(y_{1,\cdots,12} \vert x_{1,\cdots,15}) = p(y_{1,\cdots,4} \vert x_{1,\cdots,5}) \cdot p( y_{5,\cdots,8} \vert x_{1,\cdots,10}, y_{1,\cdots,4} ) \cdot p( y_{9,\cdots,12} \vert x_{1,\cdots,15}, y_{1,\cdots,8} ) 
+$$
+
+$$
+\vdots 
+$$
+
+
+$$ 
+p(y_{1,\cdots,40} \vert x_{1,\cdots,50}) = p(y_{1,\cdots,4} \vert x_{1,\cdots,5}) \cdot p( y_{5,\cdots,8} \vert x_{1,\cdots,10}, y_{1,\cdots,4} ) \cdots p( y_{37,\cdots,40} \vert x_{1,\cdots,50}, y_{1,\cdots,36} )
+$$
+
+위와 같은 수식을 얻을 수 있습니다.
+
 
 
 위의 수식에서 $$\prod$$ 안에 있는 수식은 chain rule을 통해서 decomposition할 수 있는데, 이는 아래와 같습니다.
@@ -548,8 +595,10 @@ $$
 p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}}) = \prod_{m=e_{1}+1}^{e_2} p(y_m \vert x_{1,2W}, y_{1,\cdots,(m-1)})  
 $$
 
-이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 이렇게 만들어 낸 $$p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}})$$를 사용해서 2번째 블럭에서의 확률을 $$ p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) $$ 처럼 계산 해 내는 거죠.
+이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 이렇게 만들어 낸 $$p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}})$$를 사용해서 2번째 블럭에서의 확률을 $$ p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) \cdot p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) $$ 처럼 계산 해 내게 됩니다.
 
+
+그렇다면 여기서 next step probability term 인 $$ p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)}) $$ 는 어떻게 구할까요? 이에 대해 조금 더 알아보도록 하겠습니다.
 
 
 
