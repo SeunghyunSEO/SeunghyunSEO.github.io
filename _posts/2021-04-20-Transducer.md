@@ -473,6 +473,8 @@ Attention을 사용한 Seq2Seq 모델은 전체 음성을 한번에 받아들이
 *Fig. Neural Transducer의 디테일한 다이어그램. 빨간 박스 부분의 음성에 대해서만 인코딩을 진행해 hidden vectors를 뽑고 이에 대해 Transducer가 최종적으로 토큰들을 출력한다. 여기서 Transducer는 Attention을 사용한 Seq2Seq와 같은 역할을 수행한다.*
 
 
+자 이제 조금 더 디테일하게 `Neural Transducer`에 대해 알아보도록 하겠습니다.
+
 #### 0. Model and Notation
   - $$x_{1,\cdots,L}$$ : 길이 $$L$$의 입력 음성 벡터들 (즉, 매트릭스)
   - $$x_i$$ : $$i$$ 번째 featrue vector
