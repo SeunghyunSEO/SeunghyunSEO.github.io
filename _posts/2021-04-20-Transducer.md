@@ -533,17 +533,23 @@ $$
 = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{2-1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{2-1}} ) p( y_{(e_{2}+1),\cdots,e_{3}} \vert x_{1,\cdots,3W}, y_{1,\cdots,e_{2}} ) 
 $$
 
-이를 N개에 
+이를 모든 블럭에대해서 수행하면 됩니다.
 
 
-위의 수식에서 $$\prod$$에 있는 수식은 
-
-3번째 block에 대해서 계산을 해보면 
-
+위의 수식에서 $$\prod$$ 안에 있는 수식은 chain rule을 통해서 decomposition할 수 있는데, 이는 아래와 같습니다.
 
 $$ 
 p(y_{(e_{b-1}+1),\cdots,e_b} \vert x_{1,\cdots,bW}, y_{1,\cdots,e_{b-1}}) = \prod_{m=e_{b-1}+1}^{e_b} p(y_m \vert x_{1,bW}, y_{1,\cdots,(m-1)})  
 $$
+
+예를 들어 2번째 블럭에 대해서 생각해보면
+
+$$ 
+p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}}) = \prod_{m=e_{1}+1}^{e_2} p(y_m \vert x_{1,2W}, y_{1,\cdots,(m-1)})  
+$$
+
+이 됩니다. (즉 모든 토큰에 대해서 조건부 (conditional) 확률을 걸어 블럭 내의 모든 토큰을 만들어 내는 것이죠. 이렇게 만들어 낸 $$p(y_{(e_{1}+1),\cdots,e_2} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}})$$를 사용해서 2번째 블럭에서의 확률을 $$ p(y_{1,\cdots,e_2} \vert x_{1,\cdots,2W}) = p(y_{1,\cdots,e_1} \vert x_{1,\cdots,W}) p( y_{(e_{1}+1),\cdots,e_{2}} \vert x_{1,\cdots,2W}, y_{1,\cdots,e_{1}} ) $$ 처럼 계산 해 내는 거죠.
+
 
 
 
