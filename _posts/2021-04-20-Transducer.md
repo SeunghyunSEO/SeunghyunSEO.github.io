@@ -1,5 +1,5 @@
 ---
-title: (미완)Transducer
+title: Transducer
 categories: Speech_Recognition
 tag: [tmp]
 
