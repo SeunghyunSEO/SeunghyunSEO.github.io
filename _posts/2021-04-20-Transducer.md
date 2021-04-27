@@ -405,7 +405,7 @@ $$
 이렇게 구한 graph 내의 모든 노드들에 대한 $$\alpha_{t,u}$$를 사용해 우리는 마지막 노드에서의 `forward variable`을 사용해 $$p(y \vert x) $$를 구할 수 있습니다 :
 
 $$
-p(y \vert x) = \alpha_{T,U} h_{T,U}[\phi]
+p(y \vert x) = \alpha_{T,U} \cdot h_{T,U}[\phi]
 $$
 
 마지막으로 $$log$$를 취해 나타낼 수 있으며,
