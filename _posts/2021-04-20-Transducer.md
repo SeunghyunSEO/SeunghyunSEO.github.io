@@ -420,16 +420,16 @@ $$
 
 마지막으로 RNN-T를 사용함으로써 우리가 얻을 수 있는 이득에 대해 정리하자면 (이미 앞에서 다 얘기한 것 같지만...) 다음과 같습니다.
 
-- Since one input data can generate a label sequence of arbitrary length, theoretically, the RNN-transducer can map input sequence to an output sequence of arbitrary length, whether it is longer or shorter than the input.
-- Since the prediction network is an RNN structure, each state update is based on previous state and output labels. Therefore, the RNN-transducer can model the interdependence within output sequence, that is, it can learn the language model knowledge.
-- Since Joint Network uses both language model and acoustic model output to calculate probability distribution, RNN-Transducer models the interdependence between input sequence and output sequence, achieving joint training of language model and the acoustic model.
+- 하나의 입력 벡터가 다양한 길이의 label subsequence를 생성해 낼 수 있기 때문에, 이론적으로 입력 sequence의 길이에 비해 출력 seqeunce의 길이가 짧아야 한다는 제약이 없다.
+- Prediction Network가 RNN 이기 때문에 (순전파만 생각할 경우, causal함) 출력 벡터들 사이의 Interdependence를 모델링 할 수 있는데, 이는 즉, Language Model Knowledge를 배울 수 있다는 의미이다.
+- Joint Network가 최종 출력을 만들어 낼 때 Language Model (Prediction Network) 과 Acoustic Model (Encoder(Transcription Network)) output을 모두 사용하기 때문에, 입력과 출력 사이의 Interdependence를 모델링 할 수 있으며, 이 두 네트워크를 jointly 학습할 수 있다.
 
 
 
-RNN-T 알고리즘은 CTC를 개선시켰음에도, 몇 가지 단점이 존재하는데, 우선 첫 번째는 학습 시키기 쉽지 않다는 것 입니다. 그러므로 보통 각 Sub Networks를 사전 학습 (pre-training) 시켜야 합니다. 그 다음으로는, RNN-T의 계산 과정에 포함되어있는 unreasonable paths 인데요, 예를 들어 첫 번째 입력 $$x_t$$가 정답 레이블 sequence에 대한 토큰을 모두 출력해버리면 나머지 입력들이 모두 공백 토큰을 뽑아내게 되고 이는 알고리즘 상에는 문제가 없지만, 분명히 말이 안되는 거죠. 
+하지만 RNN-T 알고리즘은 CTC를 개선시켰음에도, 몇 가지 단점이 존재하는데, 우선 첫 번째는 학습 시키기 쉽지 않다는 것 입니다. 그러므로 보통 각 Sub Networks를 사전 학습 (pre-training) 시켜야 합니다. 그 다음으로는, RNN-T의 계산 과정에 포함되어있는 unreasonable paths 인데요, 예를 들어 첫 번째 입력 $$x_t$$가 정답 레이블 sequence에 대한 토큰을 모두 출력해버리면 나머지 입력들이 모두 공백 토큰을 뽑아내게 되고 이는 알고리즘 상에는 문제가 없지만, 분명히 말이 안되는 거죠. 
 
 
-이러한 문제점들은 분명 다른 논문들에서 개선이 되긴 했으나, 여전히 RNN-T가 모든 음성인식 task에서 만능인 것은 아닙니다. 
+이러한 문제점들은 분명 다른 논문들에서 개선이 되긴 했으나, 여전히 RNN-T가 모든 음성인식 task에서 만능인 것은 아닌데, 
 
 ![Wang_3](/assets/images/rnnt/Wang_3.png)
 *Fig. 각 ASR 알고리즘들의 특징(장단점)*
