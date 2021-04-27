@@ -14,21 +14,24 @@ toc_sticky: true
 {:toc}
 ---
 
-[Transducer]((https://arxiv.org/pdf/1211.3711)) 모델이란 [Connectionist Temporal Classification (CTC)](https://www.cs.toronto.edu/~graves/icml_2006.pdf) 을 제안한 Alex Graves 가 2012년에 처음 제안한 개념으로 CTC의 단점을 보완한 업그레이드 버전이라고 이야기 할 수 .
-일반적인 경우 Recurrent Neural Networks (RNNs) 를 내부 모듈로 사용하기 때문에 RNN-Tranducer (RNN-T) 라고 부르곤 하지만, 최근에는 [Transformer-Transducer](https://arxiv.org/pdf/2002.02562) 가 제안되는 등 다양한 Variation이 존재하기 때문에 Transducer라고 부르도록 하겠습니다.
+[Transducer]((https://arxiv.org/pdf/1211.3711)) 모델이란 [Connectionist Temporal Classification (CTC)](https://www.cs.toronto.edu/~graves/icml_2006.pdf) 을 제안한 Alex Graves 가 2012년에 처음 제안한 개념으로 CTC의 단점을 보완해 업그레이드 버전이라고 이야기 할 수 있습니다.
+일반적인 경우 Recurrent Neural Networks (RNNs) 를 내부 모듈로 사용하기 때문에 RNN-Tranducer (RNN-T) 라고 부르곤 하지만, 최근에는 [Transformer-Transducer](https://arxiv.org/pdf/2002.02562) 가 제안되는 등 다양한 Variation이 존재하기 때문에 본 포스트에서는 Transducer라고 부르도록 하겠습니다.
 
 
 ```
 시작하기에 앞서, 본 포스트는 다른 자료들과 논문들의 그림을 상당 부분 참고하였음을 밝히며 출처는 Reference에 있습니다.
 ```
 
+
+
+
 ## <mark style='background-color: #fff5b1'> Common Approaches for Deep Learning based E2E ASR Model) </mark>
-데이터와 적당한 모델만 있으면 되는 딥러닝 기반 End-to-End (E2E) 음성인식 (Automatic Speech Recognition, ASR) 모델과 달리 전통적인 ASR 모델은 음성에 대한 전문적인 지식 (Domain Knowledge) 딥러닝 기법과 비교해 상당히 복잡한 모델링이 요구되었습니다.
+데이터와 적당한 모델만 있으면 되는 딥러닝 기반 End-to-End (E2E) 음성인식 (Automatic Speech Recognition, ASR) 모델이 등장하기 전에는 ASR 모델은 만들기 위해 음성에 대한 전문적인 지식 (Domain Knowledge)과 복잡한 모델링이 요구되었습니다.
 
 ![traditional_asr](/assets/images/rnnt/shinji1.png)
 *Fig. 딥러닝 기반 E2E ASR 모델이 제안되기 전의 음성인식 모델*
 
-하지만 딥러닝기반 E2E기법들이 차례대로 등장하면서 CTC(2006~), Transducer(2012~), Attention-based Seq2Seq(2014~) 복잡한 모델링이 없이도 엄청난 음성 인식 성공률을 보여주며 음성인식의 인식 레벨은 한단계 업그레이드 되었습니다.
+하지만 딥러닝 기반 E2E기법들이 차례대로 등장하면서 CTC(2006~), Transducer(2012~), Attention-based Seq2Seq(2014~) 복잡한 모델링이 없이도 엄청난 음성 인식 성공률을 보여주며 음성인식의 인식 레벨은 한 차원 업그레이드 될 수 있었습니다.
 
 ![e2e_asr](/assets/images/rnnt/asr.png)
 *Fig. 일반적인 딥러닝 기반 E2E ASR 기법들, 왼쪽부터 차례대로 CTC, Tranducer, Attention 기반 기법들이다.*
@@ -36,12 +39,14 @@ toc_sticky: true
 (이미지 출처 : [Sequence-to-sequence learning with Transducers from Loren Lugosch](https://lorenlugosch.github.io/posts/2020/11/transducer/))
 
 
-이 중 CTC, ATtention 기반 기법과 다르게, Transducer는 상대적으로 적게 연구가 되었지만 최근 실시간 음성인식 (Straeming-ASR) 의 중요성등이 대두되면서 주목을 받아왔습니다.
-Transducer는 앞서 말한 것 처럼 CTC의 업그레이드 버전인데, CTC 또한 최근 Attention기반 기법과 비교해 성능이 뒤쳐지지 않는다는 논문들이 많이 나오고 있기도 합니다.
-그렇기에 최근에는 Transducer와 Attention 기반 Sequence-to-Sequence(Seq2Seq) 모델 (LAS나 트랜스포머 기반 기법)을 같이 사용하는 Two-Pass 기법이 제안되기도 해왔습니다. 
+이 중 CTC, Attention 기반 기법과 다르게, Transducer는 상대적으로 적게 연구가 되었지만 최근 실시간 음성인식 (Straeming-ASR) 의 중요성 등이 대두되면서 주목을 받아왔습니다.
+Transducer는 앞서 말한 것 처럼 CTC의 단점을 보완한 모델이지만, 이는 Attention 기반 기법의 단점을 보완하기도 합니다.
 
 
-아무튼 우리는 이제 CTC와 Attention 기반 기법에 대해 간단하게 알아보고 Tranducer 모델들에 대해서 알아보도록 하겠습니다.
+이제 CTC와 Attention 기반 기법에이 무엇인지 간단하게 알아보고, 이들은 어떤 단점들을 가지고 있는지 알아보고, Tranducer 모델이 이를 어떻게 해결했는지에 대해서 알아보도록 하겠습니다.
+
+
+
 
 
 
@@ -59,9 +64,6 @@ CTC는 복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와
 
 모델이 하는 일은 입력을 인코더에 통과시켜 인코딩한 벡터들을 가지고 그 벡터들을 일일히 토큰(문자(char),단어(word) 등)으로 바꾸고 특정한 규칙에 의해 최종적으로 정답 Sentence를 만들어내는 것입니다.
 
-![Wang_1](/assets/images/rnnt/Wang_1.png)
-*Fig. CTC 알고리즘에서 정답 label sequence가 'cat'일 경우 가능한 모든 path들은 위와 같다. (총 7개 이며 정답 길이가 길수록 기하급수적으로 늘어난다.)*
-
 ```
 디코딩 된 모든 토큰들의 예시 1 : "c - a a - t"
 디코딩 된 모든 토큰들의 예시 2 : "c - a - t t -"
@@ -70,8 +72,13 @@ CTC는 복잡한 철학과 이론이 있지만, 짧게 요약하자면 아래와
 ```
 `CTC Decoding Example`, 위에는 하나의 디코딩 예시만 들었지만 사실 위와 같은 규칙으로 최종 출력을 만들 수 있는 경우의 수는 많으며, CTC는 이러한 가능한 모든 alignment를 `잠재 변수(latent varialbe)`로 생각하여 학습하는 모델입니다.
 
+
+![Wang_1](/assets/images/rnnt/Wang_1.png)
+*Fig. CTC 알고리즘에서 정답 label sequence가 'cat'일 경우 가능한 모든 path들은 위와 같다. (총 7개 이며 정답 길이가 길수록 기하급수적으로 늘어난다.)*
+
+
 ![Wang_2](/assets/images/rnnt/Wang_2.png)
-*Fig. Path examples in CTC.*
+*Fig. Path examples (Lattice) in CTC.*
 
 
 
