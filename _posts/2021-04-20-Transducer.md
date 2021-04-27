@@ -610,17 +610,20 @@ $$
 
 
 
-
 #### 2. Next Step Prediction
 
 
+![neural_transducer2](/assets/images/rnnt/neural_transducer2.png)
+*Fig. Remind : An overview of the Neural Transducer architecture for speech. 위의 그림은 어떤 블럭에 대해서 $$y_m,y_{m+1},y_{m+2}$$ 를 추론한 경우를 나타냈다.*
+
+그림에서의 벡터들이 어떻게 만들어 지는지는 아래의 수식을 참고하면 간단하게 이해할 수 있습니다.
 
 $$ s_m = f_{RNN} ( s_{m-1}, [c_{m-1},y_{m-1} ; \theta ] ) $$
 $$ c_m = f_{context} (s_m, h_{((b−1)W +1),\cdots,bW} ; \theta ) $$
 $$ h'_{m} = f_{RNN} (h'_{m-1}, [c_m;s_m] ; \theta) $$
 $$ p(y_m \vert x_{1,\cdots,bW},y{1,\cdots,(m-1)}) = f_{softmax}(y_m;h'_m,\theta) $$
 
-
+간단하게 말로 하자면, 블럭이 진행되면서 처음부터 현재 블럭까지 맥락 정보를 전파하는 Transducer에는 2가지 RNN가 있는데, 이들 중 한 Layer (Language Model)가 전파하는 문장적인 정보를 담은 벡터들과, 음성 정보를 담아 전파하는 RNN Layer (Acoustic Model) 가 출력한 해당 블럭 내의 벡터들을 어떠한 특별한 연산 (operation) 을 통해서 계산하고, 다시 이렇게 만들어진 최종 벡터들을 입력으로 하는 (즉 음성, 문자에 대한 종합적인 정보를 가지고 있는 벡터, $$f_{context}$$) Transducer의 나머지 RNN이 최종 토큰 출력 $$y_m$$을 출력한다는 겁니다.
 
 
 
