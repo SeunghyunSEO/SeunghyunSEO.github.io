@@ -14,6 +14,8 @@ toc_sticky: true
 {:toc}
 ---
 
+![nlp](/assets/images/transformers/nlp_architectures.png)
+*Fig. NLP Architectures*
 
 
 ## <mark style='background-color: #fff5b1'> Transformer </mark>
