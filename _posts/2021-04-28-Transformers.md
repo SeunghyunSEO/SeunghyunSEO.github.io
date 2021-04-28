@@ -14,7 +14,7 @@ toc_sticky: true
 {:toc}
 ---
 
-![nlp](/assets/images/transformers/nlp_architectures.png)
+![nlp](/assets/images/transformers/nlp_architecture.png)
 *Fig. NLP Architectures*
 
 
