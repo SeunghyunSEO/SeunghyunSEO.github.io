@@ -14,7 +14,7 @@ toc_sticky: true
 {:toc}
 ---
 
-[Transducer]((https://arxiv.org/pdf/1211.3711)) 모델이란 [Connectionist Temporal Classification (CTC)](https://www.cs.toronto.edu/~graves/icml_2006.pdf) 을 제안한 Alex Graves 가 2012년에 처음 제안한 개념으로 CTC의 단점을 보완해 업그레이드 버전이라고 이야기 할 수 있습니다.
+[Transducer]((https://arxiv.org/pdf/1211.3711)) 모델이란 [Connectionist Temporal Classification (CTC)](https://www.cs.toronto.edu/~graves/icml_2006.pdf) 을 제안한 Alex Graves 가 2012년에 처음 제안한 개념으로, CTC의 단점을 보완해 업그레이드 버전이라고 이야기 할 수 있습니다.
 일반적인 경우 Recurrent Neural Networks (RNNs) 를 내부 모듈로 사용하기 때문에 RNN-Tranducer (RNN-T) 라고 부르곤 하지만, 최근에는 [Transformer-Transducer](https://arxiv.org/pdf/2002.02562) 가 제안되는 등 다양한 Variation이 존재하기 때문에 본 포스트에서는 Transducer라고 부르도록 하겠습니다.
 
 
@@ -31,7 +31,7 @@ toc_sticky: true
 ![traditional_asr](/assets/images/rnnt/shinji1.png)
 *Fig. 딥러닝 기반 E2E ASR 모델이 제안되기 전의 음성인식 모델*
 
-하지만 딥러닝 기반 E2E기법들이 차례대로 등장하면서 CTC(2006~), Transducer(2012~), Attention-based Seq2Seq(2014~) 복잡한 모델링이 없이도 엄청난 음성 인식 성공률을 보여주며 음성인식의 인식 레벨은 한 차원 업그레이드 될 수 있었습니다.
+하지만 딥러닝 기반 E2E기법들이 차례대로 등장하면서 CTC(2006~), Transducer(2012~) 그리고 Attention-based Seq2Seq(2014~) 같은 모델들이 복잡한 모델링이 없이도 엄청난 음성 인식 성공률을 보여주며 음성인식의 인식 레벨은 한 차원 업그레이드 될 수 있었습니다.
 
 ![e2e_asr](/assets/images/rnnt/asr.png)
 *Fig. 일반적인 딥러닝 기반 E2E ASR 기법들, 왼쪽부터 차례대로 CTC, Tranducer, Attention 기반 기법들이다.*
@@ -43,7 +43,7 @@ toc_sticky: true
 Transducer는 앞서 말한 것 처럼 CTC의 단점을 보완한 모델이지만, 이는 Attention 기반 기법의 단점을 보완하기도 합니다.
 
 
-이제 CTC와 Attention 기반 기법에이 무엇인지 간단하게 알아보고, 이들은 어떤 단점들을 가지고 있는지 알아보고, Tranducer 모델이 이를 어떻게 해결했는지에 대해서 알아보도록 하겠습니다.
+이제 CTC와 Attention 기반 기법들이 무엇인지 간단하게 알아보고, 이들은 어떤 단점들을 가지고 있는지 알아보고, Tranducer 모델이 이를 어떻게 해결했는지에 대해서 알아보도록 하겠습니다.
 
 
 
