@@ -70,9 +70,11 @@ python3 --version
 
 ### Docker installation
 
-[Docker for apple silicon chip](https://docs.docker.com/docker-for-mac/apple-silicon/)에서 파일을 다운받는다.
+[Docker for apple silicon chip](https://docs.docker.com/docker-for-mac/apple-silicon/)에서 파일을 다운받거나 아래의 command line을 입력하면 된다.
 
-
+```
+brew install docker 
+```
 
 
 
