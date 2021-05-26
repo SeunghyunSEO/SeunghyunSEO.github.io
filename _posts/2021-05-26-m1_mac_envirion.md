@@ -76,6 +76,17 @@ python3 --version
 brew install docker 
 ```
 
+그리고 설치됐나 확인
+
+```
+docker --version
+```
+
+혹은 anaconda를 설치해서 환경을 관리하며 버전컨트롤을 해도 된다. 그럴경우 아래의 명령어
+
+```
+brew install miniforge
+```
 
 
 ## Reference
