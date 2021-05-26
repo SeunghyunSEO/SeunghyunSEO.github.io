@@ -88,6 +88,19 @@ docker --version
 brew install miniforge
 ```
 
+그리고 확인
+
+```
+conda --version
+```
+
+### Torch or Tensorflow installation
+
+
+
+### Run NN model
+
+
 
 ## Reference
 
