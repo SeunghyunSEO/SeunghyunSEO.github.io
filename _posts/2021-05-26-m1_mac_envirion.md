@@ -1,6 +1,6 @@
 ---
 title: M1 Mac 환경 세팅하기
-categories: DeepLearning
+categories: Coding
 tag: [tmp]
 
 toc: true
