@@ -30,7 +30,7 @@ toc_sticky: true
 
 
 
-### Homebrew 설치
+## Homebrew 설치
 
 우선 [homebrew link](https://brew.sh/index_ko)에서 `brew`를 설치한다. 
 (2021년 2월에 m1 맥북용으로 업데이트했다고 한다, 에러가 난다면 [link](https://gist.github.com/nrubin29/bea5aa83e8dfa91370fe83b62dad6dfa) 참조)
@@ -68,6 +68,8 @@ python3 --version
 ```
 
 
+## Virtual Environment
+
 ### Docker installation
 
 [Docker for apple silicon chip](https://docs.docker.com/docker-for-mac/apple-silicon/)에서 파일을 다운받거나 아래의 command line을 입력하면 된다.
@@ -82,6 +84,8 @@ brew install docker
 docker --version
 ```
 
+### Anaconda (miniconda) installation 
+
 혹은 anaconda를 설치해서 환경을 관리하며 버전컨트롤을 해도 된다. 그럴경우 아래의 명령어
 
 ```
@@ -94,11 +98,15 @@ brew install miniforge
 conda --version
 ```
 
-### Torch or Tensorflow installation
+
+
+## Torch or Tensorflow installation
 
 
 
-### Run NN model
+
+
+## Run NN model
 
 
 
