@@ -1,5 +1,5 @@
 ---
-title: (미완)EM Algorithm
+title: (미완) EM Algorithm
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
