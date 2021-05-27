@@ -55,15 +55,25 @@ echo $PATH
 brew --version
 ```
 
-아예 세팅 처음한다고 생각하고 `wget`도 깔아주고 한다.
+아예 세팅 처음한다고 생각하고 이것저것 설치해준다.
 
 ```
 brew install wget
+
+brew install cmake
+
+brew install gcc
+
+brew install libffi
+
+...
 ```
 
 M1 맥의 경우 파이썬 버전 2.7이 디폴트일테니 알아서 설치해준다, 그리고 체크
 
 ```
+brew install python
+
 python3 --version
 ```
 
@@ -89,26 +99,62 @@ docker --version
 
 ### Anaconda (miniconda) installation 
 
-혹은 anaconda를 설치해서 환경을 관리하며 버전컨트롤을 해도 된다. 그럴경우 아래의 명령어
+혹은 anaconda를 설치해서 환경을 관리하며 버전컨트롤을 해도 된다. 아래의 명령어를 이용해 macos에 맞는 miniforge를 간단하게 다운받을 수 있다.
 
 ```
 brew install miniforge
-```
 
-그리고 확인
-
-```
 conda --version
 ```
 
+를 해보니까 안된다. 다시 지우고,
+
+```
+brew uninstall miniforge
+```
+
+[Miniforge](https://github.com/conda-forge/miniforge#download) 에서 
+
+![miniforge](/assets/images/m1_mac/miniforge.png)
+*Fig. apple silicon chip을 위한 mimiforge를 다운받아야 한다.*
+
+다운 받은 폴더로 찾아가서 (보통 `~/Downloads`니까 그리로 가면 된다) shell을 실행해준다.
+
+```
+bash Miniforge3-MacOSX-arm64.sh
+```
 
 ## Torch or Tensorflow installation
 
-[docker hub](https://hub.docker.com/)에서 원하는 docker image를 pull 하면 되는데, 
+docker를 사용하려면 [docker hub](https://hub.docker.com/)에서 원하는 docker image를 pull 하면 되는데, 
 현재 apple chip을 위한 마땅한 docker image가 없는 것 같아서 conda를 쓰는게 나을 것 같다.
 
 
-텐서플로우를 사용하고 싶다면 [Mac-optimized TensorFlow and TensorFlow Addons](https://github.com/apple/tensorflow_macos)에서 공식 가이드를 따라 진행하면 될 것 같고
+`tensorflow`를 사용하고 싶다면 [Mac-optimized TensorFlow and TensorFlow Addons](https://github.com/apple/tensorflow_macos)에서 공식 가이드를 따라 진행하면 될 것 같고 `torch`를 사용하고 싶다면 [Guide: ARM64 Mac Native Deep Learning Set Up](https://github.com/oresttokovenko/Guide-ARM64-Mac-Native-Deep-Learning-Set-Up)를 참고하면 될 것 같다.
+
+
+`troch`를 쓰는 경우에 대해서만 간단하게 얘기하자면
+
+
+3.8 파이썬으로 가상 환경을 만들어주고
+
+```
+conda create -n m1_pytorch python=3.8
+```
+
+환경으로 접속해주고
+
+```
+. source m1_pytorch
+```
+
+라이브러리를 깔아주면 된다.
+
+```
+conda install pytorch -c isuruf/label/pytorch -c conda-forge
+pip install pytorch-lightning
+conda install torchvision -c pytorch
+```
 
 
 ## Run NN model
