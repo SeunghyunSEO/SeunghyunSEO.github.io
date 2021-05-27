@@ -113,8 +113,12 @@ conda --version
 
 
 ## Reference
-
-1. [국내 blog 1](https://shanepark.tistory.com/m/45?category=1182535)
-
-2. [국내 blog 2](https://cpuu.postype.com/post/9183991)
-3. [tmp](https://cpuu.postype.com/post/2948749)
+- m1 brew 설치
+  - 1. [m1 mac homebrew 설치하기](https://shanepark.tistory.com/m/45?category=1182535)
+  - 2. [m1 mac homebrew 설치하기 2](https://cpuu.postype.com/post/9183991)
+- m1 docker 설치
+  - 3. [북리뷰, 도커: 설치에서 운영까지](https://cpuu.postype.com/post/2948749)
+- m1 pytorch, tensorflow
+  - [Mac-optimized TensorFlow and TensorFlow Addons](https://github.com/apple/tensorflow_macos)
+  - [Install PyTorch natively on Mac M1](https://github.com/edadaltocg/install-pytorch-m1)
+  - [Setting up M1 Mac for both TensorFlow and PyTorch](https://naturale0.github.io/machine%20learning/setting-up-m1-mac-for-both-tensorflow-and-pytorch)
