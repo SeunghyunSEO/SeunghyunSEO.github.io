@@ -1,6 +1,6 @@
 ---
 title: (미완)Multi GPU Training with DP and DDP
-categories: coding
+categories: Coding
 tag: [gpu,multigpu,pytorch]
 
 date: 2021-01-19 01:00:00
