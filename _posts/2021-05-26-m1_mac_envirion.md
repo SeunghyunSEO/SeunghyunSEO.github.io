@@ -21,7 +21,7 @@ toc_sticky: true
 순서는 
 
 - brew 설치
-- Docker or conda 설치
+- docker or conda 설치
 - torch 등 라이브러리 설치 
 - 간단한 네트워크 러닝 해보기
 
@@ -84,6 +84,8 @@ brew install docker
 docker --version
 ```
 
+docker
+
 ### Anaconda (miniconda) installation 
 
 혹은 anaconda를 설치해서 환경을 관리하며 버전컨트롤을 해도 된다. 그럴경우 아래의 명령어
@@ -102,7 +104,7 @@ conda --version
 
 ## Torch or Tensorflow installation
 
-
+[docker hub](https://hub.docker.com/)에서 원하는 docker image를 pull 하던가 아니면 
 
 
 
