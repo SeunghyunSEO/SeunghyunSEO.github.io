@@ -171,11 +171,14 @@ torch.__version__
 
 ## Run NN model
 
-제대로 돌려보려고 했으나... 속도를 보고 바로 접었다.
+제대로 돌려보려고 했으나... 속도를 보고 바로 접었다. 파이토치는 당연히 엄청 느리고 m1용 tf를 사용해도 엄청 느리다.
 
 자세한건 다음의 블로그에서 직접 비교한 벤치마크를 참고하면 될 것 같다.[Benchmark M1 vs Xeon vs Core i5 vs K80 and T4](https://towardsdatascience.com/benchmark-m1-vs-xeon-vs-core-i5-vs-k80-and-t4-e3802f27421c)
 
-혹시나 해서 해봤지만 역시나 안된다. 그냥 colab이나 aws같은 클라우드 서비스를 쓰는 것 말고는 답이 없는 것 같다 ㅠ
+
+## 결론
+
+혹시나 해서 해봤지만 역시나 안된다. 그냥 colab이나 aws같은 클라우드 서비스를 쓰는 것 말고는 답이 없는 것 같다... 혹은 더 최적화된 tf나 torch를 내주길 기다려야 할 것 같다. 그런 날이 올지는 모르겠지만...
 
 
 
