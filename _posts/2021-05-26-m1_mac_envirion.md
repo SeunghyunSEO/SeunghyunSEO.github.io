@@ -181,6 +181,10 @@ torch.__version__
 혹시나 해서 해봤지만 역시나 안된다. 그냥 colab이나 aws같은 클라우드 서비스를 쓰는 것 말고는 답이 없는 것 같다... 혹은 더 최적화된 tf나 torch를 내주길 기다려야 할 것 같다. 그런 날이 올지는 모르겠지만...
 
 
+![torch_thread1](/assets/images/m1_mac/torch_thread1.png)
+![torch_thread2](/assets/images/m1_mac/torch_thread2.png)
+*Fig. 21년 5월 27일 기준 m1칩을 위한 torch의 업데이트 소식은 없냐는 스레드에 수 많은 답글이 달렸으나, 아무 일도 없었다고 한다...*
+
 
 ## Reference
 - m1 brew
