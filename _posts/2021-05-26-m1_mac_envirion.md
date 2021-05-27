@@ -21,7 +21,7 @@ toc_sticky: true
 순서는 
 
 - brew 설치
-- docker or conda 설치
+- 가상 환경 (docker or conda) 설치
 - torch 등 라이브러리 설치 
 - 간단한 네트워크 러닝 해보기
 
@@ -84,7 +84,8 @@ brew install docker
 docker --version
 ```
 
-docker
+![docker](/assets/images/m1_mac/docker.png)
+*Fig. docker의 기본적인 flow, 이미지 출처 : [link](http://moducon.kr/2018/wp-content/uploads/sites/2/2018/12/leesangsoo_slide.pdf)*
 
 ### Anaconda (miniconda) installation 
 
@@ -101,11 +102,13 @@ conda --version
 ```
 
 
-
 ## Torch or Tensorflow installation
 
-[docker hub](https://hub.docker.com/)에서 원하는 docker image를 pull 하던가 아니면 
+[docker hub](https://hub.docker.com/)에서 원하는 docker image를 pull 하면 되는데, 
+현재 apple chip을 위한 마땅한 docker image가 없는 것 같아서 conda를 쓰는게 나을 것 같다.
 
+
+텐서플로우를 사용하고 싶다면 [Mac-optimized TensorFlow and TensorFlow Addons](https://github.com/apple/tensorflow_macos)에서 공식 가이드를 따라 진행하면 될 것 같고
 
 
 ## Run NN model
