@@ -18,7 +18,8 @@ toc_sticky: true
 
 하단의 레퍼런스 참조
 
-
+![vi](/assets/images/editor/vi-ref.png)
+*Fig. Vi cheat sheet*
 
 
 
