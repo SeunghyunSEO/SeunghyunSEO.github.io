@@ -191,8 +191,10 @@ torch.__version__
   - [m1 mac homebrew 설치하기](https://shanepark.tistory.com/m/45?category=1182535)
   - [m1 mac homebrew 설치하기 2](https://cpuu.postype.com/post/9183991)
 - m1 docker
-  - [북리뷰, 도커: 설치에서 운영까지](https://cpuu.postype.com/post/2948749)
-  - [AI 딥러닝 시작:: 가상 환경 구현 ( Docker )](https://velog.io/@uonmf97/AI-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%8B%9C%EC%9E%91-%EA%B0%80%EC%83%81-%ED%99%98%EA%B2%BD-%EA%B5%AC%ED%98%84-Docker)
+  - [Docker Desktop for Apple silicon](https://docs.docker.com/docker-for-mac/apple-silicon/)
+  - additional
+    - [북리뷰, 도커: 설치에서 운영까지](https://cpuu.postype.com/post/2948749)
+    - [AI 딥러닝 시작:: 가상 환경 구현 ( Docker )](https://velog.io/@uonmf97/AI-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%8B%9C%EC%9E%91-%EA%B0%80%EC%83%81-%ED%99%98%EA%B2%BD-%EA%B5%AC%ED%98%84-Docker)
 - m1 pytorch, tensorflow
   - [Mac-optimized TensorFlow and TensorFlow Addons](https://github.com/apple/tensorflow_macos)
   - [Install PyTorch natively on Mac M1](https://github.com/edadaltocg/install-pytorch-m1)
