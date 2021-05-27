@@ -33,7 +33,7 @@ toc_sticky: true
 
 하단의 레퍼런스 참조
 
-![Cheatsheet for nano](/assets/images/editor/Cheatsheet for nano.png)
+![cheatsheet_for_nano](/assets/images/editor/cheatsheet_for_nano.png)
 *Fig. Nano Cheatsheet*
 
 
