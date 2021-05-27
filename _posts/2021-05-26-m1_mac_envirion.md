@@ -17,6 +17,10 @@ toc_sticky: true
 원래 M1 Macbook을 샀을 당시에 gpu가 없이 딥러닝 모델을 제대로 학습시킬 수 없다고 생각했고, 실제로 수많은 라이브러리에서 에러가 났기 때문에 일단 냅뒀는데,
 뭐 나쁘지 않게 돌리 수 있다는 (?) 말을 듣고 설치해보려고한다. (근데 MNIST 정도 되는 사이즈의 이미지 분류 task나 잘 되는 것 같다... 1080ti급이라는 소리도 헛소리일 확률이 크지만 일단 해본다.) 
 
+![mac_benchmark](/assets/images/m1_mac/mac_benchmark.png)
+*Fig. The comparison of training performance*
+
+
 
 순서는 
 
