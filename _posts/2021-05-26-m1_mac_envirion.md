@@ -113,10 +113,10 @@ conda --version
 brew uninstall miniforge
 ```
 
-[Miniforge](https://github.com/conda-forge/miniforge#download) 에서 
+[Miniforge](https://github.com/conda-forge/miniforge#download) 에서 apple silicon chip을 위한 mimiforge를 다운받아야 한다.
 
 ![miniforge](/assets/images/m1_mac/miniforge.png)
-*Fig. apple silicon chip을 위한 mimiforge를 다운받아야 한다.*
+*Fig. [Miniforge](https://github.com/conda-forge/miniforge#download) 페이지에 명시되어 있음*
 
 다운 받은 폴더로 찾아가서 (보통 `~/Downloads`니까 그리로 가면 된다) shell을 실행해준다.
 
@@ -152,8 +152,16 @@ conda create -n m1_pytorch python=3.8
 
 ```
 conda install pytorch -c isuruf/label/pytorch -c conda-forge
-pip install pytorch-lightning
 conda install torchvision -c pytorch
+```
+
+환경에서 나가지 말고 잘 설치되었는지 체크하면 된다.
+
+```
+python
+
+import torch
+torch.__version__
 ```
 
 
