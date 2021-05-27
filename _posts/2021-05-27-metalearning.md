@@ -17,8 +17,7 @@ comments: true
 ---
 
 
-## <mark style='background-color: #fff5b1'> Fisher's linear discriminant </mark>
+## <mark style='background-color: #fff5b1'> What is Meta Learning? </mark>
 
 ## <mark style='background-color: #fff5b1'> References </mark>
 
-2. [Bishop, Christopher M. Pattern recognition and machine learning. springer, 2006.](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)
