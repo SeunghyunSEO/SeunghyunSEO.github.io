@@ -171,6 +171,12 @@ torch.__version__
 
 ## Run NN model
 
+제대로 돌려보려고 했으나... 속도를 보고 바로 접었다.
+
+자세한건 다음의 블로그에서 직접 비교한 벤치마크를 참고하면 될 것 같다.[Benchmark M1 vs Xeon vs Core i5 vs K80 and T4](https://towardsdatascience.com/benchmark-m1-vs-xeon-vs-core-i5-vs-k80-and-t4-e3802f27421c)
+
+혹시나 해서 해봤지만 역시나 안된다. 그냥 colab이나 aws같은 클라우드 서비스를 쓰는 것 말고는 답이 없는 것 같다 ㅠ
+
 
 
 ## Reference
@@ -185,3 +191,5 @@ torch.__version__
   - [Install PyTorch natively on Mac M1](https://github.com/edadaltocg/install-pytorch-m1)
   - [Setting up M1 Mac for both TensorFlow and PyTorch](https://naturale0.github.io/machine%20learning/setting-up-m1-mac-for-both-tensorflow-and-pytorch)
   - [Guide: ARM64 Mac Native Deep Learning Set Up](https://github.com/oresttokovenko/Guide-ARM64-Mac-Native-Deep-Learning-Set-Up)
+  - [Apple Silicon M1 macOS에서 TensorFlow 활용기](https://cpuu.postype.com/post/9091007)
+  - [Benchmark M1 vs Xeon vs Core i5 vs K80 and T4](https://towardsdatascience.com/benchmark-m1-vs-xeon-vs-core-i5-vs-k80-and-t4-e3802f27421c)
