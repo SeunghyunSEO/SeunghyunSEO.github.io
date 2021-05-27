@@ -26,7 +26,7 @@ toc_sticky: true
 
 하단의 레퍼런스 참조
 
-![vim-cheatsheet](/assets/images/editor/vim-cheatsheet.png)
+![vim_cheatsheet](/assets/images/editor/vim_cheatsheet.png)
 *Fig. Vim Cheatsheet*
 
 ## Nano
