@@ -173,7 +173,7 @@ torch.__version__
 
 제대로 돌려보려고 했으나... 속도를 보고 바로 접었다. 파이토치는 당연히 엄청 느리고 m1용 tf를 사용해도 엄청 느리다.
 
-자세한건 다음의 블로그에서 직접 비교한 벤치마크를 참고하면 될 것 같다.[Benchmark M1 vs Xeon vs Core i5 vs K80 and T4](https://towardsdatascience.com/benchmark-m1-vs-xeon-vs-core-i5-vs-k80-and-t4-e3802f27421c)
+자세한건 다음의 블로그에서 직접 비교한 벤치마크를 참고하면 될 것 같다.[Benchmark M1 vs Xeon vs Core i5 vs K80 and T4](https://towardsdatascience.com/benchmark-m1-vs-xeon-vs-core-i5-vs-k80-and-t4-e3802f27421c), [Deep Learning on M1 Mac Mini](https://medium.com/macoclock/deep-learning-on-m1-mac-mini-59b85538212e)
 
 
 ## 결론
