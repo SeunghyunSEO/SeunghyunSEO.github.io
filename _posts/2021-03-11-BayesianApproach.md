@@ -9,12 +9,14 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> Bayesian Approach </mark>
 
-이제 ML, MAP 대해서 알아봤으니, 이제 Bayesian Approach에 대해서 알아봐야겠죠? 
-
-이제는 다음의 수식이 익숙하실 겁니다 ㅎㅎ
+MAP에서와 마찬가지로 다음의 두 관계식에 대해서 적어두고 시작하도록 하겠습니다. 
 
 > 1. $$likelihood : p(x\mid\theta)$$ <br>
 > 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
+
+`posterior`란 `likelihood`에 대해 `분포를 나타내는 변수들이 실제로는 '???'한 값을 가질 확률이 높던데?` 라는 사전 정보 prior를 추가한 것이었고
+이렇게 만들어진 posterior분포에서 최대값을 리턴하는 파라메터 하나만을 취하는 것이 `MAP`였고 모든 파라메터를 고려하는게 `Bayesian Approach`였죠. 
+
 
 ![map vs mle](https://user-images.githubusercontent.com/48202736/106485046-89ffb800-64f3-11eb-815e-c7ac0ea84f5f.png)
 
