@@ -48,9 +48,9 @@ $$
 
 & p(\mu,\sigma^2 \vert x_{1,\cdots, I}) = \frac{ \prod_{i=1}^I p(x_i \vert \mu, \sigma^2) p(\mu,\sigma^2) }{ p(x_{1,\cdots,I})  } & \\
 
-& = \frac{ Norm_{x_i} [\mu,\sigma^2] NormInvGam_{\mu,\sigma^2}[\alpha,\beta,\gamma,\delta] }{ p(x_{1,\cdots,I} } & \\
+& = \frac{ Norm_{x_i} [\mu,\sigma^2] NormInvGam_{\mu,\sigma^2}[\alpha,\beta,\gamma,\delta] }{ p(x_{1,\cdots,I}) } & \\
 
-& = \frac{ \kappa(\alpha,\beta,\gamma,\delta,x_{1,cdots,I}) NormInvGam_{\mu,\sigma^2}[\tilde{\alpha},\tilde{\beta},\tilde{\gamma},\tilde{\delta}] }{ p(x_{1,\cdots,I} } & \\
+& = \frac{ \kappa(\alpha,\beta,\gamma,\delta,x_{1,cdots,I}) NormInvGam_{\mu,\sigma^2}[\tilde{\alpha},\tilde{\beta},\tilde{\gamma},\tilde{\delta}] }{ p(x_{1,\cdots,I}) } & \\
 
 & = NormInvGam_{\mu,\sigma^2} [\tilde{\alpha},\tilde{\beta},\tilde{\gamma},\tilde{\delta}] & \\
 
