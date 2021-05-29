@@ -69,12 +69,15 @@ $$
 
 
 즉 원래의 
-샘플들로 
+샘플들로 부터 구한 posterior가 있고, 새로운 데이터 포인트 $$x^{\ast}$$가 들어오면 이 데이터는 어떤 확률을 가지는지를 이미 구해진 파라메터로 이루어진 분포의 값을 읽는게 아니고, `새로운 데이터 포인트가 들어올 때 마다 적분을 해서` 값을 리턴하는거죠.
+
+
 $$
-&& \\
-&& \\
+& p(x^{\ast} \vert x_{1,\cdots,I}) = \int p(x^{\ast} \vert \theta) p(\theta \vert x_{1,\cdots,I}) d \theta & \\
+& p(x^{\ast} \vert x_{1,\cdots,I}) = \int \int p(x^{\ast} \vert \mu,\sigma^2) p(\mu,\sigma^2 \vert x_{1,\cdots,I}) d \mu \sigma & \\
 $$
 
+이 
 
 ![bayesian4](/assets/images/Bayesian/bayesian4.png)
 *Fig.*
