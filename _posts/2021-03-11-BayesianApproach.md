@@ -51,6 +51,29 @@ $$
 & = NormInvGam_{\mu,\sigma^2} [\tilde{\alpha},\tilde{\beta},\tilde{\gamma},\tilde{\delta}] &\\
 $$
 
+여기서 
+
+$$
+& \tilde{\alpha} = \alpha + \frac{I}{2}& \\
+& \tilde{\gamma} = \gamma + I& \\
+& \tilde{\delta} = \frac{ \gamma \delta + \sum_i x_i }{ \gamma +I } & \\
+& \tilde{\beta} = \frac{\sum_i x_i^2}{2} + \beta + \frac{\gamma \delta^2}{2} - \frac{ (\gamma \delta + \sum_i x_i )^2}{ 2(\gamma +I) } & \\
+
+$$
+
+입니다.
+
+
+수식이 복잡해보이지만 likelihood에 대해 `Conjugage prior`를 사용했기 때매 그래도 간단한 분포가 도출된 것입니다.
+이제 우리는 모든 파라메터 $$\theta=\mu,\sigma^2$$에 대해 고려해서 분포를 추정하면 되는겁니다 (`predictive density`).
+
+
+즉 원래의 
+샘플들로 
+$$
+&& \\
+&& \\
+$$
 
 
 ![bayesian4](/assets/images/Bayesian/bayesian4.png)
