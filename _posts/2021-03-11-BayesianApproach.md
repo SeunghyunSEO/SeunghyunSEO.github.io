@@ -77,10 +77,25 @@ $$
 & p(x^{\ast} \vert x_{1,\cdots,I}) = \int \int p(x^{\ast} \vert \mu,\sigma^2) p(\mu,\sigma^2 \vert x_{1,\cdots,I}) d \mu \sigma & \\
 $$
 
-이 
+사실 이 `predictive density`를 구하는 적분식도 데이터가 많아지고 분포가 복잡해지면 계산이 굉장히 어려워지는데요, 지금의 경우에는 할만합니다. (하지만 생략하겠습니다 글이 너무 길어져서...)
 
 ![bayesian4](/assets/images/Bayesian/bayesian4.png)
-*Fig.*
+*Fig. 베이지안 방법론은 posterior로 부터 샘플링한 (가능한) 모든 파라메터를 이용해 테스트 데이터의 값을 추론을 하는 것이다.*
 
 
+이러한 베이지안 방법론은 실제 분류,회귀 문제를 풀 때도 적용이 될 수 있는데요, 이 때 발생하는 계산에 대한 문제 `(intractable posterior)`등을 해결하기 위해서 여러 알고리즘들이 제안되기도 했습니다.
+
+
+이제 머신러닝/딥러닝의 핵심 개념 중 하나인 MLE, MAP 그리고 Bayesian Approach까지 감을 잡았으니 앞으로는 회귀, 분류문제에 대해서도 다양하게 알아보고 고전 머신러닝 알고리즘들 (퍼셉트론, SVM 등)을 넘어 최신 딥러닝 기법 (DNN, ...)에 대해서도 다뤄보려고 합니다.
+
+
+
+
+
+
+## <mark style='background-color: #fff5b1'> References </mark>
+
+1. [Prince, Simon JD. Computer vision: models, learning, and inference. Cambridge University Press, 2012.](http://www.computervisionmodels.com/)
+
+2. [Bishop, Christopher M. Pattern recognition and machine learning. springer, 2006.](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)
 
