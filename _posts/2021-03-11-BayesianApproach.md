@@ -37,6 +37,21 @@ $$
 & p(\theta \mid x) = \frac{p(x \mid \theta)p(\theta)}{p(x)} & \\
 $$
 
+그동안 하던대로 `likelihood`는 `Normal 분포`로 정하고, 마찬가지로 계산을 용이하게 하기 위해서 `prior`, $$p(\theta)$$는 `Normal Inverse Gamma 분포`로 정합니다. 그러면 위의 수식은 아래와 같이 표현할 수 있습니다.
+
+$$
+& p(\theta \mid x) = \frac{p(x \mid \theta)p(\theta)}{p(x)} & \\
+
+& p(\mu,\sigma^2 \vert x_{1,\cdots, I}) = \frac{ \prod_{i=1}^I p(x_i \vert \mu, \sigma^2) p(\mu,\sigma^2) }{ p(x_{1,\cdots,I})  } &\\
+
+&  = \frac{ Norm_{x_i} [\mu,\sigma^2] NormInvGam_{\mu,\sigma^2}[\alpha,\beta,\gamma,\delta] }{ p(x_{1,\cdots,I} &\\
+
+& = \frac{ \kappa(\alpha,\beta,\gamma,\delta,x_{1,cdots,I}) NormInvGam_{\mu,\sigma^2}[\tilde{\alpha},\tilde{\beta},\tilde{\gamma},\tilde{\delta}] }{ p(x_{1,\cdots,I} &\\
+
+& = NormInvGam_{\mu,\sigma^2} [\tilde{\alpha},\tilde{\beta},\tilde{\gamma},\tilde{\delta}] &\\
+$$
+
+
 
 ![bayesian4](/assets/images/Bayesian/bayesian4.png)
 *Fig.*
