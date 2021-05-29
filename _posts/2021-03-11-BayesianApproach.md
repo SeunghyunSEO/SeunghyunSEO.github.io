@@ -18,20 +18,28 @@ MAP에서와 마찬가지로 다음의 두 관계식에 대해서 적어두고 �
 이렇게 만들어진 posterior분포에서 최대값을 리턴하는 파라메터 하나만을 취하는 것이 `MAP`였고 모든 파라메터를 고려하는게 `Bayesian Approach`였죠. 
 
 
-![map vs mle](https://user-images.githubusercontent.com/48202736/106485046-89ffb800-64f3-11eb-815e-c7ac0ea84f5f.png)
+![bayesian1](/assets/images/Bayesian/bayesian1.png)
+*Fig. MLE vs MAP*
 
-Maximum Likelihood와는 다르게 Maximum A Posterior는 우리가 추정하고자하는 분포의 파라메터에 대해 사전 분포(prior) 정보를 도입합니다.
-
-그래서 데이터 개수가 적을 때 prior의 도움으로 완전히 엉뚱한 분포를 예측하지 않게 도와주는 역할을 하기도 했죠.
-
-하지만 단순히 posterior를 구한 뒤, 그 중에 가장 큰 값만을 취하는 방식은 (즉 점 추정하는 방식) 
-
-![bayesian1](https://user-images.githubusercontent.com/48202736/106484849-5b81dd00-64f3-11eb-8266-8aa2b32ce4e1.png)
-![bayesian2](https://user-images.githubusercontent.com/48202736/106484856-5cb30a00-64f3-11eb-8b16-74e18f508e80.png)
-![bayesian3](https://user-images.githubusercontent.com/48202736/106484860-5de43700-64f3-11eb-86fa-384ce5e36ae3.png)
+MAP가 MLE의 단점을 보완하긴 했지만 아직도 부족합니다.
+왜냐하면 posterior 분포가 `0.3의 확률로 mean=1, variance=0.7`일 때 가장 큰 값을 리턴한다면 0.3밖에 안되는 확신으로 파라메터를 정한 것이기 때문에 이렇게 구한 분포가 별로 좋을 리 없기 때문이죠.
 
 
-사실 $$poseterior$$에 대해 좀 더 얘기해보자면 이는 베이즈룰을 사용해서 유도한 식으로 원래는 아래와 같이 적분 계산을 해야합니다.
+그래서 `베이지안 방법론 (Bayesian Approach)`는 모든 파라메터에 대해서 고려해서 결과를 산출하자는 것인데요, 
 
-<center>$$posterior :  p(\phi \mid X,W) = \frac{p(W \mid X, \phi)p(\phi)}{p(W \mid X)}$$</center>
+![bayesian3](/assets/images/Bayesian/bayesian3.png)
+*Fig. MAP vs Bayesian*
+
+사실 poseterior를 제대로 계산하려면 `베이즈 룰 (Bayes' Rule)`을 사용해서 유도한 식으로 원래는 아래와 같이 적분 계산을 해야합니다.
+
+$$
+& posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta) & \\
+& p(\theta \mid x) = \frac{p(x \mid \theta)p(\theta)}{p(x)} & \\
+$$
+
+
+![bayesian4](/assets/images/Bayesian/bayesian4.png)
+*Fig.*
+
+
 
