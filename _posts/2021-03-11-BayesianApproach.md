@@ -5,6 +5,8 @@ tag: [MachineLearning,ML]
 
 toc: true
 toc_sticky: true
+
+comments: true
 ---
 
 - <mark style='background-color: #fff5b1'> Bayesian Approach </mark>
