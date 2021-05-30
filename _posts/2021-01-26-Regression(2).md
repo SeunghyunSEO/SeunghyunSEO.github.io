@@ -48,9 +48,25 @@ comments: true
 이는 모든 구간에 동일한 confidence를 주지 않는 방법은 다르게 말하면 우리의 목표는 데이터 밀도가 적거나 데이터가 없는 부분에 대해서는 우리가 추정한 곡선이 잘 모르겠다는 의미로 큰 variance를 갖게 하는, 즉 `불확실성 (uncertainty)`를 나타내는 것이라고 할 수 있습니다.
 
 
+MAP나 MLE가 결국에는 학습 데이터($$X,Y$$)를 보고 딱 하나의 해를 구하는, 즉 `점 추정 (point estimation)`을 하는 방법이기 때문에 우리는 어떤 새로운 테스트 데이터 $$x^{\ast}$$가 들어왔을 때 우리가 학습 데이터로부터 구한 하나의 최적의 파라메터를 이용해서 단순히 결과를 산출해내는 것이지만
+
+$$
+\theta^{\ast} \leftarrow X,Y
+y^{\ast} = p(y^{\ast} \vert x^{\ast}, \theta^{\ast})
+$$
+
+베이지안 방법론은 어떤 테스트 데이터가 마찬가지로 들어왔을 때 데이터로 부터 얻어낸 파라메터의 분포를 기반으로 그 분포로 부터 나올 수 있는 모든 파라메터들을 전부 고려해서 아래와 같이 $$y^{\ast}$$ 를 예측해냅니다.
+
+$$
+y^{\ast} = p(y^{\ast} \vert x^{\ast}, X,Y) = \int p(y^{\ast} \vert x^{\ast}, \theta ) p(\theta \vert X,Y)
+$$
+
 
 ![reg2_3](/assets/images/regression/reg2_3.png)
 *Fig. uncertainty는 데이터 개수에 종속적임( 분홍색 음영이 큰 것은 그 데이터 포인트x에서 불확실성이 크다는 것)*
+
+
+
 
 
 
@@ -63,17 +79,16 @@ comments: true
 
 ![reg2_4](/assets/images/regression/reg2_4.png)
 
-오늘은 Bayesian Linear Regression만 다루고 나머지는 다음에 다루도록 하겠습니다.
+(이번 포스트에서는 Bayesian Linear Regression만 다루고 나머지는 다음에 다루도록 하겠습니다.)
 
-우리가 잘 아는 관계식이 하나 있습니다.
+
+이전에 선형 회귀 문제에서 파라메터를 구하던 것과 비슷하게 접근해 보도록 하겠습니다.
 
 > 1. $$likelihood : p(x\mid\theta)$$ <br>
 > 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
 
-이전에 선형 회귀 문제에서 파라메터를 구하던 것과 비슷하게 접근해봅시다.
-
-$$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니다. 
-(왜냐면 $$posterior$$를 구해서 적분을 하게 될 텐데, $$posterior$$는 두 분포 $$likelihood$$ 와 $$prior$$의 곱이기 때문입니다. 그리고 두 가우시안 분포의 곱은 가우시안 분포기 때문이죠.)
+`likelihood` 와 `prior`를 모두 가우시안 분포로 정의하겠습니다. 
+(왜냐면 `posterior`를 구해서 적분에 이용하게 될 텐데, 이는 두 분포의 곱이기 때문입니다. 그리고 두 가우시안 분포의 곱은 가우시안 분포기 때문이죠.)
 
 <center>$$ likelihood : Pr(w|X) = Norm_w[X^T\phi,\sigma^2I] $$</center>
 
