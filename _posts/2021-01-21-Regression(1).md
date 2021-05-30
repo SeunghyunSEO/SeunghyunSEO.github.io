@@ -29,7 +29,7 @@ comments: true
 2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있습니다.
 
 
-![reg1](/assets/images/regression/reg1)
+![reg1](/assets/images/regression/reg1.png)
 *Fig. 회귀 (Regression) vs 분류 (Classification)*
 
 
@@ -41,7 +41,7 @@ comments: true
 1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해봅시다.
 우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이 될 수 있습니다. 
 
-![reg2](/assets/images/regression/reg2){: width="70%"}
+![reg2](/assets/images/regression/reg2.png){: width="70%"}
 *Fig. 데이터를 가장 잘 설명하는 직선은 무엇일까?*
 
 (이미지 출처 : [link](https://en.wikipedia.org/wiki/Regression_analysis))
@@ -53,7 +53,7 @@ comments: true
 
 
 
-![reg3](/assets/images/regression/reg3)
+![reg3](/assets/images/regression/reg3.png)
 *Fig. Linear vs Polynomial Regression. 다항식 피팅 곡선도 선형 회귀라 할 수 있는데 왜냐하면, 우리가 추정하고자 하는 파라메터에 대해서 수식이 선형이기 때문이다.*
 
 
@@ -61,7 +61,7 @@ comments: true
 
 + (만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하는게 목적이 될 겁니다.)
 
-![reg4](/assets/images/regression/reg4)
+![reg4](/assets/images/regression/reg4.png)
 *Fig. 2차원 데이터에서의 회귀*
 
 (이미지 출처 : [link](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/01/20/ISL-linear-regression_ch3.html))
@@ -78,12 +78,12 @@ comments: true
 
 아래는 일반적으로 생각할 수 있는 직선 $$y=\theta_0 + \theta_1 x$$ 을 피팅하는 과정이고
 
-![reg5](/assets/images/regression/reg5)
+![reg5](/assets/images/regression/reg5.png)
 *Fig. Linear Regression Animation*
 
 아래는 마찬가지로 linear regression 이지만, 직선 $$y=\theta_0 + \theta_1 x + \theta_2 x^2$$ 인 polynomial linear regression을 피팅하는 과정에 대한 애니메이션입니다.
 
-![reg6](/assets/images/regression/reg6)
+![reg6](/assets/images/regression/reg6.png)
 *Fig. Linear Regression Animation2*
 
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scrach-linear-regression-normal-equation-gradient-descent-1af26b542c28))
@@ -98,7 +98,7 @@ comments: true
 여기에 조금 더 보태보면, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각할 수 있습니다.
 쉽게 $$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각해봅시다.
 
-![reg7](/assets/images/regression/reg7)
+![reg7](/assets/images/regression/reg7.png)
 *Fig. 선형 회귀 문제는 데이터 x가 주어졌을때 출력 y값이 어떤 분포의 형태로 나타날까?를 모델링한다. 그림은 가우시안 분포를 가정한다.*
 
 이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것입니다.
@@ -208,7 +208,7 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 어떤 의미냐 하면 아래의 커브 피팅(곡선 피팅) 의 예시를 보시면, 
 
 
-![reg8](/assets/images/regression/reg8){: width="60%"}
+![reg8](/assets/images/regression/reg8.png){: width="60%"}
 *Fig. 곡선 피팅의 예시 from PRML*
 
 
@@ -275,9 +275,9 @@ posterior를 최대화 하는 solution을 구하면
 $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른 정규화 term이 곡선 피팅에 끼치는 영향은 다음과 같습니다.
 
 
-![reg9](/assets/images/regression/reg9){: width="60%"}
-![reg10](/assets/images/regression/reg10){: width="60%"}
-![reg11](/assets/images/regression/reg11){: width="60%"}
+![reg9](/assets/images/regression/reg9.png){: width="60%"}
+![reg10](/assets/images/regression/reg10.png){: width="60%"}
+![reg11](/assets/images/regression/reg11.png){: width="60%"}
 *Fig. Regularization (정규화) 혹은 Penalty term의 영향력에 따른 회귀 곡선 표현력의 차이*
 
 
@@ -287,7 +287,7 @@ $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른
 
 이것들은 여백이 부족해서 2편에서 다루도록 하겠습니다.
 
-![reg12](/assets/images/regression/reg12)
+![reg12](/assets/images/regression/reg12.png)
 *Fig. 다양한 회귀 문제를 풀기 위한 Variation들*
 
 
