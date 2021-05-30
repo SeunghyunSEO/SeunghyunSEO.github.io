@@ -51,7 +51,7 @@ comments: true
 MAP나 MLE가 결국에는 학습 데이터($$X,Y$$)를 보고 딱 하나의 해를 구하는, 즉 `점 추정 (point estimation)`을 하는 방법이기 때문에 우리는 어떤 새로운 테스트 데이터 $$x^{\ast}$$가 들어왔을 때 우리가 학습 데이터로부터 구한 하나의 최적의 파라메터를 이용해서 단순히 결과를 산출해내는 것이지만
 
 $$
-\theta^{\ast} \leftarrow X,Y
+\theta^{\ast} \leftarrow X,Y \\
 y^{\ast} = p(y^{\ast} \vert x^{\ast}, \theta^{\ast})
 $$
 
