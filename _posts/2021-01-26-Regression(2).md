@@ -18,11 +18,11 @@ comments: true
 
 ## <mark style='background-color: #fff5b1'> ML solution for Modeling Gaussian Dist over Output, W </mark>
 
-우리는 이전에 회귀 문제, 그 중에서도 선형 회귀 문제를 푸는 방법에 대해 알아봤습니다.
+우리는 이전에 `회귀 (Regression)` 문제, 그 중에서도 파라메터들에 대한 선형 결합으로 선이 표현되는 `선형 회귀 (Linear Regression)` 문제를 푸는 방법에 대해 알아봤습니다.
+곡선을 찾아내기 위해서 가장 먼저 출력($$w$$)에 대한 분포를 가우시안 분포로 정의하고 `likelihood`인 $$Pr(y \mid x,\theta)$$ 를 최대화 하는 `Maximum likelihood Estimation, MLE` 방법으로 데이터에 알맞는 (fitting) 최적의 선을 찾아냈죠.
 
-가장 먼저 출력($$w$$)에 대한 분포를 가우시안 분포로 정의하고 $$likelihood$$인 $$Pr(y \mid x,\theta)$$ 를 최대화 하는 Maximum likelihood 방법이나,
 
-$$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱해서 구한 $$posterior$$, $$Pr(\theta \mid x,y)$$ 를 최대화 하는 Maximum A Posterior 방법을 사용했습니다.
+그리고 우리는 더 나아가 $$\theta$$에 대한 `prior`를 하나 더 정의해서 likelihood와 곱해서 구한 `posterior`, $$Pr(\theta \mid x,y)$$ 를 최대화 하는 `Maximum A Posterior, MAP` 방법을 사용했습니다.
 
 ![reg2_1](/assets/images/regression/reg2_1.png){: width="60%"}
 *Fig. 일반적인 점 추정 방식의 회귀 곡선*
@@ -30,13 +30,11 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 위의 그림은 MAP로 최적의 파라메터를 구했을 때의 그림입니다.
 
 
-그치만 사실 뭔가 불편합니다.
+그치만 사실 우리가 찾은 선은 뭔가 불편한데요,
+그것은 모든 x 에 대해 y 분포가 제 각기 다른데도 불구하고 (즉 샘플링 된 데이터의 밀도가 다름), 우리가 찾은 직선은 전구간에 걸쳐 다 똑같은 굵기라는 것입니다. 
 
+즉 `전 구간에 있어 동일한 자신감 (confidence)`를 가지고 있다는  즉 데이터가 없는 부분에서 over-confident 하다는 문제를 보인다는 것입니다.
 
-뭐가 불편하냐면 그것은 모든 실제로 x 에 대해 y 분포가 제 각기 다른데도 불구하고 (즉 샘플링 된 데이터의 밀도가 다름), 우리가 찾은 직선은 전구간에 걸쳐 다 똑같은 굵기라는 것입니다. 
-
-
-즉 전 구간에 있어 동일한 confidence를 가지고 있다, 즉 데이터가 없는 부분에서 over-confident 하다는 문제를 보인다는 것입니다.
 
 
 이를 해결하기 위해서 어떻게할까요? 당장 생각할 수 있는 방법은 $$posterior$$ 가장 큰 값 하나만 구하는 MAP를 사용하지 말고, 
@@ -275,9 +273,9 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 하지만 이렇게 베이지안 방법론을 간단한 회귀 문제가 아닌 비선형성이 포함된 현대의 딥러닝에 적용하는것은 문제가 있는데요, 이를 Practical하게 해결한 방법론들이 많이 존재합니다.
 
-![reg2_12](/assets/images/regression/reg2_12.png)
+![reg2_12](/assets/images/regression/reg2_12.jpeg)
 *Fig. 신경망 (Neural Network NN) 에 분포 추정 방식을 적용한, 이른 바 Bayesian Neural Network (BNN)*
-![reg2_13](/assets/images/regression/reg2_13.png)
+![reg2_13](/assets/images/regression/reg2_13.jpeg)
 *Fig. 가우시안 프로세스에 베이지안 방법론을 적용한 것은, 현대 딥러닝의 가장 심플하면서도 강력한 정규화 방법론 중 하나인 Dropout을 하는것과 같다는 것을 수식적으로 증명한 Yarin Gal*
 
  Regression 시리즈는 아니지만 나중에 기회가 되면 Bayesian Deep Learning에 대해서도 다뤄보도록 하겠습니다.
