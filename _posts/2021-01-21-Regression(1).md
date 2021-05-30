@@ -1,5 +1,5 @@
 ---
-title: Regression (1/4) - Linear Regression
+title: Regression (1/6) - Linear Regression
 categories: MachineLearning
 tag: [MachineLearning,ML]
 
@@ -19,6 +19,7 @@ comments: true
 
 ## <mark style='background-color: #fff5b1'> Regression VS Classification </mark>
 
+머신러닝을 이용하면 다양한 문제를 풀 수 있지만, 대부분의 일반적인 문제들은 회귀, 분류 문제의 연장선이라고 할 수 있습니다.
 아래의 표에서 볼 수 있듯이, 간단하게 생각하면 
 
 
@@ -27,14 +28,21 @@ comments: true
 
 2.입력값이 continuous 한데 결과값이 discrete하면 Classification 문제라 할 수 있습니다.
 
-![reg vs classification](https://user-images.githubusercontent.com/48202736/106451206-9111d080-64c9-11eb-875c-d5f1121d419d.png)
+
+![reg1](/assets/images/regression/reg1)
+*Fig. 회귀 (Regression) vs 분류 (Classification)*
+
+
+
+
 
 ## <mark style='background-color: #fff5b1'> Linear Regression </mark>
 
 1차원 x값에 대해서 이에 대응하는 y값이 존재하는 데이터를 생각해봅시다.
 우리의 목적은 예를들어 이 데이터를 가장 잘 설명하는 직선 하나를 찾는것이 될 수 있습니다. 
 
-<img src="https://user-images.githubusercontent.com/48202736/105359057-4fb43200-5c3a-11eb-9268-3f6d5f5c3241.png" width="70%" title="제목"/>
+![reg2](/assets/images/regression/reg2){: width="70%"}
+*Fig. 데이터를 가장 잘 설명하는 직선은 무엇일까?*
 
 (이미지 출처 : [link](https://en.wikipedia.org/wiki/Regression_analysis))
 
@@ -42,15 +50,27 @@ comments: true
 
 [참조1](https://brunch.co.kr/@gimmesilver/18),[참조2](https://danbi-ncsoft.github.io/study/2018/05/04/study-regression_model_summary.html)
 
-![image](https://user-images.githubusercontent.com/48202736/105502385-bbfd6700-5d08-11eb-90a0-428d75bf8cdf.png)
+
+
+
+![reg3](/assets/images/regression/reg3)
+*Fig. Linear vs Polynomial Regression. 다항식 피팅 곡선도 선형 회귀라 할 수 있는데 왜냐하면, 우리가 추정하고자 하는 파라메터에 대해서 수식이 선형이기 때문이다.*
+
 
 (이미지 출처 : [link](https://www.javatpoint.com/machine-learning-polynomial-regression))
 
 + (만약 데이터가 총 3차원 (입력 x 2차원, 결과 y 1차원) 이라면 우리는 데이터를 잘나타내는 평면의 방정식의 법선 벡터를 구하는게 목적이 될 겁니다.)
 
-![image](https://user-images.githubusercontent.com/48202736/105502143-76409e80-5d08-11eb-9f96-3550a7b919cd.png)
+![reg4](/assets/images/regression/reg4)
+*Fig. 2차원 데이터에서의 회귀*
 
 (이미지 출처 : [link](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/01/20/ISL-linear-regression_ch3.html))
+
+
+
+
+
+
 
 ### <mark style='background-color: #dcffe4'> Intuitive Animation for Linear Regression </mark>
 
@@ -58,11 +78,13 @@ comments: true
 
 아래는 일반적으로 생각할 수 있는 직선 $$y=\theta_0 + \theta_1 x$$ 을 피팅하는 과정이고
 
-![linear_regression_animation1](https://user-images.githubusercontent.com/48202736/105623281-e449aa80-5e5b-11eb-9fc8-719fd7fac0c8.gif)
+![reg5](/assets/images/regression/reg5)
+*Fig. Linear Regression Animation*
 
 아래는 마찬가지로 linear regression 이지만, 직선 $$y=\theta_0 + \theta_1 x + \theta_2 x^2$$ 인 polynomial linear regression을 피팅하는 과정에 대한 애니메이션입니다.
 
-![linear_regression_animation](https://user-images.githubusercontent.com/48202736/105623286-e7dd3180-5e5b-11eb-9f09-30f0021bcfca.gif)
+![reg6](/assets/images/regression/reg6)
+*Fig. Linear Regression Animation2*
 
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scrach-linear-regression-normal-equation-gradient-descent-1af26b542c28))
 
@@ -76,7 +98,8 @@ comments: true
 여기에 조금 더 보태보면, 우리가 직선의 방정식만 찾으면 어떤 $$x_i$$에 대응하는 $$y_i$$ 는 한 점일텐데, 그렇게 생각하지말고 앞으로는 $$x_i$$에 대응하는게 분포라고 찾는 일이라고 생각할 수 있습니다.
 쉽게 $$x_i$$에 대응하는 $$y_i$$가 가우시안 분포를 따른다고 생각해봅시다.
 
-![reg1](https://user-images.githubusercontent.com/48202736/106451223-97a04800-64c9-11eb-949f-8dbac19457eb.png)
+![reg7](/assets/images/regression/reg7)
+*Fig. 선형 회귀 문제는 데이터 x가 주어졌을때 출력 y값이 어떤 분포의 형태로 나타날까?를 모델링한다. 그림은 가우시안 분포를 가정한다.*
 
 이 때 $$y_i$$의 평균과 분산이 있을텐데 평균은 $$y_i=ax_i+b$$ 를 따르는 것입니다.
 그렇다면 우리가 추정하고자 하는 회귀 모양은 위의 그림 (b) 같이 됩니다.
@@ -90,6 +113,10 @@ comments: true
 > $$ x $$ : input state, 데이터 입력값 <br>
 > $$ w $$ : world state, x에 대응하는 값 <br>
 > $$ \theta $$ : parameter, 우리가 알고싶은, 추정하려는 값 <br>
+
+
+
+
 
 
 ## <mark style='background-color: #fff5b1'> 수식으로 보는 Linear Regression </mark>
@@ -117,6 +144,10 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 
 
+
+
+
+
 ### <mark style='background-color: #dcffe4'> likelihood </mark>
 
 우리가 찾고싶은 것은 전체 데이터셋에 대한 $$likelihood$$가 됩니다. 
@@ -140,6 +171,10 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 
 
+
+
+
+
 ### <mark style='background-color: #dcffe4'> solution </mark>
 
 위의 방법대로 풀면 우리가 Maximum likelihood 방법을 통해 구한 솔루션은 아래와 같게 됩니다.
@@ -156,6 +191,12 @@ x가 1차원이지만 notation을 쉽게 만들기 위해서 모든 $$x_i$$에 1
 
 
 
+
+
+
+
+
+
 ## <mark style='background-color: #fff5b1'> 가우시안 분포를 가정한 ML solution과 MSE의 관계  </mark> 
 
 어떤 분들은 위의 솔루션이 맘에 들지 않을 수도 있습니다.
@@ -166,8 +207,10 @@ Mean Squared Error (MSE) 를 통해 해를 구하는 방식을 얘기하기 때�
 
 어떤 의미냐 하면 아래의 커브 피팅(곡선 피팅) 의 예시를 보시면, 
 
-![prml_reg1](https://user-images.githubusercontent.com/48202736/106451320-bdc5e800-64c9-11eb-939a-4c85d6a27538.png)
- {: style="width: 60%;" class="center"}
+
+![reg8](/assets/images/regression/reg8){: width="60%"}
+*Fig. 곡선 피팅의 예시 from PRML*
+
 
 목적은 우리가 구하려는 파라메터는 곡선을 나타내는데 (직선의 방정식 얘기하다가 갑자기 곡선으로 넘어와서 햇갈리실 수 있지만 매커니즘은 같습니다.)
 그 곡선과 실제 y값과의 차이(error)가 존재하고, 이를 계산해서 줄이는 방식으로 파라메터를 점차적으로 학습 (gradient descent) 혹은 한방에(closed-form solution) 구하겠다. 입니다.
@@ -231,12 +274,11 @@ posterior를 최대화 하는 solution을 구하면
 
 $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른 정규화 term이 곡선 피팅에 끼치는 영향은 다음과 같습니다.
 
-![prml_reg2](https://user-images.githubusercontent.com/48202736/106451323-bef71500-64c9-11eb-8070-0e5433c72345.png)
- {: style="width: 60%;" class="center"}
-![prml_reg3](https://user-images.githubusercontent.com/48202736/106451328-c0284200-64c9-11eb-8bbb-36c9bed683e3.png)
- {: style="width: 60%;" class="center"}
-![prml_reg4](https://user-images.githubusercontent.com/48202736/106451333-c1596f00-64c9-11eb-8d73-a7122f278fe4.png)
- {: style="width: 60%;" class="center"}
+
+![reg9](/assets/images/regression/reg9){: width="60%"}
+![reg10](/assets/images/regression/reg10){: width="60%"}
+![reg11](/assets/images/regression/reg11){: width="60%"}
+*Fig. Regularization (정규화) 혹은 Penalty term의 영향력에 따른 회귀 곡선 표현력의 차이*
 
 
 ## <mark style='background-color: #fff5b1'> Further Study </mark>
@@ -245,7 +287,12 @@ $$\lambda = \frac{\sigma^2}{\alpha^2}$$ 라고 할 때, $$ \lambda $$ 에 따른
 
 이것들은 여백이 부족해서 2편에서 다루도록 하겠습니다.
 
-![reg all](https://user-images.githubusercontent.com/48202736/106451237-9a02a200-64c9-11eb-933a-e6522c1c0a87.png)
+![reg12](/assets/images/regression/reg12)
+*Fig. 다양한 회귀 문제를 풀기 위한 Variation들*
+
+
+
+
 
 
 ## <mark style='background-color: #fff5b1'> References </mark>
