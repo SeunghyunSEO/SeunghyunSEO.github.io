@@ -24,8 +24,7 @@ comments: true
 
 $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱해서 구한 $$posterior$$, $$Pr(\theta \mid x,y)$$ 를 최대화 하는 Maximum A Posterior 방법을 사용했습니다.
 
-![reg2](https://user-images.githubusercontent.com/48202736/106451874-81df5280-64ca-11eb-9837-a6507323d0c3.png)
-{: style="width: 60%;" class="center"}
+![reg2_1](/assets/images/regression/reg2_1.png){: width="60%"}
 *Fig. 일반적인 점 추정 방식의 회귀 곡선*
 
 위의 그림은 MAP로 최적의 파라메터를 구했을 때의 그림입니다.
@@ -45,17 +44,22 @@ $$\theta$$에 대한 $$prior$$를 하나 더 정의해서 $$likelihood$$와 곱�
 
 모든 구간에 동일한 confidence를 주지 않는 방법은 다르게 말하면 우리의 목표는 데이터 밀도가 적거나 데이터가 없는 부분에 대해서는 우리가 추정한 곡선이 잘 모르겠다는 의미로 큰 variance를 갖게 하는, 즉 uncertainty를 나타내는 것 입니다.
 
-![yarin_1](https://user-images.githubusercontent.com/48202736/108974445-d2605f00-76c8-11eb-9ce7-8a2e16d695a5.png)
+![reg2_2](/assets/images/regression/reg2_2.png)
 *Fig. 데이터 밀도에 따라서 confident가 달라짐, 즉 불확실성(uncertainty)를 나타내는 곡선을 얻어냄*
 
-<img width="1070" alt="uncertainty" src="https://user-images.githubusercontent.com/48202736/108974258-a04efd00-76c8-11eb-8a52-1628c973b1dc.png">
+![reg2_3](/assets/images/regression/reg2_3.png)
 *Fig. uncertainty는 데이터 개수에 종속적임( 분홍색 음영이 큰 것은 그 데이터 포인트x에서 불확실성이 크다는 것)*
+
+
+
+
+
 
 ## <mark style='background-color: #fff5b1'> Bayesian Regression </mark>
 
-![reg all](https://user-images.githubusercontent.com/48202736/106451883-83107f80-64ca-11eb-9078-86b1359f7dc7.png)
+![reg2_4](/assets/images/regression/reg2_4.png)
 
-(오늘은 Bayesian Linear Regression만 다루고 나머지는 다음에 다루도록 하겠습니다 ㅎㅎ...)
+오늘은 Bayesian Linear Regression만 다루고 나머지는 다음에 다루도록 하겠습니다.
 
 우리가 잘 아는 관계식이 하나 있습니다.
 
@@ -78,10 +82,15 @@ $$likelihood$$ 와 $$prior$$를 모두 가우시안 분포로 정의하겠습니
 <center>$$ posterior : Pr(\theta|X,w) = Norm_\phi[\frac{1}{\sigma^2} A^{-1}Xw, A^{-1}] $$</center>
 <center>$$ where \space A = \frac{1}{\sigma^2} XX^T + \frac{1}{\sigma_p^2}I $$</center>
 
-![bayesian_prior](https://user-images.githubusercontent.com/48202736/106451896-8441ac80-64ca-11eb-8160-76bb74c748b4.png)
+
+
+![reg2_5](/assets/images/regression/reg2_5.png)
 
 위의 그림의 왼쪽은 원래 추정하고자 했던 $$\phi$$의 사전 확률인 $$prior$$가 가우시안 분포를 나타내고, 
 오른쪽은 $$\phi$$의 분포를 나타냅니다. (variance는 나중에 다룰 예정)
+
+
+
 
 
 ### <mark style='background-color: #dcffe4'> Inference </mark>
@@ -135,7 +144,7 @@ in contrast to deep learning literature where “inference” often means model 
 
 여기서 우리는 마지막 솔루션이 $$\sigma$$에만 종속되어있다는 것을 알 수 있는데요, 일반적으로 이 값들은 정해져있거나 (fixed variance) 그렇지 않을 경우 marginal likelihood를 최적화 하는 방법으로 (maximum likelihood) 구해놓은 뒤에 사용합니다. (구해놓으면 그 뒤로는 바로바로 사용 가능 하다는 소리)
 
-![bayesian_inference](https://user-images.githubusercontent.com/48202736/106451903-8572d980-64ca-11eb-9312-cd3d6e0fe96f.png)
+![reg2_6](/assets/images/regression/reg2_6.png)
 
 a)는 추정하고자 하는 파라메터 $$\phi_0,\phi_1$$의 분포를 나타내는 것입니다.
 원래 MAP는 여기서 최대가 되는 값 하나만을 학습을 통해 구했으나, 이제는 b)처럼 가능한 파라메터 $$\phi_{1}$$, $$\phi_{2}$$, $$\phi_{3}$$ ... 에 대해서 모두 생각을 해보자는 것이죠.
@@ -152,6 +161,11 @@ $$ Pr(w^{\ast} \vert x^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} x^{\a
 
 
 
+
+
+
+
+
 ## <mark style='background-color: #fff5b1'> 점 추정? 분포 추정? </mark>
 
 ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ 분포를 구한뒤 분포의 가장 큰 값일 때의 파라메터를 찾는 것입니다.
@@ -163,14 +177,20 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 하지만 만약 우리가 가지고 있는 데이터가 많아지다못해 무한대에 가까워지면 이는 점점 posterior 분포를 어느 한 점을 나타내는 delta function에 가깝게 만듭니다. 
 이 때의 인퍼런스를한 결과는 점 추정을 하는 ML, MAP와 동일해집니다. (최대값 찾는거랑 똑같으니)
 
-<img width="1232" alt="nyu1" src="https://user-images.githubusercontent.com/48202736/108975280-ad202080-76c9-11eb-8102-2c3b7a9b23b8.png">
+![reg2_7](/assets/images/regression/reg2_7.png)
 *Fig. 일반적인 선형회귀의 ML 솔루션은 MSE Loss의 최소값*
 
-<img width="1249" alt="nyu2" src="https://user-images.githubusercontent.com/48202736/108975297-b0b3a780-76c9-11eb-965f-6a2670b134cd.png">
-<img width="1237" alt="nyu3" src="https://user-images.githubusercontent.com/48202736/108975302-b1e4d480-76c9-11eb-98bb-3829f9d06f49.png">
-<img width="1246" alt="nyu4" src="https://user-images.githubusercontent.com/48202736/108975307-b27d6b00-76c9-11eb-8d79-16cddef9192d.png">
-<img width="1232" alt="nyu5" src="https://user-images.githubusercontent.com/48202736/108975311-b3160180-76c9-11eb-81c6-618b788a86fd.png">
+![reg2_8](/assets/images/regression/reg2_8.png)
+![reg2_9](/assets/images/regression/reg2_9.png)
+![reg2_10](/assets/images/regression/reg2_10.png)
+![reg2_11](/assets/images/regression/reg2_11.png)
 *Fig. 데이터가 많아질수록 posterior가 delta function 가까워지는 모습*
+
+
+
+
+
+
 
 
 ## <mark style='background-color: #fff5b1'> Why Integral over all parameter? </mark>
@@ -203,6 +223,10 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 
 
+
+
+
+
 ## <mark style='background-color: #fff5b1'> Limitation </mark>
 
 베이지안 방법으로 문제를 푸는 것은 상당히 괜찮은 접근으로 보입니다.
@@ -214,6 +238,11 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 > 2. $$posterior \propto likelihood \times prior : p(\theta \mid x) \propto p(x \mid \theta)p(\theta)$$ <br> 
 
 위와 같이 $$posterior$$ 를 간단한 관계식으로 표현했지만, 사실 $$posterior$$를 구하기 위한 Bayes' Rule은 조금 더 복잡합니다.
+
+
+
+
+
 
 
 ### <mark style='background-color: #dcffe4'> Bayes' Rule </mark>
@@ -243,14 +272,20 @@ ML 과 MAP는 각각 $$likelihood$$와 $$posterior(likelihood \times prior)$$ �
 
 이렇게 근사하는 방법들에는 Laplace Approximation, Variational Inference 등이 있습니다.
 
-![yaringal_nn](https://user-images.githubusercontent.com/48202736/108978674-32f19b00-76cd-11eb-8249-11bef9ffb51d.jpg)
-*Fig. 뉴럴 네트워크를 분포 추정한다...?*
-![yaringal_nn_dropout](https://user-images.githubusercontent.com/48202736/108978682-3553f500-76cd-11eb-80a2-6f09c4d6cdc6.jpg)
-*Fig. 뉴럴 네트워크를 분포 추정하는, 즉 베이지안 방법으로 접근하는것은 곧 Dropout을 하는것과 같다는 것을 수식적으로 증명한 Yarin Gal*
 
-<br><br>
+하지만 이렇게 베이지안 방법론을 간단한 회귀 문제가 아닌 비선형성이 포함된 현대의 딥러닝에 적용하는것은 문제가 있는데요, 이를 Practical하게 해결한 방법론들이 많이 존재합니다.
 
-다음에는 위에서 언급한 Bayesian Classification, Bayesian Neural Network 더 나아가 Bayesian Deep Learning에 대해서 더 알아보도록 하겠습니다.
+![reg2_12](/assets/images/regression/reg2_12.png)
+*Fig. 신경망 (Neural Network NN) 에 분포 추정 방식을 적용한, 이른 바 Bayesian Neural Network (BNN)*
+![reg2_13](/assets/images/regression/reg2_13.png)
+*Fig. 가우시안 프로세스에 베이지안 방법론을 적용한 것은, 현대 딥러닝의 가장 심플하면서도 강력한 정규화 방법론 중 하나인 Dropout을 하는것과 같다는 것을 수식적으로 증명한 Yarin Gal*
+
+ Regression 시리즈는 아니지만 나중에 기회가 되면 Bayesian Deep Learning에 대해서도 다뤄보도록 하겠습니다.
+
+
+
+
+
 
 
 ## <mark style='background-color: #fff5b1'> References </mark>
