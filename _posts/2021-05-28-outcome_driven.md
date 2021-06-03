@@ -15,25 +15,25 @@ toc_sticky: true
 
 - <mark style='background-color: #fff5b1'> tmp </mark>
 
-[outcome_driven1](/assets/images/outcome_driven/outcome_driven1.png)
+![outcome_driven1](/assets/images/outcome_driven/outcome_driven1.png)
 *Fig.*
 
-[outcome_driven2](/assets/images/outcome_driven/outcome_driven2.png)
+![outcome_driven2](/assets/images/outcome_driven/outcome_driven2.png)
 *Fig.*
 
-[outcome_driven3](/assets/images/outcome_driven/outcome_driven3.png)
+![outcome_driven3](/assets/images/outcome_driven/outcome_driven3.png)
 *Fig.*
 
-[outcome_driven4](/assets/images/outcome_driven/outcome_driven4.png)
+![outcome_driven4](/assets/images/outcome_driven/outcome_driven4.png)
 *Fig.*
 
-[outcome_driven5](/assets/images/outcome_driven/outcome_driven5.png)
+![outcome_driven5](/assets/images/outcome_driven/outcome_driven5.png)
 *Fig.*
 
-[outcome_driven6](/assets/images/outcome_driven/outcome_driven6.png)
+![outcome_driven6](/assets/images/outcome_driven/outcome_driven6.png)
 *Fig.*
 
-[outcome_driven7](/assets/images/outcome_driven/outcome_driven7.png)
+![outcome_driven7](/assets/images/outcome_driven/outcome_driven7.png)
 *Fig.*
 
 
