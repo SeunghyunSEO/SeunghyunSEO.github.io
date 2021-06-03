@@ -164,12 +164,50 @@ b)는 파라메터 $$\phi_0,\phi_1$$가 어떤 값이냐에 따라서 선형 회
 c)는 말 그대로 위의 식 처럼 가능한 파라메터 $$\phi$$에 대해서 모두 적분한 결과입니다.  
 
 
-마지막으로 우리가 구한 사후 분포의 mean에 관한 수식을 전부 풀어쓰면 아래와 같습니다.
+마지막으로 우리가 구한 수식을 전부 풀어쓰면 아래와 같습니다.
 
 $$ 
 Pr(w^{\ast} \vert x^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} x^{\ast T} X w - \frac{\sigma_p^2}{\sigma^2} x^{\ast T} X (X^TX + \frac{\sigma^2}{\sigma_p^2} I)^{-1} X^TXw,  \\
 \space \sigma_p^2 x^{\ast T} x^{\ast} - \sigma_p^2 x^{\ast T} X (X^TX + \frac{\sigma^2}{\sigma_p^2} I)^{-1} X^T x^{\ast} + \sigma^2 ] 
 $$
+
+
+
+
+
+### <mark style='background-color: #dcffe4'> Fitting Variance </mark>
+
+우리가 마지막으로 구한 Bayesian Inference 수식은 아래와 같았습니다.
+
+$$ 
+Pr(w^{\ast} \vert x^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} x^{\ast T} X w - \frac{\sigma_p^2}{\sigma^2} x^{\ast T} X (X^TX + \frac{\sigma^2}{\sigma_p^2} I)^{-1} X^TXw,  \\
+\space \sigma_p^2 x^{\ast T} x^{\ast} - \sigma_p^2 x^{\ast T} X (X^TX + \frac{\sigma^2}{\sigma_p^2} I)^{-1} X^T x^{\ast} + \sigma^2 ] 
+$$
+
+보시면 여기에 파라메터라고는 출력 분포의 분산인 $$\sigma$$와 파라메터의 사전분포의 분산인 $$\sigma_p$$ 뿐입니다.
+
+여기서 $$\sigma_p$$는 적당히 1로 고정되어있다고 생각하고 (파라메터아님), $$\sigma$$는 구해야 한다고 할 때 이는 아래의 수식은 Maximum likelihood로 구하면 됩니다.
+
+$$
+\begin{aligned}
+
+&
+Pr(w \vert X, \sigma^2) = \int Pr(w \vert X, \phi, \sigma^2) Pr(\phi) d \phi
+& \\
+
+&
+= \int Norm_w [X^T \phi, \sigma^2 I] Norm_{\phi}[0,\sigma^2_p I] d\phi
+& \\
+
+&
+= Norm_w [0, \sigma^2_p X^T X + \sigma^2 I]
+& \\
+
+\end{aligned}
+$$
+
+
+
 
 
 
