@@ -55,7 +55,41 @@ $$
 이 때의 장점은 어떤 $$x$$가 어떠한 기저함수를 타고 $$z$$ 로 매핑이 되는지 명시적으로 (explicit) 하게 정하지 않아도 된다는 것이 되며, 심지어 저차원의 데이터 $$x$$가 우리가 정의한 커널 함수를 통해 `암시적 (implicit)` 으로 알게된 어떠한 기저함수를 통해 매우 노거나 무한차원의 $$z$$로 매핑이 될 수도 있다는 겁니다.
 
 
-이럴 
+이럴 경우 우리는 원래의 수식을 아래와 같이 바꿀 수 있습니다.
+
+- Before
+
+$$
+Pr(w^{\ast} \vert z^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z w - \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^TZw, \\
+\sigma_p^2 z^{\ast T} z^{\ast} - \sigma_p^2 z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^T z^{\ast} + \sigma^2 ]
+$$
+
+- After
+
+$$
+Pr(w^{\ast} \vert z^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} K[x^{\ast},X] w - \frac{\sigma_p^2}{\sigma^2} K[x^{\ast},X] ( K[X,X] + \frac{\sigma^2}{\sigma_p^2} I)^{-1} K[X,X]w, \\
+\sigma_p^2 K[x^{\ast},x^{\ast}] - \sigma_p^2 K[x^{\ast},X] (K[X,X] + \frac{\sigma^2}{\sigma_p^2} I)^{-1} K[X,x^{\ast}] + \sigma^2 ]
+$$
+
+여기서 $$K[X,X]$$는 내적한 데이터들의 값을 나타내는 matrix이며 $$(i,j)$$ 번째 element는 $$k[x_i,x_j]$$에 대한 겁니다. 
+
+$$
+k[X,X] = \begin{pmatrix}
+k[x_1,x_1] & \cdots & k[x_1,x_n] \\ 
+\vdots & \ddots & \vdots \\ 
+k[x_n,x_1] & \cdots & k[x_n,x_n]
+\end{pmatrix}
+
+$$
+
+
+
+### <mark style='background-color: #dcffe4'> Some kinds of Kernels </mark>
+
+
+
+
+
 
 
 ## <mark style='background-color: #fff5b1'> Gaussian Proccess (GP) Regression </mark>
