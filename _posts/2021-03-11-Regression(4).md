@@ -1,5 +1,5 @@
 ---
-title: (미완)Regression (4/4) - Kernelization and Gaussian processes
+title: (미완)Regression (4/6) - Kernelization and Gaussian processes
 
 categories: MachineLearning
 tag: [MachineLearning,ML]
@@ -18,18 +18,26 @@ comments: true
 {:toc}
 ---
 
+이번 글에서 다루고 싶은 내용은 아래의 그림에서
 
+![reg4_1](/assets/images/regression/reg4_1.png)
+*Fig.*
+
+비선형성과 베이지안 방법론을 적용하고 여기에 `커널 트릭 (Kernel Trick)` 까지 적용해보는 겁니다.
+
+
+![reg4_2](/assets/images/regression/reg4_2.png)
+*Fig.*
 
 ## <mark style='background-color: #fff5b1'> Kernel Trick </mark>
 
-### <mark style='background-color: #dcffe4'> Gaussian Proccess Regression </mark>
 
-### <mark style='background-color: #dcffe4'> Example : RBF Kernel  </mark>
+## <mark style='background-color: #fff5b1'> Gaussian Proccess (GP) Regression </mark>
 
-![reg5](https://user-images.githubusercontent.com/48202736/107945487-09e95000-6fd3-11eb-8087-6a7b8363506b.png)
+### <mark style='background-color: #dcffe4'> Example : GP with RBF Kernel  </mark>
 
-
-
+![reg4_3](/assets/images/regression/reg4_3.png)
+*Fig.*
 
 
 
