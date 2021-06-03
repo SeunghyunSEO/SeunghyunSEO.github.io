@@ -17,16 +17,22 @@ toc_sticky: true
 
 [outcome_driven1.png](/assets/images/outcome_driven/outcome_driven1.png)
 *Fig.*
+
 [outcome_driven2.png](/assets/images/outcome_driven/outcome_driven2.png)
 *Fig.*
+
 [outcome_driven3.png](/assets/images/outcome_driven/outcome_driven3.png)
 *Fig.*
+
 [outcome_driven4.png](/assets/images/outcome_driven/outcome_driven4.png)
 *Fig.*
+
 [outcome_driven5.png](/assets/images/outcome_driven/outcome_driven5.png)
 *Fig.*
+
 [outcome_driven6.png](/assets/images/outcome_driven/outcome_driven6.png)
 *Fig.*
+
 [outcome_driven7.png](/assets/images/outcome_driven/outcome_driven7.png)
 *Fig.*
 
