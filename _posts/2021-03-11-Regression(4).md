@@ -41,7 +41,21 @@ $$
 
 ## <mark style='background-color: #fff5b1'> Kernel Trick </mark>
 
-여기서 
+여기서 중요한 점은 아래의 수식에 데이터 그 자체는 필요하지 않고 `데이터들 사이의 관계` 식인 $$z_iT^ z_j$$, 즉 내적한 결과만 들어가 있다는 걸 알 수 있습니다.  
+
+$$
+Pr(w^{\ast} \vert z^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z w - \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^TZw, \\
+\sigma_p^2 z^{\ast T} z^{\ast} - \sigma_p^2 z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^T z^{\ast} + \sigma^2 ]
+$$
+
+그러니까 $$x$$ 를 커널에 태워서 $$z$$들로 만들고 그 데이터들 100개면 100개끼리 `dot product`한 결과로만 표현된다는 거죠.
+여기서 커널 트릭의 핵심 아이디어는 바로 위의 과정을 한큐에 처리할 수 있는 함수를 정의하자는 겁니다.
+
+우리가 이러한 함수를 굉장히 잘 고르면 우리는 $$z=f[x]$$와 동일한 역할을 하는 함수를 얻을 수 있고, 
+이 때의 장점은 어떤 $$x$$가 어떠한 기저함수를 타고 $$z$$ 로 매핑이 되는지 명시적으로 (explicit) 하게 정하지 않아도 된다는 것이 되며, 심지어 저차원의 데이터 $$x$$가 우리가 정의한 커널 함수를 통해 `암시적 (implicit)` 으로 알게된 어떠한 기저함수를 통해 매우 노거나 무한차원의 $$z$$로 매핑이 될 수도 있다는 겁니다.
+
+
+이럴 
 
 
 ## <mark style='background-color: #fff5b1'> Gaussian Proccess (GP) Regression </mark>
