@@ -25,11 +25,23 @@ comments: true
 
 비선형성과 베이지안 방법론을 적용하고 여기에 `커널 트릭 (Kernel Trick)` 까지 적용해보는 겁니다.
 
+## <mark style='background-color: #fff5b1'> Recap : Bayeisan Non-Linear Regression </mark>
+
+아래의 그림처럼 커널을 사용하고 $$z = \phi(x)$$
 
 ![reg4_2](/assets/images/regression/reg4_2.png)
-*Fig.*
+
+여기에 베이지안 방법론까지 적용하면 아래의 수식을 통해 새로운 데이터셋 $$x^{\ast}$$가 들어왔을때의 분포를 예측할 수 있었습니다.
+
+$$
+Pr(w^{\ast} \vert z^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z w - \frac{\sigma_p^2}{\sigma^2} z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^TZw, \\
+\sigma_p^2 z^{\ast T} z^{\ast} - \sigma_p^2 z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^T z^{\ast} + \sigma^2 ]
+$$
+
 
 ## <mark style='background-color: #fff5b1'> Kernel Trick </mark>
+
+여기서 
 
 
 ## <mark style='background-color: #fff5b1'> Gaussian Proccess (GP) Regression </mark>
