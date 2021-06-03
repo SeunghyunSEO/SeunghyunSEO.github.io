@@ -260,7 +260,7 @@ Pr(w^{\ast} \vert z^{\ast}, X, W) = Norm_w[ \frac{\sigma_p^2}{\sigma^2} z^{\ast 
 \sigma_p^2 z^{\ast T} z^{\ast} - \sigma_p^2 z^{\ast T} Z (Z^TZ + \frac{\sigma^2}{\sigma_p^2} I)^{-1} Z^T z^{\ast} + \sigma^2 ]
 $$
 
-위의 수식을 통해서 새로운 테스트 데이터 $$x^{\ast}$$가 들어왔을때의 분포를 가우시안 분포로 얻어낼 수 있으며, 위의 수식에서 $$\sigma^2$$ 는 marginal likelihood로 학습하면 됩니다.
+위의 수식을 통해서 새로운 테스트 데이터 $$x^{\ast}$$가 들어왔을때의 분포를 가우시안 분포로 얻어낼 수 있으며, 위의 수식에서 $$\sigma^2$$ 는 fixed variance가 아니라면 marginal likelihood로 학습하면 됩니다.
 
 ![reg3_10](/assets/images/regression/reg3_10.png)
 *Fig. Bayesian Approach for Regression using RBF*
