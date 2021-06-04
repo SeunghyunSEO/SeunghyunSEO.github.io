@@ -156,7 +156,9 @@ Speech Chain은 기본적으로 ASR TTS가 서로 반복하면서 학습됨으�
 논문에는 이 밖에도 글을 논리적으로 전개하기 위한 문단들이 더 있는데요, 간단하게 요약하는 것 치고 글이 너무 길어질 것 같아 생략하고 바로 결과로 넘어가도록 하겠습니다.
 본 논문에 사용된 ASR Network는 `LAS`이며 TTS는 `Tacotron 2` 입니다.
 
-대부분의 실험에서 
+
+실험에 사용한 데이터셋은 잘 알려진 Public English Dataset인 `LibriSpeech`입니다. 
+이 중에서 대부분의 실험에 `Speech-text pair` 데이터로 사용된 것은 `train-clean-460`으로 460시간짜리 깨끗한 음성을 사용했고, 좀 더 어려운 데이터셋인 500시간짜리 noisy한 데이터 `train-other-500`는 Ablation Study를  나중에 따로 사용했습니다.
 
 ![asr_synthesized_table1](/assets/images/asr_synthesized/asr_synthesized_table1.png)
 ![asr_synthesized_table2](/assets/images/asr_synthesized/asr_synthesized_table2.png)
