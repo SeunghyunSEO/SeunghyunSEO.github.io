@@ -47,7 +47,7 @@ ICASSP 2020년에 게재된 논문이고 Google에서 publish한 논문인데 �
 
 
 $$
-J_{UDA}(\theta) = \mathbb{E}_{x \in U} \mathbb{E}_{x^ \sim q(x^ \vert x)} D_{KL} (p_{\tilde{theta}} (y \vert x) \parallel p_{\theta} (y \vert \hat{x}) ) 
+J_{UDA}(\theta) = \mathbb{E}_{x \in U} \mathbb{E}_{x^ \sim q(x^ \vert x)} D_{KL} (p_{\tilde{\theta}} (y \vert x) \parallel p_{\theta} (y \vert \hat{x}) ) 
 $$
 
 여기서 $$q(\hat{x} \vert x)$$는 `Data Augmentation Function`입니다.
@@ -62,30 +62,35 @@ $$
 ![uda](/assets/images/asr_synthesized/uda.png)
 *Fig. Network Architecture with Unsupervised Data Augmentation*
 
+위의 그림을 보시면 수식 이해가 편하실 것 같은데요, 그림에서 왼쪽은 $$\mathbb{E}_{x,y^{\ast} \in L} [p_{\theta}(y^{\ast} \vert x)]$$ 부분으로 Supervised Learning을 하는것이고, 오른쪽은 현재의 모델 파라메터 $$\theta$$를 카피한 $$\tilde{\theta}$$로 원본 $$x$$를 given으로 추론한 $$p(y \vert x)$$와 노이즈를 추가하는 등의 Augmentation방법으로 만들어진 $$\hat{x}$$를 given으로 예측한 $$p(y \vert \hat{x})$$를 유사하게 만드는 겁니다. $$\tilde{\theta}$$ 쪽에는 그래디언트가 흐르지 않고 다른 쪽은 흐릅니다.
+ 
 
-하지만 본 논문에서는 이는 어디까지나 Unsupervised Method이기 때문에 조금 변형해서 사용하려고 합니다.
+본 논문에서는 이를 조금 변형한 loss를 사용하려고 합니다.
 
 
 
 ### <mark style='background-color: #dcffe4'> Consistency Loss (Modified UDA loss) </mark>
 
-`UDA loss`를 조금 변형해서 아래와 같이 만들었는데요, 바뀐 것은 $$q(\hat{x} \vert x)$$ 모듈이 $$q(\hat{x} \vert y^{\ast},z)$$가 됐다는 겁니다. 여기서 $$y^{\ast}$$는 원본 오디오의 타겟에 해당하는 문장이고, $$z$$는 원본 오디오에서 뽑은 `speaker conditioning information`이 담긴 벡터입니다.  
+논문에서는 `UDA loss`를 조금 변형해서 아래와 같이 만들었는데요, 바뀐 것은 $$q(\hat{x} \vert x)$$ 모듈이 $$q(\hat{x} \vert y^{\ast},z)$$가 됐다는 겁니다. 여기서 $$y^{\ast}$$는 원본 오디오의 타겟에 해당하는 문장이고, $$z$$는 원본 오디오에서 뽑은 `speaker conditioning information`이 담긴 벡터입니다.  
 
 $$
-J_{cons}(\theta) = \mathbb{E}_{x \in U} \mathbb{E}_{x^ \sim q(x^ \vert y^{\ast},z)} D_{KL} (p_{\tilde{theta}} (y \vert x) \parallel p_{\theta} (y \vert \hat{x}) ) 
+\begin{aligned}
+&
+J_{UDA}(\theta) = \mathbb{E}_{x \in U} \mathbb{E}_{x^ \sim q(x^ \vert x)} D_{KL} (p_{\tilde{\theta}} (y \vert x) \parallel p_{\theta} (y \vert \hat{x}) ) 
+& \\
+
+&
+J_{cons}(\theta) = \mathbb{E}_{x \in U} \mathbb{E}_{x^ \sim q(x^ \vert y^{\ast},z)} D_{KL} (p_{\tilde{\theta}} (y \vert x) \parallel p_{\theta} (y \vert \hat{x}) ) 
+& \\
+\end{aligned}
 $$
 
 
 
 ### <mark style='background-color: #dcffe4'> Overall Training Objective </mark>
 
-다시, `UDA`를 제안한 논문에서는 아래의 Objective를 통해서 학습을 했는데요, 
-
-$$
-{min}_{\theta} J(\theta) = \mathbb{E}_{x,y^{\ast} \in L} [p_{\theta}(y^{\ast} \vert x)] + \lambda J_{UDA} (\theta)
-$$
-
-이 Objective에서는 supervised loss term이 한개지만 본 논문에서는 아래처럼 2개를 쓴다고 합니다.
+위의 consistency loss를 활용해서 본 논문에서는 아래의 Objective를 구성했는데요. 
+이 Objective에서는 UDA와는 다르게 supervised loss term을 아래처럼 2개를 사용하고, 이와 더불어 consistency loss를 결합해서 최종 loss를 구성했습니다.
 
 $$
 \begin{aligned}
@@ -99,21 +104,27 @@ J_{tts}(\theta) = \mathbb{E}_{x,y^{\ast} \in L} [ p_{\theta} (y^{\ast} \vert \ha
 \end{aligned}
 $$
 
-그리고 최종 Objective는 아래와 같아지죠.
+최종 `Objective`는 아래가 됩니다.
 
 $$
 {min}_{\theta} J(\theta) = \lambda_r J_{real}(\theta) + \lambda_t J_{tts}(\theta) + \lambda_c J_{cons}(\theta)
 $$
 
+즉 예를들어 10개의 `speech-text` 페어가 존재하고 10개의 `text only` 데이터가 존재한다고 하면 학습 방법은 다음과 같습니다.
 
 
+- speech-text pair data
+  - $$J_{real}(\theta)$$로 ASR학습을 한다. 정답 text를 기반으로 합성을 한 뒤에 이를 바탕으로 $$J_{tts}(\theta)$$, $$J_{cons}(\theta)$$ 를 구하고 이를 최소화 하는 방향으로 학습한다. 이렇게 할 경우 원본 음성, TTS Augmented 음성 두 개로 인식을 하는 효과를 누리는데, 이 와중에 TTS Augmented 음성은 실제 음성 데이터 분포와 크게 다르지 않게 제약이 걸려있기 때문에 네트워크 입장에선 더욱 리얼한 음성으로 학습하는 것이 된다. 
+- text only data
+  - $$J_{tts}(\theta)$$로만 학습을 한다.
+  - 중요한 점은 speech-text pair 데이터로 부터의 학습 과정을 통해서 TTS 모델이 실제와 같은 (여기서 실제라함은 10개 페어 데이터 라고 해야할듯) 음성을 만들게 됐기 때문에, 네트워크 입장에서 괴리없이 학습할 수 있다. 
 
 
 
 ### <mark style='background-color: #dcffe4'> Relationship to Speech Chain </mark>
 
 
-![speech_chain](/assets/images/asr_synthesized/speech_chain.png)
+![speech_chain](/assets/images/asr_synthesized/speech_chain.png){: width="70%"}
 *Fig. Speech - to - Text - to - Speech Chain.*
 
 
