@@ -121,18 +121,26 @@ $$
 
 
 
+
+
+
+
 ### <mark style='background-color: #dcffe4'> Relationship to Speech Chain </mark>
+
+논문에서는 제안하는 Approach가 사실은 `Speech Chain`와 유사한 점이 있다고 쓰여있는데요, [Listening while Speaking: Speech Chain by Deep Learning](https://arxiv.org/pdf/1707.04879)라는 논문에서 제안된 Speech Chain은 아래와 같습니다.
+
+![speech_chain2](/assets/images/asr_synthesized/speech_chain2.png)
+*Fig. Speech Chain*
+
+Speech Chain은 기본적으로 ASR TTS가 서로 반복하면서 학습됨으로써 둘 다 성능 향상을 가져올 것이라는 생각에 제안된 방법론으로 기계 번역 분야의 `back translation`과도 유사하다고 하는데요,
+`ASR -> TTS (Speech-to-text-to-speech)`와 `TTS -> ASR (Text-to-Speech-to-Text)`로 나뉘어져 있다고 합니다.
+다른 한쪽 모듈이 학습될 때 반대 모듈은 fix한다던가 하는 식으로 학습이 된다고 쓰여있고, 음성인식한 문장이 `argmax operator`를 사용하기 때문에 gradient가 전파되지 않는다는 문제점은 아래와 같이 `gumbel softmax`를 쓰는 방식으로 해결했다고 합니다.  
 
 
 ![speech_chain](/assets/images/asr_synthesized/speech_chain.png){: width="70%"}
-*Fig. Speech - to - Text - to - Speech Chain.*
+*Fig. Speech-to-Text-to-Speech Chain.*
 
-
-
-
-
-## <mark style='background-color: #fff5b1'> Data Augmentation, Network Reguralization and SpecAugment </mark>
-
+본 논문에서는 $$J_{tts}(\theta)$$부분이 `TTS -> ASR (Text-to-Speech-to-Text)`와 닮아있다고 얘기를 합니다.
 
 
 
@@ -163,8 +171,8 @@ $$
 
 - [Improving Speech Recognition Using Consistent Predictions on Synthesized Speech](https://ieeexplore.ieee.org/document/9053831)
 
-- [Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/pdf/1904.12848) 
+- [Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/abs/1904.12848)
+
+- [Listening while Speaking: Speech Chain by Deep Learning](https://arxiv.org/pdf/1707.04879)
 
 - [Training Neural Speech Recognition Systems with Synthetic Speech Augmentation](https://arxiv.org/abs/1811.00707)
-
-- [Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/abs/1904.12848)
