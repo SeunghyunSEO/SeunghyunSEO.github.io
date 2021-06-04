@@ -153,6 +153,10 @@ Speech Chain은 기본적으로 ASR TTS가 서로 반복하면서 학습됨으�
 
 ## <mark style='background-color: #fff5b1'> Experiments </mark>
 
+논문에는 이 밖에도 글을 논리적으로 전개하기 위한 문단들이 더 있는데요, 간단하게 요약하는 것 치고 글이 너무 길어질 것 같아 생략하고 바로 결과로 넘어가도록 하겠습니다.
+본 논문에 사용된 ASR Network는 `LAS`이며 TTS는 `Tacotron 2` 입니다.
+
+대부분의 실험에서 
 
 ![asr_synthesized_table1](/assets/images/asr_synthesized/asr_synthesized_table1.png)
 ![asr_synthesized_table2](/assets/images/asr_synthesized/asr_synthesized_table2.png)
