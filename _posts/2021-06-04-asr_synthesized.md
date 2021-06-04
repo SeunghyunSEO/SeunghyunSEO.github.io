@@ -59,6 +59,10 @@ $$
 {min}_{\theta} J(\theta) = \mathbb{E}_{x,y^{\ast} \in L} [p_{\theta}(y^{\ast} \vert x)] + \lambda J_{UDA} (\theta)
 $$
 
+![uda](/assets/images/asr_synthesized/uda.png)
+*Fig. Network Architecture with Unsupervised Data Augmentation*
+
+
 하지만 본 논문에서는 이는 어디까지나 Unsupervised Method이기 때문에 조금 변형해서 사용하려고 합니다.
 
 
@@ -109,7 +113,8 @@ $$
 ### <mark style='background-color: #dcffe4'> Relationship to Speech Chain </mark>
 
 
-
+![speech_chain](/assets/images/asr_synthesized/speech_chain.png)
+*Fig. Speech - to - Text - to - Speech Chain.*
 
 
 
@@ -129,7 +134,11 @@ $$
 ## <mark style='background-color: #fff5b1'> Experiments </mark>
 
 
-
+![asr_synthesized_table1](/assets/images/asr_synthesized/asr_synthesized_table1.png)
+![asr_synthesized_table2](/assets/images/asr_synthesized/asr_synthesized_table2.png)
+![asr_synthesized_table3](/assets/images/asr_synthesized/asr_synthesized_table3.png)
+![asr_synthesized_table4](/assets/images/asr_synthesized/asr_synthesized_table4.png)
+![asr_synthesized_table5](/assets/images/asr_synthesized/asr_synthesized_table5.png)
 
 
 
