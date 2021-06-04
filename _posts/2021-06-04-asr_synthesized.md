@@ -41,9 +41,9 @@ ICASSP 2020년에 게재된 논문이고 Google에서 publish한 논문인데 �
 
 ## <mark style='background-color: #fff5b1'> Generating Consistent Predictions </mark>
 
-### <mark style='background-color: #dcffe4'> Unsupervised Data Augmentation (UDA) Loss </mark>
+### <mark style='background-color: #dcffe4'> Unsupervised Data Augmentation (UDA) Learning </mark>
 
-`Unsupervised Data Augmentation (UDA) Loss` 이란 원래의 음성 $$x$$에 noise 등을 추가해서 $$\hat{x}$$을 만들고, 이를 기반으로 추론한 문장 $$y$의 분포를 유사하게 하는 인데요, 
+`Unsupervised Data Augmentation (UDA) Loss` 란 원래의 음성 $$x$$에 noise 등을 추가해서 $$\hat{x}$$을 만들고, 이를 기반으로 추론한 문장 $$y$의 분포를 유사하게 하는 인데요, 
 
 
 $$
@@ -52,6 +52,12 @@ $$
 
 여기서 $$q(\hat{x} \vert x)$$는 `Data Augmentation Function`입니다.
 (이 loss는 [Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/pdf/1904.12848) 에서 제안된 겁니다.)
+
+`UDA`를 제안한 논문에서는 아래의 Objective를 통해서 최종적으로 네트워크를 학습했습니다. 
+
+$$
+{min}_{\theta} J(\theta) = \mathbb{E}_{x,y^{\ast} \in L} [p_{\theta}(y^{\ast} \vert x)] + \lambda J_{UDA} (\theta)
+$$
 
 하지만 본 논문에서는 이는 어디까지나 Unsupervised Method이기 때문에 조금 변형해서 사용하려고 합니다.
 
@@ -69,7 +75,7 @@ $$
 
 ### <mark style='background-color: #dcffe4'> Overall Training Objective </mark>
 
-`UDA`를 제안한 논문에서는 아래의 Objective를 통해서 학습을 했는데요, 
+다시, `UDA`를 제안한 논문에서는 아래의 Objective를 통해서 학습을 했는데요, 
 
 $$
 {min}_{\theta} J(\theta) = \mathbb{E}_{x,y^{\ast} \in L} [p_{\theta}(y^{\ast} \vert x)] + \lambda J_{UDA} (\theta)
@@ -94,3 +100,19 @@ $$
 $$
 {min}_{\theta} J(\theta) = \lambda_r J_{real}(\theta) + \lambda_t J_{tts}(\theta) + \lambda_c J_{cons}(\theta)
 $$
+
+
+
+
+
+
+
+## <mark style='background-color: #fff5b1'> Reference </mark>
+
+- [Improving Speech Recognition Using Consistent Predictions on Synthesized Speech](https://ieeexplore.ieee.org/document/9053831)
+
+- [Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/pdf/1904.12848) 
+
+- [Training Neural Speech Recognition Systems with Synthetic Speech Augmentation](https://arxiv.org/abs/1811.00707)
+
+- [Unsupervised Data Augmentation for Consistency Training](https://arxiv.org/abs/1904.12848)
