@@ -106,6 +106,38 @@ $$
 
 
 
+### <mark style='background-color: #dcffe4'> Relationship to Speech Chain </mark>
+
+
+
+
+
+
+
+
+## <mark style='background-color: #fff5b1'> Data Augmentation, Network Reguralization and SpecAugment </mark>
+
+
+
+
+
+
+
+
+
+
+## <mark style='background-color: #fff5b1'> Experiments </mark>
+
+
+
+
+
+
+
+
+
+
+
 
 ## <mark style='background-color: #fff5b1'> Reference </mark>
 
