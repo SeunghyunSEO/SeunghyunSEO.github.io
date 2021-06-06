@@ -154,17 +154,61 @@ Speech Chain은 기본적으로 ASR TTS가 서로 반복하면서 학습됨으�
 ## <mark style='background-color: #fff5b1'> Experiments </mark>
 
 논문에는 이 밖에도 글을 논리적으로 전개하기 위한 문단들이 더 있는데요, 간단하게 요약하는 것 치고 글이 너무 길어질 것 같아 생략하고 바로 결과로 넘어가도록 하겠습니다.
-본 논문에 사용된 ASR Network는 `LAS`이며 TTS는 `Tacotron 2` 입니다.
+본 논문에 사용된 ASR Network는 `LAS`이며 TTS Network는 `Tacotron 2` 입니다.
 
 
-실험에 사용한 데이터셋은 잘 알려진 Public English Dataset인 `LibriSpeech`입니다. 
+실험에 사용한 데이터셋은 잘 알려진 Public English Dataset인 `LibriSpeech`이며, 
 이 중에서 대부분의 실험에 `Speech-text pair` 데이터로 사용된 것은 `train-clean-460`으로 460시간짜리 깨끗한 음성을 사용했고, 좀 더 어려운 데이터셋인 500시간짜리 noisy한 데이터 `train-other-500`는 Ablation Study를  나중에 따로 사용했습니다.
 
 ![asr_synthesized_table1](/assets/images/asr_synthesized/asr_synthesized_table1.png)
+
+`Table 1`에 있는 첫 번째 실험 결과는 절반의 데이터인 460시간만으로 Seq2Seq 모델을 Supervised Leaning 했을 때의 결과입니다. 
+음서인식의 성능을 나타내는 WER이 10입니다 (낮을수록 에러 없이 인식을 잘 했다는 것).
+
+$$
+J(\theta) = J_{real}(\theta) 
+$$
+
+
+여기에 TTS를 joint로 트레이닝 햇을 때 성능이 $$0.5$$정도 올랐다는 걸 알 수 있는데,
+
+$$
+J(\theta) = \lambda_r J_{real}(\theta) + \lambda_t J_{tts}(\theta) 
+$$
+
+$$
+J_{tts}(\theta) = \mathbb{E}_{x,y^{\ast} \in L} [ p_{\theta} (y^{\ast} \vert \hat{x} \sim q( \hat{x} \vert y^{\ast}, z) ) ]
+$$
+
+$$ J_{tts}(\theta) $$ 에서도 합성으로 만들어낸 데이터를 이용해 파라메터 $$\theta$$를 업데이트 하기 때문에 성능 개선이 있는것은 당연합니다.
+
+
+여기에 마지막으로 `consistency loss`를 추가해서 `합성음으로 데이터를 증강하긴 할건데, 실제음 (원래의 460 시간) 에 가까운 합성음으로 하고싶다.` 라는 효과를 누려서
+
+$$
+J(\theta) = \lambda_r J_{real}(\theta) + \lambda_t J_{tts}(\theta) + \lambda_c J_{cons}(\theta)
+$$
+
+최종적으로 $$8.3$$이라는 성능을 얻었습니다.
+즉 첫 번째 실험은 `과연 TTS로 증강하는게 효과가있는가?` 와 consistency loss를 통해서 `실제 데이터와 합성 데이터의 분포를 매칭시킨다는 가정이 작용했는가?` 를 검증한셈이 됩니다.
+ 
+
 ![asr_synthesized_table2](/assets/images/asr_synthesized/asr_synthesized_table2.png)
+
+`Table 2`의 결과는 TTS + Consistency loss를 통해서 합성음으로 데이터 증강을 한 것이, 단순히 음성에 가우시안 노이즈를 섞은 것 보다 얼마나 좋았는지를 나타냅니다.
+당연히 제안한 기법이 더 좋네요. 
+ 
 ![asr_synthesized_table3](/assets/images/asr_synthesized/asr_synthesized_table3.png)
+
+`Table 3`은 화자 정보를 담당하는 `d-vector`를 랜덤하게 셔플했을 때의 효과와 음성 합성 inference를 다양하게 바꿔가면서 성능 변화를 관찰했습니다.
+화자 정보를 랜덤하게 주면 당연히 Augmentation을 하기 전 원본 데이터는 여자가말했는데, Augmentation한 데이터는 남성이 말했다던가 하는 다양성이 추가되기 때문에 더 잘될거라고 하며,  `inference`의 경우에는 Tacotron의 특성상 음성을 `autoregressive`하게 만들어 낼 때 conditioned vector를 이전까지 만들어진 벡터들로 하느냐 (full inference), ground truth 로 하느냐 (teacher forcing) 등의 차이를 실험해 본 것입니다.
+
 ![asr_synthesized_table4](/assets/images/asr_synthesized/asr_synthesized_table4.png)
+
+`Table 4`는 SpecAugment와의 양립가능성에 대한 실험인데요, 결과적으로 다 같이 쓴게 제일 좋습니다.
+
 ![asr_synthesized_table5](/assets/images/asr_synthesized/asr_synthesized_table5.png)
+
 
 
 
