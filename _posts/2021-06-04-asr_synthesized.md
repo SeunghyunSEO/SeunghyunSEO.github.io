@@ -215,7 +215,7 @@ $$
 - `text only 500hrs`를 쓸 때 : 여기서는 음성이 존재하지 않는다는 가정이기 때문에 transcript를 기반으로 합성을 해서 ASR 파라메터를 조정하는것만 할 수 있는데요, 즉 앞서 말한 것 처럼 $$J(\theta) = \lambda_r J_{real}(\theta) + \lambda_t J_{tts}(\theta) $$에서 $$J(\theta) = J_{tts}(\theta) $$ 만 사용 가능합니다.
 
 
-각각의 방법론으로 성능이 어떻게 올랐는지는 `Table 4`에 나와있고, 종합해보자면 960시간을 speech-text pair로 학습한 것이 가장 높은 성능이지만 여기에 TTS Augmentation을 추가한 것 (제안한 기법)이 점수를 좀 더 올려준다는 데서 역시 제안한 TTS를 활용한 Augmentation 이 틀리지 않았다는 것을 보여주며, `text-only`나 `speech-only`방법론 또한 작용한다는것을 봤을 때 더욱 방대한 speech나 text의 `unpaired` 데이터가 존재한다면 성능을 더 끌어올릴 수 있을 것이라는 가능성을 보여준 것 논문인 것 같습니다.
+각각의 방법론으로 성능이 어떻게 올랐는지는 Table 5에 나와있고, 종합해보자면 960시간을 speech-text pair로 학습한 것이 가장 높은 성능이지만 여기에 TTS Augmentation을 추가한 것 (제안한 기법)이 점수를 좀 더 올려준다는 데서 역시 제안한 TTS를 활용한 Augmentation 이 틀리지 않았다는 것을 보여주며, text-only나 speech-only를  방법론 또한 작용한다는것을 봤을 때 `더욱 방대한 speech나 text의 unpaired 데이터`가 존재한다면 성능을 더 끌어올릴 수 있을 것이라는 가능성을 보여준 것 논문인 것 같습니다.
 
 
 
