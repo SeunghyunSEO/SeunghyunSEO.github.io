@@ -33,16 +33,42 @@ comments: true
 - 2.asd
 
 
-## <mark style='background-color: #fff5b1'> Self Supervised Learning for Speech : Wav2vec2.0 </mark>
 
-### <mark style='background-color: #dcffe4'> asd </mark>
+## <mark style='background-color: #fff5b1'> Illustration of Wav2Vec-U </mark>
 
 
+
+
+
+## <mark style='background-color: #fff5b1'> Background </mark>
+
+### <mark style='background-color: #dcffe4'> Pre-training : Wav2Vec 2.0 </mark>
+
+### <mark style='background-color: #dcffe4'> fine-tuning : End-to-End Supervised Learning </mark>
+
+
+
+
+
+## <mark style='background-color: #fff5b1'> Proposed Method </mark>
+
+### <mark style='background-color: #dcffe4'> Objective </mark>
+
+### <mark style='background-color: #dcffe4'> Segmenting the Audio Signal </mark>
+
+### <mark style='background-color: #dcffe4'> Pre-processing the Text Data </mark>
+
+### <mark style='background-color: #dcffe4'> What features from Wav2Vec? </mark>
+
+### <mark style='background-color: #dcffe4'> Unsupervised Cross-Validation Metric </mark>
 
 
 
 
 ## <mark style='background-color: #fff5b1'> Experiments and Results </mark>
+
+
+
 
 
 ## <mark style='background-color: #fff5b1'> Reference </mark>
