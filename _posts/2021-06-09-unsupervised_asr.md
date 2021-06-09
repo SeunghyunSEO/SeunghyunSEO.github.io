@@ -15,7 +15,7 @@ comments: true
 
 ???
 
-네 사실 감이 안오실 수도 있는데요, 논문의 그림을 보시면 한순간에 "아 이렇게?" 라고 하실 수 있을 정도로 심플한 방법론입니다.
+네 사실 감이 안오실 수도 있는데요, 논문의 그림을 보시면 한순간에 "아 이렇게?" 라고 하실 수 있을 정도로 심플하니 바로 본론으로 가시죠.
 
 ---
 < 목차 >
@@ -29,20 +29,31 @@ comments: true
 
 본 논문에서 정의하는 Problem과 Contribution Point은 다음과 같습니다.
 
-- 1.asd
-- 2.asd
+- 1.MIT CSAIL의 [Speech2Vec](https://arxiv.org/pdf/1803.08976) 등을 시작으로 FAIR는 Wav2Vec, VQ-Wav2Vec, `Wav2Vec 2.0` 등을 내왔다. 이는 [BERT](https://arxiv.org/pdf/1810.04805)와 유사한 방법론으로 특히 labeled data가 많아야 하지만 구축하는데 비용이 비싼 음성인식 분야에서 획기적인 성과를 거뒀다.
+- 2.Self-Supervised Learning (SSL) 방법론을 사용한 Wav2Vec 2.0은 1번에서 언급한 것 처럼 unlabeled data를 무지막지하게 사용해서 사전학습을 했기 때문에, 파인튜닝을 할 때에는 심지어 10분정도의 labeld data만 있어도 어느정도 음성인식이 잘 되는 놀라운 결과를 보여줬지만, 이는 여전히 labeld data가 필요하다는 문제가 있다.
+- 3.본 논문에서는 unlabeld speech, unlabeld text (두 음성, 텍스트 데이터는 전혀 연관이 없다. 정답 관계가 아니라는 것)를 사용해서 `Generative Adversarial Network (GAN)` 기반의 네트워크를 구성해서 `Totally Unsupervised ASR` 네트워크 (학습 방법론)을 제시한다.
+- 4.Librispeech 데이터셋에서 supervised에 견주는 성능을 보여줬다. (근데 Language Model (LM)은 썼음)
 
 
 
 ## <mark style='background-color: #fff5b1'> Illustration of Wav2Vec-U </mark>
 
-
+[wav2vec-u_figure1](/assets/images/unsupervised_asr/wav2vec-u_figure1.png)
+*Fig. Overall Architecture of Wav2Vec-U*
 
 
 
 ## <mark style='background-color: #fff5b1'> Background </mark>
 
 ### <mark style='background-color: #dcffe4'> Pre-training : Wav2Vec 2.0 </mark>
+
+[wav2vec2.0](/assets/images/unsupervised_asr/wav2vec2.0.png)
+*Fig. 이미지 출처 : [Applying Wav2vec2.0 to Speech Recognition in Various Low-resource Languages](https://arxiv.org/pdf/2012.12121)*
+
+
+[wav2vec2.0_codebook](/assets/images/unsupervised_asr/wav2vec2.0_codebook.png)
+*Fig. 이미지 출처 : [UniSpeech: Unified Speech Representation Learning with Labeled and Unlabeled Data](https://arxiv.org/pdf/2101.07597)*
+
 
 ### <mark style='background-color: #dcffe4'> fine-tuning : End-to-End Supervised Learning </mark>
 
