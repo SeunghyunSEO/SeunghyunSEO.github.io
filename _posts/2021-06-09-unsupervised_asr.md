@@ -60,11 +60,11 @@ Wav2Vec 2.0이 시사하는 바는 아프리카 소수 부족의 언어 같이 `
 
 ### <mark style='background-color: #dcffe4'> Pre-training : Wav2Vec 2.0 </mark>
 
-[wav2vec2.0](/assets/images/unsupervised_asr/wav2vec2.0.png)
+![wav2vec2.0](/assets/images/unsupervised_asr/wav2vec2.0.png)
 *Fig. 이미지 출처 : [Applying Wav2vec2.0 to Speech Recognition in Various Low-resource Languages](https://arxiv.org/pdf/2012.12121)*
 
 
-[wav2vec2.0_codebook](/assets/images/unsupervised_asr/wav2vec2.0_codebook.png)
+![wav2vec2.0_codebook](/assets/images/unsupervised_asr/wav2vec2.0_codebook.png)
 *Fig. 이미지 출처 : [UniSpeech: Unified Speech Representation Learning with Labeled and Unlabeled Data](https://arxiv.org/pdf/2101.07597)*
 
 
@@ -84,9 +84,9 @@ Wav2Vec 2.0이 시사하는 바는 아프리카 소수 부족의 언어 같이 `
 
 ### <mark style='background-color: #dcffe4'> What features from Wav2Vec? </mark>
 
-[wav2vec-u_figure3](/assets/images/unsupervised_asr/wav2vec-u_figure3.png)
+![wav2vec-u_figure3](/assets/images/unsupervised_asr/wav2vec-u_figure3.png)
 *Fig. asd*
-[wav2vec-u_figure4](/assets/images/unsupervised_asr/wav2vec-u_figure4.png)
+![wav2vec-u_figure4](/assets/images/unsupervised_asr/wav2vec-u_figure4.png)
 *Fig. asd*
 
 
