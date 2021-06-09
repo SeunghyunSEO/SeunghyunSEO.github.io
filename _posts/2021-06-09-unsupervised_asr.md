@@ -11,7 +11,10 @@ comments: true
 
 
 이번 글에서는 [Unsupervised Speech Recognition](https://scontent-ssn1-1.xx.fbcdn.net/v/t39.8562-6/187874612_311717527241594_5668815448923437055_n.pdf?_nc_cat=102&ccb=1-3&_nc_sid=ae5e01&_nc_ohc=2rlpqCipZS4AX92nofj&_nc_ht=scontent-ssn1-1.xx&oh=ce7abb7bfc05f0269251cf8c936479e7&oe=60E59B95) 라는 논문을 요약해서 리뷰해 보려고 합니다. 
-본 논문은 `Facebook AI Research (FAIR)` 에서 publish한 논문이며, 이를 다룬 Blog post, [High-performance speech recognition with no supervision at all](https://ai.facebook.com/blog/wav2vec-unsupervised-speech-recognition-without-supervision/)의 제목에서도 알 수 있듯이, `Supervised Finetuning` 을 "전혀" 안하고 음성인식이 가능하게 한 논문입니다.
+본 논문은 `Facebook AI Research (FAIR)` 에서 publish한 논문이며 (Google 리서쳐 한분이 계신데 FAIR에서 이직했다네여), 이를 다룬 Blog post, [High-performance speech recognition with no supervision at all](https://ai.facebook.com/blog/wav2vec-unsupervised-speech-recognition-without-supervision/)의 제목에서도 알 수 있듯이, `Supervised Finetuning` 을 "전혀" 안하고 음성인식이 가능하게 한 논문입니다.
+
+
+35장에 달하는 어마어마한 논문이기 때문에, 핵심만 다뤄보도록 (중요한건 놓치지 않고) 하겠습니다.
 
 ---
 < 목차 >
@@ -51,7 +54,7 @@ Wav2Vec 2.0이 시사하는 바는 아프리카 소수 부족의 언어 같이 `
 
 ## <mark style='background-color: #fff5b1'> Illustration of Wav2Vec-U </mark>
 
-[wav2vec-u_figure1](/assets/images/unsupervised_asr/wav2vec-u_figure1.png)
+![wav2vec-u_figure1](/assets/images/unsupervised_asr/wav2vec-u_figure1.png)
 *Fig. Overall Architecture of Wav2Vec-U*
 
 
