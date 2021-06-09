@@ -1,5 +1,5 @@
 ---
-title: (Paper) Improving Speech Recognition Using Consistent Predictions on Synthesized Speech
+title: (Paper) Unsupervised Speech Recognition
 categories: Speech_Recognition
 tag: [tmp]
 
