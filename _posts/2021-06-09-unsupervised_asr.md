@@ -1,5 +1,5 @@
 ---
-title: (Paper) Unsupervised Speech Recognition
+title: (미완) (Paper) Unsupervised Speech Recognition
 categories: Speech_Recognition
 tag: [tmp]
 
