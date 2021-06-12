@@ -95,7 +95,19 @@ Wav2Vec 2.0은 직관적으로 성별, 악센트등에 상관없이 전체 음�
 ![wav2vec2.0](/assets/images/unsupervised_asr/wav2vec2.0.png)
 *Fig. 이미지 출처 : [Applying Wav2vec2.0 to Speech Recognition in Various Low-resource Languages](https://arxiv.org/pdf/2012.12121)*
 
-1d-conv layer를 통과시킨 벡터들을 `BERT 처럼` 매 time-step마다 일정 확률로 마스킹하고 이를 트랜스포머에 통과시킨 후 quantization 된 벡터들, 그러니까 앞서 말한 discrete representation vector들과 함께 `contrastive loss`를 통해서 학습합니다. 
+1d-conv layer를 통과시킨 벡터들을 `BERT 처럼` 매 time-step마다 일정 확률로 마스킹하고 이를 트랜스포머에 통과시킨 후 quantization 된 벡터들, 그러니까 앞서 말한 discrete representation vector들과 함께 `Contrastive Loss`를 통해서 학습합니다. 
+
+***
+
+- Contrastive Loss의 직관적인 이해
+
+![simclr-softmax-calculation](/assets/images/unsupervised_asr/simclr-softmax-calculation.png)
+*Fig. 이미지를 사용한 예시로, Contrastive Learning의 목적은 비슷한 의미를 가진 벡터 (고양이들)과 아닌 벡터들 (코끼리,개 등)의 사이를 서로 밀고 당기는 것이다.*
+
+![simclr-softmax-interpretation](/assets/images/unsupervised_asr/simclr-softmax-interpretation.png)
+*Fig. 비슷한 벡터의 softmax probability를 높히면 자동으로 안비슷한 벡터들은 줄어든다 (=멀어진다). 여기서 어떤걸 가까워지게 또는 멀어지게 해야 하는지는 Self-Supervised Learning답게 알아서 정한다. Wav2Vec의 경우 현재 time-step에서의 양자화된 벡터와, 트랜스포머가 통과된 벡터를 가깝게 하고 나머진느 다 멀게 만든다.*
+
+***
 
 
 전체 Objective를 수식으로 쓰자면 아래와 같습니다.
@@ -116,11 +128,15 @@ L_d = \frac{1}{GV} \sum_{g=1}^G -H(\tilde{p_g}) = \frac{1}{GV} \sum_{g=1}^G \sum
 \end{aligned}
 $$
 
+수식은 `Contrastive Loss` $$L_m$$와 Regularization term인 $$L_d$$의 합으로 이루어져 있는데요, ($$\alpha$$는 하이퍼 파라메터)
+
 수식이 의미하는 바는 Codebook이 최대한 다양한 entry (code)를 사용하면서, Contrastive Learning을 통해 관련 없는 음성은 멀어지게 하고, 관련있는 음성들은 (마스킹해서 트랜스포머 통과시킨 벡터와, 트랜스포머 통과전 벡터를 양자화 한 것) 유사한 벡터를 배우도록 하는 것입니다.
 
 ***
 
-여기서 `Diversity Loss` $$L_d$$나 코드북을 두개 써서 곱하는 전략 등을 이용해 더욱 성능을 끌어올렸다고 하는데, 둘 다 근거가 없는 말은 아니나 일각에서는 Diversity loss는 효과가 없는 것 같다는 등의 의견이 있긴 합니다.
+```
+여기서 Diversity Loss 나 코드북을 두개 써서 곱하는 전략 등을 이용해 더욱 성능을 끌어올렸다고 하는데, 둘 다 근거가 없는 말은 아니나 일각에서는 Diversity loss는 효과가 없는 것 같다는 등의 의견이 있긴 합니다.
+```
 
 ***
 
