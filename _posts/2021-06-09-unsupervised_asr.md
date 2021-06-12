@@ -95,9 +95,28 @@ Wav2Vec 2.0은 직관적으로 성별, 악센트등에 상관없이 전체 음�
 ![wav2vec2.0](/assets/images/unsupervised_asr/wav2vec2.0.png)
 *Fig. 이미지 출처 : [Applying Wav2vec2.0 to Speech Recognition in Various Low-resource Languages](https://arxiv.org/pdf/2012.12121)*
 
-1d-conv layer를 통과시킨 벡터들을 매 time-step마다 일정 확률로 마스킹하고 이를 트랜스포머에 통과시킨 후 quantization 된 벡터들, 그러니까 앞서 말한 discrete representation vector들과 함께 contrastive loss를 통해서 학습합니다. 
+1d-conv layer를 통과시킨 벡터들을 `BERT 처럼` 매 time-step마다 일정 확률로 마스킹하고 이를 트랜스포머에 통과시킨 후 quantization 된 벡터들, 그러니까 앞서 말한 discrete representation vector들과 함께 `contrastive loss`를 통해서 학습합니다. 
 
 
+전체 Objective를 수식으로 쓰자면 아래와 같습니다.
+
+$$
+\begin{aligned}
+&
+L = L_m + \alpha L_d
+& \\
+
+&
+Lm = - log \frac{exp(sim(c_t,q_t) / \kappa)}{ \sum_{\tilde{q} \sim Q_t } exp(sim(c_t,\tilde{q}) / \kappa ) }
+& \\
+
+&
+L_d = \frac{1}{GV} \sum_{g=1}^G -H(\tilde{p_g}) = \frac{1}{GV} \sum_{g=1}^G \sum_{v=1}^V \tilde{p}_{g,v} log \tilde{p}_{g,v} 
+&
+\end{aligned}
+$$
+
+수식에는 
 
 
 ### <mark style='background-color: #dcffe4'> fine-tuning : End-to-End Supervised Learning </mark>
