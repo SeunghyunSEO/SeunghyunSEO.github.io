@@ -124,7 +124,7 @@ Lm = - log \frac{exp(sim(c_t,q_t) / \kappa)}{ \sum_{\tilde{q} \sim Q_t } exp(sim
 
 &
 L_d = \frac{1}{GV} \sum_{g=1}^G -H(\tilde{p_g}) = \frac{1}{GV} \sum_{g=1}^G \sum_{v=1}^V \tilde{p}_{g,v} log \tilde{p}_{g,v} 
-&
+& \\
 \end{aligned}
 $$
 
@@ -156,20 +156,20 @@ $$
 $$
 \begin{aligned}
 &
-min_G max_C \mathbb{E}_{P^r in P^r} [logC(P^r)] - \mathbb{E}_{S \sim S} [log (1- C(G(S)))] - \lambda L_{gp} + \gamma L_sp} +  \eta L_{pd}
+min_G max_C \mathbb{E}_{P^r in P^r} [logC(P^r)] - \mathbb{E}_{S \sim S} [log (1- C(G(S)))] - \lambda L_{gp} + \gamma L_{sp} +  \eta L_{pd}
 & \\
 
 &
 \text{ where } L_{gp} = \mathbb{E}_{\tilde{P} \sim \tilde{P} } [ ( \parallel \bigtriangledown C(\tilde{P}) -1 \parallel )^2 ] 
-& \\
+&  \scriptstyle{\text{; Gradient Penalty}} \\
 
 &
 \text{ where } L_{sp} = \sum_{(p_t,p_{t+1}) \in G(S)} \parallel p_t - p_{t+1} \parallel^2
-& \\
+& \scriptstyle{\text{; Gradient Segment Smoothness Penalty}}\\
 
 &
 \text{ where } L_{pd} = \frac{1}{\vert B \vert} \sum_{S \in B} - H_G (G(S))
-& \\
+& \scriptstyle{\text{; Phoneme Diversity Penalty}} \\
 \end{aligned}
 $$
 
