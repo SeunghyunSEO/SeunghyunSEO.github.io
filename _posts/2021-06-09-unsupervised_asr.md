@@ -116,12 +116,18 @@ L_d = \frac{1}{GV} \sum_{g=1}^G -H(\tilde{p_g}) = \frac{1}{GV} \sum_{g=1}^G \sum
 \end{aligned}
 $$
 
-수식에는 
+수식이 의미하는 바는 Codebook이 최대한 다양한 entry (code)를 사용하면서, Contrastive Learning을 통해 관련 없는 음성은 멀어지게 하고, 관련있는 음성들은 (마스킹해서 트랜스포머 통과시킨 벡터와, 트랜스포머 통과전 벡터를 양자화 한 것) 유사한 벡터를 배우도록 하는 것입니다.
+
+***
+
+여기서 `Diversity Loss` $$L_d$$나 코드북을 두개 써서 곱하는 전략 등을 이용해 더욱 성능을 끌어올렸다고 하는데, 둘 다 근거가 없는 말은 아니나 일각에서는 Diversity loss는 효과가 없는 것 같다는 등의 의견이 있긴 합니다.
+
+***
 
 
 ### <mark style='background-color: #dcffe4'> fine-tuning : End-to-End Supervised Learning </mark>
 
-
+어쨌든 이렇게 학습된 Wav2Vec 2.0 네트워크는 Quantization Module의 아웃풋 벡터가 아닌 Context Vector $$c_t$$를 사용해서 이 뒤에 얕은 층의 `Shallow Decoder`를 붙히고 `CTC loss`를 사용해서 `Supervised Fine-tuning`을 하는데요, 본 논문의 핵심은 이를 제거해버리겠다는 겁니다.
 
 
 
