@@ -105,7 +105,7 @@ Wav2Vec 2.0은 직관적으로 성별, 악센트등에 상관없이 전체 음�
 *Fig. 이미지를 사용한 예시로, Contrastive Learning의 목적은 비슷한 의미를 가진 벡터 (고양이들)과 아닌 벡터들 (코끼리,개 등)의 사이를 서로 밀고 당기는 것이다.*
 
 ![simclr-softmax-interpretation](/assets/images/unsupervised_asr/simclr-softmax-interpretation.png)
-*Fig. 비슷한 벡터의 softmax probability를 높히면 자동으로 안비슷한 벡터들은 줄어든다 (=멀어진다). 여기서 어떤걸 가까워지게 또는 멀어지게 해야 하는지는 Self-Supervised Learning답게 알아서 정한다. Wav2Vec의 경우 현재 time-step에서의 양자화된 벡터와, 트랜스포머가 통과된 벡터를 가깝게 하고 나머진느 다 멀게 만든다.*
+*Fig. 비슷한 벡터의 softmax probability를 높히면 자동으로 안비슷한 벡터들은 줄어든다 (=멀어진다). 여기서 어떤걸 가까워지게 또는 멀어지게 해야 하는지는 Self-Supervised Learning답게 알아서 정한다. Wav2Vec의 경우 현재 time-step에서의 양자화된 벡터와, 트랜스포머가 통과된 벡터를 가깝게 하고 나머지 샘플들은 다 멀 만든다.*
 
 ***
 
@@ -150,6 +150,34 @@ $$
 ## <mark style='background-color: #fff5b1'> Proposed Method </mark>
 
 ### <mark style='background-color: #dcffe4'> Objective </mark>
+
+앞서 밝혔듯 본 논문에서는 `Generative Adversarial Networks (GANs)`의 Objective에 Penalty term들을 추가해서 Objective를 구성합니다.
+
+$$
+\begin{aligned}
+&
+min_G max_C \mathbb{E}_{P^r in P^r} [logC(P^r)] - \mathbb{E}_{S \sim S} [log (1- C(G(S)))] - \lambda L_{gp} + \gamma L_sp} +  \eta L_{pd}
+& \\
+
+&
+\text{ where } L_{gp} = \mathbb{E}_{\tilde{P} \sim \tilde{P} } [ ( \parallel \bigtriangledown C(\tilde{P}) -1 \parallel )^2 ] 
+& \\
+
+&
+\text{ where } L_{sp} = \sum_{(p_t,p_{t+1}) \in G(S)} \parallel p_t - p_{t+1} \parallel^2
+& \\
+
+&
+\text{ where } L_{pd} = \frac{1}{\vert B \vert} \sum_{S \in B} - H_G (G(S))
+& \\
+\end{aligned}
+$$
+
+
+
+![wav2vec-u_figure2](/assets/images/unsupervised_asr/wav2vec-u_figure2.png)
+*Fig. Overall Architecture of Wav2Vec-U*
+
 
 ### <mark style='background-color: #dcffe4'> Segmenting the Audio Signal </mark>
 
