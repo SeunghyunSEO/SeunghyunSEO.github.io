@@ -77,12 +77,27 @@ Figure와 Caption에도 나와있듯, 절차는 생각보다 간단해보이는�
 
 ### <mark style='background-color: #dcffe4'> Pre-training : Wav2Vec 2.0 </mark>
 
+Wav2Vec 2.0의 핵심은 아래와 같습니다.
+
+![wav2vec2.0_codebook](/assets/images/unsupervised_asr/wav2vec2.0_codebook.png){: width="70%"}
+*Fig. 이미지 출처 : [UniSpeech: Unified Speech Representation Learning with Labeled and Unlabeled Data](https://arxiv.org/pdf/2101.07597)*
+
+Wav2Vec 2.0은 직관적으로 성별, 악센트등에 상관없이 전체 음성의 맥락에서, 같은 발음을 나타내는 음성 벡터들은 한데 모아서 표현 (represent) 하겠다는 의미를 가지고 있습니다. 
+
+맥락을 배우는 것은 `Transformer Encoder`가 수행하고, 각각의 음성 벡터들이 speaker 같은 정보에 independent하게 하는 것은 `Quantization Module`이 담당합니다. 
+
+이렇게 `Discrete Speech Representation`을 배우는 과정은 위의 그림에 잘 나타나 있는데요,
+1d-conv 신경망을 통과시켜서 지역적으로 의미있는 벡터들을 표현한 뒤 이렇게 temporal resolution이 줄어든 벡터들을 VQ-VAE에서 처럼 Discrete Codebook을 통해 가까운 표현 벡터로 뭉치게 합니다. 
+
+
+전체적인 학습 과정은 아래의 그림에 더 자세히 나와있는데요,
+
 ![wav2vec2.0](/assets/images/unsupervised_asr/wav2vec2.0.png)
 *Fig. 이미지 출처 : [Applying Wav2vec2.0 to Speech Recognition in Various Low-resource Languages](https://arxiv.org/pdf/2012.12121)*
 
+1d-conv layer를 통과시킨 벡터들을 매 time-step마다 일정 확률로 마스킹하고 이를 트랜스포머에 통과시킨 후 quantization 된 벡터들, 그러니까 앞서 말한 discrete representation vector들과 함께 contrastive loss를 통해서 학습합니다. 
 
-![wav2vec2.0_codebook](/assets/images/unsupervised_asr/wav2vec2.0_codebook.png)
-*Fig. 이미지 출처 : [UniSpeech: Unified Speech Representation Learning with Labeled and Unlabeled Data](https://arxiv.org/pdf/2101.07597)*
+
 
 
 ### <mark style='background-color: #dcffe4'> fine-tuning : End-to-End Supervised Learning </mark>
