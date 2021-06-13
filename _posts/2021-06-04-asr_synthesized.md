@@ -29,7 +29,7 @@ ICASSP 2020년에 게재된 논문이고 Google에서 publish한 논문인데 �
 
 ## <mark style='background-color: #fff5b1'> Problem Definition and Contibution Point </mark>
 
-본 논문에서 정의하는 Problem과 Contribution Point은 다음과 같습니다.
+본 논문에서 정의하는 Problem과 Contribution Point는 다음과 같습니다.
 
 - 1.요즘 음성 합성 성능이 많이 올라왔기 때문에 이러한 합성음 데이터를 사용해서 음성인식 성능을 높히려는 노력들이 많이 있었다.
 - 2.하지만 이렇게 합성음을 사용해서 data augmentation 효과를 누리는 방법은 효과적이지 못했다. (참고 : [Training neural speech recognition systems with synthetic speech augmentation](https://arxiv.org/abs/1811.00707))
@@ -43,7 +43,7 @@ ICASSP 2020년에 게재된 논문이고 Google에서 publish한 논문인데 �
 
 ### <mark style='background-color: #dcffe4'> Unsupervised Data Augmentation (UDA) Learning </mark>
 
-`Unsupervised Data Augmentation (UDA) Loss` 란 원래의 음성 $$x$$에 noise 등을 추가해서 $$\hat{x}$$을 만들고, 이를 기반으로 추론한 문장 $$y$의 분포를 유사하게 하는 인데요, 
+`Unsupervised Data Augmentation (UDA) Loss` 란 원래의 데이터 $$x$$에 noise 등을 추가해서 $$\hat{x}$$을 만들고, 이를 기반으로 추론한 문장 $$y$$의 분포를 유사하게 하는 Objective 인데요, 
 
 
 $$
