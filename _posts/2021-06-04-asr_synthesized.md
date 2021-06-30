@@ -1,5 +1,5 @@
 ---
-title: (Paper) Improving Speech Recognition Using Consistent Predictions on Synthesized Speech
+title: (미완) (Paper) Improving Speech Recognition Using Consistent Predictions on Synthesized Speech
 categories: Speech_Recognition
 tag: [tmp]
 
