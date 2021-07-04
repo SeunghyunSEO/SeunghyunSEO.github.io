@@ -78,12 +78,12 @@ comments: true
 
 아래는 일반적으로 생각할 수 있는 직선 $$y=\theta_0 + \theta_1 x$$ 을 피팅하는 과정이고
 
-![reg5](/assets/images/regression/reg5.png)
+![reg5](/assets/images/regression/reg5.gif)
 *Fig. Linear Regression Animation*
 
 아래는 마찬가지로 linear regression 이지만, 직선 $$y=\theta_0 + \theta_1 x + \theta_2 x^2$$ 인 polynomial linear regression을 피팅하는 과정에 대한 애니메이션입니다.
 
-![reg6](/assets/images/regression/reg6.png)
+![reg6](/assets/images/regression/reg6.gif)
 *Fig. Linear Regression Animation2*
 
 (출처 : [link](https://medium.com/analytics-vidhya/ml-from-scrach-linear-regression-normal-equation-gradient-descent-1af26b542c28))
